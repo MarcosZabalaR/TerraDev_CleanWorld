@@ -57,8 +57,7 @@ En resumen: **ordena la información, coordina a las personas y reduce el tiempo
 | **Could Have** | Foro de opinión y sugerencias | Un foro comunitario donde comentar y reaccionar a los distintos eventos de la web. |
 |  | Sistema de recompensa de puntos | Por cada evento asistido y acción realizada se recompensaría con puntos canjeables por utensilios de limpieza, vales restaurante, etc. |
 |  | Creación de eventos automáticos | Si no hay un evento de limpieza en x zona sucia en determinado tiempo, se crea un evento automáticamente para hacer efecto llamada |
-|  | Sistema de validación comunitaria | Cuando alguien marca limpio un punto, otros pueden confirmar:
-“¿Está limpio?” → Sí / No. Con 2-3 votos positivos, pasa a “resuelto” |
+|  | Sistema de validación comunitaria | Cuando alguien marca limpio un punto, otros pueden confirmar: “¿Está limpio?” → Sí / No. Con 2-3 votos positivos, pasa a “resuelto” |
 |  |  |  |
 | **Wont Have (now)** | Donativos a organizaciones | Vía de pago a organizaciones para colaborar en la compra de material. |
 |  | Perfiles de equipo a organizaciones | Dar versiones mejoradas a empresas u organizaciones para una mejor gestión de los eventos. |
