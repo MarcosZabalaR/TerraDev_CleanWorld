@@ -5,7 +5,7 @@ Projecto web de TerraDev para Fundación Esplai con el objetivo de identificar, 
 
 ---
 
-![lean-orld-high-resolution-logo-transparent.png](lean-orld-high-resolution-logo-transparent.png)![logo-app.png](logo-app.png)
+![lean-orld-high-resolution-logo-transparent.png](imgs/lean-orld-high-resolution-logo-transparent.png)![logo-app.png](imgs/logo-app.png)
 
 # **1. Problema**
 
