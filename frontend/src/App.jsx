@@ -1,11 +1,16 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
+import NavBar from './components/NavBar'
 
 function App() {
 
   return (
-    <>
-     <p className="font-bold border-2 text-amber-300">Mondongo</p>
-    </>
+    <BrowserRouter>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<p className="font-bold border-2 text-amber-300">Mondongo</p>} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
