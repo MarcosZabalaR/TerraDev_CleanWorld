@@ -1,8 +1,12 @@
 import WorldMap from "../assets/worldmap.webp";
 import Cloud from "../assets/cloud.png";
 import Footer from "../components/Footer";
+import Login from "./Login";
+import { useNavigate } from 'react-router-dom'
 
 function Home() {
+  const navigate = useNavigate()
+
   return (
     <>
       <div className="bg-gradient-to-r from-blue-200 to-blue-100 h-[100vh] flex justify-center relative overflow-hidden ">
@@ -17,7 +21,7 @@ function Home() {
           <div className="flex justify-center mt-5">
             <button
               className="border-3 border-neutral-400 px-3 py-2 bg-neutral-100 rounded-full mr-5 text-neutral-700 hover:scale-105 transition cursor-pointer"
-              src="./components/Login.jsx"
+              onClick={() => navigate('/login')}
             >
               Sign In
             </button>

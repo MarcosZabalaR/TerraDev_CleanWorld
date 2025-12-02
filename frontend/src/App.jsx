@@ -7,6 +7,7 @@ import "leaflet/dist/leaflet.css";
 // Pages
 import HomePage from './pages/Home.jsx';
 import MapaPage from './pages/Map.jsx';
+import Login from './pages/Login.jsx';
 
 // Components
 import Footer from './components/Footer'
@@ -19,6 +20,7 @@ function App() {
         <main className="grow">
           <Routes>
             <Route path="/home" element={<HomePage />} />
+            <Route path="/login" element={<Login />} />
 			<Route path="/mapa" element={<MapaPage />} />
 		  </Routes>
         </main>
