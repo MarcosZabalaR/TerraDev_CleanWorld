@@ -1,6 +1,5 @@
 package com.terradev.cleanWorld.controller;
 
-import com.terradev.cleanWorld.entity.UserEntity;
 import com.terradev.cleanWorld.entity.ZoneEntity;
 import com.terradev.cleanWorld.service.ZoneService;
 import org.springframework.http.ResponseEntity;

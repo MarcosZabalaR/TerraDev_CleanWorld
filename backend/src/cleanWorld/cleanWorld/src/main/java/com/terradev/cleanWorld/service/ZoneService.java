@@ -1,6 +1,5 @@
 package com.terradev.cleanWorld.service;
 
-import com.terradev.cleanWorld.entity.UserEntity;
 import com.terradev.cleanWorld.entity.ZoneEntity;
 import com.terradev.cleanWorld.repository.ZoneRepository;
 import org.springframework.stereotype.Service;
