@@ -33,9 +33,19 @@ public class UserController {
     public UserEntity create(@RequestBody UserEntity u) {
         return service.save(u);
     }
-    
+
     @PutMapping("/{id}")
-    public ResponseEntity<UserEntity> update(@PathVariable Long id, @RequestBody UserEntity u) {
+    public ResponseEntity<UserEntity> updateData(@PathVariable Long id, @RequestBody UserEntity u) {
+        return service.findById(id)
+                .map(existing -> {
+                    existing.setName(u.getName());
+                    return ResponseEntity.ok(service.save(existing));
+                })
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<UserEntity> updateAll(@PathVariable Long id, @RequestBody UserEntity u) {
         return service.findById(id)
                 .map(existing -> {
                     existing.setName(u.getName());
