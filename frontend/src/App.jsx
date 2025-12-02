@@ -5,6 +5,7 @@ import './App.css'
 import "leaflet/dist/leaflet.css";
 
 // Pages
+import HomePage from './pages/Home.jsx';
 import MapaPage from './pages/Map.jsx';
 
 // Components
@@ -17,12 +18,7 @@ function App() {
       <div className="min-h-screen flex flex-col">
         <main className="grow">
           <Routes>
-            <Route path="/" element={
-			  <div className="min-h-screen flex flex-col">
-                <div className="grow"></div>
-                <Footer />
-              </div>
-			} />
+            <Route path="/home" element={<HomePage />} />
 			<Route path="/mapa" element={<MapaPage />} />
 		  </Routes>
         </main>
