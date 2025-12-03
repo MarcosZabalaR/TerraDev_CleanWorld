@@ -35,16 +35,6 @@ public class UserController {
         return service.save(u);
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<UserEntity> updateData(@PathVariable Long id, @RequestBody UserEntity u) {
-        return service.findById(id)
-                .map(existing -> {
-                    existing.setName(u.getName());
-                    return ResponseEntity.ok(service.save(existing));
-                })
-                .orElse(ResponseEntity.notFound().build());
-    }
-
     @PatchMapping("/edit/{id}")
     public ResponseEntity<UserEntity> update(@PathVariable Long id, @RequestBody Map<String, Object> update) {
         return service.patchUser(id, update)
