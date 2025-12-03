@@ -13,13 +13,14 @@ const PinIcon = L.divIcon({
   iconAnchor: [24, 48],
 });
 
-export default function Mapa() {
+export default function Mapa({ className }) {
   return (
     <MapContainer
       center={[36.7213, -4.4214]}
       zoom={14}
       scrollWheelZoom={true}
-      className="rounded-xl shadow-lg grow"
+      className={className}
+      style={{ height: '100%', width: '100%' }}
     >
       <TileLayer
         attribution="&copy; CleanWorld"
