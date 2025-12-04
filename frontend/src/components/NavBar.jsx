@@ -13,7 +13,7 @@ export default function NavBar() {
 				<li><Link to="/eventos" className="p-2 hover:underline">Eventos</Link></li>
 				<li><Link to="/perfil" className="p-2 hover:underline">Perfil</Link></li>
 			</ul>
-			<button><Link to="/reportar" className="p-2 rounded-xl bg-emerald-100 text-emerald-800 font-bold transition-colors hover:bg-emerald-200">+ Reportar</Link></button>
+			<button><Link to="/mapa?report=true" className="p-2 rounded-xl bg-emerald-100 text-emerald-800 font-bold transition-colors hover:bg-emerald-200">+ Reportar</Link></button>
 		</nav>
 	  </>
 	);
