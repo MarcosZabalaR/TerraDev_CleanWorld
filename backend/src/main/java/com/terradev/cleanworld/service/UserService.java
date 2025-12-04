@@ -17,18 +17,42 @@ public class UserService {
         this.repository = repository;
     }
 
+    /**
+     * GET -> Obtener todos los usuarios
+     *
+     * @return Lista de todos los usuarios
+     */
     public List<UserEntity> findAll() {
         return repository.findAll();
     }
 
+    /**
+     * GET -> Obtener un usuario por ID
+     *
+     * @param id Identificador del usuario
+     * @return Optional con el usuario indicado por ID
+     */
     public Optional<UserEntity> findById(Long id) {
         return repository.findById(id);
     }
 
+    /**
+     * POST -> Crear un nuevo usuario
+     *
+     * @param u Entidad UserEntity con los datos a guardar
+     * @return Usario creado
+     */
     public UserEntity save(UserEntity u) {
         return repository.save(u);
     }
 
+    /**
+     * PATCH -> Actualizar parcialmente un usuario
+     *
+     * @param id Identificador del usuario
+     * @param updates Campos que se desean actualizar
+     * @return Usuario actualizado
+     */
     public Optional<UserEntity> patchUser(Long id, Map<String, Object> updates) {
         return repository.findById(id).map(existing -> {
 
@@ -56,7 +80,16 @@ public class UserService {
         });
     }
 
+    /**
+     * DELETE -> Eliminar usuario
+     *
+     * @param id Identificador del usuario a eliminar
+     * @throws RuntimeException Si el usuario no existe
+     */
     public void deleteById(Long id) {
+        if (!repository.existsById(id)) {
+            throw new RuntimeException("Usuario no encontrado con id " + id);
+        }
         repository.deleteById(id);
     }
 }

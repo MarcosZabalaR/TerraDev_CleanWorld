@@ -17,24 +17,36 @@ public class UserController {
     public UserController(UserService service) {
         this.service = service;
     }
-    
+
+    /**
+     * GET -> Obtener todos los usuarios
+     */
     @GetMapping
     public List<UserEntity> getAll() {
         return  service.findAll();
     }
-    
+
+    /**
+     * GET -> Obtener un usuario por ID
+     */
     @GetMapping("/{id}")
     public ResponseEntity<UserEntity> getById(@PathVariable Long id) {
         return service.findById(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
-    
+
+    /**
+     * POST -> Crear un nuevo usuario
+     */
     @PostMapping
     public UserEntity create(@RequestBody UserEntity u) {
         return service.save(u);
     }
 
+    /**
+     * PATCH -> Actualizar parcialmente un usuario
+     */
     @PatchMapping("/edit/{id}")
     public ResponseEntity<UserEntity> update(@PathVariable Long id, @RequestBody Map<String, Object> update) {
         return service.patchUser(id, update)
@@ -42,6 +54,9 @@ public class UserController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    /**
+     * PUT -> Actualizar completamente un usuario
+     */
     @PutMapping("/{id}")
     public ResponseEntity<UserEntity> updateAll(@PathVariable Long id, @RequestBody UserEntity u) {
         return service.findById(id)
@@ -55,7 +70,10 @@ public class UserController {
                 })
                 .orElse(ResponseEntity.notFound().build());
     }
-    
+
+    /**
+     * DELETE -> Eliminar un usuario
+     */
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         return service.findById(id)
