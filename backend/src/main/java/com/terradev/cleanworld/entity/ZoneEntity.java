@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "zone")
 @Getter @Setter
@@ -33,4 +36,12 @@ public class ZoneEntity {
 
     private String status;
 
+    // MANY zones -> ONE user
+    @ManyToOne
+    @JoinColumn(name = "reported_id", foreignKey = @ForeignKey(name = "fk_zone_reported_id"),nullable = true)
+    private UserEntity reportedUser;
+
+    // MANY events -> ONE zone
+    @OneToMany(mappedBy = "zone", fetch = FetchType.LAZY)
+    private List<EventEntity> zoneEvents = new ArrayList<>();
 }

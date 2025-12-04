@@ -4,6 +4,10 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "user")
 @Getter @Setter
@@ -24,4 +28,13 @@ public class UserEntity {
     private String avatar;
 
     private Integer points = 0;
+
+    @Column(insertable = false, updatable = false)
+    private Timestamp created_at;
+
+    @Column(insertable = false, updatable = false)
+    private Timestamp updated_at;
+
+    @OneToMany(mappedBy = "reportedUser", fetch = FetchType.LAZY)
+    private List<ZoneEntity> reportedZones = new ArrayList<>();
 }
