@@ -24,7 +24,7 @@ const createPinIcon = (color) => {
 };
 
 // Pin por defecto (para el marcador temporal)
-const DefaultPinIcon = createPinIcon('#ff2d55');
+const DefaultPinIcon = createPinIcon('#5F7336');
 
 function MapClickHandler({ onMapClick, isReportMode }) {
   const map = useMap();

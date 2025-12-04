@@ -31,7 +31,7 @@ export default function ReportModal({ isReportMode, reportCoords, onClose, onSub
 
   if (isReportMode && !reportCoords) {
     return (
-      <div className="absolute bottom-2/8 left-1/2 -translate-x-1/2 z-1000 bg-emerald-600 text-white px-4 py-2 rounded-lg shadow-lg">
+      <div className="absolute bottom-2/8 left-1/2 -translate-x-1/2 z-1000 bg-brand-primary text-white px-4 py-2 rounded-lg shadow-lg">
         Haz clic en el mapa para marcar el punto
       </div>
     );
@@ -43,9 +43,9 @@ export default function ReportModal({ isReportMode, reportCoords, onClose, onSub
     <div className="absolute inset-0 flex items-center justify-center z-1000 pointer-events-none">
       <div className="bg-white p-6 rounded-xl shadow-xl w-96 pointer-events-auto">
         <div className="flex justify-between items-center mb-4">
-          <h3 className="text-2xl font-bold text-emerald-800">Nuevo reporte</h3>
-          <button onClick={onClose} className="p-1 hover:bg-gray-100 rounded-full cursor-pointer">
-            <IconX size={24} className="text-gray-500" />
+          <h3 className="text-2xl font-bold text-brand-dark">Nuevo reporte</h3>
+          <button onClick={onClose} className="p-1 hover:bg-brand-light/30 rounded-full cursor-pointer">
+            <IconX size={24} className="text-brand-dark" />
           </button>
         </div>
 
@@ -61,7 +61,7 @@ export default function ReportModal({ isReportMode, reportCoords, onClose, onSub
             onChange={handleChange}
             placeholder="Título *"
             required
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-primary"
           />
 
           <textarea
@@ -70,7 +70,7 @@ export default function ReportModal({ isReportMode, reportCoords, onClose, onSub
             onChange={handleChange}
             placeholder="Descripción..."
             rows={3}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 resize-none"
+            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-primary resize-none"
           />
 
           <div>
@@ -84,7 +84,7 @@ export default function ReportModal({ isReportMode, reportCoords, onClose, onSub
               max="5"
               value={formData.severity}
               onChange={handleChange}
-              className="w-full accent-emerald-600"
+              className="w-full accent-brand-primary"
             />
           </div>
 
@@ -96,15 +96,15 @@ export default function ReportModal({ isReportMode, reportCoords, onClose, onSub
               value={formData.img_url}
               onChange={handleChange}
               placeholder="URL de imagen"
-              className="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              className="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-primary"
             />
           </div>
 
           <div className="flex gap-3">
-            <button type="button" onClick={onClose} className="flex-1 px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 cursor-pointer">
+            <button type="button" onClick={onClose} className="flex-1 px-4 py-2 border border-brand-primary text-brand-dark rounded-lg hover:bg-brand-light/30 cursor-pointer">
               Cancelar
             </button>
-            <button type="submit" className="flex-1 px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 cursor-pointer">
+            <button type="submit" className="flex-1 px-4 py-2 bg-brand-primary text-white rounded-lg hover:bg-brand-dark cursor-pointer">
               Enviar
             </button>
           </div>
