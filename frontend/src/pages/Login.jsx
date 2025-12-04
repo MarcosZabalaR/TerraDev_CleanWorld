@@ -1,7 +1,11 @@
 import Happy from '../assets/thx.jpg'
+import Navbar from "../components/NavBar"
+import Footer from "../components/Footer"
 
 export default function Login() {
   return (
+    <>
+    <Navbar/>
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-blue-50 to-[#AFBF75]">
 
       <div className="bg-white border-2 border-gray-300 rounded-xl shadow-lg p-8 md:p-10 w-11/12 max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 relative">
@@ -76,5 +80,7 @@ export default function Login() {
       </div>
 
     </div>
+    <Footer/>
+    </>
   );
 }
