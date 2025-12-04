@@ -1,6 +1,7 @@
 import WorldMap from "../assets/worldmap.webp";
 import Cloud from "../assets/cloud.png";
 import Footer from "../components/Footer";
+import Register from "./Register"
 import Login from "./Login";
 import { useNavigate } from 'react-router-dom'
 
@@ -25,7 +26,8 @@ function Home() {
             >
               Sign In
             </button>
-            <button className="border-3 border-gray-400 px-3 py-2 bg-neutral-500 rounded-full hover:scale-105 transition cursor-pointer">
+            <button className="border-3 border-gray-400 px-3 py-2 bg-neutral-500 rounded-full hover:scale-105 transition cursor-pointer z-999"
+            onClick={() => navigate('/register')}>
               Register
             </button>
           </div>
