@@ -21,7 +21,7 @@ export default function Footer() {
               <li><Link to="/mapa" className="text-emerald-100 hover:text-white hover:underline">Mapa</Link></li>
               <li><Link to="/zonas" className="text-emerald-100 hover:text-white hover:underline">Zonas</Link></li>
               <li><Link to="/eventos" className="text-emerald-100 hover:text-white hover:underline">Eventos</Link></li>
-              <li><Link to="/reportar" className="text-emerald-100 hover:text-white hover:underline">Reportar</Link></li>
+              <li><Link to="/mapa?report=true" className="text-emerald-100 hover:text-white hover:underline">Reportar</Link></li>
             </ul>
           </div>
 
