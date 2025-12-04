@@ -17,7 +17,7 @@ public class EventService {
     /**
      * GET -> Obtener todos los eventos
      *
-     * @return Lista de todos los eventos de la BBDD
+     * @return Lista de todos los eventos
      */
     public ArrayList<EventEntity> getEvents() {
         return (ArrayList<EventEntity>) eventRepository.findAll();
@@ -27,7 +27,7 @@ public class EventService {
      * GET -> Obtener un evento por ID
      *
      * @param id Identificador del evento
-     * @return Optional con el evento indicado por ID de la BBDD
+     * @return Optional con el evento indicado por ID
      */
     public Optional<EventEntity> getEvent(Long id) {
         return eventRepository.findById(id);
@@ -37,7 +37,7 @@ public class EventService {
      * POST -> Crear un nuevo evento
      *
      * @param event Entidad EventEntity con los datos a guardar
-     * @return Evento creado en la BBDD
+     * @return Evento creado
      */
     public EventEntity createEvent(EventEntity event) {
         return eventRepository.save(event);
@@ -67,18 +67,36 @@ public class EventService {
      * PATCH -> Actualizar parcialmente un evento
      *
      * @param id Identificador del evento a actualizar
-     * @param partialEvent Evento con los campos que se desean actualizar (los nulos se ignoran)
+     * @param partialEvent Evento con los campos que se desean actualizar
      * @return Evento actualizado
      * @throws RuntimeException si el evento no existe
      */
     public EventEntity patchEvent(Long id, EventEntity partialEvent) {
         return eventRepository.findById(id).map(event -> {
-            if (partialEvent.getTitle() != null) event.setTitle(partialEvent.getTitle());
-            if (partialEvent.getDescription() != null) event.setDescription(partialEvent.getDescription());
-            if (partialEvent.getDatetime() != null) event.setDatetime(partialEvent.getDatetime());
-            if (partialEvent.getStatus() != null) event.setStatus(partialEvent.getStatus());
-            if (partialEvent.getReward_points() != null) event.setReward_points(partialEvent.getReward_points());
-            if (partialEvent.getZone() != null) event.setZone(partialEvent.getZone());
+            if (partialEvent.getTitle() != null) {
+                event.setTitle(partialEvent.getTitle());
+            }
+
+            if (partialEvent.getDescription() != null) {
+                event.setDescription(partialEvent.getDescription());
+            }
+
+            if (partialEvent.getDatetime() != null) {
+                event.setDatetime(partialEvent.getDatetime());
+            }
+
+            if (partialEvent.getStatus() != null) {
+                event.setStatus(partialEvent.getStatus());
+            }
+
+            if (partialEvent.getReward_points() != null) {
+                event.setReward_points(partialEvent.getReward_points());
+            }
+
+            if (partialEvent.getZone() != null) {
+                event.setZone(partialEvent.getZone());
+            }
+
             return eventRepository.save(event);
         }).orElseThrow(() -> new RuntimeException("Evento no encontrado con id " + id));
     }

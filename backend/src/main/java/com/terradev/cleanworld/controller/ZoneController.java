@@ -18,11 +18,17 @@ public class ZoneController {
         this.service = service;
     }
 
+    /**
+     * GET -> Obtener todas las zonas
+     */
     @GetMapping
     public List<ZoneEntity> getAll() {
         return service.findAll();
     }
 
+    /**
+     * GET -> Obtener una zona por ID
+     */
     @GetMapping("/{id}")
     public ResponseEntity<ZoneEntity> getById(@PathVariable Long id) {
         return service.findById(id)
@@ -30,6 +36,17 @@ public class ZoneController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    /**
+     * POST -> Crear una nueva zona
+     */
+    @PostMapping
+    public ZoneEntity create(@RequestBody ZoneEntity z) {
+        return service.save(z);
+    }
+
+    /**
+     * PATCH -> Actualizar parcialmente una zona
+     */
     @PatchMapping("/edit/{id}")
     public ResponseEntity<ZoneEntity> update(@PathVariable Long id, @RequestBody Map<String, Object> update) {
         return service.patchZone(id, update)
@@ -37,11 +54,9 @@ public class ZoneController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @PostMapping
-    public ZoneEntity create(@RequestBody ZoneEntity z) {
-        return service.save(z);
-    }
-
+    /**
+     * PUT -> Actualizar completamente una zona
+     */
     @PutMapping("/{id}")
     public ResponseEntity<ZoneEntity> update(@PathVariable Long id, @RequestBody ZoneEntity z) {
         return service.findById(id)
@@ -59,6 +74,9 @@ public class ZoneController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    /**
+     * DELETE -> Eliminar una zona
+     */
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         return service.findById(id)
