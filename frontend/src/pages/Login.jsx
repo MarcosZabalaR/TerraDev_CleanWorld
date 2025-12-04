@@ -1,6 +1,11 @@
 import Happy from '../assets/thx.jpg'
+import { useNavigate } from 'react-router-dom';
+
+import Register from "./Register"
 
 export default function Login() {
+
+const navigate = useNavigate();
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-blue-50 to-[#AFBF75]">
 
@@ -50,7 +55,8 @@ export default function Login() {
               <button
                 type="button"
                 className="bg-gray-200 text-gray-800 font-semibold py-3 rounded hover:bg-gray-300 transition duration-300"
-              >
+              
+              onClick={() => navigate('/register')}>
                 Register
               </button>
             </div>

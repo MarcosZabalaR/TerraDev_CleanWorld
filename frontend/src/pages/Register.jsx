@@ -1,22 +1,22 @@
 import Happy from '../assets/thx.jpg'
+import Login from "./Login"
+import { useNavigate } from 'react-router-dom';
 
 export default function Register() {
+const navigate = useNavigate();
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-blue-50 to-[#AFBF75]">
 
-      <div className="bg-white border-2 border-gray-300 rounded-xl shadow-lg p-8 md:p-10 w-11/12 max-w-4xl 
-                      grid grid-cols-1 md:grid-cols-[0.35fr_0.65fr] gap-8 md:gap-12 relative">
+      <div className="bg-white border-2 border-gray-300 rounded-xl shadow-lg p-8 md:p-10 
+                      w-120 max-w-2xl relative  gap-8 items-center">
 
-        {/* Línea divisoria central (más corta y suave) */}
-        <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-24 h-40 w-[1px] bg-gray-300/30"></div>
+        <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-1/4 h-24 w-[1px] bg-gray-300/40"></div>
 
-        {/* COLUMNA IZQUIERDA — Formulario */}
         <div className="flex flex-col justify-center">
           <h1 className="text-3xl md:text-4xl font-bold text-center mb-6 md:mb-8 text-gray-800">Register</h1>
 
           <form className="flex flex-col gap-5 md:gap-6">
-            
-            {/* Username */}
+
             <div className="relative w-full">
               <input
                 type="text"
@@ -31,7 +31,6 @@ export default function Register() {
               </label>
             </div>
 
-            {/* Email */}
             <div className="relative w-full">
               <input
                 type="email"
@@ -46,7 +45,6 @@ export default function Register() {
               </label>
             </div>
 
-            {/* Password */}
             <div className="relative w-full">
               <input
                 type="password"
@@ -61,7 +59,6 @@ export default function Register() {
               </label>
             </div>
 
-            {/* Confirm Password */}
             <div className="relative w-full">
               <input
                 type="password"
@@ -76,7 +73,6 @@ export default function Register() {
               </label>
             </div>
 
-            {/* Botones */}
             <div className="flex flex-col gap-3 md:gap-4">
               <button
                 type="submit"
@@ -88,6 +84,7 @@ export default function Register() {
               <button
                 type="button"
                 className="bg-gray-200 text-gray-800 font-semibold py-3 rounded hover:bg-gray-300 transition duration-300"
+              onClick={() => navigate('/login')}
               >
                 Already have an account?
               </button>
@@ -96,15 +93,6 @@ export default function Register() {
           </form>
         </div>
 
-        {/* COLUMNA DERECHA — Imagen */}
-        <div className="flex items-center justify-center p-0">
-          <div className="relative w-full h-64 md:h-full flex justify-center items-center">
-            <img 
-              src={Happy}
-              className="rounded-lg object-contain w-full h-full"
-            />
-          </div>
-        </div>
 
       </div>
 
