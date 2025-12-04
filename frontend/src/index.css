@@ -1,2 +1,27 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Teko:wght@300..700&display=swap');
 
+@theme {
+  --color-brand-dark: #324016;
+  --color-brand-primary: #5F7336;
+  --color-brand-light: #AFBF75;
+  --color-brand-accent: #BF784E;
+  --color-brand-warm: #A6583C;
+
+  --color-severity-1: #22c55e;
+  --color-severity-2: #84cc16;
+  --color-severity-3: #eab308;
+  --color-severity-4: #f97316;
+  --color-severity-5: #ef4444;
+
+  --font-primary: 'Teko', sans-serif;
+  --font-secondary: 'Roboto', sans-serif;
+}
+
+body {
+  font-family: var(--font-secondary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+}
