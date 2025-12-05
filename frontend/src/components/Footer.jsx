@@ -18,10 +18,10 @@ export default function Footer() {
           <div>
             <h3 className="font-bold mb-3">Enlaces</h3>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/mapa" className="text-brand-light hover:text-white hover:underline">Mapa</Link></li>
+              <li><Link to="/map" className="text-brand-light hover:text-white hover:underline">Mapa</Link></li>
               <li><Link to="/zonas" className="text-brand-light hover:text-white hover:underline">Zonas</Link></li>
               <li><Link to="/eventos" className="text-brand-light hover:text-white hover:underline">Eventos</Link></li>
-              <li><Link to="/mapa?report=true" className="text-brand-light hover:text-white hover:underline">Reportar</Link></li>
+              <li><Link to="/map?report=true" className="text-brand-light hover:text-white hover:underline">Reportar</Link></li>
             </ul>
           </div>
 
