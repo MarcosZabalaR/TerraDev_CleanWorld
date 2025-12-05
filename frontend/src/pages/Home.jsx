@@ -21,7 +21,7 @@ function Home() {
 
           <div className="flex justify-center mt-5">
             <button
-              className="border-3 border-neutral-400 px-3 py-2 bg-neutral-100 rounded-full mr-5 text-neutral-700 hover:scale-105 transition cursor-pointer"
+              className="border-3 border-neutral-400 px-3 py-2 bg-neutral-100 rounded-full mr-5 text-neutral-700 hover:scale-105 transition cursor-pointer z-999"
               onClick={() => navigate('/mapa')}
             >
               Start
