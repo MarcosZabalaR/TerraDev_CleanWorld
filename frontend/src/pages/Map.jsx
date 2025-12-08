@@ -22,7 +22,8 @@ export default function MapPage() {
     const [reportCoords, setReportCoords] = useState(null);
     const [reports, setReports] = useState([]);
     const [selectedCategories, setSelectedCategories] = useState([]);
-
+    
+    // Usar directamente searchParams como fuente de verdad
     const isReportMode = searchParams.get("report") === "true";
 
     // Cargar los reports solo una vez al montar
@@ -55,25 +56,28 @@ export default function MapPage() {
     }, []);
 
     const handleMapClick = (latlng) => {
-        if (isReportMode) {
+        if (isReportMode || reportCoords) {
             setReportCoords(latlng);
-            setSearchParams({});
+            isReportMode && setSearchParams({});
         }
     };
 
-    const handleCloseReport = () => {
+    const closeReport = () => {
         setReportCoords(null);
+        setSearchParams({});
     };
 
     const handleSubmitReport = (report) => {
         setReports(prev => [...prev, report]);
-        setReportCoords(null);
+        closeReport();
     };
 
-    // Filtrar reports según las categorías seleccionadas
+    // Filtrar reports:
+    // - Si NO hay categorías seleccionadas: solo mostrar reportes de usuario (sin residuo)
+    // - Si HAY categorías: mostrar contenedores de esas categorías + todos los reportes de usuario
     const filteredReports = selectedCategories.length > 0
-        ? reports.filter(r => selectedCategories.includes(r.residuo))
-        : [];
+        ? reports.filter(r => !r.residuo || selectedCategories.includes(r.residuo))
+        : reports.filter(r => !r.residuo); // Solo reportes de usuario cuando no hay filtros
 
     return (
         <div className="h-screen flex flex-col">
@@ -92,7 +96,7 @@ export default function MapPage() {
                 <ReportModal
                     isReportMode={isReportMode}
                     reportCoords={reportCoords}
-                    onClose={handleCloseReport}
+                    onClose={closeReport}
                     onSubmit={handleSubmitReport}
                 />
             </div>
