@@ -1,11 +1,16 @@
-import { MapContainer, TileLayer, Marker, Popup, useMapEvents, useMap } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, useMapEvents, useMap } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
 const severityColors = {
-  1: '#5F7336', // leve - verde oscuro (brand-primary)
-  2: '#f97316', // moderada - naranja
-  3: '#ef4444', // grave - rojo
+  // Soportar ambos formatos (números para compatibilidad legacy)
+  1: '#5F7336', // LOW - verde oscuro (brand-primary)
+  2: '#f97316', // MEDIUM - naranja
+  3: '#ef4444', // HIGH - rojo
+  // Formato de base de datos
+  LOW: '#5F7336',
+  MEDIUM: '#f97316',
+  HIGH: '#ef4444'
 };
 
 const createPinIcon = (color) => {
@@ -39,7 +44,13 @@ function MapClickHandler({ onMapClick, isReportMode, reportCoords }) {
   return null;
 }
 
-export default function Mapa({ onMapClick, reportCoords, isReportMode, reports = [] }) {
+export default function Mapa({ 
+  onMapClick, 
+  reportCoords, 
+  isReportMode, 
+  reports = [],
+  onReportClick 
+}) {
   return (
     <MapContainer
       center={[36.7213, -4.4214]}
@@ -64,18 +75,11 @@ export default function Mapa({ onMapClick, reportCoords, isReportMode, reports =
         <Marker 
           key={report.id} 
           position={[report.latitude, report.longitude]} 
-          icon={createPinIcon(severityColors[report.severity] || severityColors[2])}
-        >
-          <Popup>
-            <div className="p-1">
-              <strong className="text-brand-dark">{report.title}</strong>
-              {report.description && <p className="text-sm text-gray-600 mt-1">{report.description}</p>}
-              <span className="text-xs text-gray-500 mt-1 block">
-                Nivel: {report.severity === 1 ? 'Leve' : report.severity === 2 ? 'Moderado' : 'Grave'}
-              </span>
-            </div>
-          </Popup>
-        </Marker>
+          icon={createPinIcon(severityColors[report.severity] || severityColors.MEDIUM)}
+          eventHandlers={{
+            click: () => onReportClick?.(report)
+          }}
+        />
       ))}
     </MapContainer>
   );
