@@ -1,15 +1,15 @@
 import WorldMap from "../assets/worldmapGR.png";
 import Cloud from "../assets/cloud.png";
-import Footer from "../components/Footer";
-import Login from "./Login";
 import { useNavigate } from 'react-router-dom'
-import MapaPage from "./Map.jsx";
+import PageTitle from "../components/PageTitle";
 
 function Home() {
   const navigate = useNavigate()
 
   return (
     <>
+      <PageTitle title={"Inicio"} />
+
       <div className="bg-gradient-to-b from-blue-50 to-neutral-100 h-[100vh] flex justify-center relative overflow-hidden ">
         <div className="text-white mt-20">
           <span className="text-2xl font-medium drop-shadow-[1px_1px_0px_gray] text-neutral-700">

@@ -21,7 +21,7 @@ function App() {
       <div className="min-h-screen flex flex-col">
         <main className="grow">
           <Routes>
-            <Route path="/home" element={<HomePage />} />
+            <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/profile" element={<Profile />} />

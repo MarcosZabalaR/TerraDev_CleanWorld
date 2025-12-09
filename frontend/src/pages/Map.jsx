@@ -9,7 +9,6 @@ import pilasRaw from '../components/json/pilas.json';
 import ropaRaw from '../components/json/ropa.json';
 import residuosRaw from '../components/json/residuos.json';
 import industriaRaw from '../components/json/industria.json';
-
 import { convertGeoJSON } from '../components/json/convertGeoJSON.js';
 
 import NavBar from '../components/NavBar.jsx';
@@ -17,6 +16,7 @@ import Mapa from '../components/Map.jsx';
 import RecyclingMenu from '../components/RecyclingMenu.jsx';
 import ReportModal from '../components/ReportModal.jsx';
 import ZoneDrawer from '../components/ZoneDrawer.jsx';
+import PageTitle from '../components/PageTitle.jsx';
 
 export default function MapPage() {
     const [searchParams, setSearchParams] = useSearchParams();
@@ -97,6 +97,7 @@ export default function MapPage() {
 
     return (
         <div className="h-screen flex flex-col">
+            <PageTitle title={"Mapa"} />
             <NavBar />
             <div className="flex-1 relative">
                 <Mapa
