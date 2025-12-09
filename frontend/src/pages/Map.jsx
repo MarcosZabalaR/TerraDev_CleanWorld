@@ -90,9 +90,9 @@ export default function MapPage() {
 
     // Filtrar reports:
     // - Si NO hay categorías seleccionadas: solo mostrar reportes de usuario (sin residuo)
-    // - Si HAY categorías: mostrar contenedores de esas categorías + todos los reportes de usuario
+    // - Si HAY categorías: mostrar SOLO contenedores de esas categorías (sin reportes de usuario para evitar ruido visual)
     const filteredReports = selectedCategories.length > 0
-        ? reports.filter(r => !r.residuo || selectedCategories.includes(r.residuo))
+        ? reports.filter(r => r.residuo && selectedCategories.includes(r.residuo))
         : reports.filter(r => !r.residuo); // Solo reportes de usuario cuando no hay filtros
 
     return (
