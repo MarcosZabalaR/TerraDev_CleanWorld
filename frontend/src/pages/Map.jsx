@@ -110,6 +110,7 @@ export default function MapPage() {
                 <RecyclingMenu
                     selected={selectedCategories}
                     onToggleCategory={setSelectedCategories}
+                    disabled={isReportMode || reportCoords !== null}
                 />
                 <ReportModal
                     isReportMode={isReportMode}

@@ -23,9 +23,10 @@ const colorClasses = {
   slate: { bg: 'bg-brand-light/30', border: 'border-brand-primary', text: 'text-brand-primary', hover: 'hover:bg-brand-light/20' },
 };
 
-export default function RecyclingMenu({ selected, onToggleCategory }) {
+export default function RecyclingMenu({ selected, onToggleCategory, disabled = false }) {
 
   const toggleCategory = (id) => {
+    if (disabled) return;
     if (selected.includes(id)) {
       onToggleCategory(selected.filter(item => item !== id));
     } else {
@@ -60,8 +61,10 @@ export default function RecyclingMenu({ selected, onToggleCategory }) {
       )}
 
       <button
-        onClick={() => setIsOpen(!isOpen)}
-        className={`w-15 h-15 rounded-full bg-brand-primary text-white shadow-lg flex items-center justify-center hover:bg-brand-dark transition-all cursor-pointer ${isOpen ? 'rotate-360' : ''}`}
+        onClick={() => !disabled && setIsOpen(!isOpen)}
+        className={`w-15 h-15 rounded-full bg-brand-primary text-white shadow-lg flex items-center justify-center transition-all
+          ${disabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-brand-dark cursor-pointer'}
+          ${isOpen ? 'rotate-360' : ''}`}
       >
         <IconRecycle size={28} />
       </button>
