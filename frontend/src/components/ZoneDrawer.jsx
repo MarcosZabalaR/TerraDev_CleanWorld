@@ -65,10 +65,8 @@ export default function ZoneDrawer({ report, onClose }) {
   };
 
   const handleNavigate = () => {
-    // TODO: Implementar Google Maps
     const url = `https://www.google.com/maps/dir/?api=1&destination=${report.latitude},${report.longitude}`;
-    console.log('Navegar a:', url);
-    // window.open(url, '_blank');
+    window.open(url, '_blank');
   };
 
   return (
@@ -202,7 +200,7 @@ export default function ZoneDrawer({ report, onClose }) {
         <div className="p-6 border-t border-gray-200 bg-gray-50 shrink-0 flex gap-3">
           <button
             onClick={handleNavigate}
-            className="flex-1 flex items-center justify-center gap-2 px-5 py-3.5 bg-sky-700 hover:bg-sky-800 text-white rounded-xl transition-all font-semibold  hover:shadow-xl"
+            className="flex-1 flex items-center justify-center gap-2 px-5 py-3.5 bg-sky-700 hover:bg-sky-800 text-white rounded-xl transition-all font-semibold shadow-lg hover:shadow-xl cursor-pointer"
           >
             <IconNavigation size={20} />
             Llévame allí
@@ -210,7 +208,7 @@ export default function ZoneDrawer({ report, onClose }) {
           
           <button
             onClick={handleCreateEvent}
-            className="flex-1 flex items-center justify-center gap-2 px-5 py-3.5 bg-brand-primary hover:bg-brand-dark text-white rounded-xl transition-all font-semibold  hover:shadow-xl"
+            className="flex-1 flex items-center justify-center gap-2 px-5 py-3.5 bg-brand-primary hover:bg-brand-dark text-white rounded-xl transition-all font-semibold shadow-lg hover:shadow-xl cursor-pointer"
           >
             <IconCalendarPlus size={20} />
             Crear Evento
