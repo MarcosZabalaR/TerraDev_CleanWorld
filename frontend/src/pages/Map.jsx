@@ -16,6 +16,7 @@ import Mapa from '../components/Map.jsx';
 import RecyclingMenu from '../components/RecyclingMenu.jsx';
 import ReportModal from '../components/ReportModal.jsx';
 import ZoneDrawer from '../components/ZoneDrawer.jsx';
+import EventModal from '../components/EventModal.jsx';
 import PageTitle from '../components/PageTitle.jsx';
 
 export default function MapPage() {
@@ -24,6 +25,7 @@ export default function MapPage() {
     const [reports, setReports] = useState([]);
     const [selectedCategories, setSelectedCategories] = useState([]);
     const [selectedReport, setSelectedReport] = useState(null);
+    const [selectedZoneForEvent, setSelectedZoneForEvent] = useState(null);
     const [pinPosition, setPinPosition] = useState({ x: 50, y: 35 });
     
     // Usar directamente searchParams como fuente de verdad
@@ -89,6 +91,21 @@ export default function MapPage() {
         setSelectedReport(null);
     };
 
+    const handleOpenEventModal = (zone) => {
+        setSelectedZoneForEvent(zone);
+        setSelectedReport(null); // Cerrar drawer al abrir modal de evento
+    };
+
+    const handleCloseEventModal = () => {
+        setSelectedZoneForEvent(null);
+    };
+
+    const handleSubmitEvent = (event) => {
+        console.log('Evento creado:', event);
+        // TODO: Enviar a backend
+        handleCloseEventModal();
+    };
+
     // Filtrar reports:
     // - Si NO hay categorías seleccionadas: solo mostrar reportes de usuario (sin residuo)
     // - Si HAY categorías: mostrar SOLO contenedores de esas categorías (sin reportes de usuario para evitar ruido visual)
@@ -124,6 +141,12 @@ export default function MapPage() {
                 <ZoneDrawer
                     report={selectedReport}
                     onClose={handleCloseDrawer}
+                    onCreateEvent={handleOpenEventModal}
+                />
+                <EventModal
+                    zone={selectedZoneForEvent}
+                    onClose={handleCloseEventModal}
+                    onSubmit={handleSubmitEvent}
                 />
             </div>
         </div>
