@@ -43,7 +43,7 @@ const statusConfig = {
   }
 };
 
-export default function ZoneDrawer({ report, onClose }) {
+export default function ZoneDrawer({ report, onClose, onCreateEvent }) {
   if (!report) return null;
 
   const severity = severityConfig[report.severity] || severityConfig.MEDIUM;
@@ -60,8 +60,7 @@ export default function ZoneDrawer({ report, onClose }) {
     : 'Fecha no disponible';
 
   const handleCreateEvent = () => {
-    // TODO: Implementar creación de evento
-    console.log('Crear evento para zona:', report.id);
+    onCreateEvent?.(report);
   };
 
   const handleNavigate = () => {
