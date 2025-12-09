@@ -24,6 +24,7 @@ export default function MapPage() {
     const [reports, setReports] = useState([]);
     const [selectedCategories, setSelectedCategories] = useState([]);
     const [selectedReport, setSelectedReport] = useState(null);
+    const [pinPosition, setPinPosition] = useState({ x: 50, y: 35 });
     
     // Usar directamente searchParams como fuente de verdad
     const isReportMode = searchParams.get("report") === "true";
@@ -106,6 +107,7 @@ export default function MapPage() {
                     isReportMode={isReportMode}
                     reports={filteredReports}
                     onReportClick={handleReportClick}
+                    onPinPositionUpdate={setPinPosition}
                 />
                 <RecyclingMenu
                     selected={selectedCategories}
@@ -115,6 +117,7 @@ export default function MapPage() {
                 <ReportModal
                     isReportMode={isReportMode}
                     reportCoords={reportCoords}
+                    pinPosition={pinPosition}
                     onClose={closeReport}
                     onSubmit={handleSubmitReport}
                 />
