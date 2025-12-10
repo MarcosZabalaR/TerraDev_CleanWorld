@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { IconX, IconCamera, IconCheck, IconMapPin } from '@tabler/icons-react';
+import { uploadImageToCloudinary } from '../utils/uploadImage.js';
 
 const initialFormData = {
   title: '',
@@ -40,6 +41,7 @@ const severityOptions = [
 export default function ReportModal({ isReportMode, reportCoords, pinPosition = { x: 50, y: 35 }, onClose, onSubmit }) {
   const [formData, setFormData] = useState(initialFormData);
   const [images, setImages] = useState([]);
+  const [isUploading, setIsUploading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -61,26 +63,46 @@ export default function ReportModal({ isReportMode, reportCoords, pinPosition = 
     setImages([]);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsUploading(true);
     
-    // Convertir severity numérico a string para BD
-    const severityMap = { 1: 'LOW', 2: 'MEDIUM', 3: 'HIGH' };
-    
-    onSubmit({
-      id: `user-report-${Date.now()}`,
-      title: formData.title,
-      description: formData.description,
-      severity: severityMap[formData.severity],
-      img_url: images.length > 0 ? URL.createObjectURL(images[0].file) : null,
-      after_img_url: null,
-      latitude: reportCoords.lat,
-      longitude: reportCoords.lng,
-      status: 'SUCIO',
-      reported_id: null, // TODO: obtener del usuario logueado
-      created_at: new Date().toISOString(),
-    });
-    resetForm();
+    try {
+      // Subir imagen a Cloudinary si existe
+      let uploadedImageUrl = null;
+      if (images.length > 0) {
+        console.log('Iniciando subida de imagen a Cloudinary...');
+        console.log('Cloud Name:', import.meta.env.VITE_CLOUDINARY_CLOUD_NAME);
+        console.log('Upload Preset:', import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET);
+        uploadedImageUrl = await uploadImageToCloudinary(images[0].file);
+        console.log('Imagen subida exitosamente:', uploadedImageUrl);
+      }
+      
+      // Convertir severity numérico a string para BD
+      const severityMap = { 1: 'LOW', 2: 'MEDIUM', 3: 'HIGH' };
+      
+      onSubmit({
+        id: `user-report-${Date.now()}`,
+        title: formData.title,
+        description: formData.description,
+        severity: severityMap[formData.severity],
+        img_url: uploadedImageUrl,
+        after_img_url: null,
+        latitude: reportCoords.lat,
+        longitude: reportCoords.lng,
+        status: 'SUCIO',
+        reported_id: null, // TODO: obtener del usuario logueado
+        created_at: new Date().toISOString(),
+      });
+      resetForm();
+    } catch (error) {
+      console.error('Error completo:', error);
+      console.error('Mensaje de error:', error.message);
+      console.error('Stack:', error.stack);
+      alert(`Error: ${error.message || 'Error desconocido al subir la imagen'}`);
+    } finally {
+      setIsUploading(false);
+    }
   };
 
   // Mostrar indicación si está en modo reporte pero no hay coordenadas
@@ -272,15 +294,17 @@ export default function ReportModal({ isReportMode, reportCoords, pinPosition = 
             <button
               type="button"
               onClick={() => { resetForm(); onClose(); }}
-              className="flex-1 px-5 py-3 border-2 border-gray-300 text-gray-700 rounded-xl hover:bg-gray-100 transition-all font-semibold"
+              disabled={isUploading}
+              className="flex-1 px-5 py-3 border-2 border-gray-300 text-gray-700 rounded-xl hover:bg-gray-100 transition-all font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Cancelar
             </button>
             <button
               type="submit"
-              className="flex-1 px-5 py-3 bg-brand-primary text-white rounded-xl hover:bg-brand-dark transition-all font-semibold shadow-lg hover:shadow-xl"
+              disabled={isUploading}
+              className="flex-1 px-5 py-3 bg-brand-primary text-white rounded-xl hover:bg-brand-dark transition-all font-semibold shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Enviar reporte
+              {isUploading ? 'Subiendo imagen...' : 'Enviar reporte'}
             </button>
           </div>
         </form>
