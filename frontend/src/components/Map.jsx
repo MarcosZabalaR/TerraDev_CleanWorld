@@ -108,7 +108,12 @@ export default function Mapa({
           position={[report.latitude, report.longitude]} 
           icon={createPinIcon(severityColors[report.severity] || severityColors.MEDIUM)}
           eventHandlers={{
-            click: () => onReportClick?.(report)
+            click: () => {
+              // No permitir clicks en zonas cuando se está reportando
+              if (!isReportMode && !reportCoords) {
+                onReportClick?.(report);
+              }
+            }
           }}
         />
       ))}
