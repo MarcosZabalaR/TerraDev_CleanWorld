@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { IconRecycle, IconBottle, IconPackage, IconGlass, IconTrash, IconDropletHalf2Filled, IconBolt, IconBuildingFactory2, IconShirt } from '@tabler/icons-react';
 
 const categories = [
@@ -23,7 +22,7 @@ const colorClasses = {
   slate: { bg: 'bg-brand-light/30', border: 'border-brand-primary', text: 'text-brand-primary', hover: 'hover:bg-brand-light/20' },
 };
 
-export default function RecyclingMenu({ selected, onToggleCategory, disabled = false }) {
+export default function RecyclingMenu({ selected, onToggleCategory, disabled = false, isOpen = false, onToggleMenu }) {
 
   const toggleCategory = (id) => {
     if (disabled) return;
@@ -33,8 +32,6 @@ export default function RecyclingMenu({ selected, onToggleCategory, disabled = f
       onToggleCategory([...selected, id]);
     }
   };
-
-  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="absolute bottom-6 right-6 z-1000">
@@ -61,7 +58,7 @@ export default function RecyclingMenu({ selected, onToggleCategory, disabled = f
       )}
 
       <button
-        onClick={() => !disabled && setIsOpen(!isOpen)}
+        onClick={() => !disabled && onToggleMenu()}
         className={`w-15 h-15 rounded-full bg-brand-primary text-white shadow-lg flex items-center justify-center transition-all
           ${disabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-brand-dark cursor-pointer'}
           ${isOpen ? 'rotate-360' : ''}`}
