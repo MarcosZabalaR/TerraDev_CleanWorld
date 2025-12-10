@@ -1,4 +1,5 @@
 # TerraDev: CleanWorld
+
 Projecto web de TerraDev para Fundación Esplai con el objetivo de identificar, visualizar y coordinar acciones de limpieza ciudadana en tiempo real.
 
 ---
@@ -9,13 +10,27 @@ Projecto web de TerraDev para Fundación Esplai con el objetivo de identificar, 
 
 # Instalación:
 
+Estos serían los pasos a seguir para dejar instalado nuestro proyecto en tu dispositivo:
+
+- Descarga el repositorio, puedes usar el código **SSH** e introducir el comando **git clone [Nuestro código SSH]** en tu consola para descargarlo.
+
+```
+git clone git@github.com:MarcosZabalaR/TerraDev_CleanWorld.git
+```
+
+- Usa el comando **npm install --legacy-peer-deps** para inicializar React.
+
+```
+npm install --legacy-peer-deps
+```
+
 # Fase de Planificación:
 
 [✅ HITO 1 — MVP + Historias de Usuario + MoSCoW](https://github.com/MarcosZabalaR/TerraDev_CleanWorld/blob/develop/docs/Fase%20Planificaci%C3%B3n/HITO%201%20%E2%80%94%20MVP%20%2B%20Historias%20de%20Usuario%20%2B%20MoSCoW/README.md)
 
 [🎨 HITO 2 — Wireframes + Flujo de Usuario + Datos](https://github.com/MarcosZabalaR/TerraDev_CleanWorld/blob/develop/docs/Fase%20Planificaci%C3%B3n/HITO%202%20%E2%80%94%20Wireframes%20%2B%20Flujo%20de%20Usuario%20%2B%20Datos/README.md)
 
-[⚙️ HITO 3 — Sprint 1 preparado (Backlog técnico + Arquitectura + GitHub)](https://github.com/MarcosZabalaR/TerraDev_CleanWorld/blob/develop/docs/Fase%20Planificaci%C3%B3n/HITO%203%20%E2%80%94%20Sprint%201%20preparado%20(Backlog%20t%C3%A9cnico%20%2B%20Arquitectura%20%2B%20GitHub)/README.md)
+[⚙️ HITO 3 — Sprint 1 preparado (Backlog técnico + Arquitectura + GitHub)](<https://github.com/MarcosZabalaR/TerraDev_CleanWorld/blob/develop/docs/Fase%20Planificaci%C3%B3n/HITO%203%20%E2%80%94%20Sprint%201%20preparado%20(Backlog%20t%C3%A9cnico%20%2B%20Arquitectura%20%2B%20GitHub)/README.md>)
 
 # Fase de Planificación:
 
@@ -28,6 +43,9 @@ Projecto web de TerraDev para Fundación Esplai con el objetivo de identificar, 
 # TerraDev somos:
 
 #### · [Marcos Zabala](https://github.com/MarcosZabalaR)
+
 #### · [Francisco Cortés Pirson](https://github.com/SrPirson)
+
 #### · [Pablo Monís](https://github.com/pma152402)
+
 #### · [Sergio Benítez Ramírez](https://github.com/Sergio-Benitez)
