@@ -10,6 +10,7 @@ import MapaPage from './pages/Map.jsx';
 import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
 import Profile from './pages/Profile.jsx';
+import Error404 from './pages/Error404.jsx';
 
 // Components
 import Footer from './components/Footer'
@@ -21,11 +22,12 @@ function App() {
       <div className="min-h-screen flex flex-col">
         <main className="grow">
           <Routes>
-            <Route path="/home" element={<HomePage />} />
+            <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/profile" element={<Profile />} />
-			      <Route path="/mapa" element={<MapaPage />} />
+			      <Route path="/map" element={<MapaPage />} />
+            <Route path='*' element={<Error404 />} />
 		  </Routes>
         </main>
       </div>

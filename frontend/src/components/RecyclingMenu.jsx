@@ -1,14 +1,13 @@
-import { useState } from 'react';
 import { IconRecycle, IconBottle, IconPackage, IconGlass, IconTrash, IconDropletHalf2Filled, IconBolt, IconBuildingFactory2, IconShirt } from '@tabler/icons-react';
 
 const categories = [
-  { id: 'envases', icon: IconBottle, label: 'Envases', color: 'yellow' },      // Amarillo - plásticos y envases
-  { id: 'papel', icon: IconPackage, label: 'Papel y Cartón', color: 'blue' },  // Azul - papel y cartón
-  { id: 'vidrio', icon: IconGlass, label: 'Vidrio', color: 'green' },          // Verde - vidrio
-  { id: 'restos', icon: IconTrash, label: 'Restos', color: 'gray' },           // Gris/marrón - orgánico/restos
-  { id: 'pilas', icon: IconBolt, label: 'Pilas', color: 'gold' },              // Dorado - pilas
-  { id: 'ropa', icon: IconShirt, label: 'Ropa', color: 'pink' },               // Rosa - textil
-  { id: 'aceite', icon: IconDropletHalf2Filled, label: 'Aceite', color: 'brown' }, // Marrón - aceite
+  { id: 'envases', icon: IconBottle, label: 'Envases', color: 'yellow' },
+  { id: 'papel', icon: IconPackage, label: 'Papel y Cartón', color: 'blue' },
+  { id: 'vidrio', icon: IconGlass, label: 'Vidrio', color: 'green' },
+  { id: 'restos', icon: IconTrash, label: 'Restos', color: 'gray' },
+  { id: 'pilas', icon: IconBolt, label: 'Pilas', color: 'gold' },
+  { id: 'ropa', icon: IconShirt, label: 'Ropa', color: 'pink' },
+  { id: 'aceite', icon: IconDropletHalf2Filled, label: 'Aceite', color: 'brown' },
   { id: 'industria', icon: IconBuildingFactory2, label: 'Punto Limpio', color: 'slate' },
 ];
 
@@ -23,51 +22,50 @@ const colorClasses = {
   slate: { bg: 'bg-brand-light/30', border: 'border-brand-primary', text: 'text-brand-primary', hover: 'hover:bg-brand-light/20' },
 };
 
-export default function RecyclingMenu() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [selected, setSelected] = useState([]);
+export default function RecyclingMenu({ selected, onToggleCategory, disabled = false, isOpen = false, onToggleMenu }) {
 
   const toggleCategory = (id) => {
-    setSelected(prev => 
-      prev.includes(id) 
-        ? prev.filter(item => item !== id) 
-        : [...prev, id]
-    );
+    if (disabled) return;
+    if (selected.includes(id)) {
+      onToggleCategory(selected.filter(item => item !== id));
+    } else {
+      onToggleCategory([...selected, id]);
+    }
   };
 
   return (
     <div className="absolute bottom-6 right-6 z-1000">
       {isOpen && (
         <div className="absolute bottom-18 right-0 bg-white rounded-lg shadow-lg p-2 flex flex-col gap-1 w-50">
-          {categories.map((category) => {
-			const isSelected = selected.includes(category.id);
-			const colors = colorClasses[category.color];
-			const Icon = category.icon;
-			
-			return (
-				<button
-				key={category.id}
-				onClick={() => toggleCategory(category.id)}
-				className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors cursor-pointer border-2
-					${isSelected 
-					? `${colors.bg} ${colors.border}` 
-					: `border-transparent ${colors.hover}`
-					}`}
-				>
-				<Icon size={20} className={colors.text} />
-				<span>{category.label}</span>
-				</button>
-			);
-			})}
+          {categories.map(category => {
+            const isSelected = selected.includes(category.id);
+            const Icon = category.icon;
+            const colors = colorClasses[category.color];
+            return (
+              <button
+                key={category.id}
+                onClick={() => toggleCategory(category.id)}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors cursor-pointer border-2
+                  ${isSelected ? `${colors.bg} ${colors.border}` : `border-transparent ${colors.hover}`}
+                `}
+              >
+                <Icon size={20} className={colors.text} />
+                <span>{category.label}</span>
+              </button>
+            );
+          })}
         </div>
       )}
-      
+
       <button
-        onClick={() => setIsOpen(!isOpen)}
-        className={`w-15 h-15 rounded-full bg-brand-primary text-white shadow-lg flex items-center justify-center hover:bg-brand-dark transition-all cursor-pointer ${isOpen ? 'rotate-360' : ''}`}
+        onClick={() => !disabled && onToggleMenu()}
+        className={`w-15 h-15 rounded-full bg-brand-primary text-white shadow-lg flex items-center justify-center transition-all
+          ${disabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-brand-dark cursor-pointer'}
+          ${isOpen ? 'rotate-360' : ''}`}
       >
         <IconRecycle size={28} />
       </button>
     </div>
   );
 }
+

@@ -12,8 +12,11 @@
   "dependencies": {
     "@tabler/icons-react": "^3.35.0",
     "leaflet": "^1.9.4",
+    "proj4": "^2.20.2",
+    "proj4leaflet": "^1.0.2",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-helmet-async": "^2.0.5",
     "react-leaflet": "^5.0.0",
     "react-router-dom": "^7.9.6"
   },

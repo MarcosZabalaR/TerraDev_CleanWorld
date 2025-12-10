@@ -1,0 +1,2307 @@
+{
+    "type": "FeatureCollection",
+    "totalFeatures": 135,
+    "features": [
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2684",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [363798.63503658, 4064766.0498316]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-18T17:09:20.010Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2683",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [363798.63503658, 4064766.0498316]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-18T17:09:20.010Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2682",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [365728.87561419, 4064862.9157537]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-18T17:09:30.510Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2681",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [365728.87561419, 4064862.9157537]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-18T17:09:30.510Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2680",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [365890.41331444, 4065100.6524785]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-18T17:09:33.140Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-267f",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [365890.41331444, 4065100.6524785]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-18T17:09:33.140Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-267e",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [365791.90619251, 4064687.3148495]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-18T17:09:35.733Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-267d",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [365791.90619251, 4064687.3148495]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-18T17:09:35.733Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-267c",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [365704.39400508, 4064993.8289666]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-18T17:09:38.590Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-267b",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [365704.39400508, 4064993.8289666]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-18T17:09:38.590Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-267a",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [365959.50887423, 4064953.5054814]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-18T17:09:41.260Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2679",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [365959.50887423, 4064953.5054814]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-18T17:09:41.260Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2678",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [369170.78834944, 4059104.9585887]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:19:32.213Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2677",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [369319.85140442, 4059029.6636302]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:19:35.220Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2676",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [369700.14058002, 4058877.4132205]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2022-04-01T05:48:07.570Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2675",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [369461.60324328, 4058993.663891]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:19:41.497Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2674",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [369299.19219347, 4059227.5546924]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:19:44.500Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2673",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [369606.24445592, 4058816.5314111]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:19:47.340Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2672",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [369359.09613574, 4058918.4435791]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:19:50.633Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2671",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [369142.59431858, 4058891.4865287]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:19:53.567Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2670",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [369302.16082912, 4058852.2274124]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:19:56.537Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-266f",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [369361.47303825, 4058744.0116754]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2022-04-01T05:51:04.123Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-266e",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [369583.10149149, 4058715.7190105]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:20:03.063Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-266d",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [369131.69051786, 4058797.6213726]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:20:06.093Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-266c",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [369196.09433923, 4058653.9327501]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:20:09.447Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-266b",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [368262.61917129, 4057957.6147269]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:20:12.280Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-266a",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [366935.04608995, 4057316.3888634]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:20:15.120Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2669",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [366970.45122987, 4057434.4231881]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:20:18.270Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2668",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [366624.19956584, 4057616.1068448]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:20:21.450Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2667",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [366755.39384332, 4057160.0889345]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:20:24.327Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2666",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [366711.31359286, 4057346.3378465]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:20:27.387Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2665",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [366756.4764362, 4057490.2460387]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:20:30.620Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2664",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [366477.85688267, 4057398.5609776]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:20:33.447Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2663",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [366278.68950774, 4057306.1817245]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:20:36.287Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2662",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [365873.58202916, 4058096.0367961]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:20:39.453Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2661",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [365667.87679805, 4057989.5158541]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:20:45.310Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2660",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [365922.70763215, 4056820.8188451]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:21:56.880Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-265f",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [366146.98628271, 4057130.5208107]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:21:59.900Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-265e",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [366006.80065001, 4057160.6179282]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:22:02.730Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-265d",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [365944.14967997, 4057172.2826226]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:22:05.597Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-265c",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [365712.03713473, 4057032.8197144]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:22:08.657Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-265b",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [365642.49572465, 4057037.1622836]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:22:11.593Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-265a",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [365365.66113781, 4057192.7758599]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:22:14.640Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2659",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [364540.42429629, 4057325.1627842]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:22:17.530Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2658",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [364938.49784476, 4058488.1600316]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:22:20.403Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2657",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [364453.94184884, 4058457.3981302]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:22:23.430Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2656",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [364669.36200502, 4058850.4650407]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:22:26.290Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2655",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [365776.36474153, 4059609.5285248]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2022-01-13T09:26:37.630Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2654",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [366909.86756656, 4067412.9119727]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:23:05.150Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2653",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [366559.92069868, 4067317.808715]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:23:08.067Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2652",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [366424.75986428, 4067093.4560577]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:23:10.880Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2651",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [366453.03255193, 4067498.3251505]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:23:19.583Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2650",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [366673.25174132, 4067120.0467123]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:23:22.637Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-264f",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [366578.95386011, 4066914.2200683]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:23:28.493Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-264e",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [368658.54594085, 4066044.4972959]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:23:33.960Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-264d",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [368941.37627618, 4065764.3162161]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:23:42.880Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-264c",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [366720.02278769, 4066979.8474058]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:24:23.643Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-264b",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [366772.55616412, 4066942.2377081]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:24:26.433Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-264a",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [366885.07412928, 4067143.5780613]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:24:29.653Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2649",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [366682.55642446, 4067486.3052456]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:24:32.693Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2648",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [366772.09899366, 4067245.3324997]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:24:43.500Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2647",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [366932.04601219, 4067293.1062768]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:24:46.327Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2646",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [366837.92505961, 4067544.1044127]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:24:49.493Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2645",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [366510.32372002, 4067773.340674]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:24:52.353Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2644",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [366626.2741323, 4067634.5751471]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:24:55.177Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2643",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [366426.3237723, 4067272.1344686]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:24:58.017Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2642",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [366399.64220318, 4066854.2008322]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:25:01.183Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2641",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [365699.94261696, 4064845.7153887]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:39:48.433Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2640",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [365699.94261696, 4064845.7153887]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:39:48.433Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-263f",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [365676.76724986, 4064918.6354736]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:39:51.383Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-263e",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [365676.76724986, 4064918.6354736]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:39:51.383Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-263d",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [365568.72730009, 4064838.0841171]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:39:54.317Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-263c",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [365568.72730009, 4064838.0841171]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:39:54.317Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-263b",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [365768.48949189, 4065119.9205382]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:39:57.230Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-263a",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [365768.48949189, 4065119.9205382]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:39:57.230Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2639",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367450.60862478, 4061553.7651334]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:40:03.533Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2638",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367452.67699212, 4061557.7008883]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:40:06.633Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2637",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367453.55911619, 4061560.4915209]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:40:09.540Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2636",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367455.76248524, 4061563.4705343]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:40:12.507Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2635",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367458.28981775, 4061566.08654]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:40:15.300Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2634",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367458.7908339, 4061569.4200584]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:40:18.227Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2633",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367462.18043774, 4061573.5441901]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:40:21.013Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2632",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367463.86810702, 4061576.1135229]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:40:24.060Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2631",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367466.32956801, 4061580.2818489]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:40:26.840Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2630",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367468.17028308, 4061584.9967685]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T02:40:29.713Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-262f",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367472.3216681, 4061589.9444235]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2022-01-12T09:26:32.087Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-262e",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367475.16007292, 4061593.3014291]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2022-01-12T09:26:58.570Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-262d",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367477.18281652, 4061598.1626897]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2022-01-12T09:27:20.787Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-262c",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367479.45514208, 4061593.9807851]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2022-01-12T09:27:38.290Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-262b",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367483.76812701, 4061591.9450908]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2022-01-12T09:28:01.217Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-262a",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367486.18381072, 4061589.2824352]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2022-01-12T09:28:17.710Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2629",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367488.78526249, 4061588.9438567]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2022-01-12T09:28:33.843Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2628",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367491.06501766, 4061587.1782863]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2022-01-12T09:24:44.253Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2627",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367494.12359848, 4061585.4006662]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2022-01-12T09:24:20.310Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2626",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367496.52271347, 4061583.6034172]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2022-01-12T09:23:55.993Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2625",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [369498.54660871, 4058561.8247901]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2022-04-01T05:49:39.827Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2624",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [366063.79033228, 4062910.8037469]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T04:18:26.733Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2623",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [366063.921053, 4062917.2446427]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T04:18:29.597Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2622",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [366065.98921033, 4062923.0586535]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T04:18:32.537Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2621",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367445.71674658, 4063703.1191775]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T04:20:11.517Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2620",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367450.7142687, 4063702.8031724]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T04:20:14.267Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-261f",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367688.40478849, 4064109.7513683]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T04:20:17.207Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-261e",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367684.5906071, 4064111.0331269]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T04:20:20.623Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-261d",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367683.12600145, 4064109.2961592]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T04:20:23.473Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-261c",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367684.90383829, 4064106.1073276]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T04:20:26.430Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-261b",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [368600.4552189, 4062972.8769146]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T04:20:52.923Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-261a",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [368597.71029918, 4062969.6976559]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2022-04-01T05:21:49.553Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2619",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [364643.60537666, 4063711.8132494]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T04:20:59.007Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2618",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [364643.69662578, 4063715.6891821]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T04:21:02.250Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2617",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [364643.49028487, 4063719.6891234]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T04:21:05.130Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2616",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [366072.20804163, 4062924.1843236]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T04:40:36.597Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2615",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [366078.05487305, 4062924.510451]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T04:40:39.503Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2614",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367934.6765412, 4063012.6816513]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T04:43:10.823Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2613",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367931.83324756, 4063008.9672255]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T04:43:13.920Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2612",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367929.8525149, 4063004.8517306]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T04:43:17.140Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2611",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367500.92322861, 4061579.478084]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2022-01-12T09:23:37.250Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2610",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367499.40788131, 4061574.4896268]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T04:43:59.377Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-260f",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367495.74589693, 4061568.2515692]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T04:44:02.593Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-260e",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367493.50378369, 4061562.7671929]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T04:44:05.520Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-260d",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367490.49991351, 4061558.3984137]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T04:44:08.503Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-260c",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367489.19843281, 4061555.6142657]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T04:44:11.520Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-260b",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367487.1079718, 4061552.1860021]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T04:44:14.717Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-260a",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367485.18297316, 4061549.7694941]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T04:44:17.757Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2609",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367688.94239557, 4064105.7764669]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T04:45:04.163Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2608",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367482.29568388, 4061545.1900768]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T04:58:17.917Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2607",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367480.1213114, 4061540.2117994]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T04:58:20.743Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2606",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [364983.39846079, 4062998.4688795]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T04:59:16.110Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2605",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [364983.14509608, 4062990.001616]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T04:59:18.993Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2604",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [364988.93854853, 4062977.4419651]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2021-08-19T04:59:21.917Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2603",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [368346.85151705, 4059591.0963295]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2022-04-28T06:33:38.823Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2602",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [368358.56694323, 4059589.0067185]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2022-04-28T06:34:11.117Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2601",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [368340.84607974, 4059574.7176245]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2022-04-28T06:34:44.833Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-2600",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [368352.1041392, 4059574.0672851]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2022-04-28T06:35:17.200Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-25ff",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [368360.93965465, 4059571.783198]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2022-04-28T06:35:59.123Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_industria.fid--8949f62_1938a12f9c1_-25fe",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [368370.53088738, 4059571.8746111]
+        },
+        "geometry_name": "geometry",
+        "properties": {
+          "residuo": "INDUSTRIA",
+          "recogida": "CARGA TRASERA",
+          "volumen": 5000,
+          "cantidad": 1,
+          "fecha": "2022-04-28T06:36:31.120Z",
+          "tooltip": "Contenedor de INDUSTRIA de tipo CARGA TRASERA"
+        }
+      }
+    ],
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::25830"
+      }
+    }
+  }

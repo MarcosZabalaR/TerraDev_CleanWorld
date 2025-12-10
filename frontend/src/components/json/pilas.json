@@ -1,0 +1,3231 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bf0",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [372655.07052138, 4067364.596547, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2117,
+          "NOMBRE": "Contenedor pilas Av Jane Bowles 2",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE JANE BOWLES, 2 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bef",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [373090.17621992, 4064570.9754324, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2050,
+          "NOMBRE": "Contenedor pilas Pl de la Marina",
+          "DESCRIPCION": null,
+          "DIRECCION": "PLAZA DE LA MARINA, 1 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bee",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371865.65281273, 4065451.2821993, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2065,
+          "NOMBRE": "Contenedor pilas Cl Eugenio Gross ",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE EUGENIO GROSS, 56 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bed",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [372198.09505787, 4066753.9706865, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2115,
+          "NOMBRE": "Contenedor pilas Cl Deva ",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE DEVA, 2 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bec",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [373681.81494069, 4065802.5157688, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2057,
+          "NOMBRE": "Contenedor pilas Cl Cristo Epidemia",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE CRISTO DE LA EPIDEMIA, 50 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-beb",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [376628.19369152, 4065324.4589717, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2059,
+          "NOMBRE": "Contenedor pilas Pso Cerrado de Calderon",
+          "DESCRIPCION": null,
+          "DIRECCION": "PASEO CERRADO DE CALDERÓN, 11 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bea",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [375105.67525475, 4065381.0633143, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2087,
+          "NOMBRE": "Contenedor pilas Pso Limonar",
+          "DESCRIPCION": null,
+          "DIRECCION": "PASEO DEL LIMONAR, 21 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-be9",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [381861.05068043, 4063856.1189628, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2094,
+          "NOMBRE": "Contenedor pilas Ctra Almeria La Araña",
+          "DESCRIPCION": null,
+          "DIRECCION": "CARRETERA DE ALMERÍA LA ARAÑA, 87 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-be8",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [376785.86865082, 4064925.3888137, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2090,
+          "NOMBRE": "Contenedor pilas Av Juan Sebastian Elcano 7",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE JUAN SEBASTIÁN ELCANO, 7 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-be7",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [377825.92328324, 4064957.8247609, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2060,
+          "NOMBRE": "Contenedor pilas Av Juan Sebastian Elcano 123",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE JUAN SEBASTIÁN ELCANO, 123 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-be6",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [377576.38127797, 4065616.9761821, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2061,
+          "NOMBRE": "Contenedor pilas Cl Eucaliptus",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE EUCALIPTUS, 5 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-be5",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [377322.10225158, 4064946.6555095, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2091,
+          "NOMBRE": "Contenedor pilas Av Juan Sebastian Elcano 84",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE JUAN SEBASTIÁN ELCANO, 84 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-be4",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [378303.97295065, 4064812.6800614, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2171,
+          "NOMBRE": "Contenedor pilas Av Juan Sebastian Elcano 166",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE JUAN SEBASTIÁN ELCANO, 166 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-be3",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [378523.76076527, 4064824.8554312, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2093,
+          "NOMBRE": "Contenedor pilas Av Juan Sebastián Elcano 203",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE JUAN SEBASTIÁN ELCANO, 203 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-be2",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [373912.52836712, 4064787.5403342, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2084,
+          "NOMBRE": "Contenedor pilas Pl General Torrijos",
+          "DESCRIPCION": null,
+          "DIRECCION": "PLAZA DEL GENERAL TORRIJOS, 2 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"Si\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-be1",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [372587.33847021, 4068119.9457427, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2116,
+          "NOMBRE": "Contenedor pilas Av Jane Bowles 34",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE JANE BOWLES, 34 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-be0",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [373460.71256897, 4067992.078112, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2099,
+          "NOMBRE": "Contenedor pilas Cl Alcalde Nicolas Maroto 18",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE ALCALDE NICOLÁS MAROTO, 18 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"Si\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bdf",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [373492.80288721, 4068011.1028711, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2098,
+          "NOMBRE": "Contenedor pilas Cl Alcalde Nicolas Maroto 17",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE ALCALDE NICOLÁS MAROTO, 17 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bde",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [372874.93151666, 4067989.6646299, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2102,
+          "NOMBRE": "Contenedor pilas Av Jacinto Benavente",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE JACINTO BENAVENTE, 7 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bdd",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [372268.41126196, 4063898.3373086, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2119,
+          "NOMBRE": "Contenedor pilas Cl Cuarteles ",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE CUARTELES, 66 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bdc",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [372302.69614434, 4064468.0901502, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2131,
+          "NOMBRE": "Contenedor pilas Cl Armengual de la Mota ",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE ARMENGUAL DE LA MOTA, 1 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bdb",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371586.83145485, 4065094.5304505, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2107,
+          "NOMBRE": "Contenedor pilas Pje Aralar ",
+          "DESCRIPCION": null,
+          "DIRECCION": "PASAJE ARALAR, 2 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bda",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [373239.72476014, 4068033.9258291, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2100,
+          "NOMBRE": "Contenedor pilas Cl Alcalde Joaquin Quiles",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE ALCALDE JOAQUÍN QUILES, 13 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bd9",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [368864.27455315, 4065159.9487908, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2168,
+          "NOMBRE": "Contenedor pilas Cl Diego López De Zúñiga",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE DIEGO LÓPEZ DE ZÚÑIGA, 12 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"Si\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bd8",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [360183.13104702, 4066382.7539692, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2155,
+          "NOMBRE": "Contenedor pilas Av Profesor Garcia Rodeja ",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA PROFESOR GARCÍA RODEJA, 67 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bd7",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [362085.68534007, 4065766.3427309, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2154,
+          "NOMBRE": "Contenedor pilas Cl Jose Calderon ",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE JOSÉ CALDERÓN, 157 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bd6",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371506.5969783, 4065459.9151251, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2067,
+          "NOMBRE": "Contenedor pilas Cl Morales Villarubia",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE MORALES VILLARRUBIA, 25 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bd5",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371725.27736767, 4063185.6770914, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2136,
+          "NOMBRE": "Contenedor pilas Cl Ayala ",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE AYALA, 63 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bd4",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [370805.6439906, 4063629.3902309, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2129,
+          "NOMBRE": "Contenedor pilas Pl Rio Trabanco ",
+          "DESCRIPCION": null,
+          "DIRECCION": "PLAZA DEL RÍO TRABANCO, 5 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bd3",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371195.74297281, 4062655.2196061, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2137,
+          "NOMBRE": "Contenedor pilas Av de la Paloma ",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE LA PALOMA, 22 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bd2",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367844.88582729, 4065045.8781603, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2166,
+          "NOMBRE": "Contenedor pilas Av Parmenides ",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE PARMÉNIDES, 13 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bd1",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [370169.86770547, 4061190.2065082, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2141,
+          "NOMBRE": "Contenedor pilas Av Moliere ",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE MOLIÈRE, 23 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bd0",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [372936.55583992, 4067366.8309955, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2101,
+          "NOMBRE": "Contenedor pilas Av Santiago Ramon Y Cajal ",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE SANTIAGO RAMÓN Y CAJAL, 43 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bcf",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [378700.94665393, 4064619.5110739, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2097,
+          "NOMBRE": "Contenedor pilas Cl Danvila Y Collado",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE DÁNVILA Y COLLADO, 4 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"Si\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bce",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [365539.21109774, 4059477.4290626, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2077,
+          "NOMBRE": "Contenedor pilas Cmno Huertecilla",
+          "DESCRIPCION": null,
+          "DIRECCION": "CAMINO HUERTECILLA, 2 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bcd",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [372377.55148878, 4064952.7449566, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2170,
+          "NOMBRE": "Contenedor pilas Cl Jaboneros",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE JABONEROS, 1 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bcc",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [372585.18986644, 4065730.3424006, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2175,
+          "NOMBRE": "Contenedor pilas Pso Martiricos",
+          "DESCRIPCION": null,
+          "DIRECCION": "PASEO MARTIRICOS, 14 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"Si\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bcb",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [373074.10668164, 4067632.0489943, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2062,
+          "NOMBRE": "Contenedor pilas Cl Emilio Thuillier",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE EMILIO THUILLIER, 82 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bca",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [375316.61764165, 4065091.0475705, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2086,
+          "NOMBRE": "Contenedor pilas Av Pintor Joaquín Sorolla",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DEL PINTOR JOAQUÍN SOROLLA, 10 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bc9",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [373421.09978394, 4067669.5613096, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2104,
+          "NOMBRE": "Contenedor pilas Av Malaga Oloroso",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA MÁLAGA OLOROSO, 16 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bc8",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [378772.47542091, 4064647.521534, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2092,
+          "NOMBRE": "Contenedor pilas Cl Practicante Fernandez Alcolea",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE PRACTICANTE FERNÁNDEZ ALCOLEA, 11 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bc7",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [362050.60549978, 4065781.7250863, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2158,
+          "NOMBRE": "Contenedor pilas Cl Ramírez Arcas",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE RAMÍREZ ARCAS, 2 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"Si\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bc6",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [370311.3728957, 4062645.3653908, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2075,
+          "NOMBRE": "Contenedor pilas Cl Puerto Oncala ",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE PUERTO ONCALA, 1 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bc5",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [370002.85304739, 4060641.4571281, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2144,
+          "NOMBRE": "Contenedor pilas Av Imperio Argentina",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA IMPERIO ARGENTINA, 8 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bc4",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371519.0132217, 4062826.1724818, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2176,
+          "NOMBRE": "Contenedor pilas Cl La Hoz",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE LA HOZ, 39 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bc3",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [370470.20161217, 4062152.185939, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2146,
+          "NOMBRE": "Contenedor pilas Av Velazquez 59",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE VELÁZQUEZ, 59 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bc2",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367260.12890837, 4061782.9281531, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2149,
+          "NOMBRE": "Contenedor pilas Cl Castelao ",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE CASTELAO, 8 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bc1",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [370786.78831921, 4062258.603927, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2140,
+          "NOMBRE": "Contenedor pilas Cl Ildefonso Marzo ",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE ILDEFONSO MARZO, 15 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bc0",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [370621.11553296, 4064167.780788, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2121,
+          "NOMBRE": "Contenedor pilas Pl de Manuel Azaña",
+          "DESCRIPCION": null,
+          "DIRECCION": "PLAZA DE MANUEL AZAÑA, 3 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bbf",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [370817.89064754, 4063936.1565576, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2072,
+          "NOMBRE": "Contenedor pilas Av Juan XXIII",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE JUAN XXIII, 74 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bbe",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [374445.27323553, 4064891.3369639, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2083,
+          "NOMBRE": "Contenedor pilas Av Pries",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE PRÍES, 15 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bbd",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [368209.50096143, 4059003.541003, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2148,
+          "NOMBRE": "Contenedor pilas Cmno Guadalmar A La Loma ",
+          "DESCRIPCION": null,
+          "DIRECCION": "CAMINO GUADALMAR A LA LOMA, 5 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bbc",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [368300.24505723, 4062499.4551679, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2122,
+          "NOMBRE": "Contenedor pilas Cmno de los Prados ",
+          "DESCRIPCION": null,
+          "DIRECCION": "CAMINO DE LOS PRADOS, 18 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bbb",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [361292.76466549, 4066798.6504168, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2157,
+          "NOMBRE": "Contenedor pilas Av Juan Lopez De Peñalver",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE JUAN LÓPEZ DE PEÑALVER, 19 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bba",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371074.82561387, 4064478.5543997, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2126,
+          "NOMBRE": "Contenedor pilas Pl Pio XII",
+          "DESCRIPCION": null,
+          "DIRECCION": "PLAZA DE PÍO XII, 2 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bb9",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371718.84229222, 4063060.6023523, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2143,
+          "NOMBRE": "Contenedor pilas Cl Tomas Echeverria",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE TOMÁS ECHEVERRÍA, 2 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bb8",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371434.95530886, 4065795.3847181, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2108,
+          "NOMBRE": "Contenedor pilas Cl Nuestra Señora De Los Clarines ",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE NUESTRA SEÑORA DE LOS CLARINES, 2 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bb7",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [370972.76908928, 4061629.2164063, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2181,
+          "NOMBRE": "Contenedor pilas Cl Francisco de Cossio ",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE DE FRANCISCO DE COSSÍO, 8 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bb6",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [366998.678769, 4067458.3142188, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2159,
+          "NOMBRE": "Contenedor pilas Cl Lope De Rueda ",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE LOPE DE RUEDA, 244 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bb5",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [370614.51047077, 4065364.5374059, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2048,
+          "NOMBRE": "Contenedor pilas Cl Ciprés ",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE DEL CIPRÉS, 29 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bb4",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [369322.73862699, 4063698.6108878, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2080,
+          "NOMBRE": "Contenedor pilas Cl Mefistofeles ",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE MEFISTÓFELES, 11 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bb3",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371173.74104652, 4064109.2512294, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2132,
+          "NOMBRE": "Contenedor pilas Cl Conde De Guadalhorce",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE CONDE DE GUADALHORCE, 15 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"Si\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bb2",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [370727.68276972, 4062470.3370586, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2138,
+          "NOMBRE": "Contenedor pilas Av Velazquez 16",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE VELÁZQUEZ, 16 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bb1",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [370645.87944611, 4065956.9830877, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2110,
+          "NOMBRE": "Contenedor pilas Cmno San Alberto",
+          "DESCRIPCION": null,
+          "DIRECCION": "CAMINO SAN ALBERTO, 1 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bb0",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367726.45787666, 4066746.9569711, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2161,
+          "NOMBRE": "Contenedor pilas Cl Victor Hugo",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE VÍCTOR HUGO, 10 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"Si\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-baf",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371285.01084805, 4065218.1299292, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2179,
+          "NOMBRE": "Contenedor pilas Cl Sondalezas ",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE SONDALEZAS, 16 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bae",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [372343.74988632, 4065393.9352946, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2054,
+          "NOMBRE": "Contenedor pilas Cl Sevilla",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE SEVILLA, 23 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bad",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [373095.00655007, 4066728.289572, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2103,
+          "NOMBRE": "Contenedor pilas Av Nuestra Señora De Las Guias",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE NUESTRA SEÑORA DE LAS GUÍAS, 2 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bac",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [372999.69868715, 4067057.2404178, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2172,
+          "NOMBRE": "Contenedor pilas Cl María Tubau ",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE MARÍA TUBAU, 18 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-bab",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371364.28046216, 4063437.3167819, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2142,
+          "NOMBRE": "Contenedor pilas Cril Cordobesa",
+          "DESCRIPCION": null,
+          "DIRECCION": "CARRIL DE LA CORDOBESA, 14 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-baa",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371740.76250576, 4064033.9725645, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2130,
+          "NOMBRE": "Contenedor pilas Pso  Los Tilos",
+          "DESCRIPCION": null,
+          "DIRECCION": "PASEO DE LOS TILOS, 34 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-ba9",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [376747.89568757, 4066645.6100815, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2089,
+          "NOMBRE": "Contenedor pilas Cl Olmos",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE OLMOS, 43 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-ba8",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [372097.96368875, 4065779.8173524, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2180,
+          "NOMBRE": "Contenedor pilas Av Arroyo de los Angeles 56",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DEL ARROYO DE LOS ÁNGELES, 56 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-ba7",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371663.06418743, 4064766.8709979, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2127,
+          "NOMBRE": "Contenedor pilas Pl Guerrero Strachan ",
+          "DESCRIPCION": null,
+          "DIRECCION": "PLAZA DE GUERRERO STRACHAN, 8 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-ba6",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [372051.27163812, 4066300.8587959, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2112,
+          "NOMBRE": "Contenedor pilas Av Luis Buñuel ",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE LUIS BUÑUEL, 16 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-ba5",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371633.81879199, 4063297.8016965, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2074,
+          "NOMBRE": "Contenedor pilas Cl Heroe de Sostoa ",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE HÉROE DE SOSTOA, 100 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-ba4",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371699.56654192, 4066022.6525928, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2111,
+          "NOMBRE": "Contenedor pilas Av Arroyo de los Angeles 91",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DEL ARROYO DE LOS ÁNGELES, 91 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-ba3",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [372158.09489457, 4066138.659918, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2068,
+          "NOMBRE": "Contenedor pilas Cl Poeta Agustín Ruano ",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE POETA AGUSTÍN RUANO, 3 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-ba2",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [368158.77189944, 4065351.4309144, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2165,
+          "NOMBRE": "Contenedor pilas Cl Navarro Ledesma ",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE NAVARRO LEDESMA, 156 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-ba1",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [368143.07579651, 4064530.1141105, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2163,
+          "NOMBRE": "Contenedor pilas Cl Jimenez Fraud ",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE DE JIMÉNEZ FRAUD, 7 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-ba0",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371406.17687281, 4064893.8769274, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2070,
+          "NOMBRE": "Contenedor pilas Pl Aparejador Federico Bermudez ",
+          "DESCRIPCION": null,
+          "DIRECCION": "PLAZA APAREJADOR FEDERICO BERMÚDEZ, 2 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b9f",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371305.48761801, 4063853.0835636, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2069,
+          "NOMBRE": "Contenedor pilas Pl Cruz Del Humilladero",
+          "DESCRIPCION": null,
+          "DIRECCION": "PLAZA CRUZ DE HUMILLADERO, 3 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b9e",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [373388.40199351, 4065625.9092361, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2053,
+          "NOMBRE": "Contenedor pilas Cl Ejido",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE EJIDO, 6 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b9d",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [372819.90565082, 4064066.8843928, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2052,
+          "NOMBRE": "Contenedor pilas Almd Colon ",
+          "DESCRIPCION": null,
+          "DIRECCION": "ALAMEDA DE COLÓN, 19 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b9c",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [369080.078965, 4065054.6796698, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2167,
+          "NOMBRE": "Contenedor pilas Cl Andres Bernaldez ",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE ANDRÉS BERNÁLDEZ, 16 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b9b",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [373406.06813322, 4065220.7235741, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2051,
+          "NOMBRE": "Contenedor pilas Cl Merced",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE LA MERCED, 1 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"Si\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b9a",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [370634.82532192, 4065086.4322682, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2066,
+          "NOMBRE": "Contenedor pilas Av Carlos de Haya 34",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA CARLOS DE HAYA, 78 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b99",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367732.85746325, 4066815.7778901, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2079,
+          "NOMBRE": "Contenedor pilas Av Andersen ",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE ANDERSEN, 1 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b98",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [370134.94198763, 4064647.9089239, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2125,
+          "NOMBRE": "Contenedor pilas Pl Jose Bergamin",
+          "DESCRIPCION": null,
+          "DIRECCION": "PLAZA JOSÉ BERGAMÍN, 2 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b97",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371029.4225158, 4064974.3780307, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2109,
+          "NOMBRE": "Contenedor pilas Av Carlos de Haya 99",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA CARLOS DE HAYA, 34 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b96",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [372494.01367601, 4063652.7544844, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2082,
+          "NOMBRE": "Contenedor pilas Pso Antonio Machado",
+          "DESCRIPCION": null,
+          "DIRECCION": "PASEO DE ANTONIO MACHADO, 12 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"Si\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b95",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [370340.50252854, 4063994.1214978, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2124,
+          "NOMBRE": "Contenedor pilas Cl Corregidor Francisco De Molina ",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE CORREGIDOR FRANCISCO DE MOLINA, 19 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b94",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [369922.93454912, 4065334.3030635, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2173,
+          "NOMBRE": "Contenedor pilas Av Carlos de Haya 78",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA CARLOS DE HAYA, 192 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b93",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [373559.39899075, 4066228.5597055, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2056,
+          "NOMBRE": "Contenedor pilas Pl Olletas",
+          "DESCRIPCION": null,
+          "DIRECCION": "PLAZA DE OLLETAS, 6 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b92",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [373929.89780431, 4064830.4991406, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2049,
+          "NOMBRE": "Contenedor pilas Pso Reding",
+          "DESCRIPCION": null,
+          "DIRECCION": "PASEO DE REDING, 2 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b91",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [365436.03056745, 4058141.6202957, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2177,
+          "NOMBRE": "Contenedor pilas Cl Mercedes Formica ",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE MERCEDES FÓRMICA, 4 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b90",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [366317.10566978, 4062911.4578817, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2153,
+          "NOMBRE": "Contenedor pilas Cl La Gitanilla",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE DE LA GITANILLA, 17 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"Si\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b8f",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [366727.99528207, 4064291.6882126, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2081,
+          "NOMBRE": "Contenedor pilas Cl Arquitecto Francisco Peñalosa ",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE ARQUITECTO FRANCISCO PEÑALOSA, 6 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b8e",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [372027.71092193, 4064698.3665469, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2120,
+          "NOMBRE": "Contenedor pilas Cl Hilera ",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE HILERA, 11 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b8d",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371597.93400748, 4063827.6351194, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2128,
+          "NOMBRE": "Contenedor pilas Cl La Unión ",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE LA UNIÓN, 28 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b8c",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [379695.23205569, 4064890.2857711, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2095,
+          "NOMBRE": "Contenedor pilas Cmno Viejo De Velez",
+          "DESCRIPCION": null,
+          "DIRECCION": "CAMINO VIEJO DE VÉLEZ, 1 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b8b",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [370213.52633468, 4062526.9704843, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2145,
+          "NOMBRE": "Contenedor pilas Av de Europa",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE EUROPA, 99 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"Si\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b8a",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [372503.93087471, 4066905.0862917, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2113,
+          "NOMBRE": "Contenedor pilas Cl Doctor Galvez Moll",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE DOCTOR GÁLVEZ MOLL, 11 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"Si\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b89",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [375916.38480611, 4065540.4294031, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2088,
+          "NOMBRE": "Contenedor pilas Cl Federico Fellini",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE FEDERICO FELLINI, 34 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b88",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371521.5619662, 4064953.1389793, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2174,
+          "NOMBRE": "Contenedor pilas Cl Martínez Maldonado 58",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE MARTÍNEZ MALDONADO, 58 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"Si\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b87",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [373087.77916338, 4068182.3260409, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2063,
+          "NOMBRE": "Contenedor pilas Cl Quintanar De La Orden ",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE QUINTANAR DE LA ORDEN, 1 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b86",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [373045.86992092, 4066432.1868766, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2105,
+          "NOMBRE": "Contenedor pilas Cl Obispo Bartolome Espejo",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE OBISPO BARTOLOMÉ ESPEJO, 10 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b85",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [373544.47691597, 4064726.9584551, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2169,
+          "NOMBRE": "Contenedor pilas Pso Cervantes",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE CERVANTES, 2 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b84",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [365695.58622755, 4059231.3920001, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2182,
+          "NOMBRE": "Contenedor pilas Pl Inmaculada 12",
+          "DESCRIPCION": null,
+          "DIRECCION": "PLAZA DE LA INMACULADA, 12 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b83",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [365705.21918669, 4059224.2119136, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2147,
+          "NOMBRE": "Contenedor pilas Pl Inmaculada 11",
+          "DESCRIPCION": null,
+          "DIRECCION": "PLAZA DE LA INMACULADA, 11 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"Si\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b82",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [372714.30793672, 4065279.9302458, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2085,
+          "NOMBRE": "Contenedor pilas Av Rosaleda",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE LA ROSALEDA, 19 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"Si\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b81",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [372140.85467898, 4065253.311928, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2064,
+          "NOMBRE": "Contenedor pilas Pl Bailen",
+          "DESCRIPCION": null,
+          "DIRECCION": "PLAZA BAILÉN, 8 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b80",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [368178.54837845, 4064363.780135, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2178,
+          "NOMBRE": "Contenedor pilas Bv Louis Pasteur 35",
+          "DESCRIPCION": null,
+          "DIRECCION": "BULEVAR LOUIS PASTEUR, 35 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"Si\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b7f",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [370222.47097761, 4062244.0849626, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2134,
+          "NOMBRE": "Contenedor pilas Av de la Luz",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE LA LUZ, 16 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b7e",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [369577.76993667, 4064757.7273333, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2162,
+          "NOMBRE": "Contenedor pilas Pl Pintor Sandro Botticelli ",
+          "DESCRIPCION": null,
+          "DIRECCION": "PLAZA DEL PINTOR SANDRO BOTTICELLI, 1 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b7d",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371261.18215032, 4065889.405124, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2106,
+          "NOMBRE": "Contenedor pilas Cl Ibrahin ",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE IBRAHÍN, 31 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b7c",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [372378.35878804, 4065981.045121, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2114,
+          "NOMBRE": "Contenedor pilas Cl Godino ",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE GODINO, 4 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b7b",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [370425.55775958, 4061901.5202302, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2135,
+          "NOMBRE": "Contenedor pilas Pl Mozart ",
+          "DESCRIPCION": null,
+          "DIRECCION": "PLAZA DE MOZART, 4 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b7a",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [365871.29305494, 4059053.7845389, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2150,
+          "NOMBRE": "Contenedor pilas Cl Monsalvez ",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE MONSÁLVEZ, 2 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b79",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371746.65086842, 4064314.1980528, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2118,
+          "NOMBRE": "Contenedor pilas Av de la Aurora  49",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE LA AURORA, 49 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b78",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371362.14718313, 4064242.0144075, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2071,
+          "NOMBRE": "Contenedor pilas Av de la Aurora  48",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE LA AURORA, 48 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b77",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [368602.68259769, 4064529.3624278, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2164,
+          "NOMBRE": "Contenedor pilas Bv Louis Pasteur 28",
+          "DESCRIPCION": null,
+          "DIRECCION": "BULEVAR LOUIS PASTEUR, 28 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b76",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [369455.20114136, 4059168.9862977, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2152,
+          "NOMBRE": "Contenedor pilas Cl Conde Lucanor ",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE CONDE LUCANOR, 2 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b75",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371799.06420441, 4064923.3706923, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2123,
+          "NOMBRE": "Contenedor pilas Cl Martínez Maldonado 51",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE MARTÍNEZ MALDONADO, 51 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b74",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [370544.29557548, 4061270.5469439, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2073,
+          "NOMBRE": "Contenedor pilas Av Gregorio Diego ",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE GREGORIO DIEGO, 46 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b73",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371135.09036217, 4062146.2540357, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2139,
+          "NOMBRE": "Contenedor pilas Av Sor Teresa Prat 58",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE SOR TERESA PRAT, 58 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b72",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [373141.16628878, 4065790.8769194, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2055,
+          "NOMBRE": "Contenedor pilas Almd Capuchinos",
+          "DESCRIPCION": null,
+          "DIRECCION": "ALAMEDA DE CAPUCHINOS, 4 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b71",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371324.84857688, 4062401.1479104, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2076,
+          "NOMBRE": "Contenedor pilas Av Sor Teresa Prat 17",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE SOR TERESA PRAT, 17 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"Si\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b70",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [362646.86930385, 4065230.6161192, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2078,
+          "NOMBRE": "Contenedor pilas Cl Van Gogh ",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE VAN GOGH, 4 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b6f",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [363013.69316665, 4065019.147378, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2156,
+          "NOMBRE": "Contenedor pilas Cmno Santa Inés",
+          "DESCRIPCION": null,
+          "DIRECCION": "CAMINO SANTA INÉS, 27 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b6e",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [370087.59201615, 4063042.0545615, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2133,
+          "NOMBRE": "Contenedor pilas Cmno San Rafael",
+          "DESCRIPCION": null,
+          "DIRECCION": "CAMINO DE SAN RAFAEL, 99 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"Si\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b6d",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [365497.46897705, 4058638.5488708, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2151,
+          "NOMBRE": "Contenedor pilas Cl Torremolinos ",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE TORREMOLINOS, 78 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b6c",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [373967.83502333, 4064583.1301122, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2058,
+          "NOMBRE": "Contenedor pilas Cl Velez-Malaga",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE VÉLEZ MÁLAGA, 13 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresPilas.fid--3b3f458b_19afc14e6b7_-b6b",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [368790.63673267, 4066050.8073377, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2160,
+          "NOMBRE": "Contenedor pilas Av Lope De Vega ",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE LOPE DE VEGA, 25 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": "[ { \"Contenedor_interior\":\"No\" } ] "
+        }
+      }
+    ],
+    "totalFeatures": 134,
+    "numberMatched": 134,
+    "numberReturned": 134,
+    "timeStamp": "2025-12-08T03:52:13.488Z",
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::25830"
+      }
+    }
+  }

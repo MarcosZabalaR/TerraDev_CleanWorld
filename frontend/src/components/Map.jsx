@@ -1,13 +1,17 @@
-import { MapContainer, TileLayer, Marker, Popup, useMapEvents, useMap } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, useMapEvents, useMap } from "react-leaflet";
+import { useEffect } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
 const severityColors = {
-  1: '#22c55e', // verde
-  2: '#84cc16', // lima
-  3: '#eab308', // amarillo
-  4: '#f97316', // naranja
-  5: '#ef4444', // rojo
+  // Soportar ambos formatos (números para compatibilidad legacy)
+  1: '#5F7336', // LOW - verde oscuro (brand-primary)
+  2: '#f97316', // MEDIUM - naranja
+  3: '#ef4444', // HIGH - rojo
+  // Formato de base de datos
+  LOW: '#5F7336',
+  MEDIUM: '#f97316',
+  HIGH: '#ef4444'
 };
 
 const createPinIcon = (color) => {
@@ -24,13 +28,14 @@ const createPinIcon = (color) => {
 };
 
 // Pin por defecto (para el marcador temporal)
-const DefaultPinIcon = createPinIcon('#5F7336');
+const DefaultPinIcon = createPinIcon('#ec4899'); // rosa fucsia chillón
 
-function MapClickHandler({ onMapClick, isReportMode }) {
+function MapClickHandler({ onMapClick, isReportMode, reportCoords }) {
   const map = useMap();
   useMapEvents({
     click: (e) => {
-      if (onMapClick && isReportMode) {
+      // Permitir clicks si está en modo reporte O si ya hay un reporte abierto (para cambiar ubicación)
+      if (onMapClick && (isReportMode || reportCoords)) {
         onMapClick(e.latlng);
         const offsetLng = e.latlng.lng + 0.002;
         map.flyTo([e.latlng.lat, offsetLng], 18);
@@ -40,7 +45,42 @@ function MapClickHandler({ onMapClick, isReportMode }) {
   return null;
 }
 
-export default function Mapa({ onMapClick, reportCoords, isReportMode, reports = [] }) {
+function SpotlightOverlay({ reportCoords, onPositionUpdate }) {
+  const map = useMap();
+  
+  useEffect(() => {
+    if (!reportCoords || !map) return;
+    
+    const updatePosition = () => {
+      const point = map.latLngToContainerPoint([reportCoords.lat, reportCoords.lng]);
+      const container = map.getContainer();
+      const rect = container.getBoundingClientRect();
+      const x = ((point.x / rect.width) * 100).toFixed(1);
+      const y = (((point.y + 15) / rect.height) * 100).toFixed(1);
+      onPositionUpdate?.({ x, y });
+    };
+    
+    updatePosition();
+    map.on('move', updatePosition);
+    map.on('zoom', updatePosition);
+    
+    return () => {
+      map.off('move', updatePosition);
+      map.off('zoom', updatePosition);
+    };
+  }, [map, reportCoords, onPositionUpdate]);
+  
+  return null;
+}
+
+export default function Mapa({ 
+  onMapClick, 
+  reportCoords, 
+  isReportMode, 
+  reports = [],
+  onReportClick,
+  onPinPositionUpdate
+}) {
   return (
     <MapContainer
       center={[36.7213, -4.4214]}
@@ -53,7 +93,8 @@ export default function Mapa({ onMapClick, reportCoords, isReportMode, reports =
         url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
       />
 
-      <MapClickHandler onMapClick={onMapClick} isReportMode={isReportMode} />
+      <MapClickHandler onMapClick={onMapClick} isReportMode={isReportMode} reportCoords={reportCoords} />
+      <SpotlightOverlay reportCoords={reportCoords} onPositionUpdate={onPinPositionUpdate} />
 
       {/* Marcador temporal */}
       {reportCoords && (
@@ -65,14 +106,16 @@ export default function Mapa({ onMapClick, reportCoords, isReportMode, reports =
         <Marker 
           key={report.id} 
           position={[report.latitude, report.longitude]} 
-          icon={createPinIcon(severityColors[report.severity])}
-        >
-          <Popup>
-            <strong>{report.title}</strong>
-            {report.description && <p className="text-sm">{report.description}</p>}
-            <span className="text-xs">Severidad: {report.severity}/5</span>
-          </Popup>
-        </Marker>
+          icon={createPinIcon(severityColors[report.severity] || severityColors.MEDIUM)}
+          eventHandlers={{
+            click: () => {
+              // No permitir clicks en zonas cuando se está reportando
+              if (!isReportMode && !reportCoords) {
+                onReportClick?.(report);
+              }
+            }
+          }}
+        />
       ))}
     </MapContainer>
   );

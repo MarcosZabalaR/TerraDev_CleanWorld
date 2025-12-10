@@ -1,0 +1,2367 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7e4",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [373158.80002193, 4067619.6083322, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1970,
+          "NOMBRE": "Contenedor aceite Cl Jerez Perchet",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE JEREZ PERCHET, 9 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7e3",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [375117.99854081, 4065405.3732371, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2022,
+          "NOMBRE": "Contenedor aceite Pso Limonar",
+          "DESCRIPCION": null,
+          "DIRECCION": "PASEO DEL LIMONAR, 26 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7e2",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [377486.6046569, 4064962.0862953, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2023,
+          "NOMBRE": "Contenedor aceite Av Juan Sebastian Elcano",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE JUAN SEBASTIÁN ELCANO, 89 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7e1",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [369785.0359969, 4065111.2412457, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2047,
+          "NOMBRE": "Contenedor aceite Cl Juan De Robles",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE JUAN DE ROBLES, 22 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7e0",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371230.78011746, 4063722.9244281, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2001,
+          "NOMBRE": "Contenedor aceite Cl Alfambra",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE ALFAMBRA, 3 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7df",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371074.76802811, 4062504.9119354, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2010,
+          "NOMBRE": "Contenedor aceite Cl Jorge Guillen",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE JORGE GUILLÉN, 26 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7de",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [372302.69614434, 4064468.0901502, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2006,
+          "NOMBRE": "Contenedor aceite Cl Armengual De La Mota",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE ARMENGUAL DE LA MOTA, 1 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7dd",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [372277.90902825, 4063863.6832808, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1955,
+          "NOMBRE": "Contenedor aceite Cl Cuarteles",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE CUARTELES, 51 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7dc",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [370680.71090276, 4061570.3991476, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2016,
+          "NOMBRE": "Contenedor aceite Av de los Guindos",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE LOS GUINDOS, 31 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7db",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [370499.04522023, 4065655.4413121, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1973,
+          "NOMBRE": "Contenedor aceite Cl Emilio Benavent",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE EMILIO BENAVENT, 3 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7da",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [362672.73544168, 4065249.5138456, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2037,
+          "NOMBRE": "Contenedor aceite Cl Jose Calderon 27",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE JOSÉ CALDERÓN, 27 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7d9",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [372961.00840833, 4066673.3936192, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1966,
+          "NOMBRE": "Contenedor aceite Av Guerrero Strachan",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE GUERRERO STRACHAN, 28 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7d8",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [372935.06152143, 4067452.7790293, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1969,
+          "NOMBRE": "Contenedor aceite Av Santiago Ramon Y Cajal",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE SANTIAGO RAMÓN Y CAJAL, 61 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7d7",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [362041.96233682, 4065834.7474494, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1984,
+          "NOMBRE": "Contenedor aceite Cl Jose Calderon 174",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE JOSÉ CALDERÓN, 174 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7d6",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371703.98373236, 4063123.5203779, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2008,
+          "NOMBRE": "Contenedor aceite Cl Ayala",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE AYALA, 71 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7d5",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [370142.45933374, 4061165.379807, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2030,
+          "NOMBRE": "Contenedor aceite Av Moliere",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE MOLIÈRE, 20 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7d4",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [370829.8143219, 4063652.8639806, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2000,
+          "NOMBRE": "Contenedor aceite Pl Rio Trabanco",
+          "DESCRIPCION": null,
+          "DIRECCION": "PLAZA DEL RÍO TRABANCO, 7 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7d3",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [378617.37721775, 4064801.0279656, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1963,
+          "NOMBRE": "Contenedor aceite Cl Real",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE REAL, 1 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7d2",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [370943.45249432, 4062767.5626173, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2009,
+          "NOMBRE": "Contenedor aceite Av de la Paloma",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE LA PALOMA, 39 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7d1",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [370673.62969708, 4062734.6690412, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2012,
+          "NOMBRE": "Contenedor aceite Cl Jose Palanca",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE JOSÉ PALANCA, 20 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7d0",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [372139.38118632, 4064944.4148932, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2021,
+          "NOMBRE": "Contenedor aceite Av Barcelona ",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE BARCELONA, 1 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7cf",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [376626.34669067, 4065457.3470849, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1959,
+          "NOMBRE": "Contenedor aceite Gta Jorge Campbell",
+          "DESCRIPCION": null,
+          "DIRECCION": "GLORIETA JORGE CAMPBELL, 3 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7ce",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [375386.25246565, 4065126.8450736, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1958,
+          "NOMBRE": "Contenedor aceite Av Pintor Joaquin Sorolla",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DEL PINTOR JOAQUÍN SOROLLA, 21 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7cd",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [365320.10180949, 4059722.4577978, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2033,
+          "NOMBRE": "Contenedor aceite Cmno Huertecilla",
+          "DESCRIPCION": null,
+          "DIRECCION": "CAMINO HUERTECILLA, 45 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7cc",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [373421.09978394, 4067669.5613096, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2025,
+          "NOMBRE": "Contenedor aceite Av Malaga Oloroso",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA MÁLAGA OLOROSO, 16 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7cb",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [370595.27677999, 4065045.6095975, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1999,
+          "NOMBRE": "Contenedor aceite Av Santa Rosa De Lima",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE SANTA ROSA DE LIMA, 2 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7ca",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371415.26070567, 4065857.3708788, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1988,
+          "NOMBRE": "Contenedor aceite Cl Nuestra Señora De Los Clarines",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE NUESTRA SEÑORA DE LOS CLARINES, 5 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7c9",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [370393.18376346, 4062339.7282625, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2013,
+          "NOMBRE": "Contenedor aceite Cl Alcalde Joaquin Alonso",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE ALCALDE JOAQUÍN ALONSO, 18 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7c8",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [369916.30290137, 4060684.4458415, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1979,
+          "NOMBRE": "Contenedor aceite Av Imperio Argentina",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA IMPERIO ARGENTINA, 6 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7c7",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [372891.83293694, 4068404.9005999, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1967,
+          "NOMBRE": "Contenedor aceite Cmno Casabermeja",
+          "DESCRIPCION": null,
+          "DIRECCION": "CAMINO DE CASABERMEJA, 56 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7c6",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [368191.48469095, 4058986.9973132, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2034,
+          "NOMBRE": "Contenedor aceite Cmno Guadalmar A La Loma",
+          "DESCRIPCION": null,
+          "DIRECCION": "CAMINO GUADALMAR A LA LOMA, 1 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7c5",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [366752.43917759, 4065186.3134471, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2041,
+          "NOMBRE": "Contenedor aceite Cl Catedrático Cristóbal Cuevas",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE CATEDRÁTICO CRISTÓBAL CUEVAS, 11 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7c4",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [370151.50145513, 4062112.9198527, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1980,
+          "NOMBRE": "Contenedor aceite Pl de la Luz",
+          "DESCRIPCION": null,
+          "DIRECCION": "PLAZA DE LA LUZ, 5 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7c3",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367157.26128964, 4067255.1966474, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2039,
+          "NOMBRE": "Contenedor aceite Cl Lope De Rueda",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE LOPE DE RUEDA, 222 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7c2",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371463.27394244, 4063309.4571483, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2007,
+          "NOMBRE": "Contenedor aceite Cril  de la Cordobesa",
+          "DESCRIPCION": null,
+          "DIRECCION": "CARRIL DE LA CORDOBESA, 18 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7c1",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [368643.64113738, 4065042.7040855, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2046,
+          "NOMBRE": "Contenedor aceite Av Pepita Duran",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE PEPITA DURÁN, 19 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7c0",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [365641.9179408, 4059108.1069075, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2032,
+          "NOMBRE": "Contenedor aceite Cmno Nuevo",
+          "DESCRIPCION": null,
+          "DIRECCION": "CAMINO NUEVO, 69 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7bf",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [376747.89568757, 4066645.6100815, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1960,
+          "NOMBRE": "Contenedor aceite Cl Olmos",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE OLMOS, 43 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7be",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [372184.86253819, 4067070.6198352, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1974,
+          "NOMBRE": "Contenedor aceite Cl Ebro",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE EBRO, 14 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7bd",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367768.38120727, 4066778.7595376, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2040,
+          "NOMBRE": "Contenedor aceite Cl Escritora Ana Maria Matute",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE ESCRITORA ANA MARÍA MATUTE, 5 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7bc",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371821.91940268, 4065925.326599, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1987,
+          "NOMBRE": "Contenedor aceite Av Arroyo de los Angeles",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DEL ARROYO DE LOS ÁNGELES, 75 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7bb",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [368048.47475555, 4065355.9690295, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2044,
+          "NOMBRE": "Contenedor aceite Cl Navarro Ledesma",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE NAVARRO LEDESMA, 160 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7ba",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367410.97435529, 4065076.3095406, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2045,
+          "NOMBRE": "Contenedor aceite Cl Esquilo",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE ESQUILO, 4 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7b9",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [378296.87827091, 4064728.0650959, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1961,
+          "NOMBRE": "Contenedor aceite Av Pio Baroja",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE PÍO BAROJA, 19 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7b8",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [373124.3718626, 4068121.1997426, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1968,
+          "NOMBRE": "Contenedor aceite Cl Borde Alegre",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE BORDE ALEGRE, 5 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7b7",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [370549.05453834, 4062798.828011, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2029,
+          "NOMBRE": "Contenedor aceite Cl Cortijo De Echarte",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE CORTIJO DE ECHARTE, 4 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7b6",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371305.48761801, 4063853.0835636, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1996,
+          "NOMBRE": "Contenedor aceite Pl Cruz De Humilladero",
+          "DESCRIPCION": null,
+          "DIRECCION": "PLAZA CRUZ DE HUMILLADERO, 3 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7b5",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371633.86185032, 4064745.1732766, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2004,
+          "NOMBRE": "Contenedor aceite Pl Guerrero Strachan",
+          "DESCRIPCION": null,
+          "DIRECCION": "PLAZA DE GUERRERO STRACHAN, 7 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7b4",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [372786.91546123, 4064187.9785004, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2020,
+          "NOMBRE": "Contenedor aceite Almd de Colón",
+          "DESCRIPCION": null,
+          "DIRECCION": "ALAMEDA DE COLÓN, 13 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7b3",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371071.24172642, 4065343.5046762, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1990,
+          "NOMBRE": "Contenedor aceite Cl Maestro Pablo Luna",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE MAESTRO PABLO LUNA, 1 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7b2",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371450.45670139, 4064844.7726274, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2201,
+          "NOMBRE": "Contenedor aceite Cl Ingeniero de la Torre Acosta",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE INGENIERO DE LA TORRE ACOSTA, 7 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7b1",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371606.59370145, 4065112.0622894, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1972,
+          "NOMBRE": "Contenedor aceite Pje Begoña",
+          "DESCRIPCION": null,
+          "DIRECCION": "PASAJE BEGOÑA, 3 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7b0",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [369091.9220019, 4065056.7585495, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1986,
+          "NOMBRE": "Contenedor aceite Cl Andrés Bernáldez",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE ANDRÉS BERNÁLDEZ, 18 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7af",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [373406.06813322, 4065220.7235741, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1952,
+          "NOMBRE": "Contenedor aceite Cl Merced",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE LA MERCED, 1 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7ae",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [370093.99511118, 4065206.9843717, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1975,
+          "NOMBRE": "Contenedor aceite Av Carlos De Haya",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA CARLOS DE HAYA, 133 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7ad",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [370692.66977783, 4065967.387709, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1989,
+          "NOMBRE": "Contenedor aceite Cl Alcalde Jose Luis Estrada",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE ALCALDE JOSÉ LUIS ESTRADA, 13 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7ac",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [370131.94619932, 4064765.5615011, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2002,
+          "NOMBRE": "Contenedor aceite Pl Jose Bergamin",
+          "DESCRIPCION": null,
+          "DIRECCION": "PLAZA JOSÉ BERGAMÍN, 12 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7ab",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [370455.69953099, 4064038.0264358, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1998,
+          "NOMBRE": "Contenedor aceite Cl Corregidor Francisco De Molina",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE CORREGIDOR FRANCISCO DE MOLINA, 10 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7aa",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [369372.23012954, 4066108.6584222, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2042,
+          "NOMBRE": "Contenedor aceite Cl Cirilo Salinas",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE CIRILO SALINAS, 26 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7a9",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [373188.57376534, 4067817.9601596, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1965,
+          "NOMBRE": "Contenedor aceite Cl Sancho Miranda",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE SANCHO MIRANDA, 7 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7a8",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [378639.34704056, 4065145.9908777, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1964,
+          "NOMBRE": "Contenedor aceite Cl Villafuerte",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE VILLAFUERTE, 44 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7a7",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [363046.4530629, 4065594.9148849, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2038,
+          "NOMBRE": "Contenedor aceite Cl Samaniego",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE SAMANIEGO, 80 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7a6",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [365699.5459752, 4058584.1328327, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2035,
+          "NOMBRE": "Contenedor aceite Cl Sedella",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE SEDELLA, 28 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7a5",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [372127.15715428, 4066191.1671736, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1994,
+          "NOMBRE": "Contenedor aceite Cl Poetisa Juana Luna",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE POETISA JUANA LUNA, 3 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7a4",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371147.97797637, 4061614.125854, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2017,
+          "NOMBRE": "Contenedor aceite Cl Pacifico",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE PACÍFICO, 46 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7a3",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [370317.98865429, 4061317.6809115, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2018,
+          "NOMBRE": "Contenedor aceite Cmno del Pato",
+          "DESCRIPCION": null,
+          "DIRECCION": "CAMINO DEL PATO, 21 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7a2",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [373095.52029554, 4067070.7276675, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1971,
+          "NOMBRE": "Contenedor aceite Pl Francisco López López",
+          "DESCRIPCION": null,
+          "DIRECCION": "PLAZA FRANCISCO LÓPEZ LÓPEZ, 1 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7a1",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [375891.814654, 4065545.4735885, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1957,
+          "NOMBRE": "Contenedor aceite Cl Miguel Indurain",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE MIGUEL INDURÁIN, 11 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-7a0",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [373045.86992092, 4066432.1868766, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2024,
+          "NOMBRE": "Contenedor aceite Cl Obispo Bartolomé Espejo",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE OBISPO BARTOLOMÉ ESPEJO, 10 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-79f",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [372400.65252927, 4065311.9308149, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1953,
+          "NOMBRE": "Contenedor aceite Cl Don Juan De Austria",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE DON JUAN DE AUSTRIA, 25 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-79e",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [372440.19035745, 4065886.8616048, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2026,
+          "NOMBRE": "Contenedor aceite Av Doctor Marañon",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DEL DOCTOR MARAÑÓN, 23 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-79d",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [370267.27585231, 4062552.0089615, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1982,
+          "NOMBRE": "Contenedor aceite Cl Gaucin",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE GAUCÍN, 27 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-79c",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [369576.78985916, 4063704.6475954, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2043,
+          "NOMBRE": "Contenedor aceite Cl Hamlet",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE HAMLET, 8 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-79b",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [369791.97233693, 4061639.0530323, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1981,
+          "NOMBRE": "Contenedor aceite Av Leo Delibes",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE LEO DELIBES, 2 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-79a",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [370909.56196, 4062132.766066, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2011,
+          "NOMBRE": "Contenedor aceite Cl Frigiliana",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE FRIGILIANA, 14 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-799",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371230.43534644, 4064201.0123724, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1976,
+          "NOMBRE": "Contenedor aceite Av Aurora 81",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE LA AURORA, 81 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-798",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [370430.66854779, 4061935.4037065, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2014,
+          "NOMBRE": "Contenedor aceite Pl Mozart",
+          "DESCRIPCION": null,
+          "DIRECCION": "PLAZA DE MOZART, 5 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-797",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [379104.68710289, 4064518.8290355, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1962,
+          "NOMBRE": "Contenedor aceite Cl Luis De Milán",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE LUIS DE MILÁN, 2 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-796",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [372522.87495301, 4066529.1410679, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1995,
+          "NOMBRE": "Contenedor aceite Cl Arlanza",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE ARLANZA, 1 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-795",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371497.14359781, 4064563.1677229, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1978,
+          "NOMBRE": "Contenedor aceite Av Obispo Angel Herrera Oria",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DEL OBISPO ÁNGEL HERRERA ORIA, 3 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-794",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371838.87824403, 4064178.9274987, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2005,
+          "NOMBRE": "Contenedor aceite Cl Mauricio Moro Pareto",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE MAURICIO MORO PARETO, 6 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-793",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371855.1054961, 4065418.9332819, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1992,
+          "NOMBRE": "Contenedor aceite Cl Martinez De La Rosa",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE MARTÍNEZ DE LA ROSA, 39 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-792",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [370401.71204605, 4063662.6496245, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2003,
+          "NOMBRE": "Contenedor aceite Cl Alcalde Diaz Zafra",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE ALCALDE DÍAZ ZAFRA, 24 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-791",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371365.45718488, 4062924.9666537, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2027,
+          "NOMBRE": "Contenedor aceite Cl Abogado Francisco Orellana Toledano",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE ABOGADO FEDERICO ORELLANA TOLEDANO, 16 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-790",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371472.69189056, 4064254.929455, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1977,
+          "NOMBRE": "Contenedor aceite Av Aurora 61",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE LA AURORA, 61 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-78f",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [369108.49666392, 4058816.0766477, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1983,
+          "NOMBRE": "Contenedor aceite Cl Rogelio Oliva",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE ROGELIO OLIVA, 29 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-78e",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [373713.45876079, 4065471.2131644, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1954,
+          "NOMBRE": "Contenedor aceite Pl Victoria",
+          "DESCRIPCION": null,
+          "DIRECCION": "PLAZA DE LA VICTORIA, 1 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-78d",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [371342.25198415, 4065692.1754671, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1991,
+          "NOMBRE": "Contenedor aceite Cmno Suarez",
+          "DESCRIPCION": null,
+          "DIRECCION": "CAMINO DE SUÁREZ, 52 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-78c",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [365824.62497348, 4059058.5710372, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2019,
+          "NOMBRE": "Contenedor aceite Cl Toril",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE TORIL, 1 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-78b",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [370850.02816384, 4064450.4353325, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1997,
+          "NOMBRE": "Contenedor aceite Cl Virgen De La Esperanza",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE VIRGEN DE LA ESPERANZA, 18 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-78a",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [372617.72421782, 4066749.1763598, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1993,
+          "NOMBRE": "Contenedor aceite Av de la Palmilla",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE LA PALMILLA, 16 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-789",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [368824.46755816, 4066023.2680018, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1985,
+          "NOMBRE": "Contenedor aceite Av de Lope De Vega",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE LOPE DE VEGA, 23 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-788",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [367659.57363676, 4064829.5743227, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2028,
+          "NOMBRE": "Contenedor aceite Cl Pindaro",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE PÍNDARO, 10 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-787",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [370189.82377354, 4061537.1056453, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2015,
+          "NOMBRE": "Contenedor aceite Av Gregorio Diego",
+          "DESCRIPCION": null,
+          "DIRECCION": "AVENIDA DE GREGORIO DIEGO, 18 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-786",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [374512.29871686, 4064885.5174594, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1956,
+          "NOMBRE": "Contenedor aceite Pso Sancha",
+          "DESCRIPCION": null,
+          "DIRECCION": "PASEO DE SANCHA, 2 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-785",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [373967.83502333, 4064583.1301122, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 1951,
+          "NOMBRE": "Contenedor aceite Cl Velez Malaga",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE VÉLEZ MÁLAGA, 13 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-784",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [373457.8892457, 4066082.4626685, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2031,
+          "NOMBRE": "Contenedor aceite Almd Capuchinos",
+          "DESCRIPCION": null,
+          "DIRECCION": "ALAMEDA DE CAPUCHINOS, 76 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "da_medioAmbiente_contenedoresAceite.fid--3b3f458b_19afc14e6b7_-783",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [360139.14280151, 4066409.9123437, 0]
+        },
+        "geometry_name": "SDOGEOMETRIA",
+        "properties": {
+          "ID": 2036,
+          "NOMBRE": "Contenedor aceite Cl Travesia De Maqueda",
+          "DESCRIPCION": null,
+          "DIRECCION": "CALLE TRAVESÍA DE MAQUEDA, 16 ",
+          "URL": null,
+          "EMAIL": null,
+          "CONTACTO": null,
+          "HORARIOS": null,
+          "PRECIOS": null,
+          "TITULARIDAD": "OTRAS",
+          "TARJETAJOVEN": "No",
+          "ACCESOPMR": "No",
+          "INFOESP": null
+        }
+      }
+    ],
+    "totalFeatures": 98,
+    "numberMatched": 98,
+    "numberReturned": 98,
+    "timeStamp": "2025-12-08T03:52:16.603Z",
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:EPSG::25830"
+      }
+    }
+  }
