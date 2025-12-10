@@ -27,9 +27,20 @@ export default function MapPage() {
     const [selectedReport, setSelectedReport] = useState(null);
     const [selectedZoneForEvent, setSelectedZoneForEvent] = useState(null);
     const [pinPosition, setPinPosition] = useState({ x: 50, y: 35 });
+    const [isRecyclingMenuOpen, setIsRecyclingMenuOpen] = useState(false);
     
     // Usar directamente searchParams como fuente de verdad
     const isReportMode = searchParams.get("report") === "true";
+
+    // Desactivar filtros y cerrar menú cuando se activa el modo reporte
+    useEffect(() => {
+        if (isReportMode) {
+            setTimeout(() => {
+                setSelectedCategories([]);
+                setIsRecyclingMenuOpen(false);
+            }, 0);
+        }
+    }, [isReportMode]);
 
     // Cargar los reports solo una vez al montar
     useEffect(() => {
@@ -130,6 +141,8 @@ export default function MapPage() {
                     selected={selectedCategories}
                     onToggleCategory={setSelectedCategories}
                     disabled={isReportMode || reportCoords !== null}
+                    isOpen={isRecyclingMenuOpen}
+                    onToggleMenu={() => setIsRecyclingMenuOpen(!isRecyclingMenuOpen)}
                 />
                 <ReportModal
                     isReportMode={isReportMode}
