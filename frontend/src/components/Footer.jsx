@@ -91,7 +91,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-bold mb-3 text-3xl font-medium">¿Dónde estamos?</h3>
+            <h3 className="font-bold mb-3 text-3xl">¿Dónde estamos?</h3>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3197.293316234903!2d-4.4225367!3d36.739529999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72f7003a823cb9%3A0x2a149fd29d27200e!2sFundaci%C3%B3n%20Esplai!5e0!3m2!1ses!2ses!4v1765275382502!5m2!1ses!2ses"
               className="w-70 h-64 md:h-70 rounded-lg"

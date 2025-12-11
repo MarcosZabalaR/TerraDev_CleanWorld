@@ -1,4 +1,4 @@
-import WorldMap from "../assets/worldmapGR.png";
+import WorldMap from "../assets/worldmap.webp";
 import Cloud from "../assets/cloud.png";
 import { useNavigate } from 'react-router-dom';
 
@@ -8,24 +8,26 @@ function Home() {
   return (
     <>
 
-      <div className="bg-gradient-to-b from-blue-50 to-neutral-100 h-[100vh] flex justify-center relative overflow-hidden ">
+      <div className="bg-linear-to-b from-blue-50 to-neutral-100 h-screen flex justify-center relative overflow-hidden ">
         <div className="text-white mt-20">
-          <span className="text-2xl font-medium drop-shadow-[1px_1px_0px_gray] text-neutral-700 select-none pointer-events-none">
+          <span className="text-2xl font-medium drop-shadow-[1px_1px_0px_gray] text-brand-dark select-none pointer-events-none">
             Bienvenido a
           </span>
           <h1 className="text-9xl font-bold drop-shadow-[1px_3px_1px_gray] z-60 select-none pointer-events-none">
-            <span className="text-[#AFBF75]">Clean</span><span className="text-[#5f7336]">World</span>
+            <span className="text-brand-light">Clean</span><span className="text-brand-primary">World</span>
           </h1>
 
-          <div className="flex justify-center mt-5">
+          <div className="flex justify-center gap-4 mt-5">
             <button
-              className="border-3 border-neutral-400 px-3 py-2 bg-neutral-100 rounded-full mr-5 text-neutral-700 hover:scale-105 transition cursor-pointer z-999 select-none"
+              className="bg-brand-primary text-white font-semibold px-6 py-3 rounded-xl hover:bg-brand-dark transition duration-300 shadow-lg hover:shadow-xl z-999 cursor-pointer"
               onClick={() => navigate('/map')}
             >
               Start
             </button>
-            <button className="border-3 border-gray-400 px-3 py-2 bg-neutral-400 rounded-full hover:scale-105 transition cursor-pointer z-999 select-none"
-            onClick={() => navigate('/login')}>
+            <button 
+              className="bg-gray-200 text-gray-800 font-semibold px-6 py-3 rounded-xl hover:bg-gray-300 transition duration-300 z-999 cursor-pointer"
+              onClick={() => navigate('/login')}
+            >
               Login
             </button>
           </div>
@@ -50,12 +52,12 @@ function Home() {
         {/* IZQUIERDA */}
         <img
           src={Cloud}
-          className="h-100 w-400 absolute top-[25vh] left-[-50vh] rotate-[16deg] z-1 select-none pointer-events-none"
+          className="h-100 w-400 absolute top-[25vh] left-[-50vh] rotate-16 z-1 select-none pointer-events-none"
         ></img>
 
         <img
           src={Cloud}
-          className="h-100 w-400 absolute top-[50vh] left-[-40vh] rotate-[20deg] z-1 select-none pointer-events-none"
+          className="h-100 w-400 absolute top-[50vh] left-[-40vh] rotate-20 z-1 select-none pointer-events-none"
         ></img>
       </div>
     </>

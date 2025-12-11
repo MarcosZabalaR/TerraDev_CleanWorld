@@ -2,11 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Teko:wght@300..700&display=swap');
 
 @theme {
-  --color-brand-dark: #324016;
-  --color-brand-primary: #5F7336;
-  --color-brand-light: #AFBF75;
-  --color-brand-accent: #BF784E;
-  --color-brand-warm: #A6583C;
+  --color-brand-dark: #3E4F44;
+  --color-brand-primary: #5E8D66;
+  --color-brand-light: #C2D6C5;
+  --color-brand-accent: #EEDBBE;
+  --color-brand-warm: #9F684B;
 
   --color-severity-1: #22c55e;
   --color-severity-2: #84cc16;
