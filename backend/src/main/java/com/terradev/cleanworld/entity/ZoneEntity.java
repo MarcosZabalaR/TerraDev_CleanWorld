@@ -3,9 +3,12 @@ package com.terradev.cleanworld.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.sql.Timestamp;
 
 @Entity
 @Table(name = "zone")
@@ -35,6 +38,14 @@ public class ZoneEntity{
     private Integer severity;
 
     private String status;
+
+    @CreationTimestamp
+    @Column(name = "created_at", updatable = false)
+    private Timestamp createdAt;
+
+    @UpdateTimestamp
+    @Column(name = "updated_at")
+    private Timestamp updatedAt;
 
     // MANY zones -> ONE user
     @ManyToOne

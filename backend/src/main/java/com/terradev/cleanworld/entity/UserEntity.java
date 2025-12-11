@@ -3,6 +3,8 @@ package com.terradev.cleanworld.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -29,11 +31,13 @@ public class UserEntity {
 
     private Integer points = 0;
 
-    @Column(insertable = false, updatable = false)
-    private Timestamp created_at;
+    @CreationTimestamp
+    @Column(name = "created_at", updatable = false)
+    private Timestamp createdAt;
 
-    @Column(insertable = false, updatable = false)
-    private Timestamp updated_at;
+    @UpdateTimestamp
+    @Column(name = "updated_at")
+    private Timestamp updatedAt;
 
     @OneToMany(mappedBy = "reportedUser", fetch = FetchType.LAZY)
     private List<ZoneEntity> reportedZones = new ArrayList<>();
