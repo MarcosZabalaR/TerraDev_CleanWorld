@@ -17,7 +17,6 @@ import RecyclingMenu from '../components/RecyclingMenu.jsx';
 import ReportModal from '../components/ReportModal.jsx';
 import ZoneDrawer from '../components/ZoneDrawer.jsx';
 import EventModal from '../components/EventModal.jsx';
-import PageTitle from '../components/PageTitle.jsx';
 
 export default function MapPage() {
     const [searchParams, setSearchParams] = useSearchParams();
@@ -126,7 +125,6 @@ export default function MapPage() {
 
     return (
         <div className="h-screen flex flex-col">
-            <PageTitle title={"Mapa"} />
             <NavBar />
             <div className="flex-1 relative">
                 <Mapa

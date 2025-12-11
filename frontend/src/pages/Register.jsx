@@ -1,16 +1,14 @@
-import Happy from '../assets/thx.jpg'
-import Login from "./Login"
+import Happy from '../assets/thx.jpg';
+import Login from "./Login";
 
 import Navbar from '../components/NavBar';
 import Footer from "../components/Footer";
 import { useNavigate } from 'react-router-dom';
-import PageTitle from '../components/PageTitle';
 
 export default function Register() {
 const navigate = useNavigate();
   return (
     <>
-    <PageTitle title={"Registro"} />
     <Navbar/>
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-blue-50 to-[#AFBF75]">
 

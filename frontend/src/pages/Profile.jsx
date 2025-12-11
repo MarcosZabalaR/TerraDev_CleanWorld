@@ -1,15 +1,13 @@
 import { useNavigate } from 'react-router-dom';
-import Navbar from "../components/NavBar"
-import Footer from "../components/Footer"
-import Avatar from "../assets/Avatar.jpg"
-import PageTitle from '../components/PageTitle';
+import Navbar from "../components/NavBar";
+import Footer from "../components/Footer";
+import Avatar from "../assets/Avatar.jpg";
 
 export default function Profile() {
 
 const navigate = useNavigate();
   return (
     <>
-    <PageTitle title={"Perfil"} />
     <Navbar/>
     <div className="relative flex items-center justify-center min-h-screen bg-gradient-to-b from-blue-50 to-[#AFBF75]">
 
