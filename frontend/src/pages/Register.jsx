@@ -48,7 +48,7 @@ export default function Register() {
   return (
     <>
       <Navbar />
-      <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-blue-50 to-[#AFBF75]">
+      <div className="flex items-center justify-center min-h-screen bg-linear-to-b from-blue-50 to-brand-light">
         <div className="bg-white border-2 border-gray-300 rounded-xl shadow-lg p-8 md:p-10 w-120 max-w-2xl">
           <div className="flex flex-col justify-center">
             <h1 className="text-3xl md:text-4xl font-bold text-center mb-6 md:mb-8 text-gray-800">
@@ -67,7 +67,7 @@ export default function Register() {
                   value={formValues.name}
                   onChange={handleChange}
                   className="peer bg-gray-100 border border-gray-300 rounded px-4 pt-5 pb-2 w-full 
-                           focus:outline-none focus:ring-2 focus:ring-[#AFBF75]"
+                           focus:outline-none focus:ring-2 focus:ring-brand-primary"
                 />
                 <label
                   className="absolute left-4 top-2 text-gray-500 text-sm transition-all 
@@ -88,7 +88,7 @@ export default function Register() {
                   value={formValues.email}
                   onChange={handleChange}
                   className="peer bg-gray-100 border border-gray-300 rounded px-4 pt-5 pb-2 w-full 
-                           focus:outline-none focus:ring-2 focus:ring-[#AFBF75]"
+                           focus:outline-none focus:ring-2 focus:ring-brand-primary"
                 />
                 <label
                   className="absolute left-4 top-2 text-gray-500 text-sm transition-all 
@@ -109,7 +109,7 @@ export default function Register() {
                   value={formValues.password}
                   onChange={handleChange}
                   className="peer bg-gray-100 border border-gray-300 rounded px-4 pt-5 pb-2 w-full 
-                           focus:outline-none focus:ring-2 focus:ring-[#AFBF75]"
+                           focus:outline-none focus:ring-2 focus:ring-brand-primary"
                 />
                 <label
                   className="absolute left-4 top-2 text-gray-500 text-sm transition-all 
@@ -130,7 +130,7 @@ export default function Register() {
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   className="peer bg-gray-100 border border-gray-300 rounded px-4 pt-5 pb-2 w-full 
-                           focus:outline-none focus:ring-2 focus:ring-[#AFBF75]"
+                           focus:outline-none focus:ring-2 focus:ring-brand-primary"
                 />
                 <label
                   className="absolute left-4 top-2 text-gray-500 text-sm transition-all 
@@ -145,7 +145,7 @@ export default function Register() {
               <div className="flex flex-col gap-3 md:gap-4">
                 <button
                   type="submit"
-                  className="bg-[#5F7336] text-white font-semibold py-3 rounded hover:bg-[#324016] transition duration-300"
+                  className="bg-brand-primary text-white font-semibold py-3 rounded hover:bg-brand-dark transition duration-300"
                 >
                   Registrar
                 </button>
