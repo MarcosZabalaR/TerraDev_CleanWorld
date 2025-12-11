@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import axios from 'axios';
 
 import envasesRaw from '../components/json/envases.json';
 import vidrioRaw from '../components/json/vidrio.json';
@@ -41,39 +42,27 @@ export default function MapPage() {
         }
     }, [isReportMode]);
 
-    // Cargar los reports solo una vez al montar
     useEffect(() => {
-        const allRaw = [
-            { data: envasesRaw, category: 'envases' },
-            { data: vidrioRaw, category: 'vidrio' },
-            { data: papelcartonRaw, category: 'papel' },
-            { data: aceiteRaw, category: 'aceite' },
-            { data: pilasRaw, category: 'pilas' },
-            { data: ropaRaw, category: 'ropa' },
-            { data: residuosRaw, category: 'restos' },
-            { data: industriaRaw, category: 'industria' }
-        ];
-
-        const allFeatures = allRaw.flatMap(raw =>
-            convertGeoJSON(raw.data).features.map(f => ({
-                id: f.id,
-                latitude: f.latitude,
-                longitude: f.longitude,
-                title: f.properties.tooltip || 'Zona sin título',
-                description: null,
-                img_url: null,
-                after_img_url: null,
-                severity: 'MEDIUM',
-                status: 'SUCIO',
-                residuo: raw.category,
-                reported_id: null,
-                created_at: null
-            }))
-        );
-
-        // Evitar warning de setState en efecto
-        setTimeout(() => setReports(allFeatures), 0);
-
+        (async () => {
+            try {
+                const { data } = await axios.get('http://localhost:8080/zones');
+                const containers = [
+                    { data: envasesRaw, category: 'envases' }, { data: vidrioRaw, category: 'vidrio' },
+                    { data: papelcartonRaw, category: 'papel' }, { data: aceiteRaw, category: 'aceite' },
+                    { data: pilasRaw, category: 'pilas' }, { data: ropaRaw, category: 'ropa' },
+                    { data: residuosRaw, category: 'restos' }, { data: industriaRaw, category: 'industria' }
+                ].flatMap(({ data: raw, category }) => 
+                    convertGeoJSON(raw).features.map(f => ({
+                        ...f, title: f.properties.tooltip || 'Zona sin título', residuo: category,
+                        description: null, img_url: null, after_img_url: null, severity: 2,
+                        status: 'SUCIO', reported_id: null, created_at: null
+                    }))
+                );
+                setReports([...data, ...containers]);
+            } catch (err) {
+                console.error('Error cargando zonas:', err);
+            }
+        })();
     }, []);
 
     const handleMapClick = (latlng) => {
@@ -89,6 +78,7 @@ export default function MapPage() {
     };
 
     const handleSubmitReport = (report) => {
+        // report ya viene con la respuesta del backend incluyendo el ID
         setReports(prev => [...prev, report]);
         closeReport();
     };
