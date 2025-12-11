@@ -74,7 +74,7 @@ export default function Register() {
                 peer-placeholder-shown:top-5 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base
                 peer-focus:top-2 peer-focus:text-gray-700 peer-focus:text-sm"
                 >
-                  Usuario
+                  Usuario *
                 </label>
               </div>
 
@@ -95,7 +95,7 @@ export default function Register() {
                 peer-placeholder-shown:top-5 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base
                 peer-focus:top-2 peer-focus:text-gray-700 peer-focus:text-sm"
                 >
-                  Email
+                  Email *
                 </label>
               </div>
 
@@ -116,7 +116,7 @@ export default function Register() {
                 peer-placeholder-shown:top-5 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base
                 peer-focus:top-2 peer-focus:text-gray-700 peer-focus:text-sm"
                 >
-                  Contraseña
+                  Contraseña *
                 </label>
               </div>
 
@@ -137,7 +137,7 @@ export default function Register() {
                 peer-placeholder-shown:top-5 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base
                 peer-focus:top-2 peer-focus:text-gray-700 peer-focus:text-sm"
                 >
-                  Confirmar contraseña
+                  Confirmar contraseña *
                 </label>
               </div>
 
