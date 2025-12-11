@@ -85,7 +85,7 @@ export default function Register() {
   return (
     <>
       <Navbar />
-      <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-blue-50 to-[#AFBF75]">
+      <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-blue-50 to-brand-light">
         <div className="bg-white border-2 border-gray-300 rounded-xl shadow-lg p-8 md:p-10 w-120 max-w-2xl">
           <h1 className="text-3xl md:text-4xl font-bold text-center mb-6 md:mb-8 text-gray-800">
             Registro
@@ -101,7 +101,7 @@ export default function Register() {
                 placeholder=" "
                 value={formValues.name}
                 onChange={handleChange}
-                className="peer bg-gray-100 border border-gray-300 rounded px-4 pt-5 pb-2 w-full focus:outline-none focus:ring-2 focus:ring-[#AFBF75]"
+                className="peer bg-gray-100 border border-gray-300 rounded px-4 pt-5 pb-2 w-full focus:outline-none focus:ring-2 focus:ring-brand-primary"
               />
               <label className="absolute left-4 top-2 text-gray-500 text-sm transition-all 
                 peer-placeholder-shown:top-5 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base
@@ -119,7 +119,7 @@ export default function Register() {
                 placeholder=" "
                 value={formValues.email}
                 onChange={handleChange}
-                className="peer bg-gray-100 border border-gray-300 rounded px-4 pt-5 pb-2 w-full focus:outline-none focus:ring-2 focus:ring-[#AFBF75]"
+                className="peer bg-gray-100 border border-gray-300 rounded px-4 pt-5 pb-2 w-full focus:outline-none focus:ring-2 focus:ring-brand-primary"
               />
               <label className="absolute left-4 top-2 text-gray-500 text-sm transition-all 
                 peer-placeholder-shown:top-5 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base
@@ -137,7 +137,7 @@ export default function Register() {
                 placeholder=" "
                 value={formValues.password}
                 onChange={handleChange}
-                className="peer bg-gray-100 border border-gray-300 rounded px-4 pt-5 pb-2 w-full focus:outline-none focus:ring-2 focus:ring-[#AFBF75]"
+                className="peer bg-gray-100 border border-gray-300 rounded px-4 pt-5 pb-2 w-full focus:outline-none focus:ring-2 focus:ring-brand-primary"
               />
               <label className="absolute left-4 top-2 text-gray-500 text-sm transition-all 
                 peer-placeholder-shown:top-5 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base
@@ -155,7 +155,7 @@ export default function Register() {
                 placeholder=" "
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                className="peer bg-gray-100 border border-gray-300 rounded px-4 pt-5 pb-2 w-full focus:outline-none focus:ring-2 focus:ring-[#AFBF75]"
+                className="peer bg-gray-100 border border-gray-300 rounded px-4 pt-5 pb-2 w-full focus:outline-none focus:ring-2 focus:ring-brand-primary"
               />
               <label className="absolute left-4 top-2 text-gray-500 text-sm transition-all 
                 peer-placeholder-shown:top-5 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base
@@ -167,7 +167,7 @@ export default function Register() {
 
             {/* BOTONES */}
             <div className="flex flex-col gap-3 md:gap-4">
-              <button type="submit" className="bg-[#5F7336] text-white font-semibold py-3 rounded hover:bg-[#324016] transition duration-300">
+              <button type="submit" className="bg-brand-primary text-white font-semibold py-3 rounded hover:bg-brand-dark transition duration-300">
                 Registrar
               </button>
               <button type="button" className="bg-gray-200 text-gray-800 font-semibold py-3 rounded hover:bg-gray-300 transition duration-300" onClick={() => navigate("/login")}>
