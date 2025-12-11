@@ -16,6 +16,8 @@ export default function Register() {
     points: 0,
   });
 
+  const [confirmPassword, setConfirmPassword] = useState("");
+
   const handleChange = (e) => {
     setFormValues({
       ...formValues,
@@ -26,14 +28,20 @@ export default function Register() {
   const createUser = async (e) => {
     e.preventDefault();
 
+    // Validación de contraseña
+    if (formValues.password !== confirmPassword) {
+      alert("Las contraseñas no coinciden");
+      return;
+    }
+
     try {
       const response = await axios.post(baseURL, formValues);
 
       console.log("Usuario creado:", response.data);
-
       navigate("/login");
     } catch (error) {
       console.error("Error creando usuario:", error);
+      alert("Error al crear el usuario, revisa la consola.");
     }
   };
 
@@ -44,7 +52,7 @@ export default function Register() {
         <div className="bg-white border-2 border-gray-300 rounded-xl shadow-lg p-8 md:p-10 w-120 max-w-2xl">
           <div className="flex flex-col justify-center">
             <h1 className="text-3xl md:text-4xl font-bold text-center mb-6 md:mb-8 text-gray-800">
-              Register
+              Registro
             </h1>
 
             <form className="flex flex-col gap-5 md:gap-6" onSubmit={createUser}>
@@ -53,14 +61,20 @@ export default function Register() {
               <div className="relative w-full">
                 <input
                   type="text"
+                  placeholder=" "
                   name="name"
+                  required
                   value={formValues.name}
                   onChange={handleChange}
                   className="peer bg-gray-100 border border-gray-300 rounded px-4 pt-5 pb-2 w-full 
                            focus:outline-none focus:ring-2 focus:ring-[#AFBF75]"
                 />
-                <label className="absolute left-4 top-2 text-gray-500 text-sm transition-all peer-focus:top-2 peer-focus:text-gray-700 peer-focus:text-sm">
-                  Username
+                <label
+                  className="absolute left-4 top-2 text-gray-500 text-sm transition-all 
+                peer-placeholder-shown:top-5 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base
+                peer-focus:top-2 peer-focus:text-gray-700 peer-focus:text-sm"
+                >
+                  Usuario
                 </label>
               </div>
 
@@ -68,13 +82,19 @@ export default function Register() {
               <div className="relative w-full">
                 <input
                   type="email"
+                  placeholder=" "
                   name="email"
+                  required
                   value={formValues.email}
                   onChange={handleChange}
                   className="peer bg-gray-100 border border-gray-300 rounded px-4 pt-5 pb-2 w-full 
                            focus:outline-none focus:ring-2 focus:ring-[#AFBF75]"
                 />
-                <label className="absolute left-4 top-2 text-gray-500 text-sm transition-all peer-focus:top-2 peer-focus:text-gray-700 peer-focus:text-sm">
+                <label
+                  className="absolute left-4 top-2 text-gray-500 text-sm transition-all 
+                peer-placeholder-shown:top-5 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base
+                peer-focus:top-2 peer-focus:text-gray-700 peer-focus:text-sm"
+                >
                   Email
                 </label>
               </div>
@@ -83,14 +103,41 @@ export default function Register() {
               <div className="relative w-full">
                 <input
                   type="password"
+                  placeholder=" "
                   name="password"
+                  required
                   value={formValues.password}
                   onChange={handleChange}
                   className="peer bg-gray-100 border border-gray-300 rounded px-4 pt-5 pb-2 w-full 
                            focus:outline-none focus:ring-2 focus:ring-[#AFBF75]"
                 />
-                <label className="absolute left-4 top-2 text-gray-500 text-sm transition-all peer-focus:top-2 peer-focus:text-gray-700 peer-focus:text-sm">
-                  Password
+                <label
+                  className="absolute left-4 top-2 text-gray-500 text-sm transition-all 
+                peer-placeholder-shown:top-5 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base
+                peer-focus:top-2 peer-focus:text-gray-700 peer-focus:text-sm"
+                >
+                  Contraseña
+                </label>
+              </div>
+
+              {/* CONFIRM PASSWORD */}
+              <div className="relative w-full">
+                <input
+                  type="password"
+                  placeholder=" "
+                  name="confirmPassword"
+                  required
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  className="peer bg-gray-100 border border-gray-300 rounded px-4 pt-5 pb-2 w-full 
+                           focus:outline-none focus:ring-2 focus:ring-[#AFBF75]"
+                />
+                <label
+                  className="absolute left-4 top-2 text-gray-500 text-sm transition-all 
+                peer-placeholder-shown:top-5 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base
+                peer-focus:top-2 peer-focus:text-gray-700 peer-focus:text-sm"
+                >
+                  Confirmar contraseña
                 </label>
               </div>
 
@@ -100,7 +147,7 @@ export default function Register() {
                   type="submit"
                   className="bg-[#5F7336] text-white font-semibold py-3 rounded hover:bg-[#324016] transition duration-300"
                 >
-                  Register
+                  Registrar
                 </button>
 
                 <button
@@ -108,7 +155,7 @@ export default function Register() {
                   className="bg-gray-200 text-gray-800 font-semibold py-3 rounded hover:bg-gray-300 transition duration-300"
                   onClick={() => navigate("/login")}
                 >
-                  Already have an account?
+                  Ya tengo cuenta
                 </button>
               </div>
 
