@@ -19,7 +19,7 @@ public class SecurityConfig {
                         .anyRequest().permitAll())
         );
        return http.build();
-    }
+    } 
 
     @Bean
     public PasswordEncoder passwordEncoder() {
