@@ -29,7 +29,7 @@ export default function Register() {
 
     let validationErrors = {};
 
-    // Validación nombre
+    // --- VALIDACIÓN LOCAL (frontend) ---
     if (!formValues.name.trim()) {
       validationErrors.name = "El nombre de usuario es obligatorio";
     } else {
@@ -39,7 +39,6 @@ export default function Register() {
       }
     }
 
-    // Validación email
     if (!formValues.email.trim()) {
       validationErrors.email = "El email es obligatorio";
     } else {
@@ -49,36 +48,53 @@ export default function Register() {
       }
     }
 
-    // Validación contraseña
     if (!formValues.password) {
       validationErrors.password = "La contraseña es obligatoria";
     }
+
     if (formValues.password !== confirmPassword) {
       validationErrors.confirmPassword = "Las contraseñas no coinciden";
     }
 
     setErrors(validationErrors);
-
-    // Si hay errores, no seguimos
     if (Object.keys(validationErrors).length > 0) return;
 
+    // --- VALIDACIÓN CON BACKEND ---
     try {
-      // POST al backend
+      // Comprueba si el nombre existe
+      const userExists = await axios.get(
+        `${baseURL}/check-user`,
+        { params: { name: formValues.name } }
+      );
+
+      if (userExists.data.exists) {
+        setErrors({ name: "El nombre de usuario ya existe" });
+        return;
+      }
+
+      // Comprueba si el email existe
+      const emailExists = await axios.get(
+        `${baseURL}/check-email`,
+        { params: { email: formValues.email } }
+      );
+
+      if (emailExists.data.exists) {
+        setErrors({ email: "Este email ya está registrado" });
+        return;
+      }
+
+      // --- CREAR USUARIO ---
       const response = await axios.post(baseURL, {
         ...formValues,
-        avatar: "",  // puedes dejar vacío o manejarlo después
+        avatar: "",
         points: 0,
       });
 
       console.log("Usuario creado:", response.data);
       navigate("/login");
+
     } catch (error) {
       console.error("Error creando usuario:", error);
-      if (error.response?.status === 409) {
-        setErrors({ name: "El usuario ya existe" });
-      } else {
-        alert("Error al crear el usuario, revisa la consola.");
-      }
     }
   };
 
