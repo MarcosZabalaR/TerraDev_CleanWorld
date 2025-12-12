@@ -1,5 +1,6 @@
 package com.terradev.cleanworld.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -54,5 +55,6 @@ public class ZoneEntity{
 
     // MANY events -> ONE zone
     @OneToMany(mappedBy = "zone", fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<EventEntity> zoneEvents = new ArrayList<>();
 }
