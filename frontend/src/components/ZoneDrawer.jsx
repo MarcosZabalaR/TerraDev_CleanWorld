@@ -178,68 +178,97 @@ export default function ZoneDrawer({ report, event, onClose, onCreateEvent }) {
             </div>
           )}
           
-          {/* Imagen principal */}
-          {report.img_url && (
-            <div className="relative rounded-2xl overflow-hidden  border-2 border-gray-200">
-              <img
-                src={report.img_url}
-                alt={report.title}
-                className="w-full aspect-video object-cover"
-              />
-            </div>
-          )}
+          {/* Para zonas limpias: mostrar después, descripción, antes */}
+          {report.status === 'LIMPIO' ? (
+            <>
+              {/* Imagen "después" */}
+              {report.after_img_url && (
+                <div className="relative rounded-xl overflow-hidden border-2 border-emerald-200">
+                  <div className="absolute top-3 right-3 bg-emerald-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold shadow-md">
+                    Después de la limpieza
+                  </div>
+                  <img
+                    src={report.after_img_url}
+                    alt={`${report.title} - después`}
+                    className="w-full aspect-video object-cover"
+                  />
+                </div>
+              )}
 
-          {/* Badge de gravedad - Destacado */}
-          <div className={`relative overflow-hidden rounded-xl border-2 ${severity.borderColor} `}>
-            <div className={`absolute inset-0 ${severity.bgColor} opacity-90`} />
-            <div className="relative flex items-center gap-3 p-4">
-              <div className={`p-2 rounded-lg ${severity.color} bg-white/90`}>
-                {severityKey === 'HIGH' ? (
-                  <IconAlertTriangle size={28} strokeWidth={2.5} />
-                ) : severityKey === 'MEDIUM' ? (
-                  <IconAlertCircle size={28} strokeWidth={2.5} />
-                ) : (
-                  <IconTrash size={28} strokeWidth={2.5} />
-                )}
-              </div>
-              <div className="flex-1">
-                <p className={`text-lg font-bold ${severity.color} mb-0.5`}>{severity.label}</p>
-                <p className="text-xs font-medium text-gray-600">
-                  {severityKey === 'HIGH' 
-                    ? 'Requiere atención inmediata' 
-                    : severityKey === 'MEDIUM' 
-                    ? 'Necesita limpieza pronto' 
-                    : 'Basura dispersa en la zona'}
-                </p>
-              </div>
-              <div className={`w-1.5 h-12 rounded-full ${severity.dotColor}`} />
-            </div>
-          </div>
+              {/* Descripción */}
+              {report.description && (
+                <div className="bg-emerald-50 p-4 rounded-xl border border-emerald-200">
+                  <p className="text-gray-700 leading-relaxed">{report.description}</p>
+                </div>
+              )}
 
-          {/* Imagen "después" (si existe y está limpio) */}
-          {report.after_img_url && report.status === 'LIMPIO' && (
-            <div className="relative rounded-2xl overflow-hidden  border-2 border-green-300">
-              <div className="absolute top-3 left-3 bg-green-600 text-white px-3 py-1 rounded-full text-xs font-bold ">
-                ✓ Después de la limpieza
-              </div>
-              <img
-                src={report.after_img_url}
-                alt={`${report.title} - después`}
-                className="w-full aspect-video object-cover"
-              />
-            </div>
-          )}
+              {/* Imagen "antes" */}
+              {report.img_url && (
+                <div className="relative rounded-xl overflow-hidden border-2 border-gray-200">
+                  <div className="absolute top-3 right-3 bg-gray-600 text-white px-3 py-1.5 rounded-lg text-xs font-semibold shadow-md">
+                    Antes de la limpieza
+                  </div>
+                  <img
+                    src={report.img_url}
+                    alt={`${report.title} - antes`}
+                    className="w-full aspect-video object-cover"
+                  />
+                </div>
+              )}
+            </>
+          ) : (
+            <>
+              {/* Para zonas sucias: flujo normal */}
+              {/* Imagen principal */}
+              {report.img_url && (
+                <div className="relative rounded-2xl overflow-hidden border-2 border-gray-200">
+                  <img
+                    src={report.img_url}
+                    alt={report.title}
+                    className="w-full aspect-video object-cover"
+                  />
+                </div>
+              )}
 
-          {/* Descripción */}
-          {report.description && (
-            <div>
-              <h3 className="text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">
-                Descripción
-              </h3>
-              <p className="text-gray-700 leading-relaxed bg-gray-50 p-4 rounded-xl border border-gray-200">
-                {report.description}
-              </p>
-            </div>
+              {/* Badge de gravedad - Destacado */}
+              <div className={`relative overflow-hidden rounded-xl border-2 ${severity.borderColor} `}>
+                <div className={`absolute inset-0 ${severity.bgColor} opacity-90`} />
+                <div className="relative flex items-center gap-3 p-4">
+                  <div className={`p-2 rounded-lg ${severity.color} bg-white/90`}>
+                    {severityKey === 'HIGH' ? (
+                      <IconAlertTriangle size={28} strokeWidth={2.5} />
+                    ) : severityKey === 'MEDIUM' ? (
+                      <IconAlertCircle size={28} strokeWidth={2.5} />
+                    ) : (
+                      <IconTrash size={28} strokeWidth={2.5} />
+                    )}
+                  </div>
+                  <div className="flex-1">
+                    <p className={`text-lg font-bold ${severity.color} mb-0.5`}>{severity.label}</p>
+                    <p className="text-xs font-medium text-gray-600">
+                      {severityKey === 'HIGH' 
+                        ? 'Requiere atención inmediata' 
+                        : severityKey === 'MEDIUM' 
+                        ? 'Necesita limpieza pronto' 
+                        : 'Basura dispersa en la zona'}
+                    </p>
+                  </div>
+                  <div className={`w-1.5 h-12 rounded-full ${severity.dotColor}`} />
+                </div>
+              </div>
+
+              {/* Descripción */}
+              {report.description && (
+                <div>
+                  <h3 className="text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">
+                    Descripción
+                  </h3>
+                  <p className="text-gray-700 leading-relaxed bg-gray-50 p-4 rounded-xl border border-gray-200">
+                    {report.description}
+                  </p>
+                </div>
+              )}
+            </>
           )}
 
           {/* Información adicional */}
@@ -273,7 +302,7 @@ export default function ZoneDrawer({ report, event, onClose, onCreateEvent }) {
             Llévame allí
           </button>
           
-          {!event && (
+          {!event && report.status !== 'LIMPIO' && (
             <button
               onClick={handleCreateEvent}
               className="flex-1 flex items-center justify-center gap-2 px-5 py-3.5 bg-brand-primary hover:bg-brand-dark text-white rounded-xl transition-all font-semibold shadow-lg hover:shadow-xl cursor-pointer"
