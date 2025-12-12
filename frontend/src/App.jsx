@@ -7,13 +7,11 @@ import "leaflet/dist/leaflet.css";
 // Pages
 import HomePage from './pages/Home.jsx';
 import MapaPage from './pages/Map.jsx';
+import ZonesPage from './pages/Zones.jsx';
 import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
 import Profile from './pages/Profile.jsx';
 import Error404 from './pages/Error404.jsx';
-
-// Components
-import Footer from './components/Footer'
 
 function App() {
 
@@ -26,7 +24,8 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/profile" element={<Profile />} />
-			      <Route path="/map" element={<MapaPage />} />
+			<Route path="/map" element={<MapaPage />} />
+			<Route path="/zones" element={<ZonesPage />} />
             <Route path='*' element={<Error404 />} />
 		  </Routes>
         </main>

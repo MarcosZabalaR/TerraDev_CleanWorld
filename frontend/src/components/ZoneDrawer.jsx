@@ -46,7 +46,12 @@ const statusConfig = {
 export default function ZoneDrawer({ report, onClose, onCreateEvent }) {
   if (!report) return null;
 
-  const severity = severityConfig[report.severity] || severityConfig.MEDIUM;
+  // Convertir severity numérico a string si es necesario
+  const severityKey = typeof report.severity === 'number' 
+    ? ['', 'LOW', 'MEDIUM', 'HIGH'][report.severity] 
+    : report.severity;
+  
+  const severity = severityConfig[severityKey] || severityConfig.MEDIUM;
   const status = statusConfig[report.status] || statusConfig.SUCIO;
   
   const formattedDate = report.created_at 
@@ -120,9 +125,9 @@ export default function ZoneDrawer({ report, onClose, onCreateEvent }) {
             <div className={`absolute inset-0 ${severity.bgColor} opacity-90`} />
             <div className="relative flex items-center gap-3 p-4">
               <div className={`p-2 rounded-lg ${severity.color} bg-white/90`}>
-                {report.severity === 'HIGH' ? (
+                {severityKey === 'HIGH' ? (
                   <IconAlertTriangle size={28} strokeWidth={2.5} />
-                ) : report.severity === 'MEDIUM' ? (
+                ) : severityKey === 'MEDIUM' ? (
                   <IconAlertCircle size={28} strokeWidth={2.5} />
                 ) : (
                   <IconTrash size={28} strokeWidth={2.5} />
@@ -131,9 +136,9 @@ export default function ZoneDrawer({ report, onClose, onCreateEvent }) {
               <div className="flex-1">
                 <p className={`text-lg font-bold ${severity.color} mb-0.5`}>{severity.label}</p>
                 <p className="text-xs font-medium text-gray-600">
-                  {report.severity === 'HIGH' 
+                  {severityKey === 'HIGH' 
                     ? 'Requiere atención inmediata' 
-                    : report.severity === 'MEDIUM' 
+                    : severityKey === 'MEDIUM' 
                     ? 'Necesita limpieza pronto' 
                     : 'Basura dispersa en la zona'}
                 </p>

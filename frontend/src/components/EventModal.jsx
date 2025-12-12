@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { IconX, IconCalendar, IconTrophy, IconMapPin, IconCalendarPlus } from '@tabler/icons-react';
 
 const severityPointsMap = {
-  LOW: 10,
-  MEDIUM: 25,
-  HIGH: 50
+  1: 10, LOW: 10,
+  2: 25, MEDIUM: 25,
+  3: 50, HIGH: 50
 };
 
 const suggestedTools = [
@@ -243,7 +243,7 @@ export default function EventModal({ zone, onClose, onSubmit }) {
                 />
               </div>
               <p className="text-xs text-gray-600 mt-1.5">
-                Puntos asignados automáticamente según la gravedad de la zona ({zone.severity === 'LOW' ? 'Leve' : zone.severity === 'MEDIUM' ? 'Moderada' : 'Grave'})
+                Puntos asignados automáticamente según la gravedad de la zona ({[, 'Leve', 'Moderada', 'Grave'][typeof zone.severity === 'number' ? zone.severity : ({ LOW: 1, MEDIUM: 2, HIGH: 3 }[zone.severity] || 2)]})
               </p>
             </div>
 

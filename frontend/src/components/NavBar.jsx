@@ -20,8 +20,8 @@ export default function NavBar() {
 			<h1><Link to="/" className="flex items-center gap-1 text-lg"><img src={Logo} alt="CleanWorld Logo" className="w-8 h-8 object-contain mr-2 bg-white rounded-md"/>CleanWorld</Link></h1>
 			<ul className="flex font-medium gap-4 justify-center grow">
 				<li><Link to="/map" className="p-2 hover:underline">Mapa</Link></li>
-				<li><Link to="/zonas" className="p-2 hover:underline">Zonas</Link></li>
-				<li><Link to="/eventos" className="p-2 hover:underline">Eventos</Link></li>
+				<li><Link to="/zones" className="p-2 hover:underline">Zonas</Link></li>
+				<li><Link to="/events" className="p-2 hover:underline">Eventos</Link></li>
 				<li><Link to="/profile" className="p-2 hover:underline">Perfil</Link></li>
 			</ul>
 			<button onClick={handleReportClick} className="p-2 rounded-xl bg-brand-light text-brand-dark font-bold transition-colors hover:bg-white">Reportar</button>

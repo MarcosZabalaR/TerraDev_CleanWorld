@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import axios from 'axios';
 import { IconX, IconCamera, IconCheck, IconMapPin } from '@tabler/icons-react';
 import { uploadImageToCloudinary } from '../utils/uploadImage.js';
 
@@ -50,9 +51,7 @@ export default function ReportModal({ isReportMode, reportCoords, pinPosition = 
 
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
-    if (!file) return;
-    if (images.length >= 1) return alert('Máximo 1 imagen');
-
+    if (!file || images.length >= 1) return images.length >= 1 && alert('Máximo 1 imagen');
     const reader = new FileReader();
     reader.onloadend = () => setImages([{ file, preview: reader.result }]);
     reader.readAsDataURL(file);
@@ -65,41 +64,26 @@ export default function ReportModal({ isReportMode, reportCoords, pinPosition = 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (images.length === 0) {
+      alert('Debes subir al menos una foto del problema');
+      return;
+    }
+    if (!formData.description.trim()) {
+      alert('Debes añadir una descripción del problema');
+      return;
+    }
     setIsUploading(true);
-    
     try {
-      // Subir imagen a Cloudinary si existe
-      let uploadedImageUrl = null;
-      if (images.length > 0) {
-        console.log('Iniciando subida de imagen a Cloudinary...');
-        console.log('Cloud Name:', import.meta.env.VITE_CLOUDINARY_CLOUD_NAME);
-        console.log('Upload Preset:', import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET);
-        uploadedImageUrl = await uploadImageToCloudinary(images[0].file);
-        console.log('Imagen subida exitosamente:', uploadedImageUrl);
-      }
-      
-      // Convertir severity numérico a string para BD
-      const severityMap = { 1: 'LOW', 2: 'MEDIUM', 3: 'HIGH' };
-      
-      onSubmit({
-        id: `user-report-${Date.now()}`,
-        title: formData.title,
-        description: formData.description,
-        severity: severityMap[formData.severity],
-        img_url: uploadedImageUrl,
-        after_img_url: null,
-        latitude: reportCoords.lat,
-        longitude: reportCoords.lng,
-        status: 'SUCIO',
-        reported_id: null, // TODO: obtener del usuario logueado
-        created_at: new Date().toISOString(),
+      const img_url = await uploadImageToCloudinary(images[0].file);
+      const { data } = await axios.post('http://localhost:8080/zones', {
+        ...formData, img_url, latitude: reportCoords.lat, longitude: reportCoords.lng,
+        status: 'SUCIO', reported_id: 1
       });
+      onSubmit(data);
       resetForm();
     } catch (error) {
-      console.error('Error completo:', error);
-      console.error('Mensaje de error:', error.message);
-      console.error('Stack:', error.stack);
-      alert(`Error: ${error.message || 'Error desconocido al subir la imagen'}`);
+      console.error('Error:', error);
+      alert(error.response?.data?.message || error.message || 'Error desconocido');
     } finally {
       setIsUploading(false);
     }
@@ -195,12 +179,13 @@ export default function ReportModal({ isReportMode, reportCoords, pinPosition = 
             {/* Descripción */}
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-2">
-                Descripción <span className="text-gray-400 font-normal">(opcional)</span>
+                Descripción <span className="text-red-500">*</span>
               </label>
               <textarea
                 name="description"
                 value={formData.description}
                 onChange={handleChange}
+                required
                 rows="4"
                 placeholder="Describe el problema con detalle..."
                 className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brand-primary focus:border-brand-primary transition-all resize-none text-base"
@@ -251,7 +236,7 @@ export default function ReportModal({ isReportMode, reportCoords, pinPosition = 
             {/* Fotos */}
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-2">
-                Fotografía <span className="text-gray-400 font-normal">(opcional)</span>
+                Fotografía <span className="text-red-500 font-normal">*</span>
               </label>
               
               {images.length > 0 ? (
@@ -301,10 +286,10 @@ export default function ReportModal({ isReportMode, reportCoords, pinPosition = 
             </button>
             <button
               type="submit"
-              disabled={isUploading}
+              disabled={isUploading || images.length === 0 || !formData.description.trim()}
               className="flex-1 px-5 py-3 bg-brand-primary text-white rounded-xl hover:bg-brand-dark transition-all font-semibold shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {isUploading ? 'Subiendo imagen...' : 'Enviar reporte'}
+              {isUploading ? 'Subiendo imagen...' : images.length === 0 ? 'Sube una foto para continuar' : !formData.description.trim() ? 'Añade una descripción' : 'Enviar reporte'}
             </button>
           </div>
         </form>
