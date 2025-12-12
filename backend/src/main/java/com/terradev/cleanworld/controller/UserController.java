@@ -85,6 +85,7 @@ public class UserController {
                     existing.setAvatar(u.getAvatar());
                     existing.setPoints(u.getPoints());
                     existing.setPassword(u.getPassword());
+                    existing.setRol(u.getRol());
                     return ResponseEntity.ok(service.save(existing));
                 })
                 .orElse(ResponseEntity.notFound().build());
