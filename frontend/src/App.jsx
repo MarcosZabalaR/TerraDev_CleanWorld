@@ -12,6 +12,7 @@ import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
 import Profile from './pages/Profile.jsx';
 import Error404 from './pages/Error404.jsx';
+import Points from './pages/Points.jsx';
 
 function App() {
 
@@ -26,7 +27,9 @@ function App() {
             <Route path="/profile" element={<Profile />} />
 			<Route path="/map" element={<MapaPage />} />
 			<Route path="/zones" element={<ZonesPage />} />
+			<Route path="/points" element={<ZonesPage />} />
             <Route path='*' element={<Error404 />} />
+
 		  </Routes>
         </main>
       </div>
