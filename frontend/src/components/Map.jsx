@@ -1,7 +1,8 @@
-import { MapContainer, TileLayer, Marker, useMapEvents, useMap } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, useMapEvents, useMap } from "react-leaflet";
 import { useEffect } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
+import { IconLocation } from '@tabler/icons-react';
 
 const severityColors = {
   1: '#5F7336', LOW: '#5F7336',
@@ -133,11 +134,32 @@ export default function Mapa({
             click: () => {
               // No permitir clicks en zonas cuando se está reportando
               if (!isReportMode && !reportCoords) {
-                onReportClick?.(report);
+                // Si es un contenedor, no hacer nada (el popup se abrirá automáticamente)
+                // Si es una zona reportada, abrir el drawer
+                if (!report.residuo) {
+                  onReportClick?.(report);
+                }
               }
             }
           }}
-        />
+        >
+          {/* Popup solo para contenedores */}
+          {report.residuo && (
+            <Popup offset={[0, -30]}>
+              <div className="text-center py-2 px-1">
+                <a 
+                  href={`https://www.google.com/maps/dir/?api=1&destination=${report.latitude},${report.longitude}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-blue-600 hover:text-blue-800 font-semibold text-lg transition-colors"
+                >
+                  <IconLocation size={24} />
+                  Llévame allí
+                </a>
+              </div>
+            </Popup>
+          )}
+        </Marker>
       ))}
     </MapContainer>
   );
