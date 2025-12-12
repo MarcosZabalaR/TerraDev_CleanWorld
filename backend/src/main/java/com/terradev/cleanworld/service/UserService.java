@@ -2,6 +2,7 @@ package com.terradev.cleanworld.service;
 
 import com.terradev.cleanworld.entity.UserEntity;
 import com.terradev.cleanworld.repository.UserRepository;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,9 +13,11 @@ import java.util.Optional;
 public class UserService {
 
     private final UserRepository repository;
+    private final PasswordEncoder passwordEncoder;
 
-    public UserService(UserRepository repository) {
+    public UserService(UserRepository repository, PasswordEncoder passwordEncoder) {
         this.repository = repository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     /**
@@ -85,7 +88,10 @@ public class UserService {
                         existing.setEmail((String) value);
                         break;
                     case "password":
-                        existing.setPassword((String) value);
+                        String raw = (String) value;
+                        if (raw != null && !raw.isEmpty()) {
+                            existing.setPassword(passwordEncoder.encode(raw));
+                        }
                         break;
                     case "avatar":
                         existing.setAvatar((String) value);
@@ -115,4 +121,5 @@ public class UserService {
         }
         repository.deleteById(id);
     }
+
 }
