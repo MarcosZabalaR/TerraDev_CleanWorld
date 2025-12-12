@@ -29,6 +29,8 @@ public class UserEntity {
 
     private Integer points = 0;
 
+    private Integer rol = 0;
+
     @Column(insertable = false, updatable = false)
     private Timestamp created_at;
 

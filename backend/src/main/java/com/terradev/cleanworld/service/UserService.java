@@ -73,6 +73,9 @@ public class UserService {
                     case "points":
                         existing.setPoints((Integer) value);
                         break;
+                    case "rol":
+                        existing.setRol((Integer) value);
+                        break;
                 }
             });
 
