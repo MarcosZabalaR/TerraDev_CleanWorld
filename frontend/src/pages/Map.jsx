@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, useLocation } from 'react-router-dom';
 import axios from 'axios';
 
 import envasesRaw from '../components/json/envases.json';
@@ -21,6 +21,7 @@ import EventModal from '../components/EventModal.jsx';
 
 export default function MapPage() {
     const [searchParams, setSearchParams] = useSearchParams();
+    const location = useLocation();
     const [reportCoords, setReportCoords] = useState(null);
     const [reports, setReports] = useState([]);
     const [events, setEvents] = useState([]);
@@ -64,13 +65,22 @@ export default function MapPage() {
                     }))
                 );
                 
-                setReports([...zonesRes.data, ...containers]);
+                const allReports = [...zonesRes.data, ...containers];
+                setReports(allReports);
                 setEvents(eventsRes.data);
+                
+                // Abrir drawer si se navegó desde la página de zonas
+                if (location.state?.selectedZoneId) {
+                    const zone = zonesRes.data.find(z => z.id === location.state.selectedZoneId);
+                    if (zone) {
+                        setSelectedReport(zone);
+                    }
+                }
             } catch (err) {
                 console.error('Error cargando datos:', err);
             }
         })();
-    }, []);
+    }, [location.state]);
 
     const handleMapClick = (latlng) => {
         if (isReportMode || reportCoords) {
@@ -130,6 +140,7 @@ export default function MapPage() {
                     reports={filteredReports}
                     onReportClick={handleReportClick}
                     onPinPositionUpdate={setPinPosition}
+                    zoomCoords={location.state?.zoomToZone ? location.state.coords : null}
                 />
                 <RecyclingMenu
                     selected={selectedCategories}
