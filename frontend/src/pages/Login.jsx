@@ -2,10 +2,76 @@ import Happy from "../assets/thx.jpg";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/NavBar";
 import Footer from "../components/Footer";
-import Register from "./Register";
+import axios from "axios";
+import { useState } from "react";
 
 export default function Login() {
   const navigate = useNavigate();
+
+  const baseURL = `${import.meta.env.API_URL || "http://localhost:8080"}/users`;
+
+  const [formValues, setFormValues] = useState({
+    email: "",
+    password: "",
+  });
+
+  const [errors, setErrors] = useState({});
+
+  // Maneja cambios en los inputs y actualiza formValues
+  const handleChange = (e) => {
+    setFormValues({
+      ...formValues,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  // Maneja el submit del formulario
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    let validationErrors = {};
+
+    // --- VALIDACIÓN LOCAL ---
+    if (!formValues.email.trim()) {
+      validationErrors.email = "El email es obligatorio";
+    }
+
+    if (!formValues.password) {
+      validationErrors.password = "La contraseña es obligatoria";
+    }
+
+    setErrors(validationErrors);
+
+    if (Object.keys(validationErrors).length > 0) return; // Si hay errores no seguimos
+
+    // --- VALIDACIÓN CON BACKEND ---
+    try {
+      // Hacemos POST al endpoint de login del backend
+      const response = await axios.post(`${baseURL}/login`, {
+        email: formValues.email,
+        password: formValues.password,
+      });
+
+      // Si la respuesta es exitosa, guardamos datos si quieres (ej: token) y redirigimos
+      console.log("Usuario logueado:", response.data);
+
+      // Guarda el id del usuario en localstorage (aqui tiene que ir el token)
+      localStorage.setItem("userId", response.data.id);
+
+      navigate("/profile");
+
+    } catch (error) {
+      console.error("Error en login:", error);
+
+      // Manejo de errores de login según el backend
+      if (error.response?.status === 401) {
+        setErrors({ login: "Email o contraseña incorrectos" });
+      } else {
+        setErrors({ login: "Error inesperado, inténtalo de nuevo" });
+      }
+    }
+  };
+
   return (
     <>
       <Navbar />
@@ -18,11 +84,16 @@ export default function Login() {
               Login
             </h1>
 
-            <form className="flex flex-col gap-5 md:gap-6">
+            <form className="flex flex-col gap-5 md:gap-6" onSubmit={handleSubmit}>
+
+              {/* EMAIL */}
               <div className="relative w-full">
                 <input
-                  type="text"
+                  type="email"
+                  name="email"
                   placeholder=" "
+                  value={formValues.email}
+                  onChange={handleChange}
                   className="peer bg-gray-100 border border-gray-300 rounded px-4 pt-5 pb-2 w-full focus:outline-none focus:ring-2 focus:ring-brand-light"
                 />
                 <label
@@ -30,14 +101,19 @@ export default function Login() {
                 peer-placeholder-shown:top-5 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base
                 peer-focus:top-2 peer-focus:text-gray-700 peer-focus:text-sm"
                 >
-                  Username
+                  Email
                 </label>
+                {errors.email && <p className="text-red-600">{errors.email}</p>}
               </div>
 
+              {/* PASSWORD */}
               <div className="relative w-full">
                 <input
                   type="password"
+                  name="password"
                   placeholder=" "
+                  value={formValues.password}
+                  onChange={handleChange}
                   className="peer bg-gray-100 border border-gray-300 rounded px-4 pt-5 pb-2 w-full focus:outline-none focus:ring-2 focus:ring-brand-light"
                 />
                 <label
@@ -47,8 +123,13 @@ export default function Login() {
                 >
                   Password
                 </label>
+                {errors.password && <p className="text-red-600">{errors.password}</p>}
               </div>
 
+              {/* ERROR DE LOGIN GENERAL */}
+              {errors.login && <p className="text-red-600 text-center">{errors.login}</p>}
+
+              {/* BOTONES */}
               <div className="flex flex-col gap-3 md:gap-4">
                 <button
                   type="submit"

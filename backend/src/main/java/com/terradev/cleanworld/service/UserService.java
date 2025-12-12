@@ -67,6 +67,23 @@ public class UserService {
     }
 
     /**
+     * POST -> Valida si un usuario existe y si la contraseña es correcta
+     *
+     * @param email
+     * @param password
+     * @return
+     */
+    public boolean validateUser(String email, String password) {
+        Optional<UserEntity> userOpt = repository.findByEmail(email);
+        if (userOpt.isPresent()) {
+            UserEntity user = userOpt.get();
+            // Aquí hay usar hashing para la contraseña encriptada
+            return user.getPassword().equals(password);
+        }
+        return false;
+    }
+
+    /**
      * PATCH -> Actualizar parcialmente un usuario
      *
      * @param id Identificador del usuario
