@@ -12,7 +12,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
-    @Bean
+    /*@Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf(csrf -> csrf.disable()
                 .authorizeHttpRequests(auth -> auth
@@ -22,15 +22,15 @@ public class SecurityConfig {
                 .httpBasic(Customizer.withDefaults())
         ); // Desactivamos CSRF para facilitar el trabajo con APIs
        return http.build();
-    }
+    }*/
 
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder(11);
     }
 
-    @Bean
+    /*@Bean
     public AuthenticationProvider authenticationProvider (){
         return authenticationProvider(); // esta mal, es para que no joda
-    }
+    }*/
 }
