@@ -30,7 +30,7 @@ public class EventEntity {
     @CreationTimestamp
     @Column(name = "created_at", updatable = false)
     private Timestamp createdAt;
- 
+
     @UpdateTimestamp
     @Column(name = "updated_at")
     private Timestamp updatedAt;
