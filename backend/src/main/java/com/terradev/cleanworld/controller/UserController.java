@@ -38,6 +38,24 @@ public class UserController {
     }
 
     /**
+     * GET -> Comprobar si un email existe
+     */
+    @GetMapping("/check-email")
+    public Map<String, Boolean> checkEmail(@RequestParam String email) {
+        boolean exists = service.existsByEmail(email);
+        return Map.of("exists", exists);
+    }
+
+    /**
+     * GET -> Comprobar si el usuario existe
+     */
+    @GetMapping("/check-user")
+    public Map<String, Boolean> checkUser(@RequestParam String name) {
+        boolean exists = service.existsByName(name);
+        return Map.of("exists", exists);
+    }
+
+    /**
      * POST -> Crear un nuevo usuario
      */
     @PostMapping
