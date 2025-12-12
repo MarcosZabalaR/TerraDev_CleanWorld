@@ -3,14 +3,17 @@ import axios from 'axios';
 import Navbar from "../components/NavBar";
 import Footer from "../components/Footer";
 import ZoneDrawer from "../components/ZoneDrawer";
+import EventModal from "../components/EventModal";
 import { IconChevronDown, IconChevronUp, IconMapPin, IconAlertTriangle, IconCalendar } from '@tabler/icons-react';
 
 export default function ZonesPage() {
   const [zones, setZones] = useState([]);
+  const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [sortOrder, setSortOrder] = useState('date-desc');
   const [selectedZone, setSelectedZone] = useState(null);
+  const [selectedZoneForEvent, setSelectedZoneForEvent] = useState(null);
 
   useEffect(() => {
     fetchZones();
@@ -19,15 +22,33 @@ export default function ZonesPage() {
   const fetchZones = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:8080/zones');
-      setZones(response.data);
+      const [zonesRes, eventsRes] = await Promise.all([
+        axios.get('http://localhost:8080/zones'),
+        axios.get('http://localhost:8080/events')
+      ]);
+      setZones(zonesRes.data);
+      setEvents(eventsRes.data);
       setError(null);
     } catch (err) {
-      console.error('Error fetching zones:', err);
-      setError('Error al cargar las zonas');
+      console.error('Error fetching data:', err);
+      setError('Error al cargar los datos');
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleOpenEventModal = (zone) => {
+    setSelectedZoneForEvent(zone);
+    setSelectedZone(null);
+  };
+
+  const handleCloseEventModal = () => {
+    setSelectedZoneForEvent(null);
+  };
+
+  const handleSubmitEvent = (event) => {
+    setEvents(prev => [...prev, event]);
+    handleCloseEventModal();
   };
 
   const getSeverityValue = (s) => typeof s === 'number' ? s : ({ HIGH: 3, MEDIUM: 2, LOW: 1 }[s] || 0);
@@ -162,10 +183,17 @@ export default function ZonesPage() {
       {selectedZone && (
         <ZoneDrawer
           report={selectedZone}
+          event={events.find(e => e.zone?.id === selectedZone.id) || null}
           onClose={() => setSelectedZone(null)}
-          onCreateEvent={() => {}}
+          onCreateEvent={handleOpenEventModal}
         />
       )}
+      
+      <EventModal
+        zone={selectedZoneForEvent}
+        onClose={handleCloseEventModal}
+        onSubmit={handleSubmitEvent}
+      />
     </>
   );
 }
