@@ -37,6 +37,26 @@ public class UserService {
     }
 
     /**
+     * GET -> Obtener el correo y comprobar si existe ya en la base de datos
+     *
+     * @param email Email del usuario a comprobar.
+     * @return true si el email ya existe en la base de datos, false en caso contrario
+     */
+    public boolean existsByEmail(String email) {
+        return repository.existsByEmail(email);
+    }
+
+    /**
+     * GET -> Obtener el usuario y comprobar si existe ya en la base de datos
+     *
+     * @param name Nombre del usuario a comprobar.
+     * @return true si el nombre ya existe en la base de datos, false en caso contrario.
+     */
+    public boolean existsByName(String name) {
+        return repository.existsByName(name);
+    }
+
+    /**
      * POST -> Crear un nuevo usuario
      *
      * @param u Entidad UserEntity con los datos a guardar
