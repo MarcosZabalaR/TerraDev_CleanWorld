@@ -1,5 +1,18 @@
+// componentes
 import Navbar from "../components/NavBar";
 import Footer from "../components/Footer";
+
+// img
+import adidas from "../assets/adidas.png";
+import footlocker from "../assets/footlocker.png";
+import hm from "../assets/hm.png";
+import lol from "../assets/lol.png";
+import rakuten from "../assets/rakuten.png";
+import roblox from "../assets/roblox.png";
+
+// tablericon
+import { IconCircleCheckFilled } from '@tabler/icons-react';
+
 
 export default function Points() {
   return (
@@ -17,13 +30,56 @@ export default function Points() {
 
             <h2 className="text-neutral-800 text-4xl font-semibold mb-4">
               Has acumulado:{" "}
-              <span className="text-brand-light">1762 puntos</span>
+              <span className="text-brand-primary">1762 puntos</span>
             </h2>
             <p className="text-gray-400 text-md">
               Gana puntos y consigue recompensas
             </p>
           </div>
         </section>
+
+ {/* Tutorial */}
+      <div className="grid grid-cols-3">
+        <div className="bg-amber-200 grid grid-cols-1 text-center place-items-center px-6 py-10">
+          <span className="pb-15"><IconCircleCheckFilled size={72} className="text-neutral-800"/></span>
+          <h3 className="text-5xl pb-8">Inicia sesión</h3>
+
+          <p className="text-lg max-w-xl">
+            Puede que ya tengas una cuenta creada con nosotros. Intenta iniciar
+            sesión con tu cuenta CleanWorld© antes de crear una nueva.
+          </p>
+
+          <a className="text-lg cursor-pointer mt-4">
+            Iniciar sesión →
+          </a>
+        </div>
+
+        <div className="bg-blue-200 grid grid-cols-1 text-center place-items-center px-6 py-10">
+          <h3 className="text-5xl pb-8">Inicia sesión</h3>
+
+          <p className="text-lg max-w-xl">
+            Puede que ya tengas una cuenta creada con nosotros. Intenta iniciar
+            sesión con tu cuenta CleanWorld© antes de crear una nueva.
+          </p>
+
+          <a className="text-lg cursor-pointer mt-4">
+            Iniciar sesión →
+          </a>
+        </div>
+
+        <div className="bg-purple-200 grid grid-cols-1 text-center place-items-center px-6 py-10">
+          <h3 className="text-5xl pb-8">Inicia sesión</h3>
+
+          <p className="text-lg max-w-xl">
+            Puede que ya tengas una cuenta creada con nosotros. Intenta iniciar
+            sesión con tu cuenta CleanWorld© antes de crear una nueva.
+          </p>
+
+          <a className="text-lg cursor-pointer mt-4">
+            Iniciar sesión →
+          </a>
+        </div>
+      </div>
 
         {/* Sección de recompensas */}
         <section className="max-w-7xl mx-auto mt-10 px-4">
@@ -32,9 +88,7 @@ export default function Points() {
 
             {/* Recompensa 1 */}
             <div className="relative z-0 hover:z-0 rounded-lg shadow-2xl hover:shadow-[0_10px_30px_rgba(0,0,0,0.2)] overflow-hidden transition transform hover:scale-105">
-              <div className="h-48 bg-gray-200 flex items-center justify-center">
-                <span className="text-gray-700">Img</span>
-              </div>
+              <div className="h-48 bg-gray-200 flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: `url(${rakuten})` }}></div>
 
               <div className="mt-7 p-4 flex flex-col items-center text-center">
                 <h3 className="font-medium text-2xl mb-2">
@@ -53,9 +107,8 @@ export default function Points() {
 
             {/* Recompensa 2 */}
             <div className="relative z-0 hover:z-0 shadow-2xl hover:shadow-[0_10px_30px_rgba(0,0,0,0.2)] rounded-lg overflow-hidden transition hover:scale-105">
-              <div className="h-48 bg-gray-200 flex items-center justify-center">
-                <span className="text-gray-700">Img</span>
-              </div>
+              <div className="h-48 bg-gray-200 flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: `url(${roblox})` }}></div>
+
 
               <div className="mt-7 p-4 flex flex-col items-center text-center">
                 <h3 className="font-medium text-2xl mb-2">
@@ -74,9 +127,8 @@ export default function Points() {
 
             {/* Recompensa 3 */}
             <div className="relative z-0 hover:z-0 rounded-lg shadow-2xl hover:shadow-[0_10px_30px_rgba(0,0,0,0.22] overflow-hidden transition hover:scale-105">
-              <div className="h-48 bg-gray-200 flex items-center justify-center">
-                <span className="text-gray-700">Img</span>
-              </div>
+              <div className="h-48 bg-gray-200 flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: `url(${adidas})` }}></div>
+
 
               <div className="mt-7 p-4 flex flex-col items-center text-center">
                 <h3 className="font-medium text-2xl mb-2">
@@ -95,9 +147,8 @@ export default function Points() {
 
             {/* Recompensa 4 */}
             <div className="relative z-0 hover:z-0 rounded-lg shadow-2xl hover:shadow-[0_10px_30px_rgba(0,0,0,0.22] overflow-hidden transition hover:scale-105">
-              <div className="h-48 bg-gray-200 flex items-center justify-center">
-                <span className="text-gray-700">Img</span>
-              </div>
+              <div className="h-48 bg-gray-200 flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: `url(${lol})` }}></div>
+
 
               <div className="mt-7 p-4 flex flex-col items-center text-center">
                 <h3 className="font-medium text-2xl mb-2">
@@ -116,9 +167,8 @@ export default function Points() {
 
             {/* Recompensa 5 */}
             <div className="relative z-0 hover:z-0 rounded-lg shadow-2xl hover:shadow-[0_10px_30px_rgba(0,0,0,0.2)] overflow-hidden transition hover:scale-105">
-              <div className="h-48 bg-gray-200 flex items-center justify-center">
-                <span className="text-gray-700">Img</span>
-              </div>
+              <div className="h-48 bg-gray-200 flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: `url(${hm})` }}></div>
+
 
               <div className="mt-7 p-4 flex flex-col items-center text-center">
                 <h3 className="font-medium text-2xl mb-2">
@@ -137,9 +187,8 @@ export default function Points() {
 
             {/* Recompensa 6 */}
             <div className="relative z-0 hover:z-0 rounded-lg shadow-2xl hover:shadow-[0_10px_30px_rgba(0,0,0,0.22] overflow-hidden transition hover:scale-105">
-              <div className="h-48 bg-gray-200 flex items-center justify-center">
-                <span className="text-gray-700">Img</span>
-              </div>
+              <div className="h-48 bg-gray-200 flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: `url(${footlocker})` }}></div>
+
 
               <div className="mt-7 p-4 flex flex-col items-center text-center">
                 <h3 className="font-medium text-2xl mb-2">
@@ -194,48 +243,7 @@ export default function Points() {
         </section>
       </div>
 
-      {/* Tutorial */}
-      <div className="grid grid-cols-3">
-        <div className="bg-amber-200 grid grid-cols-1 text-center place-items-center px-6 py-10">
-          <h3 className="text-5xl pb-8">Inicia sesión</h3>
-
-          <p className="text-lg max-w-xl">
-            Puede que ya tengas una cuenta creada con nosotros. Intenta iniciar
-            sesión con tu cuenta CleanWorld© antes de crear una nueva.
-          </p>
-
-          <a className="text-lg cursor-pointer mt-4">
-            Iniciar sesión →
-          </a>
-        </div>
-
-        <div className="bg-blue-200 grid grid-cols-1 text-center place-items-center px-6 py-10">
-          <h3 className="text-5xl pb-8">Inicia sesión</h3>
-
-          <p className="text-lg max-w-xl">
-            Puede que ya tengas una cuenta creada con nosotros. Intenta iniciar
-            sesión con tu cuenta CleanWorld© antes de crear una nueva.
-          </p>
-
-          <a className="text-lg cursor-pointer mt-4">
-            Iniciar sesión →
-          </a>
-        </div>
-
-        <div className="bg-purple-200 grid grid-cols-1 text-center place-items-center px-6 py-10">
-          <h3 className="text-5xl pb-8">Inicia sesión</h3>
-
-          <p className="text-lg max-w-xl">
-            Puede que ya tengas una cuenta creada con nosotros. Intenta iniciar
-            sesión con tu cuenta CleanWorld© antes de crear una nueva.
-          </p>
-
-          <a className="text-lg cursor-pointer mt-4">
-            Iniciar sesión →
-          </a>
-        </div>
-      </div>
-
+     
       <Footer />
     </>
   );

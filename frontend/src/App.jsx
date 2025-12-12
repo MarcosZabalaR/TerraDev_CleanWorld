@@ -25,9 +25,9 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/profile" element={<Profile />} />
-			<Route path="/map" element={<MapaPage />} />
-			<Route path="/zones" element={<ZonesPage />} />
-			<Route path="/points" element={<ZonesPage />} />
+			      <Route path="/map" element={<MapaPage />} />
+			      <Route path="/zones" element={<ZonesPage />} />
+			      <Route path="/points" element={<Points />} />
             <Route path='*' element={<Error404 />} />
 
 		  </Routes>
