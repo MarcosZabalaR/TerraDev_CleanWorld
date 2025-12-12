@@ -19,7 +19,7 @@ public class SecurityConfig {
                         .anyRequest().permitAll())
         ); // Desactivamos CSRF para facilitar el trabajo con APIs
        return http.build();
-    } 
+    }
 
     @Bean
     public PasswordEncoder passwordEncoder() {

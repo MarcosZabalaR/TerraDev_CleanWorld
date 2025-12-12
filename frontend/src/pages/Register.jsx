@@ -18,6 +18,7 @@ export default function Register() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState({});
 
+  // Maneja cambios en los inputs y actualiza formValues
   const handleChange = (e) => {
     setFormValues({
       ...formValues,
@@ -25,6 +26,7 @@ export default function Register() {
     });
   };
 
+  // Maneja el submit del formulario
   const handleSubmit = async (e) => {
     e.preventDefault();
 

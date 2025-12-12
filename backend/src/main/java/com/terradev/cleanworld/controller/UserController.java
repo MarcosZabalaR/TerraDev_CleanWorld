@@ -1,7 +1,9 @@
 package com.terradev.cleanworld.controller;
 
+import com.terradev.cleanworld.dto.UserDto;
 import com.terradev.cleanworld.entity.UserEntity;
 import com.terradev.cleanworld.service.UserService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -58,9 +60,14 @@ public class UserController {
     /**
      * POST -> Crear un nuevo usuario
      */
-    @PostMapping
-    public UserEntity create(@RequestBody UserEntity u) {
-        return service.save(u);
+    @PostMapping("/login")
+    public ResponseEntity<String> login(@RequestBody UserDto userDto) {
+        boolean valid = service.validateUser(userDto.getEmail(), userDto.getPassword());
+        if (valid) {
+            return ResponseEntity.ok("Login correcto" + userDto);
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Usuario o contraseña incorrecta");
+        }
     }
 
     /**
