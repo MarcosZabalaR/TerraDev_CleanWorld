@@ -23,6 +23,7 @@ export default function MapPage() {
     const [searchParams, setSearchParams] = useSearchParams();
     const [reportCoords, setReportCoords] = useState(null);
     const [reports, setReports] = useState([]);
+    const [events, setEvents] = useState([]);
     const [selectedCategories, setSelectedCategories] = useState([]);
     const [selectedReport, setSelectedReport] = useState(null);
     const [selectedZoneForEvent, setSelectedZoneForEvent] = useState(null);
@@ -45,7 +46,11 @@ export default function MapPage() {
     useEffect(() => {
         (async () => {
             try {
-                const { data } = await axios.get('http://localhost:8080/zones');
+                const [zonesRes, eventsRes] = await Promise.all([
+                    axios.get('http://localhost:8080/zones'),
+                    axios.get('http://localhost:8080/events')
+                ]);
+                
                 const containers = [
                     { data: envasesRaw, category: 'envases' }, { data: vidrioRaw, category: 'vidrio' },
                     { data: papelcartonRaw, category: 'papel' }, { data: aceiteRaw, category: 'aceite' },
@@ -58,9 +63,11 @@ export default function MapPage() {
                         status: 'SUCIO', reported_id: null, created_at: null
                     }))
                 );
-                setReports([...data, ...containers]);
+                
+                setReports([...zonesRes.data, ...containers]);
+                setEvents(eventsRes.data);
             } catch (err) {
-                console.error('Error cargando zonas:', err);
+                console.error('Error cargando datos:', err);
             }
         })();
     }, []);
@@ -101,8 +108,7 @@ export default function MapPage() {
     };
 
     const handleSubmitEvent = (event) => {
-        console.log('Evento creado:', event);
-        // TODO: Enviar a backend
+        setEvents(prev => [...prev, event]);
         handleCloseEventModal();
     };
 
@@ -141,6 +147,7 @@ export default function MapPage() {
                 />
                 <ZoneDrawer
                     report={selectedReport}
+                    event={selectedReport ? events.find(e => e.zone?.id === selectedReport.id) : null}
                     onClose={handleCloseDrawer}
                     onCreateEvent={handleOpenEventModal}
                 />
