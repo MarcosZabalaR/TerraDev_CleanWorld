@@ -12,6 +12,7 @@ export default function Register() {
     name: "",
     email: "",
     password: "",
+    rol: 1
   });
 
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -29,13 +30,17 @@ export default function Register() {
 
     let validationErrors = {};
 
-    // --- VALIDACIÓN LOCAL (frontend) ---
+    // --- VALIDACIÓN LOCAL ---
     if (!formValues.name.trim()) {
       validationErrors.name = "El nombre de usuario es obligatorio";
     } else {
       const patternUser = /^[a-zA-Z0-9 áéíóúÁÉÍÓÚñÑüÜ'-]+$/;
       if (!patternUser.test(formValues.name)) {
         validationErrors.name = "El usuario solo puede tener letras y números";
+      } else {
+        if (formValues.name.length > 16 || formValues.name.length < 3) {
+          validationErrors.name = "El usuario debe tener entre 3 y 16 caracteres";
+        }
       }
     }
 
@@ -108,7 +113,6 @@ export default function Register() {
           </h1>
 
           <form className="flex flex-col gap-5 md:gap-6" onSubmit={handleSubmit}>
-
             {/* NOMBRE */}
             <div className="relative w-full">
               <input
