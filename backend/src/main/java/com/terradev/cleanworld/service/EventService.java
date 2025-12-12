@@ -1,7 +1,9 @@
 package com.terradev.cleanworld.service;
 
 import com.terradev.cleanworld.entity.EventEntity;
+import com.terradev.cleanworld.entity.ZoneEntity;
 import com.terradev.cleanworld.repository.EventRepository;
+import com.terradev.cleanworld.repository.ZoneRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +15,9 @@ public class EventService {
 
     @Autowired
     private EventRepository eventRepository;
+
+    @Autowired
+    private ZoneRepository zoneRepository;
 
     /**
      * GET -> Obtener todos los eventos
@@ -40,6 +45,16 @@ public class EventService {
      * @return Evento creado
      */
     public EventEntity createEvent(EventEntity event) {
+
+        if (event.getZone() != null && event.getZone().getId() != null) {
+            Long zoneId = event.getZone().getId();
+            ZoneEntity zone = zoneRepository.findById(zoneId)
+                    .orElseThrow(() -> new RuntimeException("Zona no encontrada con id " + zoneId));
+            event.setZone(zone);
+        } else {
+            event.setZone(null);
+        }
+
         return eventRepository.save(event);
     }
 
@@ -58,7 +73,14 @@ public class EventService {
             event.setDatetime(updatedEvent.getDatetime());
             event.setStatus(updatedEvent.getStatus());
             event.setReward_points(updatedEvent.getReward_points());
-            event.setZone(updatedEvent.getZone());
+            if (updatedEvent.getZone() != null && updatedEvent.getZone().getId() != null) {
+                Long zoneId = updatedEvent.getZone().getId();
+                ZoneEntity zone = zoneRepository.findById(zoneId)
+                        .orElseThrow(() -> new RuntimeException("Zona no encontrada con id " + zoneId));
+                event.setZone(zone);
+            } else {
+                event.setZone(null);
+            }
             return eventRepository.save(event);
         }).orElseThrow(() -> new RuntimeException("Evento no encontrado con id " + id));
     }
@@ -94,7 +116,14 @@ public class EventService {
             }
 
             if (partialEvent.getZone() != null) {
-                event.setZone(partialEvent.getZone());
+                if (partialEvent.getZone().getId() != null) {
+                    Long zoneId = partialEvent.getZone().getId();
+                    ZoneEntity zone = zoneRepository.findById(zoneId)
+                            .orElseThrow(() -> new RuntimeException("Zona no encontrada con id " + zoneId));
+                    event.setZone(zone);
+                } else {
+                    event.setZone(null);
+                }
             }
 
             return eventRepository.save(event);

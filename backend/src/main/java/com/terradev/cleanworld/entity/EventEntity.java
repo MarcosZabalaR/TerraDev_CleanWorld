@@ -41,7 +41,7 @@ public class EventEntity {
 
     // MANY events → ONE zone
     @ManyToOne
-    @JoinColumn(name = "zone_id", nullable = true)
+    @JoinColumn(name = "zone_id", nullable = false)
     private ZoneEntity zone;
 
     // Event has many attendees

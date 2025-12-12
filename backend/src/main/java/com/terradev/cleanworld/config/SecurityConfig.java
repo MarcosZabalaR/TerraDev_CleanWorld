@@ -17,9 +17,9 @@ public class SecurityConfig {
         http.csrf(csrf -> csrf.disable()
                 .authorizeHttpRequests(auth -> auth
                         .anyRequest().permitAll())
-        ); // Desactivamos CSRF para facilitar el trabajo con APIs
+        );
        return http.build();
-    }
+    } 
 
     @Bean
     public PasswordEncoder passwordEncoder() {
