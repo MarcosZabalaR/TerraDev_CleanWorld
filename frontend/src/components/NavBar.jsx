@@ -23,6 +23,7 @@ export default function NavBar() {
 				<li><Link to="/zones" className="p-2 hover:underline">Zonas</Link></li>
 				<li><Link to="/events" className="p-2 hover:underline">Eventos</Link></li>
 				<li><Link to="/profile" className="p-2 hover:underline">Perfil</Link></li>
+				<li><Link to="/points" className="p-2 hover:underline">Recompensas</Link></li>
 			</ul>
 			<button onClick={handleReportClick} className="p-2 rounded-xl bg-brand-light text-brand-dark font-bold transition-colors hover:bg-white">Reportar</button>
 		</nav>
