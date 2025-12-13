@@ -93,13 +93,26 @@ function SpotlightOverlay({ reportCoords, onPositionUpdate }) {
   return null;
 }
 
+function ZoomToZone({ coords }) {
+  const map = useMap();
+  
+  useEffect(() => {
+    if (coords && map) {
+      map.flyTo([coords.lat, coords.lng], 18, { duration: 1.5 });
+    }
+  }, [coords, map]);
+  
+  return null;
+}
+
 export default function Mapa({ 
   onMapClick, 
   reportCoords, 
   isReportMode, 
   reports = [],
   onReportClick,
-  onPinPositionUpdate
+  onPinPositionUpdate,
+  zoomCoords
 }) {
   return (
     <MapContainer
@@ -115,6 +128,7 @@ export default function Mapa({
 
       <MapClickHandler onMapClick={onMapClick} isReportMode={isReportMode} reportCoords={reportCoords} />
       <SpotlightOverlay reportCoords={reportCoords} onPositionUpdate={onPinPositionUpdate} />
+      {zoomCoords && <ZoomToZone coords={zoomCoords} />}
 
       {/* Marcador temporal */}
       {reportCoords && (
@@ -128,6 +142,8 @@ export default function Mapa({
           position={[report.latitude, report.longitude]} 
           icon={report.residuo 
             ? createWasteIcon(report.residuo, report.severity)
+            : report.status === 'LIMPIO'
+            ? createPinIcon('#34d399')
             : createPinIcon(severityColors[report.severity] || severityColors.MEDIUM)
           }
           eventHandlers={{

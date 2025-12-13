@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import axios from 'axios';
 import { IconX, IconCalendar, IconTrophy, IconMapPin, IconCalendarPlus } from '@tabler/icons-react';
 
 const severityPointsMap = {
@@ -27,6 +28,7 @@ const initialFormData = {
 export default function EventModal({ zone, onClose, onSubmit }) {
   const [formData, setFormData] = useState(initialFormData);
   const [selectedTools, setSelectedTools] = useState([]);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   
   // Calcular fecha mínima (24 horas desde ahora) - useState con lazy init
   const [minDateTime] = useState(() => 
@@ -72,7 +74,7 @@ export default function EventModal({ zone, onClose, onSubmit }) {
     setSelectedTools([]);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     // Validar que la fecha sea al menos 24 horas en el futuro
@@ -85,16 +87,26 @@ export default function EventModal({ zone, onClose, onSubmit }) {
       return;
     }
     
-    onSubmit({
-      id: `event-${Date.now()}`,
-      ...formData,
-      reward_points: rewardPoints,
-      zone_id: zone.id,
-      created_at: new Date().toISOString(),
-      updated_at: new Date().toISOString(),
-    });
-    resetForm();
-    onClose();
+    setIsSubmitting(true);
+    try {
+      const { data } = await axios.post('http://localhost:8080/events', {
+        title: formData.title,
+        description: formData.description,
+        datetime: formData.datetime,
+        status: 'SCHEDULED',
+        reward_points: rewardPoints,
+        zone: { id: zone.id }
+      });
+      
+      onSubmit?.(data);
+      resetForm();
+      onClose();
+    } catch (error) {
+      console.error('Error creando evento:', error);
+      alert(error.response?.data?.message || 'Error al crear el evento');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (!zone) return null;
@@ -243,7 +255,7 @@ export default function EventModal({ zone, onClose, onSubmit }) {
                 />
               </div>
               <p className="text-xs text-gray-600 mt-1.5">
-                Puntos asignados automáticamente según la gravedad de la zona ({[, 'Leve', 'Moderada', 'Grave'][typeof zone.severity === 'number' ? zone.severity : ({ LOW: 1, MEDIUM: 2, HIGH: 3 }[zone.severity] || 2)]})
+                Puntos asignados automáticamente según la gravedad de la zona ({['', 'Leve', 'Moderada', 'Grave'][typeof zone.severity === 'number' ? zone.severity : ({ LOW: 1, MEDIUM: 2, HIGH: 3 }[zone.severity] || 2)]})
               </p>
             </div>
 
@@ -283,15 +295,17 @@ export default function EventModal({ zone, onClose, onSubmit }) {
             <button
               type="button"
               onClick={() => { resetForm(); onClose(); }}
-              className="flex-1 px-5 py-3 border-2 border-gray-300 text-gray-700 rounded-xl hover:bg-gray-100 transition-all font-semibold"
+              disabled={isSubmitting}
+              className="flex-1 px-5 py-3 border-2 border-gray-300 text-gray-700 rounded-xl hover:bg-gray-100 transition-all font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Cancelar
             </button>
             <button
               type="submit"
-              className="flex-1 px-5 py-3 bg-brand-primary text-white rounded-xl hover:bg-brand-dark transition-all font-semibold shadow-lg hover:shadow-xl"
+              disabled={isSubmitting}
+              className="flex-1 px-5 py-3 bg-brand-primary text-white rounded-xl hover:bg-brand-dark transition-all font-semibold shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Crear Evento
+              {isSubmitting ? 'Creando...' : 'Crear Evento'}
             </button>
           </div>
         </form>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, useLocation } from 'react-router-dom';
 import axios from 'axios';
 
 import envasesRaw from '../components/json/envases.json';
@@ -21,8 +21,10 @@ import EventModal from '../components/EventModal.jsx';
 
 export default function MapPage() {
     const [searchParams, setSearchParams] = useSearchParams();
+    const location = useLocation();
     const [reportCoords, setReportCoords] = useState(null);
     const [reports, setReports] = useState([]);
+    const [events, setEvents] = useState([]);
     const [selectedCategories, setSelectedCategories] = useState([]);
     const [selectedReport, setSelectedReport] = useState(null);
     const [selectedZoneForEvent, setSelectedZoneForEvent] = useState(null);
@@ -45,7 +47,11 @@ export default function MapPage() {
     useEffect(() => {
         (async () => {
             try {
-                const { data } = await axios.get('http://localhost:8080/zones');
+                const [zonesRes, eventsRes] = await Promise.all([
+                    axios.get('http://localhost:8080/zones'),
+                    axios.get('http://localhost:8080/events')
+                ]);
+                
                 const containers = [
                     { data: envasesRaw, category: 'envases' }, { data: vidrioRaw, category: 'vidrio' },
                     { data: papelcartonRaw, category: 'papel' }, { data: aceiteRaw, category: 'aceite' },
@@ -58,12 +64,23 @@ export default function MapPage() {
                         status: 'SUCIO', reported_id: null, created_at: null
                     }))
                 );
-                setReports([...data, ...containers]);
+                
+                const allReports = [...zonesRes.data, ...containers];
+                setReports(allReports);
+                setEvents(eventsRes.data);
+                
+                // Abrir drawer si se navegó desde la página de zonas
+                if (location.state?.selectedZoneId) {
+                    const zone = zonesRes.data.find(z => z.id === location.state.selectedZoneId);
+                    if (zone) {
+                        setSelectedReport(zone);
+                    }
+                }
             } catch (err) {
-                console.error('Error cargando zonas:', err);
+                console.error('Error cargando datos:', err);
             }
         })();
-    }, []);
+    }, [location.state]);
 
     const handleMapClick = (latlng) => {
         if (isReportMode || reportCoords) {
@@ -101,8 +118,7 @@ export default function MapPage() {
     };
 
     const handleSubmitEvent = (event) => {
-        console.log('Evento creado:', event);
-        // TODO: Enviar a backend
+        setEvents(prev => [...prev, event]);
         handleCloseEventModal();
     };
 
@@ -124,6 +140,7 @@ export default function MapPage() {
                     reports={filteredReports}
                     onReportClick={handleReportClick}
                     onPinPositionUpdate={setPinPosition}
+                    zoomCoords={location.state?.zoomToZone ? location.state.coords : null}
                 />
                 <RecyclingMenu
                     selected={selectedCategories}
@@ -141,6 +158,7 @@ export default function MapPage() {
                 />
                 <ZoneDrawer
                     report={selectedReport}
+                    event={selectedReport ? events.find(e => e.zone?.id === selectedReport.id) : null}
                     onClose={handleCloseDrawer}
                     onCreateEvent={handleOpenEventModal}
                 />
