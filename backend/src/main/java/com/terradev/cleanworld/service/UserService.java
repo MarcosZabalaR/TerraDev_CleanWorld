@@ -66,6 +66,7 @@ public class UserService {
      * @return Usario creado
      */
     public UserEntity save(UserEntity u) {
+        u.setPassword(passwordEncoder.encode(u.getPassword())); // Hasheo de la contraseña
         return repository.save(u);
     }
 
@@ -73,15 +74,14 @@ public class UserService {
      * POST -> Valida si un usuario existe y si la contraseña es correcta
      *
      * @param email
-     * @param password
+     * @param rawPassword
      * @return
      */
-    public boolean validateUser(String email, String password) {
+    public boolean validateUser(String email, String rawPassword) {
         Optional<UserEntity> userOpt = repository.findByEmail(email);
         if (userOpt.isPresent()) {
             UserEntity user = userOpt.get();
-            // Aquí hay usar hashing para la contraseña encriptada
-            return user.getPassword().equals(password);
+            return passwordEncoder.matches(rawPassword, user.getPassword());
         }
         return false;
     }

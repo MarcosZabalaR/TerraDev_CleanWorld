@@ -12,13 +12,12 @@ export default function Register() {
     name: "",
     email: "",
     password: "",
-    rol: 1
+    rol: 1,
   });
 
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState({});
 
-  // Maneja cambios en los inputs y actualiza formValues
   const handleChange = (e) => {
     setFormValues({
       ...formValues,
@@ -26,23 +25,19 @@ export default function Register() {
     });
   };
 
-  // Maneja el submit del formulario
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     let validationErrors = {};
 
-    // --- VALIDACIÓN LOCAL ---
     if (!formValues.name.trim()) {
       validationErrors.name = "El nombre de usuario es obligatorio";
     } else {
       const patternUser = /^[a-zA-Z0-9 áéíóúÁÉÍÓÚñÑüÜ'-]+$/;
       if (!patternUser.test(formValues.name)) {
         validationErrors.name = "El usuario solo puede tener letras y números";
-      } else {
-        if (formValues.name.length > 16 || formValues.name.length < 3) {
-          validationErrors.name = "El usuario debe tener entre 3 y 16 caracteres";
-        }
+      } else if (formValues.name.length > 16 || formValues.name.length < 3) {
+        validationErrors.name = "El usuario debe tener entre 3 y 16 caracteres";
       }
     }
 
@@ -66,42 +61,30 @@ export default function Register() {
     setErrors(validationErrors);
     if (Object.keys(validationErrors).length > 0) return;
 
-    // --- VALIDACIÓN CON BACKEND ---
     try {
-      // Comprueba si el nombre existe
-      const userExists = await axios.get(
-        `${baseURL}/check-user`,
-        { params: { name: formValues.name } }
-      );
-
+      const userExists = await axios.get(`${baseURL}/check-user`, { params: { name: formValues.name } });
       if (userExists.data.exists) {
         setErrors({ name: "El nombre de usuario ya existe" });
         return;
       }
 
-      // Comprueba si el email existe
-      const emailExists = await axios.get(
-        `${baseURL}/check-email`,
-        { params: { email: formValues.email } }
-      );
-
+      const emailExists = await axios.get(`${baseURL}/check-email`, { params: { email: formValues.email } });
       if (emailExists.data.exists) {
         setErrors({ email: "Este email ya está registrado" });
         return;
       }
 
-      // --- CREAR USUARIO ---
-      const response = await axios.post(baseURL, {
+      await axios.post(baseURL, {
         ...formValues,
         avatar: "",
         points: 0,
       });
 
-      console.log("Usuario creado:", response.data);
       navigate("/login");
 
     } catch (error) {
       console.error("Error creando usuario:", error);
+      setErrors({ submit: "Error inesperado al crear usuario" });
     }
   };
 
@@ -115,7 +98,6 @@ export default function Register() {
           </h1>
 
           <form className="flex flex-col gap-5 md:gap-6" onSubmit={handleSubmit}>
-            {/* NOMBRE */}
             <div className="relative w-full">
               <input
                 type="text"
@@ -133,7 +115,6 @@ export default function Register() {
               {errors.name && <p className="text-red-600">{errors.name}</p>}
             </div>
 
-            {/* EMAIL */}
             <div className="relative w-full">
               <input
                 type="email"
@@ -151,7 +132,6 @@ export default function Register() {
               {errors.email && <p className="text-red-600">{errors.email}</p>}
             </div>
 
-            {/* PASSWORD */}
             <div className="relative w-full">
               <input
                 type="password"
@@ -169,7 +149,6 @@ export default function Register() {
               {errors.password && <p className="text-red-600">{errors.password}</p>}
             </div>
 
-            {/* CONFIRM PASSWORD */}
             <div className="relative w-full">
               <input
                 type="password"
@@ -187,7 +166,8 @@ export default function Register() {
               {errors.confirmPassword && <p className="text-red-600">{errors.confirmPassword}</p>}
             </div>
 
-            {/* BOTONES */}
+            {errors.submit && <p className="text-red-600 text-center">{errors.submit}</p>}
+
             <div className="flex flex-col gap-3 md:gap-4">
               <button type="submit" className="bg-brand-primary text-white font-semibold py-3 rounded hover:bg-brand-dark transition duration-300">
                 Registrar
