@@ -7,63 +7,42 @@ import { useState } from "react";
 
 export default function Login() {
   const navigate = useNavigate();
-
   const baseURL = `${import.meta.env.API_URL || "http://localhost:8080"}/users`;
 
-  const [formValues, setFormValues] = useState({
-    email: "",
-    password: "",
-  });
-
+  const [formValues, setFormValues] = useState({ email: "", password: "" });
   const [errors, setErrors] = useState({});
 
-  // Maneja cambios en los inputs y actualiza formValues
   const handleChange = (e) => {
-    setFormValues({
-      ...formValues,
-      [e.target.name]: e.target.value,
-    });
+    setFormValues({ ...formValues, [e.target.name]: e.target.value });
   };
 
-  // Maneja el submit del formulario
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     let validationErrors = {};
-
-    // --- VALIDACIÓN LOCAL ---
-    if (!formValues.email.trim()) {
-      validationErrors.email = "El email es obligatorio";
-    }
-
-    if (!formValues.password) {
-      validationErrors.password = "La contraseña es obligatoria";
-    }
+    if (!formValues.email.trim()) validationErrors.email = "El email es obligatorio";
+    if (!formValues.password) validationErrors.password = "La contraseña es obligatoria";
 
     setErrors(validationErrors);
+    if (Object.keys(validationErrors).length > 0) return;
 
-    if (Object.keys(validationErrors).length > 0) return; // Si hay errores no seguimos
-
-    // --- VALIDACIÓN CON BACKEND ---
     try {
-      // Hacemos POST al endpoint de login del backend
       const response = await axios.post(`${baseURL}/login`, {
         email: formValues.email,
         password: formValues.password,
       });
 
-      // Si la respuesta es exitosa, guardamos datos si quieres (ej: token) y redirigimos
-      console.log("Usuario logueado:", response.data);
+      // response.data ya contiene id, name, email y token
+      const userData = response.data;
 
-      // Guarda el id del usuario en localstorage (aqui tiene que ir el token)
-      localStorage.setItem("userId", response.data.id);
+      localStorage.setItem("user", JSON.stringify(userData));
 
-      navigate("/profile");
+      console.log("Usuario logueado:", userData);
+
+      navigate("/profile"); // redirige al perfil
 
     } catch (error) {
       console.error("Error en login:", error);
-
-      // Manejo de errores de login según el backend
       if (error.response?.status === 401) {
         setErrors({ login: "Email o contraseña incorrectos" });
       } else {
@@ -85,8 +64,6 @@ export default function Login() {
             </h1>
 
             <form className="flex flex-col gap-5 md:gap-6" onSubmit={handleSubmit}>
-
-              {/* EMAIL */}
               <div className="relative w-full">
                 <input
                   type="email"
@@ -96,17 +73,14 @@ export default function Login() {
                   onChange={handleChange}
                   className="peer bg-gray-100 border border-gray-300 rounded px-4 pt-5 pb-2 w-full focus:outline-none focus:ring-2 focus:ring-brand-light"
                 />
-                <label
-                  className="absolute left-4 top-2 text-gray-500 text-sm transition-all 
-                peer-placeholder-shown:top-5 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base
-                peer-focus:top-2 peer-focus:text-gray-700 peer-focus:text-sm"
-                >
+                <label className="absolute left-4 top-2 text-gray-500 text-sm transition-all 
+                  peer-placeholder-shown:top-5 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base
+                  peer-focus:top-2 peer-focus:text-gray-700 peer-focus:text-sm">
                   Email
                 </label>
                 {errors.email && <p className="text-red-600">{errors.email}</p>}
               </div>
 
-              {/* PASSWORD */}
               <div className="relative w-full">
                 <input
                   type="password"
@@ -116,20 +90,16 @@ export default function Login() {
                   onChange={handleChange}
                   className="peer bg-gray-100 border border-gray-300 rounded px-4 pt-5 pb-2 w-full focus:outline-none focus:ring-2 focus:ring-brand-light"
                 />
-                <label
-                  className="absolute left-4 top-2 text-gray-500 text-sm transition-all 
-                peer-placeholder-shown:top-5 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base
-                peer-focus:top-2 peer-focus:text-gray-700 peer-focus:text-sm"
-                >
+                <label className="absolute left-4 top-2 text-gray-500 text-sm transition-all 
+                  peer-placeholder-shown:top-5 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base
+                  peer-focus:top-2 peer-focus:text-gray-700 peer-focus:text-sm">
                   Password
                 </label>
                 {errors.password && <p className="text-red-600">{errors.password}</p>}
               </div>
 
-              {/* ERROR DE LOGIN GENERAL */}
               {errors.login && <p className="text-red-600 text-center">{errors.login}</p>}
 
-              {/* BOTONES */}
               <div className="flex flex-col gap-3 md:gap-4">
                 <button
                   type="submit"
@@ -148,10 +118,7 @@ export default function Login() {
               </div>
 
               <div className="text-center mt-2">
-                <a
-                  href="#"
-                  className="text-sm text-brand-primary hover:text-brand-dark hover:underline"
-                >
+                <a href="#" className="text-sm text-brand-primary hover:text-brand-dark hover:underline">
                   Forgot your password?
                 </a>
               </div>
@@ -160,15 +127,11 @@ export default function Login() {
 
           <div className="flex items-center justify-center p-4 md:p-0">
             <div className="relative w-full h-64 md:h-full">
-              <img
-                src={Happy}
-                className="rounded-lg object-cover w-full h-full"
-              />
+              <img src={Happy} className="rounded-lg object-cover w-full h-full" />
             </div>
           </div>
         </div>
       </div>
-
       <Footer />
     </>
   );

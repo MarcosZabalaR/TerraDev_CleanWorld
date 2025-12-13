@@ -2,6 +2,7 @@ package com.terradev.cleanworld.service;
 
 import com.terradev.cleanworld.entity.UserEntity;
 import com.terradev.cleanworld.repository.UserRepository;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,9 +13,11 @@ import java.util.Optional;
 public class UserService {
 
     private final UserRepository repository;
+    private final PasswordEncoder passwordEncoder;
 
-    public UserService(UserRepository repository) {
+    public UserService(UserRepository repository, PasswordEncoder passwordEncoder) {
         this.repository = repository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     /**
@@ -24,6 +27,10 @@ public class UserService {
      */
     public List<UserEntity> findAll() {
         return repository.findAll();
+    }
+
+    public Optional<UserEntity> findByEmail(String email) {
+        return repository.findByEmail(email);
     }
 
     /**
@@ -63,6 +70,7 @@ public class UserService {
      * @return Usario creado
      */
     public UserEntity save(UserEntity u) {
+        u.setPassword(passwordEncoder.encode(u.getPassword()));
         return repository.save(u);
     }
 
@@ -70,15 +78,14 @@ public class UserService {
      * POST -> Valida si un usuario existe y si la contraseña es correcta
      *
      * @param email
-     * @param password
+     * @param rawPassword
      * @return
      */
-    public boolean validateUser(String email, String password) {
+    public boolean validateUser(String email, String rawPassword) {
         Optional<UserEntity> userOpt = repository.findByEmail(email);
         if (userOpt.isPresent()) {
             UserEntity user = userOpt.get();
-            // Aquí hay usar hashing para la contraseña encriptada
-            return user.getPassword().equals(password);
+            return passwordEncoder.matches(rawPassword, user.getPassword());
         }
         return false;
     }

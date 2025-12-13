@@ -5,7 +5,7 @@ public class LoginResponse {
     private Long id;
     private String name;
     private String email;
-    private String token; // opcional, si luego agregas JWT
+    private String token;
 
     // Constructor vacío
     public LoginResponse() {}

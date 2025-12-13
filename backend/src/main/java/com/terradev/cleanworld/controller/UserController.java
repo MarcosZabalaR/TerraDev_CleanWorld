@@ -1,8 +1,10 @@
 package com.terradev.cleanworld.controller;
 
+import com.terradev.cleanworld.dto.LoginResponse;
 import com.terradev.cleanworld.dto.UserDto;
 import com.terradev.cleanworld.entity.UserEntity;
 import com.terradev.cleanworld.service.UserService;
+import com.terradev.cleanworld.util.JwtUtil;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,11 +16,13 @@ import java.util.Map;
 @RestController
 @RequestMapping("/users")
 public class UserController {
-    
-    private final UserService service;
 
-    public UserController(UserService service) {
+    private final UserService service;
+    private final JwtUtil jwtUtil;
+
+    public UserController(UserService service, JwtUtil jwtUtil) {
         this.service = service;
+        this.jwtUtil = jwtUtil;
     }
 
     /**
@@ -61,13 +65,48 @@ public class UserController {
      * POST -> Crear un nuevo usuario
      */
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody UserDto userDto) {
+    public ResponseEntity<LoginResponse> login(@RequestBody UserDto userDto) {
         boolean valid = service.validateUser(userDto.getEmail(), userDto.getPassword());
+
         if (valid) {
-            return ResponseEntity.ok("Login correcto" + userDto);
+            UserEntity user = service.findByEmail(userDto.getEmail()).get();
+            String token = jwtUtil.generateToken(user.getEmail());
+
+            LoginResponse response = new LoginResponse(
+                    user.getId(),
+                    user.getName(),
+                    user.getEmail(),
+                    token
+            );
+
+            return ResponseEntity.ok(response);
         } else {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Usuario o contraseña incorrecta");
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
+    }
+
+    /**
+     * POST -> Registrar un nuevo usuario
+     */
+    @PostMapping
+    public ResponseEntity<LoginResponse> register(@RequestBody UserEntity user) {
+        // Validaciones de email y nombre
+        if (service.existsByEmail(user.getEmail()) || service.existsByName(user.getName())) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).build();
+        }
+
+        // Guardar usuario
+        UserEntity saved = service.save(user);
+
+        // Crear respuesta sin contraseña
+        LoginResponse response = new LoginResponse(
+                saved.getId(),
+                saved.getName(),
+                saved.getEmail(),
+                null // Token null por ahora
+        );
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
     /**
