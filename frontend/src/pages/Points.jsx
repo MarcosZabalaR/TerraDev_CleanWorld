@@ -1,4 +1,4 @@
-import { useState } from "react"; // Añade esta importación
+import { useState, useEffect } from "react"; // Añade esta importación
 import Navbar from "../components/NavBar";
 import Footer from "../components/Footer";
 
@@ -16,17 +16,56 @@ import {
   IconAwardFilled,
   IconHeartFilled,
   IconCaretDownFilled,
-  IconCaretUpFilled, 
+  IconCaretUpFilled,
 } from "@tabler/icons-react";
 
 export default function Points() {
   // Estado para controlar la visibilidad del tutorial
   const [showTutorial, setShowTutorial] = useState(false);
 
+  // Estado para controlar los puntos
+  const [points, setPoints] = useState(null);
+
   // Función para alternar la visibilidad
   const toggleTutorial = () => {
     setShowTutorial(!showTutorial);
   };
+
+  // URL base de la API
+  const API_BASE_URL = "http://localhost:8080";
+
+  // ID del usuario
+  const AUTHENTICATED_USER_ID = 1; // deberia ser localStorage.getItem("id")
+
+
+  // obtener el usuario
+  useEffect(() => {
+  // 
+  if (!AUTHENTICATED_USER_ID) {
+    console.warn("No se encontró el ID de usuario en el localStorage. La API no será llamada.");
+    setPoints(0); 
+    return; 
+  }
+
+  const fetchUser = async () => {
+    try {
+      const response = await fetch(
+        `${API_BASE_URL}/users/${AUTHENTICATED_USER_ID}` // Aquí el ID es válido
+      );
+      if (!response.ok) throw new Error("Error fetching user data.");
+      const data = await response.json();
+      console.log(data);
+      setPoints(data.points);
+    } catch (e) {
+      console.error("Error fetching user:", e);
+      // Opcional: Establecer puntos a 0 si hay un error de fetch (ej: 404 o servidor caído)
+      setPoints(0); 
+    }
+  };
+  
+  fetchUser();
+  // El [] indica que se ejecuta solo una vez al montar.
+}, []);
 
   return (
     <>
@@ -42,7 +81,7 @@ export default function Points() {
 
             <h2 className="text-neutral-800 text-4xl font-semibold mb-4">
               Has acumulado:{" "}
-              <span className="text-brand-primary">1762 puntos</span>
+              <span className="text-brand-primary">{points !== null ? `${points} puntos` : "Cargando..."}</span>
             </h2>
 
             <div className="flex items-center justify-center gap-1 pt-3">
@@ -54,7 +93,10 @@ export default function Points() {
                 {showTutorial ? (
                   <IconCaretUpFilled size={20} className="text-inherit ml-2" />
                 ) : (
-                  <IconCaretDownFilled size={20} className="text-inherit ml-2" />
+                  <IconCaretDownFilled
+                    size={20}
+                    className="text-inherit ml-2"
+                  />
                 )}
               </button>
             </div>
@@ -62,15 +104,12 @@ export default function Points() {
         </section>
 
         {/* Tutorial  */}
-        <div 
+        <div
           className={`
             grid grid-cols-3 w-full 
             transform transition-all duration-500 ease-in-out
             overflow-hidden
-            ${showTutorial ? 
-              "max-h-screen opacity-100" : 
-              "max-h-0 opacity-0"
-            }
+            ${showTutorial ? "max-h-screen opacity-100" : "max-h-0 opacity-0"}
           `}
         >
           {/* 1 */}
@@ -84,7 +123,7 @@ export default function Points() {
               aventura
             </p>
           </div>
-          
+
           {/* 2 */}
           <div className="bg-blue-100 grid grid-cols-1 text-center place-items-center px-6 py-10">
             <span className="pb-15">
@@ -96,7 +135,7 @@ export default function Points() {
               recompensas.
             </p>
           </div>
-          
+
           {/* 3 */}
           <div className="bg-purple-100 grid grid-cols-1 text-center place-items-center px-6 py-10">
             <span className="pb-15">
