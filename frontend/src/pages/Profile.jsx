@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Navbar from "../components/NavBar";
 import Footer from "../components/Footer";
 
@@ -13,7 +12,6 @@ import DefaultAvatar from "../assets/Avatar.jpg";
 const API_BASE_URL = "http://localhost:8080";
 
 export default function Profile() {
-  const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
