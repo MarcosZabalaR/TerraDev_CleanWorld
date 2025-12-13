@@ -1,7 +1,8 @@
-package com.terradev.cleanworld.utils;
+package com.terradev.cleanworld.util;
 
-import io.jsonwebtoken.*;
-import org.springframework.beans.factory.annotation.Value;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -9,17 +10,13 @@ import java.util.Date;
 @Component
 public class JwtUtil {
 
-    private final String SECRET_KEY;
-    private final long EXPIRATION;
+    // Clave secreta (para pruebas puedes dejar fija, en producción debe estar en env)
+    private final String SECRET_KEY = "EB86B158E701E339CDE2C8694D1C64B127564987D673E44BB1B5615B431049DD";
 
-    public JwtUtil(
-            @Value("${jwt.secret}") String secretKey,
-            @Value("${jwt.expiration}") long expiration
-    ) {
-        this.SECRET_KEY = secretKey;
-        this.EXPIRATION = expiration;
-    }
+    // Expiración en milisegundos (por ejemplo 1 hora)
+    private final long EXPIRATION = 1000 * 60 * 60;
 
+    // Generar token
     public String generateToken(String email) {
         return Jwts.builder()
                 .setSubject(email)
@@ -29,24 +26,24 @@ public class JwtUtil {
                 .compact();
     }
 
+    // Obtener email del token
     public String extractEmail(String token) {
-        return Jwts.parser()
-                .setSigningKey(SECRET_KEY)
-                .parseClaimsJws(token)
-                .getBody()
-                .getSubject();
+        return getClaims(token).getSubject();
     }
 
+    // Validar token
     public boolean validateToken(String token, String email) {
         return extractEmail(token).equals(email) && !isTokenExpired(token);
     }
 
     private boolean isTokenExpired(String token) {
+        return getClaims(token).getExpiration().before(new Date());
+    }
+
+    private Claims getClaims(String token) {
         return Jwts.parser()
                 .setSigningKey(SECRET_KEY)
                 .parseClaimsJws(token)
-                .getBody()
-                .getExpiration()
-                .before(new Date());
+                .getBody();
     }
 }

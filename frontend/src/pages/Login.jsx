@@ -7,35 +7,21 @@ import { useState } from "react";
 
 export default function Login() {
   const navigate = useNavigate();
-
   const baseURL = `${import.meta.env.API_URL || "http://localhost:8080"}/users`;
 
-  const [formValues, setFormValues] = useState({
-    email: "",
-    password: "",
-  });
-
+  const [formValues, setFormValues] = useState({ email: "", password: "" });
   const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
-    setFormValues({
-      ...formValues,
-      [e.target.name]: e.target.value,
-    });
+    setFormValues({ ...formValues, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     let validationErrors = {};
-
-    if (!formValues.email.trim()) {
-      validationErrors.email = "El email es obligatorio";
-    }
-
-    if (!formValues.password) {
-      validationErrors.password = "La contraseña es obligatoria";
-    }
+    if (!formValues.email.trim()) validationErrors.email = "El email es obligatorio";
+    if (!formValues.password) validationErrors.password = "La contraseña es obligatoria";
 
     setErrors(validationErrors);
     if (Object.keys(validationErrors).length > 0) return;
@@ -46,16 +32,17 @@ export default function Login() {
         password: formValues.password,
       });
 
-      const token = response.data.token;
-      localStorage.setItem("token", token); // Guardamos el JWT
+      // response.data ya contiene id, name, email y token
+      const userData = response.data;
 
-      console.log("Usuario logueado:", response.data);
+      localStorage.setItem("user", JSON.stringify(userData));
 
-      navigate("/profile");
+      console.log("Usuario logueado:", userData);
+
+      navigate("/profile"); // redirige al perfil
 
     } catch (error) {
       console.error("Error en login:", error);
-
       if (error.response?.status === 401) {
         setErrors({ login: "Email o contraseña incorrectos" });
       } else {

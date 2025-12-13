@@ -29,6 +29,10 @@ public class UserService {
         return repository.findAll();
     }
 
+    public Optional<UserEntity> findByEmail(String email) {
+        return repository.findByEmail(email);
+    }
+
     /**
      * GET -> Obtener un usuario por ID
      *
@@ -66,7 +70,7 @@ public class UserService {
      * @return Usario creado
      */
     public UserEntity save(UserEntity u) {
-        u.setPassword(passwordEncoder.encode(u.getPassword())); // Hasheo de la contraseña
+        u.setPassword(passwordEncoder.encode(u.getPassword()));
         return repository.save(u);
     }
 
@@ -105,10 +109,7 @@ public class UserService {
                         existing.setEmail((String) value);
                         break;
                     case "password":
-                        String raw = (String) value;
-                        if (raw != null && !raw.isEmpty()) {
-                            existing.setPassword(passwordEncoder.encode(raw));
-                        }
+                        existing.setPassword((String) value);
                         break;
                     case "avatar":
                         existing.setAvatar((String) value);
@@ -138,5 +139,4 @@ public class UserService {
         }
         repository.deleteById(id);
     }
-
 }
