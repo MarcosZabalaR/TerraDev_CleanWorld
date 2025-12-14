@@ -3,9 +3,9 @@ package com.terradev.cleanworld.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
@@ -28,10 +28,26 @@ public class SecurityConfig {
                 .cors(cors -> {}) // habilita CORS usando tu CorsConfig
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/users/login").permitAll()
-                        .requestMatchers("/users").permitAll()
-                        .requestMatchers("/users/check-user").permitAll()
-                        .requestMatchers("/users/check-email").permitAll()
+                        .requestMatchers(
+                                "/users/login",
+                                "/users",
+                                "/users/check-user",
+                                "/users/check-email"
+                        ).permitAll()
+                        .requestMatchers(
+                                "/users/{id}",
+                                "/users/{id}/zones",
+                                "/users/{id}/events",
+
+                                "/zones",
+                                "/zones/{id}",
+                                "/zones/{id}/events",
+
+                                "/events",
+                                "/events/{id}",
+                                "/events/{id}/attendees",
+                                "/events/{id}/attendees/**"
+                        ).authenticated()
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
