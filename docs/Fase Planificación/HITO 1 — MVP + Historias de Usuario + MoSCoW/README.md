@@ -1,11 +1,12 @@
 # TerraDev: CleanWorld
+
 Projecto web de TerraDev para Fundación Esplai con el objetivo de identificar, visualizar y coordinar acciones de limpieza ciudadana en tiempo real.
 
 ---
 
 ---
 
-![lean-orld-high-resolution-logo-transparent.png](imgs/lean-orld-high-resolution-logo-transparent.png)![logo-app.png](imgs/logo-app.png)
+![lean-orld-high-resolution-logo-transparent.png](../imgs/lean-orld-high-resolution-logo-transparent.png)![logo-app.png](../imgs/logo-app.png)
 
 # **1. Problema**
 
@@ -43,26 +44,26 @@ En resumen: **ordena la información, coordina a las personas y reduce el tiempo
 
 # 3. Lista de funcionalidades priorizadas MoSCoW
 
-| Prioridad  | Funcionalidad  | Descripción |
-| --- | --- | --- |
-| **Must Have** | Gestion de mapa | Mostrar un mapa de la zona que poder marcar distintas zonas de limpieza |
-|  | Gestión de usuarios | Autenticación con OAuth (?) |
-|  | Creación de Evento de limpieza y gestión | Mostar en la zona marcada un evento de limpieza con la hora a la que se organiza y forma de apuntarse y gestionar los usuarios apuntados, e incluir sistema de gravedad (suciedad baja/media/alta) |
-|  | Feedback fotográfico | Registro por zonas mediante fotografías del antes y el después. |
-|  |  |  |
-| **Should Have** | Ver puntos de reciclaje | Mostrar puntos cercanos mediante API o dataset local. Filtrar por tipo de residuo |
-|  | Botón “llevarme aquí” | Abre Google Maps del móvil directamente. |
-|  | Notificaciones push | Recordatorios de eventos a los que el user se registró o nuevos eventos creados en determinadas zonas |
-|  |  |  |
-| **Could Have** | Foro de opinión y sugerencias | Un foro comunitario donde comentar y reaccionar a los distintos eventos de la web. |
-|  | Sistema de recompensa de puntos | Por cada evento asistido y acción realizada se recompensaría con puntos canjeables por utensilios de limpieza, vales restaurante, etc. |
-|  | Creación de eventos automáticos | Si no hay un evento de limpieza en x zona sucia en determinado tiempo, se crea un evento automáticamente para hacer efecto llamada |
-|  | Sistema de validación comunitaria | Cuando alguien marca limpio un punto, otros pueden confirmar: “¿Está limpio?” → Sí / No. Con 2-3 votos positivos, pasa a “resuelto” |
-|  |  |  |
-| **Wont Have (now)** | Donativos a organizaciones | Vía de pago a organizaciones para colaborar en la compra de material. |
-|  | Perfiles de equipo a organizaciones | Dar versiones mejoradas a empresas u organizaciones para una mejor gestión de los eventos. |
-|  | ChatBot IA | Chat sencillo donde consultar zonas comunmente en necesidad de limpieza |
-|  |  |  |
+| Prioridad           | Funcionalidad                            | Descripción                                                                                                                                                                                        |
+| ------------------- | ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Must Have**       | Gestion de mapa                          | Mostrar un mapa de la zona que poder marcar distintas zonas de limpieza                                                                                                                            |
+|                     | Gestión de usuarios                      | Autenticación con OAuth (?)                                                                                                                                                                        |
+|                     | Creación de Evento de limpieza y gestión | Mostar en la zona marcada un evento de limpieza con la hora a la que se organiza y forma de apuntarse y gestionar los usuarios apuntados, e incluir sistema de gravedad (suciedad baja/media/alta) |
+|                     | Feedback fotográfico                     | Registro por zonas mediante fotografías del antes y el después.                                                                                                                                    |
+|                     |                                          |                                                                                                                                                                                                    |
+| **Should Have**     | Ver puntos de reciclaje                  | Mostrar puntos cercanos mediante API o dataset local. Filtrar por tipo de residuo                                                                                                                  |
+|                     | Botón “llevarme aquí”                    | Abre Google Maps del móvil directamente.                                                                                                                                                           |
+|                     | Notificaciones push                      | Recordatorios de eventos a los que el user se registró o nuevos eventos creados en determinadas zonas                                                                                              |
+|                     |                                          |                                                                                                                                                                                                    |
+| **Could Have**      | Foro de opinión y sugerencias            | Un foro comunitario donde comentar y reaccionar a los distintos eventos de la web.                                                                                                                 |
+|                     | Sistema de recompensa de puntos          | Por cada evento asistido y acción realizada se recompensaría con puntos canjeables por utensilios de limpieza, vales restaurante, etc.                                                             |
+|                     | Creación de eventos automáticos          | Si no hay un evento de limpieza en x zona sucia en determinado tiempo, se crea un evento automáticamente para hacer efecto llamada                                                                 |
+|                     | Sistema de validación comunitaria        | Cuando alguien marca limpio un punto, otros pueden confirmar: “¿Está limpio?” → Sí / No. Con 2-3 votos positivos, pasa a “resuelto”                                                                |
+|                     |                                          |                                                                                                                                                                                                    |
+| **Wont Have (now)** | Donativos a organizaciones               | Vía de pago a organizaciones para colaborar en la compra de material.                                                                                                                              |
+|                     | Perfiles de equipo a organizaciones      | Dar versiones mejoradas a empresas u organizaciones para una mejor gestión de los eventos.                                                                                                         |
+|                     | ChatBot IA                               | Chat sencillo donde consultar zonas comunmente en necesidad de limpieza                                                                                                                            |
+|                     |                                          |                                                                                                                                                                                                    |
 
 # **4. Historias de usuario principales**
 
@@ -115,7 +116,7 @@ En resumen: **ordena la información, coordina a las personas y reduce el tiempo
 
 ---
 
-### **HU5 – Como usuario quiero recibir recordatorios** *(Should Have)*
+### **HU5 – Como usuario quiero recibir recordatorios** _(Should Have)_
 
 **Para** no olvidar los eventos a los que me apunté.
 
@@ -163,11 +164,10 @@ El MVP de **CleanWorld** incluirá:
 ### **Backend**
 
 - API REST para:
-    - Zonas sucias (CRUD).
-    - Eventos (CRUD + participación).
-    - Usuarios (registro/login OAuth opcional).
-    - Estadísticas básicas.
+  - Zonas sucias (CRUD).
+  - Eventos (CRUD + participación).
+  - Usuarios (registro/login OAuth opcional).
+  - Estadísticas básicas.
 - Gestión de imágenes (Cloudinary o local).
 - Seguridad con OAuth2 or JWT (según preferencia).
 - Validación de datos y estados.
-

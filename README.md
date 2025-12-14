@@ -6,7 +6,7 @@ Projecto web de TerraDev para Fundación Esplai con el objetivo de identificar, 
 
 ---
 
-![lean-orld-high-resolution-logo-transparent.png](docs/HITO%201%20—%20MVP%20+%20Historias%20de%20Usuario%20+%20MoSCoW/imgs/lean-orld-high-resolution-logo-transparent.png)![logo-app.png](docs/HITO%201%20—%20MVP%20+%20Historias%20de%20Usuario%20+%20MoSCoW/imgs/logo-app.png)
+![lean-orld-high-resolution-logo-transparent.png](docs/imgs/lean-orld-high-resolution-logo-transparent.png)![logo-app.png](docs/imgs/logo-app.png)
 
 # Instalación:
 
