@@ -44,6 +44,11 @@ public class EventEntity {
     @JoinColumn(name = "zone_id", nullable = false)
     private ZoneEntity zone;
 
+     // MANY events -> ONE user
+    @ManyToOne
+    @JoinColumn(name = "reported_id", foreignKey = @ForeignKey(name = "fk_event_reported_id"),nullable = true)
+    private UserEntity reportedUserEvent;
+
     // Event has many attendees
     @ManyToMany
     @JoinTable(

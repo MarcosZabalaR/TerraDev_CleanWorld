@@ -44,6 +44,9 @@ public class UserEntity {
     @OneToMany(mappedBy = "reportedUser", fetch = FetchType.LAZY)
     private List<ZoneEntity> reportedZones = new ArrayList<>();
 
+     @OneToMany(mappedBy = "reportedUserEvent", fetch = FetchType.LAZY)
+    private List<EventEntity> reportedEvents = new ArrayList<>();
+
     public String getRoleName() {
         return switch (rol) {
             case 1 -> "ROLE_USER";
