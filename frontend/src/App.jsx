@@ -8,6 +8,7 @@ import "leaflet/dist/leaflet.css";
 import HomePage from './pages/Home.jsx';
 import MapaPage from './pages/Map.jsx';
 import ZonesPage from './pages/Zones.jsx';
+import EventsPage from './pages/Events.jsx';
 import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
 import Profile from './pages/Profile.jsx';
@@ -27,6 +28,7 @@ function App() {
             <Route path="/profile" element={<Profile />} />
 			      <Route path="/map" element={<MapaPage />} />
 			      <Route path="/zones" element={<ZonesPage />} />
+			      <Route path="/events" element={<EventsPage />} />
 			      <Route path="/points" element={<Points />} />
             <Route path='*' element={<Error404 />} />
 

@@ -42,7 +42,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  to="/eventos"
+                  to="/events"
                   className="text-brand-light hover:text-white hover:underline text-xl"
                 >
                   Eventos
