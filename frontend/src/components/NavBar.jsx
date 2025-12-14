@@ -1,29 +1,47 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react"; // Importar useRef para el menú desplegable
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import Logo from "../assets/CleanWorldLogo.png";
-import { IconLogout, IconUser } from "@tabler/icons-react";
+import { IconLogout, IconUser, IconChevronDown, IconChevronUp } from "@tabler/icons-react"; // Añadir iconos
 
 export default function NavBar() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // autenticacion
+  // Estados de autenticación
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [userName, setUserName] = useState("");
+  // Estado para el menú desplegable
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  
+  // Referencia para detectar clics fuera del menú
+  const dropdownRef = useRef(null);
 
+  // Función para cerrar el menú si se hace clic fuera de él
   useEffect(() => {
-    // 1. Obtener el string JSON del usuario desde localStorage
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
+    };
+    
+    // Adjuntar y limpiar el listener
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+
+  // Efecto para verificar la autenticación
+  useEffect(() => {
     const userString = localStorage.getItem("user");
 
     if (userString) {
       try {
-        // 2. Parsear el string JSON a un objeto
         const userData = JSON.parse(userString);
         
-        // 3. Verificar si el objeto contiene la información necesaria (por ejemplo, el token)
         if (userData.token && userData.name) {
           setIsAuthenticated(true);
-          // Usamos 'userData.name'. ¡Asegúrate de que este campo exista en el objeto que guardas!
           setUserName(userData.name); 
           return;
         }
@@ -32,7 +50,6 @@ export default function NavBar() {
       }
     }
 
-    // Si no hay 'userString' o el parseo falla, o faltan datos
     setIsAuthenticated(false);
     setUserName("");
     
@@ -41,7 +58,6 @@ export default function NavBar() {
   //  reporte
   const handleReportClick = (e) => {
     e.preventDefault();
-    // Lógica para redirigir con el parámetro `report=true`
     if (location.pathname === "/map") {
       navigate("/map?report=true", { replace: true });
     } else {
@@ -51,18 +67,20 @@ export default function NavBar() {
 
   // Función para manejar el cierre de sesión
   const handleLogout = () => {
-    // 1. ELIMINAR EL OBJETO COMPLETO DE USUARIO DE localStorage
     localStorage.removeItem("user"); 
-    
-    // 2. Actualizar el estado local
     setIsAuthenticated(false);
     setUserName("");
-    
-    // 3. Redirigir al inicio o a la página de login
+    setIsDropdownOpen(false); // Cierra el menú al cerrar sesión
     navigate("/");
   };
+  
+  // Función para navegar al perfil desde el desplegable
+  const handleProfileClick = () => {
+      setIsDropdownOpen(false);
+      navigate("/profile");
+  }
 
-  // Clase CSS para simplificarlo to
+  // Clase CSS para simplificarlo
   const navLinkClass = "py-1 hover:underline";
 
   return (
@@ -110,11 +128,7 @@ export default function NavBar() {
       
         {isAuthenticated && (
           <>
-            <li>
-              <Link to="/profile" className={navLinkClass}>
-                Perfil
-              </Link>
-            </li>
+            {/* El enlace a Perfil y Logout ya no están aquí, están en el desplegable. */}
             <li>
               <Link to="/points" className={navLinkClass}>
                 Recompensas
@@ -127,33 +141,55 @@ export default function NavBar() {
     
       <div className="flex items-center gap-3">
         {isAuthenticated ? (
-          // Si el usuario está autenticado
-          <>
-            <span className="flex items-center gap-1 text-sm text-brand-light font-medium px-2">
-              <IconUser size={18} /> ¡Bienvenido {userName}!
-            </span>
+          // Si el usuario está autenticado, muestra el desplegable
+          <div className="relative" ref={dropdownRef}>
+            {/* Botón/Etiqueta que activa el desplegable */}
             <button
-              onClick={handleLogout}
-              className="px-3 py-2 rounded-xl bg-brand-warm text-white font-bold transition-colors hover:bg-red-700 flex items-center gap-1"
-              title="Cerrar Sesión"
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              className="flex items-center gap-1 px-3 py-2 rounded-xl bg-brand-secondary text-white font-bold transition-colors hover:bg-brand-dark"
+              aria-expanded={isDropdownOpen}
+              aria-controls="profile-menu"
             >
-              <IconLogout size={20} />
-              Cerrar Sesión
+              <IconUser size={20} />
+              <span className="truncate max-w-[100px]">{userName}</span>
+              {isDropdownOpen ? <IconChevronUp size={18} /> : <IconChevronDown size={18} />}
             </button>
-          </>
+
+            {/* Menú Desplegable */}
+            {isDropdownOpen && (
+              <div 
+                id="profile-menu"
+                className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl py-1 z-9999 text-gray-800 border border-gray-200"
+              >
+                <button
+                  onClick={handleProfileClick}
+                  className="w-full text-left px-4 py-2 text-sm flex items-center gap-2 hover:bg-gray-100"
+                >
+                  <IconUser size={18} /> Perfil
+                </button>
+                
+                <hr className="my-1 border-gray-100" />
+                
+                <button
+                  onClick={handleLogout}
+                  className="w-full text-left px-4 py-2 text-sm text-red-600 flex items-center gap-2 hover:bg-red-50 hover:text-red-700"
+                >
+                  <IconLogout size={18} /> Cerrar Sesión
+                </button>
+              </div>
+            )}
+          </div>
         ) : (
           // Si el usuario NO está autenticado
           <>
             <Link
               to="/login"
-              
               className="hover:underline px-3 py-2 rounded-xl text-white font-bold transition-colors hover:bg-brand-secondary"
             >
               Iniciar Sesión
             </Link>
             <Link
               to="/register"
-              
               className="px-3 py-2 rounded-xl bg-brand-light text-brand-dark font-bold transition-colors hover:bg-white"
             >
               Registro
