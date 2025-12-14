@@ -33,31 +33,22 @@ public class SecurityConfig {
             HttpSecurity http,
             JwtAuthenticationFilter jwtAuthenticationFilter
     ) throws Exception {
-
         http
                 .cors(cors -> {})
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(
-                                "/users/login",
                                 "/users",
+                                "/users/**",
+                                "/users/login",
                                 "/users/check-user",
-                                "/users/check-email"
+                                "/users/check-email",
+                                "/events",
+                                "/events/**",
+                                "/zones",
+                                "/zones/**"
                         ).permitAll()
-
-                        .requestMatchers(HttpMethod.GET,
-                                "/users/*",
-                                "/zones", "/zones/*",
-                                "/events", "/events/*"
-                        ).authenticated()
-
-                        .requestMatchers(HttpMethod.PATCH, "/users/edit/*")
-                        .hasAnyRole("USER", "ADMIN")
-
-                        .requestMatchers("/users/**", "/zones/**", "/events/**")
-                        .hasRole("ADMIN")
-
-                        .anyRequest().authenticated()
+                        .anyRequest().permitAll()
                 )
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 
