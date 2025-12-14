@@ -82,8 +82,8 @@ export default function ZonesPage() {
     { key: 'severity', label: 'Gravedad', desc: { asc: 'Menor gravedad primero', desc: 'Mayor gravedad primero' } }
   ];
 
-  const statusLabels = { all: 'Todas', SUCIO: 'Sucias', LIMPIO: 'Limpias' };
-  const statusDescriptions = { SUCIO: 'Mostrando zonas sucias', LIMPIO: 'Mostrando zonas limpias' };
+  const statusLabels = { all: 'Todas las zonas', SUCIO: 'Zonas sucias', LIMPIO: 'Zonas limpias' };
+  const statusDescriptions = { all: 'Mostrando todas las zonas', SUCIO: 'Mostrando zonas sucias', LIMPIO: 'Mostrando zonas limpias' };
 
   return (
     <>
@@ -98,21 +98,27 @@ export default function ZonesPage() {
                 const isActive = sortOrder.startsWith(key);
                 const direction = sortOrder.split('-')[1];
                 return (
-                  <div key={key}>
-                    <button onClick={() => setSortOrder(`${key}-${direction === 'desc' ? 'asc' : 'desc'}`)} className={`flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition shadow-md ${isActive ? 'bg-brand-primary text-white hover:shadow-lg' : 'bg-white text-gray-800 hover:bg-gray-50 hover:shadow-lg'}`}>
+                  <div key={key} className="h-[68px]">
+                    <button onClick={() => setSortOrder(`${key}-${direction === 'desc' ? 'asc' : 'desc'}`)} className={`flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition shadow-md min-w-[100px] ${isActive ? 'bg-brand-primary text-white hover:shadow-lg' : 'bg-white text-gray-800 hover:bg-gray-50 hover:shadow-lg'}`}>
                       {label}
-                      {direction === 'desc' ? <IconChevronDown size={20} /> : <IconChevronUp size={20} />}
+                      <span className="w-5 h-5 flex items-center justify-center">
+                        {isActive && (direction === 'desc' ? <IconChevronDown size={20} /> : <IconChevronUp size={20} />)}
+                      </span>
                     </button>
-                    {isActive && <p className="text-sm text-gray-700 mt-1 font-medium">{desc[direction]}</p>}
+                    <p className="text-sm text-gray-700 mt-1 font-medium h-5">
+                      {isActive && desc[direction]}
+                    </p>
                   </div>
                 );
               })}
               
-              <div>
-                <button onClick={() => setStatusFilter({ all: 'SUCIO', SUCIO: 'LIMPIO', LIMPIO: 'all' }[statusFilter])} className={`px-4 py-2 rounded-lg font-semibold transition shadow-md ${statusFilter !== 'all' ? 'bg-brand-primary text-white hover:shadow-lg' : 'bg-white text-gray-800 hover:bg-gray-50 hover:shadow-lg'}`}>
+              <div className="h-[68px]">
+                <button onClick={() => setStatusFilter({ all: 'SUCIO', SUCIO: 'LIMPIO', LIMPIO: 'all' }[statusFilter])} className={`w-[170px] px-4 py-2 rounded-lg font-semibold transition shadow-md ${statusFilter !== 'all' ? 'bg-brand-primary text-white hover:shadow-lg' : 'bg-white text-gray-800 hover:bg-gray-50 hover:shadow-lg'}`}>
                   {statusLabels[statusFilter]}
                 </button>
-                {statusDescriptions[statusFilter] && <p className="text-sm text-gray-700 mt-1 font-medium">{statusDescriptions[statusFilter]}</p>}
+                <p className="text-sm text-gray-700 mt-1 font-medium h-5">
+                  {statusDescriptions[statusFilter]}
+                </p>
               </div>
             </div>
           </div>
