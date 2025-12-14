@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import Navbar from "../components/NavBar";
 import Footer from "../components/Footer";
 
+// 🎯 Importar la función de logout para limpiar la sesión si falla la autenticación
+import { logout } from "../utils/auth"; 
+
 // Iconos
 import { IconCamera, IconUserCircle, IconMail, IconCalendar, IconLock, IconPencil, IconX, IconLoader2, IconAlertCircle } from '@tabler/icons-react';
 
@@ -28,7 +31,7 @@ export default function Profile() {
   const [confirmNewPassword, setConfirmNewPassword] = useState('');
   const [passwordError, setPasswordError] = useState(null);
 
-  // --- NUEVA LÓGICA PARA CAMBIO DE AVATAR ---
+  // --- LÓGICA PARA CAMBIO DE AVATAR ---
   const [avatarFile, setAvatarFile] = useState(null);
   const [avatarError, setAvatarError] = useState(null);
   const [isUploadingAvatar, setIsUploadingAvatar] = useState(false);
@@ -36,26 +39,20 @@ export default function Profile() {
 
   /**
    * Helper para realizar peticiones con el Token JWT de autenticación.
+   * 🎯 ADAPTADO para leer solo la clave 'token' de localStorage.
    * @param {string} url - URL de la API.
    * @param {object} options - Opciones de fetch (method, body, headers, etc.).
    * @returns {Promise<Response>}
    */
   const fetchWithAuth = (url, options = {}) => {
-    const userString = localStorage.getItem('user');
-    if (!userString) throw new Error("Usuario no autenticado");
-
-    let usuario;
-    try {
-      usuario = JSON.parse(userString);
-    } catch (e) {
-      throw new Error("Datos de usuario corruptos en localStorage");
-    }
-
-    if (!usuario?.token) throw new Error("Token de autenticación no encontrado");
+    // 🎯 Lee directamente el token
+    const token = localStorage.getItem('token');
+    
+    if (!token) throw new Error("Token de autenticación no encontrado.");
 
     // Lógica para manejar Content-Type para JSON vs FormData (archivos)
     const headers = {
-        'Authorization': `Bearer ${usuario.token}`,
+        'Authorization': `Bearer ${token}`,
         ...options.headers, 
     };
     
@@ -67,7 +64,6 @@ export default function Profile() {
         headers['Content-Type'] = 'application/json';
     }
 
-
     return fetch(url, {
       ...options,
       headers: headers,
@@ -76,27 +72,26 @@ export default function Profile() {
 
   /**
    * Función que maneja la selección y subida del archivo de avatar.
-   * Endpoint: /users/{id}/avatar (PATCH/POST con FormData)
    */
   const handleAvatarChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      // Validaciones omitidas por brevedad, asumiendo que ya funcionan.
+      // Validación básica
       if (!['image/jpeg', 'image/png', 'image/webp'].includes(file.type) || file.size > 5 * 1024 * 1024) {
-          setAvatarError("Archivo inválido (tipo o tamaño).");
+          setAvatarError("Archivo inválido (tipo o tamaño). El límite es 5MB.");
           setAvatarFile(null);
-          e.target.value = null; // Limpiar input para permitir la misma selección si hay error
+          e.target.value = null; 
           return;
       }
       setAvatarError(null);
       setAvatarFile(file);
+      // Inicia la subida inmediatamente
       handleAvatarUpdate(file); 
     }
   };
 
   /**
    * Función para subir y actualizar la foto de perfil.
-   * @param {File} file - El archivo de imagen a subir.
    */
   const handleAvatarUpdate = async (file) => {
     if (!file) return;
@@ -104,18 +99,34 @@ export default function Profile() {
     setAvatarError(null);
     setIsUploadingAvatar(true);
     setLoading(true); 
+    
+    // El ID es necesario para el endpoint
+    if (!user?.id) {
+        setAvatarError("ID de usuario no disponible para actualizar.");
+        setLoading(false);
+        setIsUploadingAvatar(false);
+        return;
+    }
+
 
     try {
       const formData = new FormData();
-      formData.append('avatar', file); // 'avatar' debe coincidir con el campo esperado por tu API
+      formData.append('avatar', file); 
 
-      // ENDPOINT DE CAMBIO DE AVATAR
+      // ENDPOINT DE CAMBIO DE AVATAR (PATCH)
       const response = await fetchWithAuth(`${API_BASE_URL}/users/${user.id}/avatar`, {
         method: 'PATCH', 
         body: formData,
       });
 
       if (!response.ok) {
+        // Si hay un 401/403, limpiar local storage y forzar error
+        if (response.status === 401 || response.status === 403) {
+            // 🎯 Usar la función logout importada para limpiar token y forzar recarga/login
+            logout(); 
+            throw new Error("Sesión expirada o permisos insuficientes. Por favor, inicia sesión de nuevo.");
+        }
+        
         const errorText = await response.text();
         let errorMessage = "Error al subir la foto de perfil.";
         try {
@@ -129,17 +140,18 @@ export default function Profile() {
 
       const updatedUserData = await response.json(); 
       
-      // Actualizar estados y localStorage
+      // Actualizar estados (solo el avatar)
       setUser(prevUser => ({ ...prevUser, avatar: updatedUserData.avatar }));
-      const userLocal = JSON.parse(localStorage.getItem('user'));
-      localStorage.setItem("user", JSON.stringify({ ...userLocal, avatar: updatedUserData.avatar }));
-
+      
+      // 🎯 Ya no manipulamos el objeto 'user' completo en localStorage.
+      
       setAvatarFile(null);
       alert("Foto de perfil actualizada con éxito.");
 
     } catch (err) {
       console.error("Error al actualizar el avatar:", err);
       setAvatarError(err.message || "No se pudo subir el archivo.");
+      // Si el error fue por token, la función logout ya maneja la recarga/redirección.
     } finally {
       setIsUploadingAvatar(false);
       setLoading(false);
@@ -149,7 +161,7 @@ export default function Profile() {
 
   /**
    * Función para actualizar nombre de usuario.
-   * Endpoint: /users/{id} (PATCH)
+   * USA: PATCH /users/{id}
    */
   const handleUsernameUpdate = async (e) => {
     e.preventDefault();
@@ -159,6 +171,12 @@ export default function Profile() {
       return;
     }
     setLoading(true);
+    
+    if (!user?.id) {
+        setUsernameError("ID de usuario no disponible para actualizar.");
+        setLoading(false);
+        return;
+    }
 
     try {
       // ENDPOINT DE CAMBIO DE NOMBRE (PATCH al recurso principal)
@@ -168,6 +186,13 @@ export default function Profile() {
       });
 
       if (!response.ok) {
+        // Si hay un 401/403, limpiar local storage y forzar error
+        if (response.status === 401 || response.status === 403) {
+            // 🎯 Usar la función logout importada para limpiar token y forzar recarga/login
+            logout(); 
+            throw new Error("Sesión expirada o permisos insuficientes. Por favor, inicia sesión de nuevo.");
+        }
+        
         const errorText = await response.text(); 
         let errorMessage = "Error al actualizar el nombre de usuario.";
         try {
@@ -180,16 +205,18 @@ export default function Profile() {
       }
 
       let updatedUserData;
+      // Obtener el nuevo nombre del cuerpo de la respuesta o usar el que enviamos
       if (response.status !== 204) {
         updatedUserData = await response.json();
       } else {
         updatedUserData = { name: newUsername.trim() }; 
       }
       
-      // Actualizar estados y localStorage
+      // Actualizar estados
       setUser(prevUser => ({ ...prevUser, name: updatedUserData.name }));
-      const userLocal = JSON.parse(localStorage.getItem('user'));
-      localStorage.setItem("user", JSON.stringify({ ...userLocal, name: updatedUserData.name }));
+      
+      // 🎯 Guardar el nombre actualizado en localStorage bajo la clave 'userName' (usada por NavBar)
+      localStorage.setItem("userName", updatedUserData.name);
       
       setIsEditingUsername(false);
       alert("Nombre de usuario actualizado con éxito.");
@@ -197,6 +224,7 @@ export default function Profile() {
     } catch (err) {
       console.error("Error al actualizar el nombre de usuario:", err);
       setUsernameError(err.message || "No se pudo conectar con el servidor o token inválido.");
+      // Si el error fue por token, la función logout ya maneja la recarga/redirección.
     } finally {
       setLoading(false);
     }
@@ -204,7 +232,7 @@ export default function Profile() {
 
   /**
    * Función para actualizar contraseña.
-   * Endpoint: /users/{id}/password (PATCH)
+   * USA: PATCH /users/{id}/password
    */
   const handlePasswordUpdate = async (e) => {
     e.preventDefault();
@@ -220,6 +248,13 @@ export default function Profile() {
     }
 
     setLoading(true);
+    
+    if (!user?.id) {
+        setPasswordError("ID de usuario no disponible para actualizar.");
+        setLoading(false);
+        return;
+    }
+    
     try {
       // ENDPOINT DE CAMBIO DE CONTRASEÑA (PATCH a un sub-recurso dedicado)
       const response = await fetchWithAuth(`${API_BASE_URL}/users/${user.id}/password`, {
@@ -231,6 +266,13 @@ export default function Profile() {
       });
 
       if (!response.ok) {
+        // Si hay un 401/403, limpiar local storage y forzar error
+        if (response.status === 401 || response.status === 403) {
+            // 🎯 Usar la función logout importada para limpiar token y forzar recarga/login
+            logout(); 
+            throw new Error("Sesión expirada o permisos insuficientes. Por favor, inicia sesión de nuevo.");
+        }
+        
         const errorText = await response.text();  
         let errorMessage = "Error al cambiar la contraseña. Verifica la contraseña actual.";
         try {
@@ -247,11 +289,12 @@ export default function Profile() {
       setCurrentPassword('');
       setNewPassword('');
       setConfirmNewPassword('');
-      alert("Contraseña cambiada con éxito.");
+      alert("Contraseña cambiada con éxito. Por seguridad, es posible que deba volver a iniciar sesión.");
 
     } catch (err) {
       console.error("Error al cambiar la contraseña:", err);
       setPasswordError(err.message || "No se pudo conectar con el servidor.");
+       // Si el error fue por token, la función logout ya maneja la recarga/redirección.
     } finally {
       setLoading(false);
     }
@@ -263,25 +306,32 @@ export default function Profile() {
       setError(null);
       setLoading(true);
       try {
-        const userLocalString = localStorage.getItem('user');
-        if (!userLocalString) throw new Error("Usuario no autenticado. Redirigiendo a Login.");
+        // 🎯 Obtener el token y la ID directamente de localStorage
+        const token = localStorage.getItem('token');
+        const userId = localStorage.getItem('userId'); 
 
-        const usuarioLocal = JSON.parse(userLocalString);
-        if (!usuarioLocal.id) throw new Error("ID de usuario no encontrado.");
+        if (!token || !userId) {
+            // Si falta alguno, forzamos la limpieza y lanzamos el error
+            logout(); 
+            throw new Error("Usuario no autenticado o ID/Token faltante. Redirigiendo a Login.");
+        }
 
         // ENDPOINT DE OBTENCIÓN DE DATOS (GET)
-        const response = await fetchWithAuth(`${API_BASE_URL}/users/${usuarioLocal.id}`);
+        const response = await fetchWithAuth(`${API_BASE_URL}/users/${userId}`);
         
         if (!response.ok) {
+           // Manejo explícito de token inválido/expirado en el GET inicial
            if (response.status === 401 || response.status === 403) {
-              localStorage.removeItem('user'); 
+              // 🎯 Usar la función logout importada
+              logout(); 
               throw new Error("Sesión expirada o token inválido. Por favor, inicia sesión de nuevo.");
            }
            throw new Error("Error al obtener los datos del usuario.");
         }
 
         const data = await response.json();
-        setUser(data);
+        // 🎯 Establecer el usuario, asegurando que tengamos el ID para las peticiones de actualización
+        setUser({ ...data, id: userId });
         setNewUsername(data.name); 
         
       } catch (e) {
@@ -314,6 +364,7 @@ export default function Profile() {
         <p className="text-lg text-gray-700 max-w-md">{error}</p>
         {(error.includes("Sesión expirada") || error.includes("Usuario no autenticado")) && (
             <button 
+                // Si el error de sesión no lo activó la función logout, lo hacemos manualmente
                 onClick={() => window.location.href = '/login'} 
                 className="mt-6 px-6 py-3 bg-brand-primary text-white rounded-lg hover:bg-brand-dark transition"
             >
