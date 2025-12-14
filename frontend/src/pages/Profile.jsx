@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import Navbar from "../components/NavBar";
 import Footer from "../components/Footer";
 
-// 🎯 Importar la función de logout para limpiar la sesión si falla la autenticación
+// 🎯 Asegúrate de que tu función 'logout' ahora limpia solo la clave 'user'
+// Si estás usando una librería o un archivo auth.js, debe hacer: localStorage.removeItem('user');
 import { logout } from "../utils/auth"; 
 
 // Iconos
@@ -39,20 +40,28 @@ export default function Profile() {
 
   /**
    * Helper para realizar peticiones con el Token JWT de autenticación.
-   * 🎯 ADAPTADO para leer solo la clave 'token' de localStorage.
+   * 🎯 MODIFICADO: Lee el token del objeto 'user' completo.
    * @param {string} url - URL de la API.
    * @param {object} options - Opciones de fetch (method, body, headers, etc.).
    * @returns {Promise<Response>}
    */
   const fetchWithAuth = (url, options = {}) => {
-    // 🎯 Lee directamente el token
-    const token = localStorage.getItem('token');
+    const userString = localStorage.getItem('user');
     
-    if (!token) throw new Error("Token de autenticación no encontrado.");
+    if (!userString) throw new Error("Usuario no autenticado");
+
+    let usuario;
+    try {
+      usuario = JSON.parse(userString);
+    } catch (e) {
+      throw new Error("Datos de usuario corruptos en localStorage");
+    }
+
+    if (!usuario?.token) throw new Error("Token de autenticación no encontrado");
 
     // Lógica para manejar Content-Type para JSON vs FormData (archivos)
     const headers = {
-        'Authorization': `Bearer ${token}`,
+        'Authorization': `Bearer ${usuario.token}`, // Usa el token del objeto
         ...options.headers, 
     };
     
@@ -100,7 +109,6 @@ export default function Profile() {
     setIsUploadingAvatar(true);
     setLoading(true); 
     
-    // El ID es necesario para el endpoint
     if (!user?.id) {
         setAvatarError("ID de usuario no disponible para actualizar.");
         setLoading(false);
@@ -122,8 +130,7 @@ export default function Profile() {
       if (!response.ok) {
         // Si hay un 401/403, limpiar local storage y forzar error
         if (response.status === 401 || response.status === 403) {
-            // 🎯 Usar la función logout importada para limpiar token y forzar recarga/login
-            logout(); 
+            logout(); // Usa la función logout que limpia la clave 'user'
             throw new Error("Sesión expirada o permisos insuficientes. Por favor, inicia sesión de nuevo.");
         }
         
@@ -143,7 +150,9 @@ export default function Profile() {
       // Actualizar estados (solo el avatar)
       setUser(prevUser => ({ ...prevUser, avatar: updatedUserData.avatar }));
       
-      // 🎯 Ya no manipulamos el objeto 'user' completo en localStorage.
+      // 🎯 ACTUALIZAR EL OBJETO COMPLETO EN LOCAL STORAGE
+      const userLocal = JSON.parse(localStorage.getItem('user'));
+      localStorage.setItem("user", JSON.stringify({ ...userLocal, avatar: updatedUserData.avatar }));
       
       setAvatarFile(null);
       alert("Foto de perfil actualizada con éxito.");
@@ -151,7 +160,9 @@ export default function Profile() {
     } catch (err) {
       console.error("Error al actualizar el avatar:", err);
       setAvatarError(err.message || "No se pudo subir el archivo.");
-      // Si el error fue por token, la función logout ya maneja la recarga/redirección.
+      if (err.message.includes("Sesión expirada")) {
+          window.location.reload(); 
+      }
     } finally {
       setIsUploadingAvatar(false);
       setLoading(false);
@@ -161,7 +172,6 @@ export default function Profile() {
 
   /**
    * Función para actualizar nombre de usuario.
-   * USA: PATCH /users/{id}
    */
   const handleUsernameUpdate = async (e) => {
     e.preventDefault();
@@ -188,7 +198,6 @@ export default function Profile() {
       if (!response.ok) {
         // Si hay un 401/403, limpiar local storage y forzar error
         if (response.status === 401 || response.status === 403) {
-            // 🎯 Usar la función logout importada para limpiar token y forzar recarga/login
             logout(); 
             throw new Error("Sesión expirada o permisos insuficientes. Por favor, inicia sesión de nuevo.");
         }
@@ -205,7 +214,6 @@ export default function Profile() {
       }
 
       let updatedUserData;
-      // Obtener el nuevo nombre del cuerpo de la respuesta o usar el que enviamos
       if (response.status !== 204) {
         updatedUserData = await response.json();
       } else {
@@ -215,8 +223,9 @@ export default function Profile() {
       // Actualizar estados
       setUser(prevUser => ({ ...prevUser, name: updatedUserData.name }));
       
-      // 🎯 Guardar el nombre actualizado en localStorage bajo la clave 'userName' (usada por NavBar)
-      localStorage.setItem("userName", updatedUserData.name);
+      // 🎯 ACTUALIZAR EL OBJETO COMPLETO EN LOCAL STORAGE
+      const userLocal = JSON.parse(localStorage.getItem('user'));
+      localStorage.setItem("user", JSON.stringify({ ...userLocal, name: updatedUserData.name }));
       
       setIsEditingUsername(false);
       alert("Nombre de usuario actualizado con éxito.");
@@ -224,7 +233,9 @@ export default function Profile() {
     } catch (err) {
       console.error("Error al actualizar el nombre de usuario:", err);
       setUsernameError(err.message || "No se pudo conectar con el servidor o token inválido.");
-      // Si el error fue por token, la función logout ya maneja la recarga/redirección.
+      if (err.message.includes("Sesión expirada")) {
+          window.location.reload(); 
+      }
     } finally {
       setLoading(false);
     }
@@ -232,7 +243,6 @@ export default function Profile() {
 
   /**
    * Función para actualizar contraseña.
-   * USA: PATCH /users/{id}/password
    */
   const handlePasswordUpdate = async (e) => {
     e.preventDefault();
@@ -268,7 +278,6 @@ export default function Profile() {
       if (!response.ok) {
         // Si hay un 401/403, limpiar local storage y forzar error
         if (response.status === 401 || response.status === 403) {
-            // 🎯 Usar la función logout importada para limpiar token y forzar recarga/login
             logout(); 
             throw new Error("Sesión expirada o permisos insuficientes. Por favor, inicia sesión de nuevo.");
         }
@@ -294,7 +303,9 @@ export default function Profile() {
     } catch (err) {
       console.error("Error al cambiar la contraseña:", err);
       setPasswordError(err.message || "No se pudo conectar con el servidor.");
-       // Si el error fue por token, la función logout ya maneja la recarga/redirección.
+       if (err.message.includes("Sesión expirada")) {
+          window.location.reload(); 
+      }
     } finally {
       setLoading(false);
     }
@@ -306,32 +317,28 @@ export default function Profile() {
       setError(null);
       setLoading(true);
       try {
-        // 🎯 Obtener el token y la ID directamente de localStorage
-        const token = localStorage.getItem('token');
-        const userId = localStorage.getItem('userId'); 
+        // 🎯 OBTENER el objeto COMPLETO de 'user'
+        const userLocalString = localStorage.getItem('user');
+        if (!userLocalString) throw new Error("Usuario no autenticado. Redirigiendo a Login.");
 
-        if (!token || !userId) {
-            // Si falta alguno, forzamos la limpieza y lanzamos el error
-            logout(); 
-            throw new Error("Usuario no autenticado o ID/Token faltante. Redirigiendo a Login.");
-        }
+        const usuarioLocal = JSON.parse(userLocalString);
+        if (!usuarioLocal.id) throw new Error("ID de usuario no encontrado en la sesión.");
 
         // ENDPOINT DE OBTENCIÓN DE DATOS (GET)
-        const response = await fetchWithAuth(`${API_BASE_URL}/users/${userId}`);
+        const response = await fetchWithAuth(`${API_BASE_URL}/users/${usuarioLocal.id}`);
         
         if (!response.ok) {
            // Manejo explícito de token inválido/expirado en el GET inicial
            if (response.status === 401 || response.status === 403) {
-              // 🎯 Usar la función logout importada
-              logout(); 
+              logout(); // Limpia la sesión y fuerza el re-login
               throw new Error("Sesión expirada o token inválido. Por favor, inicia sesión de nuevo.");
            }
            throw new Error("Error al obtener los datos del usuario.");
         }
 
         const data = await response.json();
-        // 🎯 Establecer el usuario, asegurando que tengamos el ID para las peticiones de actualización
-        setUser({ ...data, id: userId });
+        // 🎯 Aseguramos que el estado de React use la ID para las peticiones posteriores
+        setUser({ ...data, id: usuarioLocal.id });
         setNewUsername(data.name); 
         
       } catch (e) {
@@ -364,7 +371,6 @@ export default function Profile() {
         <p className="text-lg text-gray-700 max-w-md">{error}</p>
         {(error.includes("Sesión expirada") || error.includes("Usuario no autenticado")) && (
             <button 
-                // Si el error de sesión no lo activó la función logout, lo hacemos manualmente
                 onClick={() => window.location.href = '/login'} 
                 className="mt-6 px-6 py-3 bg-brand-primary text-white rounded-lg hover:bg-brand-dark transition"
             >
