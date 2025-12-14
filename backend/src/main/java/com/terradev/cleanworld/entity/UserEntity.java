@@ -31,7 +31,7 @@ public class UserEntity {
 
     private Integer points = 0;
 
-    private Integer rol = 0;
+    private Integer rol = 0; // 0 = GUEST, 1 = USER, 2 = ADMIN
 
     @CreationTimestamp
     @Column(name = "created_at", updatable = false)
@@ -43,4 +43,12 @@ public class UserEntity {
 
     @OneToMany(mappedBy = "reportedUser", fetch = FetchType.LAZY)
     private List<ZoneEntity> reportedZones = new ArrayList<>();
+
+    public String getRoleName() {
+        return switch (rol) {
+            case 1 -> "ROLE_USER";
+            case 2 -> "ROLE_ADMIN";
+            default -> "ROLE_GUEST";
+        };
+    }
 }
