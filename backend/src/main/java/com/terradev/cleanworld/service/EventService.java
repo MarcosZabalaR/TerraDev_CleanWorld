@@ -2,8 +2,10 @@ package com.terradev.cleanworld.service;
 
 import com.terradev.cleanworld.entity.EventEntity;
 import com.terradev.cleanworld.entity.ZoneEntity;
+import com.terradev.cleanworld.entity.UserEntity;
 import com.terradev.cleanworld.repository.EventRepository;
 import com.terradev.cleanworld.repository.ZoneRepository;
+import com.terradev.cleanworld.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +20,9 @@ public class EventService {
 
     @Autowired
     private ZoneRepository zoneRepository;
+
+    @Autowired
+    private UserRepository userRepository;
 
     /**
      * GET -> Obtener todos los eventos
@@ -141,5 +146,35 @@ public class EventService {
             throw new RuntimeException("Evento no encontrado con id " + id);
         }
         eventRepository.deleteById(id);
+    }
+
+    /**
+     * Añadir usuario como asistente a un evento
+     */
+    public EventEntity attendEvent(Long eventId, Long userId) {
+        EventEntity event = eventRepository.findById(eventId)
+                .orElseThrow(() -> new RuntimeException("Evento no encontrado con id " + eventId));
+        UserEntity user = userRepository.findById(userId)
+                .orElseThrow(() -> new RuntimeException("Usuario no encontrado con id " + userId));
+        if (!event.getAttendees().contains(user)) {
+            event.getAttendees().add(user);
+            eventRepository.save(event);
+        }
+        return event;
+    }
+
+    /**
+     * Quitar usuario como asistente de un evento
+     */
+    public EventEntity unattendEvent(Long eventId, Long userId) {
+        EventEntity event = eventRepository.findById(eventId)
+                .orElseThrow(() -> new RuntimeException("Evento no encontrado con id " + eventId));
+        UserEntity user = userRepository.findById(userId)
+                .orElseThrow(() -> new RuntimeException("Usuario no encontrado con id " + userId));
+
+        // Remover por ID en lugar de por objeto para evitar problemas de equals/hashCode
+        event.getAttendees().removeIf(attendee -> attendee.getId().equals(userId));
+
+        return eventRepository.save(event);
     }
 }

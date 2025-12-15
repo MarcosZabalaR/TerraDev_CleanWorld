@@ -16,28 +16,54 @@ export default function EventsPage() {
   const [showMyEvents, setShowMyEvents] = useState(false);
   const [showPastEvents, setShowPastEvents] = useState(false);
   const [selectedZone, setSelectedZone] = useState(null);
+  const [selectedEvent, setSelectedEvent] = useState(null);
+  const [currentUser, setCurrentUser] = useState(null);
+  const [registeringEventId, setRegisteringEventId] = useState(null);
 
+  // Cargar usuario al montar el componente
   useEffect(() => {
-    fetchData();
+    try {
+      const userLocalString = localStorage.getItem('user');
+      if (userLocalString) {
+        const userData = JSON.parse(userLocalString);
+        setCurrentUser(userData);
+      }
+    } catch (err) {
+      console.error('Error loading user:', err);
+    }
   }, []);
 
-  const fetchData = async () => {
-    try {
-      setLoading(true);
-      const [eventsRes, zonesRes] = await Promise.all([
-        axios.get('http://localhost:8080/events'),
-        axios.get('http://localhost:8080/zones')
-      ]);
-      setEvents(eventsRes.data);
-      setZones(zonesRes.data);
-      setError(null);
-    } catch (err) {
-      console.error('Error fetching data:', err);
-      setError('Error al cargar los datos');
-    } finally {
-      setLoading(false);
-    }
-  };
+  // Cargar eventos cuando cambia el usuario
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const [eventsRes, zonesRes] = await Promise.all([
+          axios.get('http://localhost:8080/events'),
+          axios.get('http://localhost:8080/zones')
+        ]);
+
+        // Marcar eventos donde el usuario está registrado
+        const eventsWithRegistration = eventsRes.data.map(event => {
+          const isUserRegistered = currentUser && event.attendees
+            ? event.attendees.some(attendee => attendee.id === currentUser.id)
+            : false;
+          return { ...event, isUserRegistered };
+        });
+
+        setEvents(eventsWithRegistration);
+        setZones(zonesRes.data);
+        setError(null);
+      } catch (err) {
+        console.error('Error fetching data:', err);
+        setError('Error al cargar los datos');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [currentUser]);
 
   const now = new Date();
   
@@ -65,7 +91,7 @@ export default function EventsPage() {
     : sortedUpcoming;
 
   const filteredEvents = showMyEvents 
-    ? sortedEvents.filter(event => event.isUserRegistered) // Esto aún no funciona
+    ? sortedEvents.filter(event => event.isUserRegistered)
     : sortedEvents;
 
   const handleToggleSort = () => {
@@ -78,6 +104,98 @@ export default function EventsPage() {
 
   const handleTogglePastEvents = () => {
     setShowPastEvents(!showPastEvents);
+  };
+
+  const handleRegisterToEvent = async (eventId) => {
+    if (!currentUser || !currentUser.id) {
+      alert('Debes iniciar sesión para apuntarte a un evento');
+      navigate('/login');
+      return;
+    }
+
+    try {
+      setRegisteringEventId(eventId);
+      const response = await axios.post(
+        `http://localhost:8080/events/${eventId}/attend`,
+        { userId: currentUser.id },
+        {
+          headers: {
+            'Authorization': `Bearer ${currentUser.token}`,
+            'Content-Type': 'application/json'
+          }
+        }
+      );
+
+      // Actualizar el evento en la lista y marcar isUserRegistered
+      setEvents(prevEvents =>
+        prevEvents.map(e => {
+          if (e.id === eventId) {
+            const updatedAttendees = response.data.attendees || [];
+            const isUserRegistered = updatedAttendees.some(u => u.id === currentUser.id);
+            return { ...e, attendees: updatedAttendees, isUserRegistered };
+          }
+          return e;
+        })
+      );
+    } catch (err) {
+      console.error('Error registrando a evento:', err);
+      if (err.response?.status === 401) {
+        alert('Sesión expirada. Por favor inicia sesión de nuevo.');
+        navigate('/login');
+      } else if (err.response?.data?.message) {
+        alert('Error: ' + err.response.data.message);
+      } else {
+        alert('Error al apuntarse al evento. Inténtalo de nuevo.');
+      }
+    } finally {
+      setRegisteringEventId(null);
+    }
+  };
+
+  const handleUnregisterFromEvent = async (eventId) => {
+    if (!currentUser || !currentUser.id) {
+      return;
+    }
+
+    try {
+      setRegisteringEventId(eventId);
+      const response = await axios.post(
+        `http://localhost:8080/events/${eventId}/unattend`,
+        { userId: currentUser.id },
+        {
+          headers: {
+            'Authorization': `Bearer ${currentUser.token}`,
+            'Content-Type': 'application/json'
+          }
+        }
+      );
+
+      // Actualizar el evento en la lista
+      setEvents(prevEvents =>
+        prevEvents.map(e => {
+          if (e.id === eventId) {
+            const updatedAttendees = response.data.attendees || [];
+            const isUserRegistered = updatedAttendees.some(u => u.id === currentUser.id);
+            return { ...e, attendees: updatedAttendees, isUserRegistered };
+          }
+          return e;
+        })
+      );
+    } catch (err) {
+      console.error('Error desapuntándose del evento:', err);
+      console.error('Response data:', err.response?.data);
+      console.error('Response status:', err.response?.status);
+      if (err.response?.status === 401) {
+        alert('Sesión expirada. Por favor inicia sesión de nuevo.');
+        navigate('/login');
+      } else if (err.response?.data?.message) {
+        alert('Error: ' + err.response.data.message);
+      } else {
+        alert('Error al desapuntarse del evento. Inténtalo de nuevo. Status: ' + (err.response?.status || 'desconocido'));
+      }
+    } finally {
+      setRegisteringEventId(null);
+    }
   };
 
   const formatEventDate = (dateString) => {
@@ -156,11 +274,11 @@ export default function EventsPage() {
                       : 'bg-white text-gray-800 hover:bg-gray-50 hover:shadow-lg'
                   }`}
                 >
-                  {showPastEvents ? 'Ocultar eventos terminados' : 'Mostrar eventos terminados'}
+                  {showPastEvents ? 'Ocultar eventos pasados' : 'Mostrar eventos pasados'}
                 </button>
                 {showPastEvents && (
                   <p className="text-sm text-gray-700 mt-1 font-medium">
-                    Mostrando eventos terminados
+                    Mostrando eventos pasados
                   </p>
                 )}
               </div>
@@ -197,12 +315,17 @@ export default function EventsPage() {
               if (!zone) return null;
               
               return (
-                <div 
-                  key={event.id} 
+                <div
+                  key={event.id}
                   className={`bg-white rounded-xl shadow-2xl hover:shadow-[0_10px_30px_rgba(0,0,0,0.2)] overflow-hidden transition transform hover:scale-105 cursor-pointer flex flex-col relative ${
                     isPastEvent ? 'opacity-60 border-4 border-emerald-400' : ''
                   }`}
-                  onClick={() => zone && setSelectedZone(zone)}
+                  onClick={() => {
+                    if (zone) {
+                      setSelectedZone(zone);
+                      setSelectedEvent(event);
+                    }
+                  }}
                 >
                   {/* Imagen de la zona */}
                   {zone.img_url && (
@@ -260,27 +383,42 @@ export default function EventsPage() {
                     <div className="pt-3 border-t border-gray-200">
                       <div className="flex items-center justify-between gap-2">
                         {!isPastEvent && (
-                          <button 
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              // TODO: Implementar lógica de apuntarse al evento
-                              alert('Funcionalidad de apuntarse al evento próximamente');
-                            }}
-                            className="px-4 py-2 bg-sky-700 text-white rounded-lg font-semibold hover:bg-sky-800 transition"
-                          >
-                            Apuntarme
-                          </button>
+                          <>
+                            {event.isUserRegistered ? (
+                              <button
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  handleUnregisterFromEvent(event.id);
+                                }}
+                                disabled={registeringEventId === event.id}
+                                className="px-4 py-2 bg-red-600 text-white rounded-lg font-semibold hover:bg-red-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                              >
+                                {registeringEventId === event.id ? 'Procesando...' : 'Desapuntarme'}
+                              </button>
+                            ) : (
+                              <button
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  handleRegisterToEvent(event.id);
+                                }}
+                                disabled={registeringEventId === event.id}
+                                className="px-4 py-2 bg-sky-700 text-white rounded-lg font-semibold hover:bg-sky-800 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                              >
+                                {registeringEventId === event.id ? 'Apuntando...' : 'Apuntarme'}
+                              </button>
+                            )}
+                          </>
                         )}
-                        
-                        <button 
+
+                        <button
                           onClick={(e) => {
                             e.stopPropagation();
-                            navigate('/map', { 
-                              state: { 
-                                selectedZoneId: zone.id, 
-                                zoomToZone: true, 
-                                coords: { lat: zone.latitude, lng: zone.longitude } 
-                              } 
+                            navigate('/map', {
+                              state: {
+                                selectedZoneId: zone.id,
+                                zoomToZone: true,
+                                coords: { lat: zone.latitude, lng: zone.longitude }
+                              }
                             });
                           }}
                           className={`flex items-center gap-1 px-2 py-1 text-xs font-medium text-sky-700 hover:bg-sky-50 rounded-lg ${isPastEvent ? 'ml-auto' : ''}`}
@@ -302,8 +440,11 @@ export default function EventsPage() {
       {selectedZone && (
         <ZoneDrawer
           report={selectedZone}
-          event={events.find(e => (e.zone?.id === selectedZone.id) || (e.zone_id === selectedZone.id)) || null}
-          onClose={() => setSelectedZone(null)}
+          event={selectedEvent}
+          onClose={() => {
+            setSelectedZone(null);
+            setSelectedEvent(null);
+          }}
           onCreateEvent={() => {}}
         />
       )}
