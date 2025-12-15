@@ -1,0 +1,267 @@
+{
+    "navbar": {
+        "map": "Mapa",
+        "zone": "Zona",
+        "event": "Eventos",
+        "report": "Reportar zona",
+        "reward": "Recompensas",
+        "profile": "Perfil",
+        "logout": "Cerrar Sesión",
+        "login": "Iniciar Sesión",
+        "register": "Registro"
+    },
+    "footer": {
+        "slogan": "Juntos por un planeta más limpio. Reporta, participa y haz la diferencia.",
+        "links": "Enlaces",
+        "follow": "Síguenos",
+        "where": "¿Dónde estamos?",
+        "wer": "somos"
+    },
+    "eventModal": {
+        "gloves": "Guantes de protección",
+        "bags": "Bolsas de basura resistentes",
+        "picker": "Pinzas recogedoras",
+        "broom": "Escobas y cepillos",
+        "shovel": "Palas",
+        "rake": "Rastrillos",
+        "vest": "Chalecos reflectantes",
+        "water": "Agua y protección solar",
+        "tools": "Herramientas necesarias",
+        "eventAlert": "El evento debe programarse con al menos 24 horas de antelación",
+        "errorEvent": "Error al crear el evento",
+        "organize": "Organizar Limpieza",
+        "titleEvent": "Título del evento",
+        "description": "Descripción",
+        "toolsNecesary": "Herramientas necesarias (opcional)",
+        "toolsAdd": "Las herramientas se añadirán automáticamente a la descripción",
+        "dateTime": "Fecha y hora",
+        "pointsEeward": "Puntos de recompensa",
+        "points": "puntos",
+        "autoPoints": "Puntos asignados automáticamente según la gravedad de la zona",
+        "mild": "Leve",
+        "moderate": "Moderada",
+        "severe": "Grave",
+        "selectZone": "Zona seleccionada",
+        "cancel": "Cancelar",
+        "creating": "Creando",
+        "create": "Crear Evento"
+    },
+    "recyclingMenu": {
+        "containers": "Envases",
+        "paper": "Papel y Cartón",
+        "glass": "Vidrio",
+        "waste": "Restos",
+        "batteries": "Pilas",
+        "clothes": "Ropa",
+        "oil": "Aceite",
+        "center": "Punto Limpio"
+    },
+    "reportModal": {
+        "severityDescription": {
+            "Mild": "Basura dispersa por la zona",
+            "Moderate": "Acumulación notable de basura",
+            "Severe": "Vertido ilegal o gran acumulación de basura"
+        },
+        "maxImage": "Máximo 1 imagen",
+        "image": "Debes subir al menos una foto del problema",
+        "descriptionProblem": "Debes añadir una descripción del problema",
+        "dirty": "SUCIO",
+        "location": "Selecciona la ubicación",
+        "markMap": "Haz clic en el mapa para marcar la zona",
+        "reportZone": "Reportar zona",
+        "clickMap": "Haz clic en el mapa para cambiar ubicación",
+        "title": "Título",
+        "exampleTitle": "Ej: Basura acumulada junto al contenedor",
+        "description": "Descripción",
+        "exampleDescription": "Describe el problema con detalle...",
+        "level": "Nivel de gravedad",
+        "photo": "Fotografía",
+        "addPhoto": "Añadir fotografía",
+        "cancel": "Cancelar"
+    },
+    "zoneDrawer": {
+        "event": "EVENTO DE LIMPIEZA",
+        "addme": "Apuntarme al evento",
+        "after": "Después de la limpieza",
+        "before": "Antes de la limpieza",
+        "takeMe": "Llévame allí",
+        "createEvent": "Crear Evento"
+    },
+    "error404": {
+        "notFound": "Página No Encontrada",
+        "backHome": "Volver a Inicio",
+        "support": "Contactar con soporte"
+    },
+    "events": {
+        "pastEvent": "Evento pasado",
+        "today": "Hoy",
+        "tomorrow": "Mañana",
+        "in": "En",
+        "days": "días",
+        "cleanEvents": "Eventos de Limpieza",
+        "dateEvent": "Fecha del evento",
+        "registration": "Mis inscripciones",
+        "showRegistration": "Mostrando mis inscripciones",
+        "hideFinishedEvents": "Ocultar eventos terminados",
+        "showFinishedEvents": "Mostrar eventos terminados",
+        "loadEvents": "Cargando eventos...",
+        "error": "Error",
+        "notFoundEvents": "No hay eventos disponibles",
+        "completed": "Completado",
+        "sign": "Apuntarme",
+        "shownMap": "Ver en mapa"
+    },
+    "home": {
+        "welcome": "Bienvenido a",
+        "map": "Mapa",
+        "login": "Iniciar sesión"
+    },
+    "login": {
+        "title": "Login",
+        "email": "Email",
+        "password": "Contraseña",
+        "errors": {
+            "requiredEmail": "El email es obligatorio",
+            "requiredPassword": "La contraseña es obligatoria",
+            "invalidLogin": "Email o contraseña incorrectos",
+            "unexpected": "Error inesperado, inténtalo de nuevo"
+        },
+        "buttons": {
+            "login": "Login",
+            "register": "Register"
+        },
+        "links": {
+            "forgotPassword": "Forgot your password?"
+        }
+    },
+    "points": {
+        "title": "¡Enhorabuena!",
+        "subtitle": "Has acumulado:",
+        "points": "puntos",
+        "loadingPoints": "Cargando...",
+        "tutorialToggle": "¿Cómo puedo ganar puntos?",
+        "tutorialSteps": {
+        "step1": {
+            "title": "Inicia sesión",
+            "description": "Primero crea una cuenta CleanWorld o inicia sesión para empezar tu aventura"
+            },
+            "step2": {
+                "title": "Gana puntos",
+                "description": "Participa en eventos para ganar puntos y canjearlos por increíbles recompensas."
+            },
+            "step3": {
+                "title": "Consigue recompensas",
+                "description": "Visita nuestro panel de recompensas para cambiar tus puntos por los mejores premios."
+            }
+        },
+        "redeem": "Canjear"
+    },
+    "profile": {
+        "loadingProfile": "Cargando perfil...",
+        "loadError": {
+        "title": "Error de Carga",
+        "message": "{{error}}",
+        "loginButton": "Ir a Iniciar Sesión",
+        "sessionExpired": "Sesión expirada. Por favor inicia sesión de nuevo."
+        },
+        "avatar": {
+        "alt": "Avatar de Usuario",
+        "uploadButton": "Subir Avatar",
+        "invalidFile": "Archivo inválido (tipo o tamaño). Máx 5MB.",
+        "uploading": "Subiendo avatar..."
+        },
+        "userInfo": {
+        "memberOf": "Miembro de CleanWorld",
+        "email": "Email",
+        "joinDate": "Miembro desde",
+        "username": "Nombre",
+        "password": "Contraseña",
+        "edit": "Editar",
+        "save": "Guardar",
+        "cancel": "Cancelar"
+        },
+        "usernameUpdate": {
+        "emptyOrSame": "Nombre vacío o igual al actual",
+        "success": "Nombre actualizado con éxito",
+        "error": "Error al actualizar nombre"
+        },
+        "passwordUpdate": {
+        "mismatch": "Contraseñas no coinciden",
+        "minLength": "Mínimo 6 caracteres",
+        "success": "Contraseña actualizada con éxito",
+        "error": "Error al cambiar contraseña"
+        },
+        "loadingAction": "Procesando...",
+        "buttons": {
+        "logout": "Cerrar sesión"
+        }
+    },
+    "register": {
+        "title": "Registro",
+        "fields": {
+        "username": "Usuario",
+        "email": "Email",
+        "password": "Contraseña",
+        "confirmPassword": "Confirmar contraseña"
+        },
+        "errors": {
+        "usernameRequired": "El nombre de usuario es obligatorio",
+        "usernameInvalid": "El usuario solo puede tener letras y números",
+        "usernameLength": "El usuario debe tener entre 3 y 16 caracteres",
+        "usernameExists": "El nombre de usuario ya existe",
+        "emailRequired": "El email es obligatorio",
+        "emailInvalid": "Formato de email inválido",
+        "emailExists": "Este email ya está registrado",
+        "passwordRequired": "La contraseña es obligatoria",
+        "passwordMismatch": "Las contraseñas no coinciden",
+        "submitError": "Error inesperado al crear usuario"
+        },
+        "buttons": {
+        "register": "Registrar",
+        "alreadyHaveAccount": "Ya tengo cuenta"
+        }
+    },
+    "zonesPage": {
+        "title": "Zonas Reportadas",
+        "filters": {
+        "date": {
+            "label": "Fecha de creación",
+            "asc": "Más antiguos primero",
+            "desc": "Más recientes primero"
+        },
+        "severity": {
+            "label": "Gravedad",
+            "asc": "Menor gravedad primero",
+            "desc": "Mayor gravedad primero"
+        },
+        "status": {
+            "all": "Todas las zonas",
+            "SUCIO": "Zonas sucias",
+            "LIMPIO": "Zonas limpias"
+        },
+        "statusDescription": {
+            "all": "Mostrando todas las zonas",
+            "SUCIO": "Mostrando zonas sucias",
+            "LIMPIO": "Mostrando zonas limpias"
+        }
+        },
+        "loading": "Cargando zonas...",
+        "noZones": "No hay zonas reportadas",
+        "error": {
+        "title": "Error",
+        "fetch": "Error al cargar los datos",
+        "delete": "Error al borrar la zona"
+        },
+        "zoneCard": {
+        "clean": "Limpia",
+        "status": "Estado",
+        "reportedOn": "Zona reportada el",
+        "viewOnMap": "Ver en mapa"
+        },
+        "severity": {
+        "Leve": "Leve",
+        "Moderada": "Moderada",
+        "Grave": "Grave"
+        }
+    }
+}

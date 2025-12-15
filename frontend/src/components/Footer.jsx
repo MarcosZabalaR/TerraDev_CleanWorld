@@ -5,6 +5,7 @@ import {
   IconBrandInstagram,
   IconMail,
 } from "@tabler/icons-react";
+const year = new Date().getFullYear();
 
 export default function Footer() {
   return (
@@ -132,7 +133,7 @@ export default function Footer() {
               Pablo Monís Álvarez
             </a>{" "}
           </p>
-          <p>© 2025 CleanWorld. Todos los derechos reservados.</p>
+          <p>© {year} CleanWorld.</p>
         </div>
       </div>
     </footer>

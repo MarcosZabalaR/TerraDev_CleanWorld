@@ -1,8 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import Logo from "../assets/CleanWorldLogo.png";
-import Avatar from "../assets/Avatar.jpg"; // <--- 1. Importar la imagen por defecto (Asegúrate de que la ruta sea correcta)
+import Avatar from "../assets/Avatar.jpg"; 
 import { IconLogout, IconUser, IconChevronDown, IconChevronUp } from "@tabler/icons-react"; 
+import LangSwitcher from "../components/langSwitcher";
 
 export default function NavBar() {
   const navigate = useNavigate();
@@ -11,7 +12,7 @@ export default function NavBar() {
   // Estados de autenticación
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [userName, setUserName] = useState("");
-  const [userAvatarURL, setUserAvatarURL] = useState(null); // <--- 2. NUEVO ESTADO para la URL del avatar
+  const [userAvatarURL, setUserAvatarURL] = useState(null); 
   
   // Estado para el menú desplegable
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -27,42 +28,34 @@ export default function NavBar() {
       }
     };
     
-    // Adjuntar y limpiar el listener
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
-
-  // Efecto para verificar la autenticación
+  // Verificar autenticación
   useEffect(() => {
     const userString = localStorage.getItem("user");
-
     if (userString) {
       try {
         const userData = JSON.parse(userString);
-        
         if (userData.token && userData.name) {
           setIsAuthenticated(true);
           setUserName(userData.name); 
-          // 3. OBTENER LA URL DEL AVATAR (Asumiendo que viene en userData.profilePicture)
-          // Si userData.profilePicture existe, la usamos, si no, es null.
           setUserAvatarURL(userData.profilePicture || null); 
           return;
         }
       } catch (e) {
-        console.error("Error al parsear el usuario de localStorage:", e);
+        console.error("Error parsing user from localStorage:", e);
       }
     }
-
     setIsAuthenticated(false);
     setUserName("");
-    setUserAvatarURL(null); // Limpiar el avatar al cerrar sesión o no estar autenticado
-    
+    setUserAvatarURL(null); 
   }, [location.pathname]); 
 
-  //  reporte
+  // Reportar zona
   const handleReportClick = (e) => {
     e.preventDefault();
     if (location.pathname === "/map") {
@@ -72,32 +65,28 @@ export default function NavBar() {
     }
   };
 
-  // Función para manejar el cierre de sesión
+  // Logout
   const handleLogout = () => {
     localStorage.removeItem("user"); 
     setIsAuthenticated(false);
     setUserName("");
-    setUserAvatarURL(null); // Limpiar el estado
+    setUserAvatarURL(null); 
     setIsDropdownOpen(false);
     navigate("/");
   };
   
-  // Función para navegar al perfil desde el desplegable
   const handleProfileClick = () => {
-      setIsDropdownOpen(false);
-      navigate("/profile");
+    setIsDropdownOpen(false);
+    navigate("/profile");
   }
 
-  // Clase CSS para simplificarlo
   const navLinkClass = "py-1 hover:underline";
-  
-  // 4. Determinar la fuente de la imagen (URL del usuario o Avatar por defecto)
   const avatarSrc = userAvatarURL || Avatar;
 
   return (
-    <nav className="flex bg-brand-primary text-white font-bold p-4 h-20 items-center relative z-9999">
-
+    <nav className="flex bg-brand-primary text-white font-bold p-4 h-20 items-center relative z-9999 justify-between">
      
+      {/* Logo */}
       <h1>
         <Link to="/" className="flex items-center gap-1 text-lg">
           <img
@@ -112,22 +101,14 @@ export default function NavBar() {
       {/* Enlaces */}
       <ul className="flex font-medium gap-4 justify-center grow items-center">
         <li>
-          <Link to="/map" className={navLinkClass}>
-            Mapa
-          </Link>
+          <Link to="/map" className={navLinkClass}>Mapa</Link>
         </li>
         <li>
-          <Link to="/zones" className={navLinkClass}>
-            Zonas
-          </Link>
+          <Link to="/zones" className={navLinkClass}>Zonas</Link>
         </li>
         <li>
-          <Link to="/events" className={navLinkClass}>
-            Eventos
-          </Link>
+          <Link to="/events" className={navLinkClass}>Eventos</Link>
         </li>
-        
-    
         <li>
           <button
             onClick={handleReportClick}
@@ -136,43 +117,34 @@ export default function NavBar() {
             Reportar zona
           </button>
         </li>
-
-      
         {isAuthenticated && (
-          <>
-            {/* El enlace a Perfil y Logout ya no están aquí, están en el desplegable. */}
-            <li>
-              <Link to="/points" className={navLinkClass}>
-                Recompensas
-              </Link>
-            </li>
-          </>
+          <li>
+            <Link to="/points" className={navLinkClass}>Recompensas</Link>
+          </li>
         )}
       </ul>
 
-    
+      {/* Zona derecha: LangSwitcher y usuario */}
       <div className="flex items-center gap-3">
+        <LangSwitcher />
+
         {isAuthenticated ? (
-          // Si el usuario está autenticado, muestra el desplegable
           <div className="relative" ref={dropdownRef}>
-            {/* Botón/Etiqueta que activa el desplegable */}
             <button
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="flex items-center gap-2 px-3 py-2 rounded-xl bg-brand-secondary text-white font-bold transition-colors hover:bg-brand-dark" // Ajustado el gap a gap-2 para la imagen
+              className="flex items-center gap-2 px-3 py-2 rounded-xl bg-brand-secondary text-white font-bold transition-colors hover:bg-brand-dark"
               aria-expanded={isDropdownOpen}
               aria-controls="profile-menu"
             >
-              {/* 5. IMPLEMENTACIÓN DE LA IMAGEN DE PERFIL */}
               <img 
                 src={avatarSrc}
                 alt="Avatar de usuario"
-                className="w-6 h-6 rounded-full object-cover" // Estilos para la imagen
+                className="w-6 h-6 rounded-full object-cover"
               />
               <span className="truncate max-w-[100px]">{userName}</span>
               {isDropdownOpen ? <IconChevronUp size={18} /> : <IconChevronDown size={18} />}
             </button>
 
-            {/* Menú Desplegable */}
             {isDropdownOpen && (
               <div 
                 id="profile-menu"
@@ -184,9 +156,7 @@ export default function NavBar() {
                 >
                   <IconUser size={18} /> Perfil
                 </button>
-                
                 <hr className="my-1 border-gray-100" />
-                
                 <button
                   onClick={handleLogout}
                   className="w-full text-left px-4 py-2 text-sm text-red-600 flex items-center gap-2 hover:bg-red-50 hover:text-red-700"
@@ -197,7 +167,6 @@ export default function NavBar() {
             )}
           </div>
         ) : (
-          // Si el usuario NO está autenticado
           <>
             <Link
               to="/login"
