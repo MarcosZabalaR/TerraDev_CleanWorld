@@ -1,5 +1,7 @@
 package com.terradev.cleanworld.controller;
 
+import com.terradev.cleanworld.dto.CreateZoneDto;
+import com.terradev.cleanworld.dto.ZoneDto;
 import com.terradev.cleanworld.entity.ZoneEntity;
 import com.terradev.cleanworld.service.ZoneService;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +25,7 @@ public class ZoneController {
      * GET -> Obtener todas las zonas
      */
     @GetMapping
-    public List<ZoneEntity> getAll() {
+    public List<ZoneDto> getAll() {
         return service.findAll();
     }
 
@@ -31,7 +33,7 @@ public class ZoneController {
      * GET -> Obtener una zona por ID
      */
     @GetMapping("/{id}")
-    public ResponseEntity<ZoneEntity> getById(@PathVariable Long id) {
+    public ResponseEntity<ZoneDto> getById(@PathVariable Long id) {
         return service.findById(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
@@ -41,8 +43,8 @@ public class ZoneController {
      * POST -> Crear una nueva zona
      */
     @PostMapping
-    public ZoneEntity create(@RequestBody ZoneEntity z) {
-        return service.save(z);
+    public ZoneDto create(@RequestBody CreateZoneDto dto) {
+        return service.create(dto);
     }
 
     /**

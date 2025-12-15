@@ -1,6 +1,9 @@
 package com.terradev.cleanworld.service;
 
+import com.terradev.cleanworld.dto.CreateZoneDto;
+import com.terradev.cleanworld.dto.ZoneDto;
 import com.terradev.cleanworld.entity.ZoneEntity;
+import com.terradev.cleanworld.mapper.ZoneMapper;
 import com.terradev.cleanworld.repository.ZoneRepository;
 import org.springframework.stereotype.Service;
 
@@ -12,9 +15,11 @@ import java.util.Optional;
 public class ZoneService {
 
     private final ZoneRepository repository;
+    private final ZoneMapper mapper;
 
-    public ZoneService(ZoneRepository repository) {
+    public ZoneService(ZoneRepository repository, ZoneMapper mapper) {
         this.repository = repository;
+        this.mapper = mapper;
     }
 
     /**
@@ -22,8 +27,12 @@ public class ZoneService {
      *
      * @return Lista de todas las zonas
      */
-    public List<ZoneEntity> findAll() {
-        return repository.findAll();
+    public List<ZoneDto> findAll() {
+
+        return repository.findAll()
+                .stream()
+                .map(mapper::toDto)
+                .toList();
     }
 
     /**
@@ -32,8 +41,21 @@ public class ZoneService {
      * @param id Identificador de la zona
      * @return Optional con la zona indicado por ID
      */
-    public Optional<ZoneEntity> findById(Long id) {
-        return repository.findById(id);
+    public Optional<ZoneDto> findById(Long id) {
+        return repository.findById(id)
+                .map(mapper::toDto);
+    }
+
+    /**
+     * POST -> Creación de una zona
+     *
+     * @param dto DTO de zona con sus campos
+     * @return mapa con DTO y todos sus campos creados
+     */
+    public ZoneDto create(CreateZoneDto dto) {
+        ZoneEntity entity = mapper.toEntity(dto);
+        ZoneEntity saved = repository.save(entity);
+        return mapper.toDto(saved);
     }
 
     /**
