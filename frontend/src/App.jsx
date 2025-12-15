@@ -16,7 +16,6 @@ import Error404 from './pages/Error404.jsx';
 import Points from './pages/Points.jsx';
 
 function App() {
-
   return (
     <BrowserRouter>
       <div className="min-h-screen flex flex-col">
