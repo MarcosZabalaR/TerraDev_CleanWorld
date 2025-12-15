@@ -1,7 +1,8 @@
-import { useState, useEffect, useRef } from "react"; // Importar useRef para el menú desplegable
+import { useState, useEffect, useRef } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import Logo from "../assets/CleanWorldLogo.png";
-import { IconLogout, IconUser, IconChevronDown, IconChevronUp } from "@tabler/icons-react"; // Añadir iconos
+import Avatar from "../assets/Avatar.jpg"; // <--- 1. Importar la imagen por defecto (Asegúrate de que la ruta sea correcta)
+import { IconLogout, IconUser, IconChevronDown, IconChevronUp } from "@tabler/icons-react"; 
 
 export default function NavBar() {
   const navigate = useNavigate();
@@ -10,6 +11,8 @@ export default function NavBar() {
   // Estados de autenticación
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [userName, setUserName] = useState("");
+  const [userAvatarURL, setUserAvatarURL] = useState(null); // <--- 2. NUEVO ESTADO para la URL del avatar
+  
   // Estado para el menú desplegable
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   
@@ -43,6 +46,9 @@ export default function NavBar() {
         if (userData.token && userData.name) {
           setIsAuthenticated(true);
           setUserName(userData.name); 
+          // 3. OBTENER LA URL DEL AVATAR (Asumiendo que viene en userData.profilePicture)
+          // Si userData.profilePicture existe, la usamos, si no, es null.
+          setUserAvatarURL(userData.profilePicture || null); 
           return;
         }
       } catch (e) {
@@ -52,6 +58,7 @@ export default function NavBar() {
 
     setIsAuthenticated(false);
     setUserName("");
+    setUserAvatarURL(null); // Limpiar el avatar al cerrar sesión o no estar autenticado
     
   }, [location.pathname]); 
 
@@ -70,7 +77,8 @@ export default function NavBar() {
     localStorage.removeItem("user"); 
     setIsAuthenticated(false);
     setUserName("");
-    setIsDropdownOpen(false); // Cierra el menú al cerrar sesión
+    setUserAvatarURL(null); // Limpiar el estado
+    setIsDropdownOpen(false);
     navigate("/");
   };
   
@@ -82,6 +90,9 @@ export default function NavBar() {
 
   // Clase CSS para simplificarlo
   const navLinkClass = "py-1 hover:underline";
+  
+  // 4. Determinar la fuente de la imagen (URL del usuario o Avatar por defecto)
+  const avatarSrc = userAvatarURL || Avatar;
 
   return (
     <nav className="flex bg-brand-primary text-white font-bold p-4 h-20 items-center relative z-9999">
@@ -147,11 +158,16 @@ export default function NavBar() {
             {/* Botón/Etiqueta que activa el desplegable */}
             <button
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="flex items-center gap-1 px-3 py-2 rounded-xl bg-brand-secondary text-white font-bold transition-colors hover:bg-brand-dark"
+              className="flex items-center gap-2 px-3 py-2 rounded-xl bg-brand-secondary text-white font-bold transition-colors hover:bg-brand-dark" // Ajustado el gap a gap-2 para la imagen
               aria-expanded={isDropdownOpen}
               aria-controls="profile-menu"
             >
-              <IconUser size={20} />
+              {/* 5. IMPLEMENTACIÓN DE LA IMAGEN DE PERFIL */}
+              <img 
+                src={avatarSrc}
+                alt="Avatar de usuario"
+                className="w-6 h-6 rounded-full object-cover" // Estilos para la imagen
+              />
               <span className="truncate max-w-[100px]">{userName}</span>
               {isDropdownOpen ? <IconChevronUp size={18} /> : <IconChevronDown size={18} />}
             </button>
