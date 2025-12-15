@@ -18,27 +18,38 @@ Estos serían los pasos a seguir para dejar instalado nuestro proyecto en tu dis
 git clone git@github.com:MarcosZabalaR/TerraDev_CleanWorld.git
 ```
 
-- Usa el comando **npm install --legacy-peer-deps** para inicializar React.
+- Usa el comando **npm install** para inicializar React.
 
 ```
-npm install --legacy-peer-deps
+npm install
 ```
+
+- Desde **IntelliJ**, cambiar las variables de entorno a:
+
+```
+DDBB_HOST=sdvhnk.h.filess.io;DDBB_PORT=3307;DDBB_NAME=clean_world_shestiffof;DDBB_USER=clean_world_shestiffof;DDBB_PASS=26f0e04f0694f4523029d5b491ca980965c756d5
+```
+
+En caso de no saber cambiar las variables de entorno aquí te dejo un tutorial:
+**https://www.baeldung.com/intellij-idea-environment-variables**
+
+- Lanzar el Back-end desde **IntelliJ** desde **CleanWorldApplication**.
 
 # Fase de Planificación:
 
-[✅ HITO 1 — MVP + Historias de Usuario + MoSCoW](https://github.com/MarcosZabalaR/TerraDev_CleanWorld/blob/develop/docs/Fase%20Planificaci%C3%B3n/HITO%201%20%E2%80%94%20MVP%20%2B%20Historias%20de%20Usuario%20%2B%20MoSCoW/README.md)
+[✅ HITO 1 — MVP + Historias de Usuario + MoSCoW](https://github.com/MarcosZabalaR/TerraDev_CleanWorld/blob/main/docs/Fase%20Planificaci%C3%B3n/HITO%201%20%E2%80%94%20MVP%20%2B%20Historias%20de%20Usuario%20%2B%20MoSCoW/README.md)
 
-[🎨 HITO 2 — Wireframes + Flujo de Usuario + Datos](https://github.com/MarcosZabalaR/TerraDev_CleanWorld/blob/develop/docs/Fase%20Planificaci%C3%B3n/HITO%202%20%E2%80%94%20Wireframes%20%2B%20Flujo%20de%20Usuario%20%2B%20Datos/README.md)
+[🎨 HITO 2 — Wireframes + Flujo de Usuario + Datos](https://github.com/MarcosZabalaR/TerraDev_CleanWorld/blob/main/docs/Fase%20Planificaci%C3%B3n/HITO%202%20%E2%80%94%20Wireframes%20%2B%20Flujo%20de%20Usuario%20%2B%20Datos/README.md)
 
-[⚙️ HITO 3 — Sprint 1 preparado (Backlog técnico + Arquitectura + GitHub)](<https://github.com/MarcosZabalaR/TerraDev_CleanWorld/blob/develop/docs/Fase%20Planificaci%C3%B3n/HITO%203%20%E2%80%94%20Sprint%201%20preparado%20(Backlog%20t%C3%A9cnico%20%2B%20Arquitectura%20%2B%20GitHub)/README.md>)
+[⚙️ HITO 3 — Sprint 1 preparado (Backlog técnico + Arquitectura + GitHub)](<https://github.com/MarcosZabalaR/TerraDev_CleanWorld/blob/main/docs/Fase%20Planificaci%C3%B3n/HITO%203%20%E2%80%94%20Sprint%201%20preparado%20(Backlog%20t%C3%A9cnico%20%2B%20Arquitectura%20%2B%20GitHub)/README.md>)
 
 # Fase de Planificación:
 
-[🎨 DOCUMENTACIÓN FRONT-END:](https://github.com/MarcosZabalaR/TerraDev_CleanWorld/blob/develop/docs/Fase%20Desarrollo/Desarrollo%20Front-end/README.md)
+[🎨 DOCUMENTACIÓN FRONT-END:](https://github.com/MarcosZabalaR/TerraDev_CleanWorld/blob/main/docs/Fase%20Desarrollo/Desarrollo%20Front-end/README.md)
 
-[🚧 DOCUMENTACIÓN BACK-END:](https://github.com/MarcosZabalaR/TerraDev_CleanWorld/blob/develop/docs/Fase%20Desarrollo/Desarrolo%20Back-end/README.md)
+[🚧 DOCUMENTACIÓN BACK-END:](https://github.com/MarcosZabalaR/TerraDev_CleanWorld/blob/main/docs/Fase%20Desarrollo/Desarrolo%20Back-end/README.md)
 
-[🏃‍♂️ BACKLOG SPRINT 1](https://github.com/MarcosZabalaR/TerraDev_CleanWorld/blob/develop/docs/Fase%20Desarrollo/Backlog%20Sprint%201/README.md)
+[🏃‍♂️ BACKLOG SPRINT 1](https://github.com/MarcosZabalaR/TerraDev_CleanWorld/blob/main/docs/Fase%20Desarrollo/Backlog%20Sprint%201/README.md)
 
 # TerraDev somos:
 
