@@ -5,9 +5,12 @@ import {
   IconBrandInstagram,
   IconMail,
 } from "@tabler/icons-react";
-const year = new Date().getFullYear();
+import { useTranslation } from "react-i18next";
 
 export default function Footer() {
+  const { t } = useTranslation("global"); // <-- dentro del componente
+  const year = new Date().getFullYear();
+
   return (
     <footer className="bg-brand-primary text-white py-8 px-4">
       <div className="max-w-6xl mx-auto">
@@ -16,21 +19,20 @@ export default function Footer() {
           <div>
             <h2 className="text-3xl font-medium mb-3">CleanWorld</h2>
             <p className="text-brand-light text-sm">
-              Juntos por un planeta más limpio. Reporta, participa y haz la
-              diferencia.
+              {t("footer.slogan")}
             </p>
           </div>
 
           {/* Enlaces rápidos */}
           <div>
-            <h3 className="text-3xl font-medium mb-3">Enlaces</h3>
+            <h3 className="text-3xl font-medium mb-3">{t("footer.links")}</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
                   to="/map"
                   className="text-brand-light hover:text-white hover:underline text-xl"
                 >
-                  Mapa
+                  {t("navbar.map")}
                 </Link>
               </li>
               <li>
@@ -38,7 +40,7 @@ export default function Footer() {
                   to="/zonas"
                   className="text-brand-light hover:text-white hover:underline text-xl"
                 >
-                  Zonas
+                  {t("navbar.zone")}
                 </Link>
               </li>
               <li>
@@ -46,7 +48,7 @@ export default function Footer() {
                   to="/events"
                   className="text-brand-light hover:text-white hover:underline text-xl"
                 >
-                  Eventos
+                  {t("navbar.event")}
                 </Link>
               </li>
               <li>
@@ -54,7 +56,7 @@ export default function Footer() {
                   to="/map?report=true"
                   className="text-brand-light hover:text-white hover:underline text-xl"
                 >
-                  Reportar
+                  {t("navbar.report")}
                 </Link>
               </li>
             </ul>
@@ -62,7 +64,7 @@ export default function Footer() {
 
           {/* Redes sociales */}
           <div>
-            <h3 className="text-3xl font-medium mb-3">Síguenos</h3>
+            <h3 className="text-3xl font-medium mb-3">{t("footer.follow")}</h3>
             <div className="flex gap-4">
               <a
                 href="#"
@@ -92,7 +94,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-bold mb-3 text-3xl">¿Dónde estamos?</h3>
+            <h3 className="font-bold mb-3 text-3xl">{t("footer.where")}</h3>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3197.293316234903!2d-4.4225367!3d36.739529999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72f7003a823cb9%3A0x2a149fd29d27200e!2sFundaci%C3%B3n%20Esplai!5e0!3m2!1ses!2ses!4v1765275382502!5m2!1ses!2ses"
               className="w-70 h-64 md:h-70 rounded-lg"
@@ -104,7 +106,7 @@ export default function Footer() {
         {/* Línea divisoria y copyright */}
         <div className="border-t border-brand-dark mt-8 pt-4 text-center text-sm text-brand-light">
           <p>
-            CleanWorld somos:&nbsp;
+            CleanWorld {t("footer.wer")}:&nbsp;
             <a
               href="https://www.linkedin.com/in/franciscocortespirson/"
               className="hover:underline"

@@ -1,14 +1,15 @@
 import { IconRecycle, IconBottle, IconPackage, IconGlass, IconTrash, IconDropletHalf2Filled, IconBolt, IconBuildingFactory2, IconShirt } from '@tabler/icons-react';
+import { useTranslation } from 'react-i18next';
 
 const categories = [
-  { id: 'envases', icon: IconBottle, label: 'Envases', color: 'yellow' },
-  { id: 'papel', icon: IconPackage, label: 'Papel y Cartón', color: 'blue' },
-  { id: 'vidrio', icon: IconGlass, label: 'Vidrio', color: 'green' },
-  { id: 'restos', icon: IconTrash, label: 'Restos', color: 'gray' },
-  { id: 'pilas', icon: IconBolt, label: 'Pilas', color: 'gold' },
-  { id: 'ropa', icon: IconShirt, label: 'Ropa', color: 'pink' },
-  { id: 'aceite', icon: IconDropletHalf2Filled, label: 'Aceite', color: 'brown' },
-  { id: 'industria', icon: IconBuildingFactory2, label: 'Punto Limpio', color: 'slate' },
+  { id: 'envases', icon: IconBottle, labelKey: 'containers', color: 'yellow' },
+  { id: 'papel', icon: IconPackage, labelKey: 'paper', color: 'blue' },
+  { id: 'vidrio', icon: IconGlass, labelKey: 'glass', color: 'green' },
+  { id: 'restos', icon: IconTrash, labelKey: 'waste', color: 'gray' },
+  { id: 'pilas', icon: IconBolt, labelKey: 'batteries', color: 'gold' },
+  { id: 'ropa', icon: IconShirt, labelKey: 'clothes', color: 'pink' },
+  { id: 'aceite', icon: IconDropletHalf2Filled, labelKey: 'oil', color: 'brown' },
+  { id: 'industria', icon: IconBuildingFactory2, labelKey: 'center', color: 'slate' },
 ];
 
 const colorClasses = {
@@ -23,6 +24,7 @@ const colorClasses = {
 };
 
 export default function RecyclingMenu({ selected, onToggleCategory, disabled = false, isOpen = false, onToggleMenu }) {
+  const { t } = useTranslation('global');
 
   const toggleCategory = (id) => {
     if (disabled) return;
@@ -50,7 +52,7 @@ export default function RecyclingMenu({ selected, onToggleCategory, disabled = f
                 `}
               >
                 <Icon size={20} className={colors.text} />
-                <span>{category.label}</span>
+                <span>{t(`recyclingMenu.${category.labelKey}`)}</span>
               </button>
             );
           })}
@@ -68,4 +70,3 @@ export default function RecyclingMenu({ selected, onToggleCategory, disabled = f
     </div>
   );
 }
-
