@@ -84,7 +84,8 @@ export default function NavBar() {
   const navLinkClass = "py-1 hover:underline";
 
   return (
-    <nav className="flex bg-brand-primary text-white font-bold p-4 h-20 items-center relative z-50">
+    <nav className="flex bg-brand-primary text-white font-bold p-4 h-20 items-center relative z-9999">
+
      
       <h1>
         <Link to="/" className="flex items-center gap-1 text-lg">
@@ -159,7 +160,7 @@ export default function NavBar() {
             {isDropdownOpen && (
               <div 
                 id="profile-menu"
-                className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl py-1 z-9999 text-gray-800 border border-gray-200"
+                className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl py-1 z-1 text-gray-800 border border-gray-200"
               >
                 <button
                   onClick={handleProfileClick}

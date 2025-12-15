@@ -4,7 +4,7 @@ import com.terradev.cleanworld.dto.LoginResponse;
 import com.terradev.cleanworld.dto.UserDto;
 import com.terradev.cleanworld.entity.UserEntity;
 import com.terradev.cleanworld.service.UserService;
-import com.terradev.cleanworld.config.JwtService; // <- Cambio aquí
+import com.terradev.cleanworld.config.JwtService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
@@ -19,11 +19,11 @@ import java.util.Map;
 public class UserController {
 
     private final UserService service;
-    private final JwtService jwtService; // <- Cambio aquí
+    private final JwtService jwtService;
 
     public UserController(UserService service, JwtService jwtService) {
         this.service = service;
-        this.jwtService = jwtService; // <- Cambio aquí
+        this.jwtService = jwtService;
     }
 
     @GetMapping
@@ -93,7 +93,7 @@ public class UserController {
                 saved.getId(),
                 saved.getName(),
                 saved.getEmail(),
-                null // Token null por ahora
+                null
         );
 
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
