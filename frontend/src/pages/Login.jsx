@@ -5,13 +5,33 @@ import Footer from "../components/Footer";
 import axios from "axios";
 import { useState } from "react";
 
+// Importa el hook de Formspree si lo vas a usar, o usa axios directamente para Formspree
+// Si usas Formspree, asegúrate de haber instalado: npm install @formspree/react
+// Aquí usaré axios para la petición a Formspree, lo cual es más flexible.
+// import { useForm } from "@formspree/react"; // Opcional, si prefieres usar el hook
+
 export default function Login() {
   const navigate = useNavigate();
-  const baseURL = `${import.meta.env.API_URL || "http://localhost:8080"}/users`;
-
+  // Asegúrate de que API_URL está correctamente configurada en .env y cargada por Vite/otro
+  const baseURL = `${import.meta.env.VITE_API_URL || "http://localhost:8080"}/users`;
+  
+  // =================================================================================
+  // ESTADOS PRINCIPALES
+  // =================================================================================
   const [formValues, setFormValues] = useState({ email: "", password: "" });
   const [errors, setErrors] = useState({});
 
+  // =================================================================================
+  // ESTADOS PARA RECUPERACIÓN DE CONTRASEÑA
+  // =================================================================================
+  const [showRecoveryModal, setShowRecoveryModal] = useState(false);
+  const [recoveryEmail, setRecoveryEmail] = useState("");
+  const [recoveryStatus, setRecoveryStatus] = useState({ message: "", type: "" }); // type: 'success' | 'error' | ''
+  const [isRecoveryLoading, setIsRecoveryLoading] = useState(false);
+  
+  // =================================================================================
+  // HANDLERS DE LOGIN
+  // =================================================================================
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
   };
@@ -34,12 +54,14 @@ export default function Login() {
 
       // response.data ya contiene id, name, email y token
       const userData = response.data;
-
+      // Asumo que si tienes la foto, vendrá aquí (profilePicture)
+      // Si no, la propiedad será undefined, lo cual es manejado en NavBar.jsx
+      
       localStorage.setItem("user", JSON.stringify(userData));
 
       console.log("Usuario logueado:", userData);
 
-      navigate("/profile"); // redirige al perfil
+      navigate("/profile"); 
 
     } catch (error) {
       console.error("Error en login:", error);
@@ -50,6 +72,70 @@ export default function Login() {
       }
     }
   };
+
+  // =================================================================================
+  // HANDLER DE RECUPERACIÓN DE CONTRASEÑA
+  // =================================================================================
+  const handleForgotPassword = async (e) => {
+    e.preventDefault();
+    setRecoveryStatus({ message: "", type: "" });
+    
+    if (!recoveryEmail.trim()) {
+        setRecoveryStatus({ message: "Por favor, introduce tu correo electrónico.", type: "error" });
+        return;
+    }
+    
+    setIsRecoveryLoading(true);
+
+    try {
+        // PASO 1: Verificar si el correo existe en tu backend (asumo que tienes un endpoint)
+        // Ejemplo de endpoint: /users/check-email-exists
+        // **DEBES ASEGURARTE DE QUE ESTE ENDPOINT EXISTE EN TU BACKEND**
+        const checkResponse = await axios.get(`${baseURL}/check-email-exists?email=${recoveryEmail}`);
+        
+        // Si el backend responde con un código 200/OK y dice que el email existe
+        if (checkResponse.data.exists) {
+            
+            // PASO 2: Enviar el correo de recuperación usando Formspree
+            // Necesitas configurar tu ID de Formspree (por ejemplo, 'fsw00000')
+            const FORMSPREE_ID = "fsw000000000"; // <-- ¡REEMPLAZA CON TU ID DE FORMSPREE!
+            
+            // Aquí simulas que Formspree envía un enlace de recuperación
+            const formspreeResponse = await axios.post(`https://formspree.io/f/${FORMSPREE_ID}`, {
+                email: recoveryEmail,
+                _subject: "Solicitud de Recuperación de Contraseña - CleanWorld",
+                // Aquí deberías pasar la URL del enlace de restablecimiento (por ejemplo, con un token)
+                // Esto es una simplificación, Formspree solo enviará el cuerpo del mensaje.
+                // Idealmente, tu backend generaría un token y enviaría el correo.
+                // **NOTA:** Usar Formspree aquí es una SIMPLIFICACIÓN. Para una recuperación real,
+                // DEBES usar un servicio de email (SendGrid, nodemailer) y un token generado por tu backend.
+                message: `Hola. Hemos recibido una solicitud de restablecimiento de contraseña para ${recoveryEmail}. Por favor, haz clic en el siguiente enlace para continuar: [LINK DE RESTABLECIMIENTO]`,
+            }, {
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            
+            if (formspreeResponse.status === 200) {
+                setRecoveryStatus({ message: `Se ha enviado un correo a ${recoveryEmail}. Revisa tu bandeja de entrada y spam.`, type: "success" });
+            } else {
+                 setRecoveryStatus({ message: "Error al enviar el correo de Formspree. Inténtalo más tarde.", type: "error" });
+            }
+
+        } else {
+            // Si el backend indica que el correo no existe, mostramos un mensaje genérico por seguridad
+            setRecoveryStatus({ message: "Si la cuenta existe, recibirás un correo electrónico con instrucciones.", type: "success" });
+        }
+        
+    } catch (error) {
+        console.error("Error en el proceso de recuperación:", error);
+        // Si el endpoint de check falla, o hay un error de red
+        setRecoveryStatus({ message: "Error de conexión. Por favor, inténtalo más tarde.", type: "error" });
+    } finally {
+        setIsRecoveryLoading(false);
+    }
+  };
+
 
   return (
     <>
@@ -64,6 +150,7 @@ export default function Login() {
             </h1>
 
             <form className="flex flex-col gap-5 md:gap-6" onSubmit={handleSubmit}>
+              {/* Campo Email */}
               <div className="relative w-full">
                 <input
                   type="email"
@@ -78,9 +165,10 @@ export default function Login() {
                   peer-focus:top-2 peer-focus:text-gray-700 peer-focus:text-sm">
                   Email
                 </label>
-                {errors.email && <p className="text-red-600">{errors.email}</p>}
+                {errors.email && <p className="text-red-600 text-sm mt-1">{errors.email}</p>}
               </div>
 
+              {/* Campo Password */}
               <div className="relative w-full">
                 <input
                   type="password"
@@ -95,7 +183,7 @@ export default function Login() {
                   peer-focus:top-2 peer-focus:text-gray-700 peer-focus:text-sm">
                   Password
                 </label>
-                {errors.password && <p className="text-red-600">{errors.password}</p>}
+                {errors.password && <p className="text-red-600 text-sm mt-1">{errors.password}</p>}
               </div>
 
               {errors.login && <p className="text-red-600 text-center">{errors.login}</p>}
@@ -118,21 +206,89 @@ export default function Login() {
               </div>
 
               <div className="text-center mt-2">
-                <a href="#" className="text-sm text-brand-primary hover:text-brand-dark hover:underline">
-                  Forgot your password?
-                </a>
+                <button 
+                  type="button" 
+                  onClick={() => {
+                    setShowRecoveryModal(true);
+                    setRecoveryStatus({ message: "", type: "" }); // Limpiar estado al abrir
+                  }}
+                  className="text-sm text-brand-primary hover:text-brand-dark hover:underline"
+                >
+                  ¿Olvidaste tu contraseña?
+                </button>
               </div>
             </form>
           </div>
 
           <div className="flex items-center justify-center p-4 md:p-0">
             <div className="relative w-full h-64 md:h-full">
-              <img src={Happy} className="rounded-lg object-cover w-full h-full" />
+              <img src={Happy} alt="Persona limpiando" className="rounded-lg object-cover w-full h-full" />
             </div>
           </div>
         </div>
       </div>
       <Footer />
+      
+      {/* ================================================================================= */}
+      {/* MODAL DE RECUPERACIÓN DE CONTRASEÑA */}
+      {/* ================================================================================= */}
+      {showRecoveryModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[1000]">
+          <div className="bg-white rounded-lg p-6 w-11/12 max-w-md shadow-2xl">
+            <h2 className="text-2xl font-bold mb-4 text-gray-800">Recuperar Contraseña</h2>
+            
+            <p className="mb-4 text-gray-600">
+              Introduce el correo electrónico asociado a tu cuenta.
+            </p>
+
+            <form onSubmit={handleForgotPassword}>
+              <div className="relative w-full mb-4">
+                <input
+                  type="email"
+                  name="recoveryEmail"
+                  placeholder=" "
+                  value={recoveryEmail}
+                  onChange={(e) => setRecoveryEmail(e.target.value)}
+                  className="peer bg-gray-100 border border-gray-300 rounded px-4 pt-5 pb-2 w-full focus:outline-none focus:ring-2 focus:ring-brand-light"
+                  required
+                />
+                <label className="absolute left-4 top-2 text-gray-500 text-sm transition-all 
+                  peer-placeholder-shown:top-5 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base
+                  peer-focus:top-2 peer-focus:text-gray-700 peer-focus:text-sm">
+                  Email
+                </label>
+              </div>
+
+              {recoveryStatus.message && (
+                <p className={`mb-4 text-center p-2 rounded ${recoveryStatus.type === 'error' ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700'}`}>
+                  {recoveryStatus.message}
+                </p>
+              )}
+
+              <div className="flex justify-end gap-3">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setShowRecoveryModal(false);
+                    setRecoveryEmail(""); // Limpiar correo al cerrar
+                  }}
+                  className="px-4 py-2 bg-gray-300 text-gray-800 rounded hover:bg-gray-400 transition"
+                  disabled={isRecoveryLoading}
+                >
+                  Cancelar
+                </button>
+                <button
+                  type="submit"
+                  className="px-4 py-2 bg-brand-primary text-white rounded hover:bg-brand-dark transition disabled:opacity-50"
+                  disabled={isRecoveryLoading}
+                >
+                  {isRecoveryLoading ? "Enviando..." : "Enviar Correo"}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </>
   );
 }
