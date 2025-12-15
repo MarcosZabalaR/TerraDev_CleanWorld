@@ -1,5 +1,6 @@
 package com.terradev.cleanworld.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -8,6 +9,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -45,11 +47,12 @@ public class EventEntity {
     private ZoneEntity zone;
 
     // Event has many attendees
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "event_attendees",
             joinColumns = @JoinColumn(name = "event_id"),
             inverseJoinColumns = @JoinColumn(name = "user_id")
     )
-    private List<UserEntity> attendees;
+    @JsonIgnoreProperties({"password", "reportedZones", "createdAt", "updatedAt"})
+    private List<UserEntity> attendees = new ArrayList<>();
 }

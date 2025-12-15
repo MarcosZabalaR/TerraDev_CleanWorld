@@ -2,6 +2,9 @@ package com.terradev.cleanworld.controller;
 
 import com.terradev.cleanworld.entity.EventEntity;
 import com.terradev.cleanworld.service.EventService;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
+import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -61,5 +64,25 @@ public class EventController {
     @DeleteMapping("/{id}")
     public void deleteEvent(@PathVariable Long id) {
         eventService.deleteEvent(id);
+    }
+
+    /**
+     * POST -> Apuntar usuario a un evento
+     */
+    @PostMapping("/{id}/attend")
+    public ResponseEntity<EventEntity> attendEvent(@PathVariable Long id, @RequestBody Map<String, Long> body) {
+        Long userId = body.get("userId");
+        EventEntity updated = eventService.attendEvent(id, userId);
+        return ResponseEntity.ok(updated);
+    }
+
+    /**
+     * POST -> Quitar usuario de un evento
+     */
+    @PostMapping("/{id}/unattend")
+    public ResponseEntity<EventEntity> unattendEvent(@PathVariable Long id, @RequestBody Map<String, Long> body) {
+        Long userId = body.get("userId");
+        EventEntity updated = eventService.unattendEvent(id, userId);
+        return ResponseEntity.ok(updated);
     }
 }
