@@ -115,12 +115,13 @@ export default function Mapa({
   zoomCoords
 }) {
   return (
-    <MapContainer
-      center={[36.7213, -4.4214]}
-      zoom={14}
-      scrollWheelZoom={true}
-      style={{ height: '100%', width: '100%' }}
-    >
+    <div className="relative z-0 w-full h-full">
+      <MapContainer
+        center={[36.7213, -4.4214]}
+        zoom={14}
+        scrollWheelZoom={true}
+        className="w-full h-full"
+      >
       <TileLayer
         attribution="&copy; CleanWorld"
         url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
@@ -177,6 +178,7 @@ export default function Mapa({
           )}
         </Marker>
       ))}
-    </MapContainer>
-  );
+        </MapContainer>
+  </div>
+);
 }
