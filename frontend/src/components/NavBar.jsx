@@ -1,11 +1,14 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
 import Logo from "../assets/CleanWorldLogo.png";
 import Avatar from "../assets/Avatar.jpg"; 
 import { IconLogout, IconUser, IconChevronDown, IconChevronUp } from "@tabler/icons-react"; 
 import LangSwitcher from "../components/langSwitcher";
 
 export default function NavBar() {
+  const { t } = useTranslation("global");
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -101,25 +104,33 @@ export default function NavBar() {
       {/* Enlaces */}
       <ul className="flex font-medium gap-4 justify-center grow items-center">
         <li>
-          <Link to="/map" className={navLinkClass}>Mapa</Link>
+          <Link to="/map" className={navLinkClass}>
+            {t("navbar.map")}
+          </Link>
         </li>
         <li>
-          <Link to="/zones" className={navLinkClass}>Zonas</Link>
+          <Link to="/zones" className={navLinkClass}>
+            {t("navbar.zone")}
+          </Link>
         </li>
         <li>
-          <Link to="/events" className={navLinkClass}>Eventos</Link>
+          <Link to="/events" className={navLinkClass}>
+            {t("navbar.event")}
+          </Link>
         </li>
         <li>
           <button
             onClick={handleReportClick}
             className="px-3 py-2 rounded-xl bg-brand-light text-brand-dark font-bold transition-colors hover:bg-neutral-200"
           >
-            Reportar zona
+            {t("navbar.report")}
           </button>
         </li>
         {isAuthenticated && (
           <li>
-            <Link to="/points" className={navLinkClass}>Recompensas</Link>
+            <Link to="/points" className={navLinkClass}>
+              {t("navbar.reward")}
+            </Link>
           </li>
         )}
       </ul>
@@ -154,14 +165,14 @@ export default function NavBar() {
                   onClick={handleProfileClick}
                   className="w-full text-left px-4 py-2 text-sm flex items-center gap-2 hover:bg-gray-100"
                 >
-                  <IconUser size={18} /> Perfil
+                  <IconUser size={18} /> {t("navbar.profile")}
                 </button>
                 <hr className="my-1 border-gray-100" />
                 <button
                   onClick={handleLogout}
                   className="w-full text-left px-4 py-2 text-sm text-red-600 flex items-center gap-2 hover:bg-red-50 hover:text-red-700"
                 >
-                  <IconLogout size={18} /> Cerrar Sesión
+                  <IconLogout size={18} /> {t("navbar.logout")}
                 </button>
               </div>
             )}
@@ -172,13 +183,13 @@ export default function NavBar() {
               to="/login"
               className="hover:underline px-3 py-2 rounded-xl text-white font-bold transition-colors hover:bg-brand-secondary"
             >
-              Iniciar Sesión
+              {t("navbar.login")}
             </Link>
             <Link
               to="/register"
               className="px-3 py-2 rounded-xl bg-brand-light text-brand-dark font-bold transition-colors hover:bg-white"
             >
-              Registro
+              {t("navbar.register")}
             </Link>
           </>
         )}

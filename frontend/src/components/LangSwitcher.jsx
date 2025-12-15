@@ -23,20 +23,21 @@ export default function LangSwitcher() {
 
   const handleChangeLang = (newLang) => {
     const currentPath = location.pathname;
-    const routesCurrent = i18n.getResourceBundle(currentLang, "global").routes || {};
-    const routesNew = i18n.getResourceBundle(newLang, "global").routes || {};
-
+  
+    const routesCurrent =
+      i18n.getResourceBundle(currentLang, "global")?.routes || {};
+    const routesNew =
+      i18n.getResourceBundle(newLang, "global")?.routes || {};
+  
     const matchingKey = Object.keys(routesCurrent).find(
       (key) => routesCurrent[key] === currentPath
     );
-
+  
     i18n.changeLanguage(newLang);
     setIsOpen(false);
-
+  
     if (matchingKey && routesNew[matchingKey]) {
-      navigate(routesNew[matchingKey]);
-    } else {
-      navigate("/");
+      navigate(routesNew[matchingKey], { replace: true });
     }
   };
 
