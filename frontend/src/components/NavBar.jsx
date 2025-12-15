@@ -119,6 +119,11 @@ export default function NavBar() {
           </Link>
         </li>
         <li>
+            <Link to="/points" className={navLinkClass}>
+              {t("navbar.reward")}
+            </Link>
+          </li>
+        <li>
           <button
             onClick={handleReportClick}
             className="px-3 py-2 rounded-xl bg-brand-light text-brand-dark font-bold transition-colors hover:bg-neutral-200"
@@ -126,13 +131,6 @@ export default function NavBar() {
             {t("navbar.report")}
           </button>
         </li>
-        {isAuthenticated && (
-          <li>
-            <Link to="/points" className={navLinkClass}>
-              {t("navbar.reward")}
-            </Link>
-          </li>
-        )}
       </ul>
 
       {/* Zona derecha: LangSwitcher y usuario */}
