@@ -9,14 +9,14 @@ const severityPointsMap = {
 };
 
 const suggestedTools = [
-  { id: 'gloves', key: 'gloves' },
-  { id: 'bags', key: 'bags' },
-  { id: 'picker', key: 'picker' },
-  { id: 'broom', key: 'broom' },
-  { id: 'shovel', key: 'shovel' },
-  { id: 'rake', key: 'rake' },
-  { id: 'vest', key: 'vest' },
-  { id: 'water', key: 'water' },
+  { id: 'gloves', label: 'Guantes de protección' },
+  { id: 'bags', label: 'Bolsas de basura resistentes' },
+  { id: 'picker', label: 'Pinzas recogedoras' },
+  { id: 'broom', label: 'Escobas y cepillos' },
+  { id: 'shovel', label: 'Palas' },
+  { id: 'rake', label: 'Rastrillos' },
+  { id: 'vest', label: 'Chalecos reflectantes' },
+  { id: 'water', label: 'Agua y protección solar' },
 ];
 
 const initialFormData = {
@@ -25,15 +25,17 @@ const initialFormData = {
   datetime: '',
 };
 
-export default function EventModal({ zone, onClose, onSubmit, t }) {
+export default function EventModal({ zone, onClose, onSubmit }) {
   const [formData, setFormData] = useState(initialFormData);
   const [selectedTools, setSelectedTools] = useState([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   
+  // Calcular fecha mínima (24 horas desde ahora) - useState con lazy init
   const [minDateTime] = useState(() => 
     new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString().slice(0, 16)
   );
   
+  // Calcular puntos basados en la gravedad de la zona
   const rewardPoints = severityPointsMap[zone?.severity] || 25;
 
   const handleChange = (e) => {
@@ -47,15 +49,16 @@ export default function EventModal({ zone, onClose, onSubmit, t }) {
         ? prev.filter(id => id !== toolId)
         : [...prev, toolId];
       
+      // Actualizar descripción automáticamente
       const toolsList = newTools
-        .map(id => suggestedTools.find(t => t.id === id)?.key)
-        .filter(Boolean)
-        .map(key => t[key]);
+        .map(id => suggestedTools.find(t => t.id === id)?.label)
+        .filter(Boolean);
       
       const toolsText = toolsList.length > 0
-        ? `\n\n🛠️ ${t.tools}:\n${toolsList.map(t => `• ${t}`).join('\n')}`
+        ? `\n\n🛠️ Herramientas necesarias:\n${toolsList.map(t => `• ${t}`).join('\n')}`
         : '';
       
+      // Mantener la descripción base del usuario y añadir herramientas
       const baseDescription = formData.description.split('\n\n🛠️')[0];
       setFormData(prev => ({
         ...prev,
@@ -74,12 +77,13 @@ export default function EventModal({ zone, onClose, onSubmit, t }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
+    // Validar que la fecha sea al menos 24 horas en el futuro
     const selectedDate = new Date(formData.datetime);
     const now = new Date();
-    const minDate = new Date(now.getTime() + 24 * 60 * 60 * 1000);
+    const minDate = new Date(now.getTime() + 24 * 60 * 60 * 1000); // +24 horas
     
     if (selectedDate < minDate) {
-      alert(t.eventAlert);
+      alert('El evento debe programarse con al menos 24 horas de antelación');
       return;
     }
     
@@ -98,8 +102,8 @@ export default function EventModal({ zone, onClose, onSubmit, t }) {
       resetForm();
       onClose();
     } catch (error) {
-      console.error(t.errorEvent, error);
-      alert(error.response?.data?.message || t.errorEvent);
+      console.error('Error creando evento:', error);
+      alert(error.response?.data?.message || 'Error al crear el evento');
     } finally {
       setIsSubmitting(false);
     }
@@ -124,8 +128,8 @@ export default function EventModal({ zone, onClose, onSubmit, t }) {
         <div className="p-5 border-b border-gray-200 flex items-center justify-between shrink-0">
           <div className="flex-1">
             <h2 className="flex gap-2 text-2xl font-bold text-brand-dark">
-              <IconCalendarPlus size={20} />
-              {t.organize}
+			  <IconCalendarPlus size={20} />
+              Organizar Limpieza
             </h2>
             <div className="flex items-center gap-2 mt-1.5">
               <div className="flex items-center gap-1 text-sm text-gray-600 bg-gray-100 px-2 py-1 rounded">
@@ -145,14 +149,14 @@ export default function EventModal({ zone, onClose, onSubmit, t }) {
           </button>
         </div>
 
-        {/* Form Content */}
+        {/* Form Content - Scrollable */}
         <form onSubmit={handleSubmit} className="flex flex-col min-h-0 flex-1">
           <div className="overflow-y-auto p-6 space-y-6">
             
             {/* Título */}
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-2">
-                {t.titleEvent} <span className="text-red-500">*</span>
+                Título del evento <span className="text-red-500">*</span>
               </label>
               <input
                 type="text"
@@ -168,7 +172,7 @@ export default function EventModal({ zone, onClose, onSubmit, t }) {
             {/* Descripción */}
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-2">
-                {t.description} <span className="text-red-500">*</span>
+                Descripción <span className="text-red-500">*</span>
               </label>
               <textarea
                 name="description"
@@ -184,7 +188,7 @@ export default function EventModal({ zone, onClose, onSubmit, t }) {
             {/* Herramientas sugeridas */}
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-2">
-                {t.toolsNecesary}
+                Herramientas necesarias (opcional)
               </label>
               <div className="grid grid-cols-2 gap-1.5">
                 {suggestedTools.map(tool => (
@@ -202,17 +206,19 @@ export default function EventModal({ zone, onClose, onSubmit, t }) {
                       onChange={() => handleToolToggle(tool.id)}
                       className="w-3.5 h-3.5 text-brand-primary border-gray-300 rounded focus:ring-brand-primary"
                     />
-                    <span className="text-xs text-gray-700">{t[tool.key]}</span>
+                    <span className="text-xs text-gray-700">{tool.label}</span>
                   </label>
                 ))}
               </div>
-              <p className="text-xs text-gray-500 mt-1.5">{t.toolsAdd}</p>
+              <p className="text-xs text-gray-500 mt-1.5">
+                Las herramientas se añadirán automáticamente a la descripción
+              </p>
             </div>
 
             {/* Fecha y Hora */}
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-2">
-                {t.dateTime} <span className="text-red-500">*</span>
+                Fecha y hora <span className="text-red-500">*</span>
               </label>
               <div className="relative">
                 <input
@@ -229,15 +235,19 @@ export default function EventModal({ zone, onClose, onSubmit, t }) {
                   className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"
                 />
               </div>
-              <p className="text-xs text-gray-600 mt-1.5">{t.eventAlert}</p>
+              <p className="text-xs text-gray-600 mt-1.5">
+                El evento debe programarse con al menos 24 horas de antelación
+              </p>
             </div>
 
-            {/* Puntos de recompensa */}
+            {/* Puntos de recompensa - Solo lectura */}
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">{t.pointsEeward}</label>
+              <label className="block text-sm font-semibold text-gray-700 mb-2">
+                Puntos de recompensa
+              </label>
               <div className="relative">
                 <div className="w-full px-4 py-3 pl-11 border-2 border-brand-primary/30 bg-brand-light/20 rounded-xl text-base font-bold text-brand-dark">
-                  {rewardPoints} {t.points}
+                  {rewardPoints} puntos
                 </div>
                 <IconTrophy 
                   size={20} 
@@ -245,7 +255,7 @@ export default function EventModal({ zone, onClose, onSubmit, t }) {
                 />
               </div>
               <p className="text-xs text-gray-600 mt-1.5">
-                {t.autoPoints} ({['', t.mild, t.moderate, t.severe][typeof zone.severity === 'number' ? zone.severity : ({ LOW: 1, MEDIUM: 2, HIGH: 3 }[zone.severity] || 2)]})
+                Puntos asignados automáticamente según la gravedad de la zona ({['', 'Leve', 'Moderada', 'Grave'][typeof zone.severity === 'number' ? zone.severity : ({ LOW: 1, MEDIUM: 2, HIGH: 3 }[zone.severity] || 2)]})
               </p>
             </div>
 
@@ -253,8 +263,10 @@ export default function EventModal({ zone, onClose, onSubmit, t }) {
             <div className="bg-brand-light/20 rounded-xl p-4 border border-brand-primary/20">
               <h3 className="text-sm font-bold text-brand-dark mb-3 flex items-center gap-2">
                 <IconMapPin size={16} />
-                {t.selectZone}
+                Zona seleccionada
               </h3>
+              
+              {/* Imagen de la zona */}
               {zone.img_url && (
                 <div className="mb-3 rounded-lg overflow-hidden">
                   <img 
@@ -264,6 +276,7 @@ export default function EventModal({ zone, onClose, onSubmit, t }) {
                   />
                 </div>
               )}
+              
               <p className="text-sm text-gray-700 font-medium">{zone.title}</p>
               {zone.description && (
                 <p className="text-xs text-gray-600 mt-1">{zone.description}</p>
@@ -274,9 +287,10 @@ export default function EventModal({ zone, onClose, onSubmit, t }) {
                 </span>
               </div>
             </div>
+
           </div>
 
-          {/* Footer */}
+          {/* Footer - Fixed */}
           <div className="p-5 border-t border-gray-200 bg-gray-50 shrink-0 flex gap-3">
             <button
               type="button"
@@ -284,14 +298,14 @@ export default function EventModal({ zone, onClose, onSubmit, t }) {
               disabled={isSubmitting}
               className="flex-1 px-5 py-3 border-2 border-gray-300 text-gray-700 rounded-xl hover:bg-gray-100 transition-all font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {t.cancel}
+              Cancelar
             </button>
             <button
               type="submit"
               disabled={isSubmitting}
               className="flex-1 px-5 py-3 bg-brand-primary text-white rounded-xl hover:bg-brand-dark transition-all font-semibold shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {isSubmitting ? t.creating : t.create}
+              {isSubmitting ? 'Creando...' : 'Crear Evento'}
             </button>
           </div>
         </form>
