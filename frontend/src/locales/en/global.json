@@ -80,12 +80,20 @@
       "cancel": "Cancel"
     },
     "zoneDrawer": {
-      "event": "CLEANUP EVENT",
-      "addme": "Join the event",
-      "after": "After cleanup",
-      "before": "Before cleanup",
+      "mild": "Mild",
+      "moderate": "Moderate",
+      "severe": "Severe",
+
+      "severityLowDesc": "Scattered trash in the area",
+      "severityMediumDesc": "Needs cleaning soon",
+      "severityHighDesc": "Requires immediate attention",
+
+      "description": "Description",
+      "reportDate": "Report date",
+      "dateUnavailable": "Date unavailable",
+
       "takeMe": "Take me there",
-      "createEvent": "Create Event"
+      "createEvent": "Create event"
     },
     "error404": {
       "notFound": "Page Not Found",

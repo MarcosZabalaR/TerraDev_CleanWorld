@@ -80,12 +80,20 @@
         "cancel": "Cancelar"
     },
     "zoneDrawer": {
-        "event": "EVENTO DE LIMPIEZA",
-        "addme": "Apuntarme al evento",
-        "after": "Después de la limpieza",
-        "before": "Antes de la limpieza",
+        "mild": "Leve",
+        "moderate": "Moderada",
+        "severe": "Grave",
+
+        "severityLowDesc": "Basura dispersa en la zona",
+        "severityMediumDesc": "Necesita limpieza pronto",
+        "severityHighDesc": "Requiere atención inmediata",
+
+        "description": "Descripción",
+        "reportDate": "Fecha del reporte",
+        "dateUnavailable": "Fecha no disponible",
+
         "takeMe": "Llévame allí",
-        "createEvent": "Crear Evento"
+        "createEvent": "Crear evento"
     },
     "error404": {
         "notFound": "Página No Encontrada",
