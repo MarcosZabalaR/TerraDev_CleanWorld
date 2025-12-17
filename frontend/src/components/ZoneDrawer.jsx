@@ -125,7 +125,7 @@ export default function ZoneDrawer({ report, event, onClose, onCreateEvent }) {
     try {
       setRegistering(true);
       const response = await axios.post(
-        `http://localhost:8080/events/${localEvent.id}/attend`,
+        `https://terradev-cleanworld.onrender.com/events/${localEvent.id}/attend`,
         { userId: currentUser.id },
         {
           headers: {
@@ -165,7 +165,7 @@ export default function ZoneDrawer({ report, event, onClose, onCreateEvent }) {
     try {
       setRegistering(true);
       const response = await axios.post(
-        `http://localhost:8080/events/${localEvent.id}/unattend`,
+        `https://terradev-cleanworld.onrender.com/events/${localEvent.id}/unattend`,
         { userId: currentUser.id },
         {
           headers: {

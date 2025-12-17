@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Map;
 
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "https://terradev-cleanworld.vercel.app")
 @RestController
 @RequestMapping("/zones")
 public class ZoneController {

@@ -73,7 +73,7 @@ export default function NavBar() {
     navigate(reportPath, { replace: location.pathname === "/map" });
   };
 
-  const avatarSrc = userAvatarURL || Avatar;
+  const avatarSrc = "https://images.icon-icons.com/1378/PNG/512/avatardefault_92824.png";
 
   return (
     <>

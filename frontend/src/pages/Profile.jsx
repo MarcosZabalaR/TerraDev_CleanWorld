@@ -10,7 +10,7 @@ import {
 
 import DefaultAvatar from "../assets/Avatar.jpg";
 
-const API_BASE_URL = import.meta.env.API_URL || "http://localhost:8080";
+const API_BASE_URL = import.meta.env.API_URL || "https://terradev-cleanworld.onrender.com";
 
 export default function Profile() {
   const [user, setUser] = useState(null);
@@ -267,8 +267,8 @@ export default function Profile() {
                   className="rounded-full h-48 w-48 object-cover border-8 border-white shadow-xl"
                 />
                 <input type="file" id="avatar-upload" hidden accept="image/png, image/jpeg, image/webp" onChange={handleAvatarChange} disabled={isUploadingAvatar || loadingAction} />
-                <label htmlFor="avatar-upload" className={`absolute inset-0 bg-black bg-opacity-40 rounded-full flex items-center justify-center transition duration-300 focus:outline-none cursor-pointer ${isUploadingAvatar ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'} ${isUploadingAvatar || loadingAction ? 'cursor-not-allowed' : ''}`}>
-                  {isUploadingAvatar ? <IconLoader2 size={36} className="text-white animate-spin" /> : <IconCamera size={36} className="text-white" />}
+                <label htmlFor="avatar-upload" className={`absolute inset-0 bg-black bg-opacity-40 rounded-full flex items-center justify-center transition duration-300 focus:outline-none ${isUploadingAvatar ? 'opacity-100' : 'opacity-0 '} ${isUploadingAvatar || loadingAction ? 'cursor-not-allowed' : ''}`}>
+                 
                 </label>
               </div>
             </div>
