@@ -36,7 +36,7 @@ export default function RecyclingMenu({ selected, onToggleCategory, disabled = f
   };
 
   return (
-    <div className="absolute bottom-6 right-6 z-1000">
+    <div className="absolute bottom-10 md:bottom-6 right-3 md:right-6 z-1000">
       {isOpen && (
         <div className="absolute bottom-18 right-0 bg-white rounded-lg shadow-lg p-2 flex flex-col gap-1 w-50">
           {categories.map(category => {

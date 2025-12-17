@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "https://terradev-cleanworld.vercel.app")
 @RestController
 @RequestMapping("/events")
 public class EventController {
