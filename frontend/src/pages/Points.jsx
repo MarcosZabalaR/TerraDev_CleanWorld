@@ -3,12 +3,12 @@ import Navbar from "../components/NavBar";
 import Footer from "../components/Footer";
 
 // img
-import adidas from "../assets/adidas.png";
-import footlocker from "../assets/footlocker.png";
-import hm from "../assets/hm.png";
-import lol from "../assets/lol.png";
-import rakuten from "../assets/rakuten.png";
-import roblox from "../assets/roblox.png";
+import adidas from "../assets/tutifruti.jpeg";
+import footlocker from "../assets/images.jpeg";
+import hm from "../assets/mesondepaco.jpeg";
+import lol from "../assets/thyssen.webp";
+import rakuten from "../assets/krustypark.jpg";
+import roblox from "../assets/casa-kiki-plaza-palmera.jpg";
 
 // tablericon
 import {
@@ -251,42 +251,42 @@ export default function Points() {
             {/* Recompensa 1 - Rakuten TV */}
             <RewardCard 
               img={rakuten} 
-              title="Rakuten TV: 1 Película en HD" 
+              title="Krustypark: 5€ de descuento" 
               cost={800} 
             />
 
             {/* Recompensa 2 - Roblox */}
             <RewardCard 
               img={roblox} 
-              title="Tarjeta digital de Roblox" 
+              title="Palmera gratis en Casa Kiki" 
               cost={950} 
             />
 
             {/* Recompensa 3 - Adidas */}
             <RewardCard 
               img={adidas} 
-              title="Tarjeta regalo de Adidas" 
+              title="Heladeria Tuttifrutti" 
               cost={1850} 
             />
 
             {/* Recompensa 4 - League of Legends */}
             <RewardCard 
               img={lol} 
-              title="Tarjeta regalo de League of Legends" 
+              title="Día gratis en Museo Thyssen" 
               cost={1300} 
             />
 
             {/* Recompensa 5 - H&M */}
             <RewardCard 
               img={hm} 
-              title="H&M Tarjeta de Regalo España" 
+              title="Cena gratis en Mesón Paco" 
               cost={2650} 
             />
 
             {/* Recompensa 6 - FootLocker */}
             <RewardCard 
               img={footlocker} 
-              title="FootLocker Tarjeta Regalo" 
+              title="Almuerza gratis en el Portón" 
               cost={1800} 
             />
 
