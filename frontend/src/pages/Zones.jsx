@@ -26,8 +26,8 @@ export default function ZonesPage() {
     try {
       setLoading(true);
       const [zonesRes, eventsRes] = await Promise.all([
-        axios.get('http://localhost:8080/zones'),
-        axios.get('http://localhost:8080/events')
+        axios.get('https://terradev-cleanworld.onrender.com/zones'),
+        axios.get('https://terradev-cleanworld.onrender.com/events')
       ]);
       setZones(zonesRes.data);
       setEvents(eventsRes.data);
@@ -56,7 +56,7 @@ export default function ZonesPage() {
 
   const handleDeleteZone = async (zoneId) => {
     try {
-      await axios.delete(`http://localhost:8080/zones/${zoneId}`);
+      await axios.delete(`https://terradev-cleanworld.onrender.com/zones/${zoneId}`);
       setZones(zones.filter(z => z.id !== zoneId));
     } catch (err) {
       console.error('Error borrando zona:', err);

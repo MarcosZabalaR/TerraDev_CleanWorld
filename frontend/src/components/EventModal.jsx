@@ -89,7 +89,7 @@ export default function EventModal({ zone, onClose, onSubmit }) {
     
     setIsSubmitting(true);
     try {
-      const { data } = await axios.post('http://localhost:8080/events', {
+      const { data } = await axios.post('https://terradev-cleanworld.onrender.com/events', {
         title: formData.title,
         description: formData.description,
         datetime: formData.datetime,

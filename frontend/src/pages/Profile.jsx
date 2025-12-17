@@ -10,7 +10,7 @@ import {
 
 import DefaultAvatar from "../assets/Avatar.jpg";
 
-const API_BASE_URL = import.meta.env.API_URL || "http://localhost:8080";
+const API_BASE_URL = import.meta.env.API_URL || "https://terradev-cleanworld.onrender.com";
 
 export default function Profile() {
   const [user, setUser] = useState(null);
