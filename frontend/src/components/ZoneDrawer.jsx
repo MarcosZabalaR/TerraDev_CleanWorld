@@ -1,29 +1,25 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { 
-  IconX, IconCalendarPlus, IconMapPin, IconNavigation, 
-  IconAlertTriangle, IconAlertCircle, IconTrash, IconAwardFilled 
-} from '@tabler/icons-react';
-import { useTranslation } from 'react-i18next';
+import { IconX, IconCalendarPlus, IconMapPin, IconNavigation, IconAlertTriangle, IconAlertCircle, IconTrash, IconAwardFilled } from '@tabler/icons-react';
 
 const severityConfig = {
   LOW: { 
-    labelKey: 'zoneDrawer.mild',
+    label: 'Leve', 
     color: 'text-brand-primary', 
     bgColor: 'bg-brand-primary/10',
     borderColor: 'border-brand-primary/30',
     dotColor: 'bg-brand-primary'
   },
   MEDIUM: { 
-    labelKey: 'zoneDrawer.moderate',
+    label: 'Moderado', 
     color: 'text-orange-600', 
     bgColor: 'bg-orange-50',
     borderColor: 'border-orange-200',
     dotColor: 'bg-orange-500'
   },
   HIGH: { 
-    labelKey: 'zoneDrawer.severe',
+    label: 'Grave', 
     color: 'text-red-600', 
     bgColor: 'bg-red-50',
     borderColor: 'border-red-200',
@@ -51,25 +47,19 @@ const statusConfig = {
 };
 
 export default function ZoneDrawer({ report, event, onClose, onCreateEvent }) {
-  const { t } = useTranslation();
   const navigate = useNavigate();
   const [currentUser, setCurrentUser] = useState(null);
   const [registering, setRegistering] = useState(false);
   const [localEvent, setLocalEvent] = useState(event);
 
-  // Cargar usuario actual
   useEffect(() => {
-    try {
-      const userLocalString = localStorage.getItem('user');
-      if (userLocalString) setCurrentUser(JSON.parse(userLocalString));
-    } catch (err) {
-      console.error('Error loading user:', err);
-    }
+    loadCurrentUser();
   }, []);
 
   // Actualizar localEvent cuando event cambia
   useEffect(() => {
     if (event) {
+      // Verificar si el usuario está registrado
       const isUserRegistered = currentUser && event.attendees
         ? event.attendees.some(attendee => attendee.id === currentUser.id)
         : false;
@@ -79,15 +69,28 @@ export default function ZoneDrawer({ report, event, onClose, onCreateEvent }) {
     }
   }, [event, currentUser]);
 
+  const loadCurrentUser = () => {
+    try {
+      const userLocalString = localStorage.getItem('user');
+      if (userLocalString) {
+        const userData = JSON.parse(userLocalString);
+        setCurrentUser(userData);
+      }
+    } catch (err) {
+      console.error('Error loading user:', err);
+    }
+  };
+
   if (!report) return null;
 
+  // Convertir severity numérico a string si es necesario
   const severityKey = typeof report.severity === 'number'
     ? ['', 'LOW', 'MEDIUM', 'HIGH'][report.severity]
     : report.severity;
 
   const severity = severityConfig[severityKey] || severityConfig.MEDIUM;
   const status = statusConfig[report.status] || statusConfig.SUCIO;
-
+  
   const formattedDate = report.created_at 
     ? new Date(report.created_at).toLocaleDateString('es-ES', {
         day: 'numeric',
@@ -96,7 +99,7 @@ export default function ZoneDrawer({ report, event, onClose, onCreateEvent }) {
         hour: '2-digit',
         minute: '2-digit'
       })
-    : t('zoneDrawer.dateUnavailable');
+    : 'Fecha no disponible';
 
   const handleCreateEvent = () => {
     onCreateEvent?.(report);
@@ -109,13 +112,13 @@ export default function ZoneDrawer({ report, event, onClose, onCreateEvent }) {
 
   const handleRegisterToEvent = async () => {
     if (!currentUser || !currentUser.id) {
-      alert(t('auth.loginRequired'));
+      alert('Debes iniciar sesión para apuntarte a un evento');
       navigate('/login');
       return;
     }
 
     if (!localEvent || !localEvent.id) {
-      alert(t('zoneDrawer.noEvent'));
+      alert('No hay evento disponible');
       return;
     }
 
@@ -124,35 +127,67 @@ export default function ZoneDrawer({ report, event, onClose, onCreateEvent }) {
       const response = await axios.post(
         `http://localhost:8080/events/${localEvent.id}/attend`,
         { userId: currentUser.id },
-        { headers: { 'Authorization': `Bearer ${currentUser.token}` } }
+        {
+          headers: {
+            'Authorization': `Bearer ${currentUser.token}`,
+            'Content-Type': 'application/json'
+          }
+        }
       );
+      // Actualizar asistentes y estado de inscripción
       const updatedAttendees = response.data.attendees || [];
       const isUserRegistered = updatedAttendees.some(u => u.id === currentUser.id);
       setLocalEvent({ ...localEvent, attendees: updatedAttendees, isUserRegistered });
     } catch (err) {
       console.error('Error registrando a evento:', err);
-      alert(err.response?.data?.message || t('zoneDrawer.registerError'));
+      if (err.response?.status === 401) {
+        alert('Sesión expirada. Por favor inicia sesión de nuevo.');
+        navigate('/login');
+      } else if (err.response?.data?.message) {
+        alert('Error: ' + err.response.data.message);
+      } else {
+        alert('Error al apuntarse al evento. Inténtalo de nuevo.');
+      }
     } finally {
       setRegistering(false);
     }
   };
 
   const handleUnregisterFromEvent = async () => {
-    if (!currentUser || !currentUser.id || !localEvent || !localEvent.id) return;
+    if (!currentUser || !currentUser.id) {
+      return;
+    }
+
+    if (!localEvent || !localEvent.id) {
+      return;
+    }
 
     try {
       setRegistering(true);
       const response = await axios.post(
         `http://localhost:8080/events/${localEvent.id}/unattend`,
         { userId: currentUser.id },
-        { headers: { 'Authorization': `Bearer ${currentUser.token}` } }
+        {
+          headers: {
+            'Authorization': `Bearer ${currentUser.token}`,
+            'Content-Type': 'application/json'
+          }
+        }
       );
+      // Actualizar asistentes y estado de inscripción
       const updatedAttendees = response.data.attendees || [];
       const isUserRegistered = updatedAttendees.some(u => u.id === currentUser.id);
       setLocalEvent({ ...localEvent, attendees: updatedAttendees, isUserRegistered });
     } catch (err) {
       console.error('Error desapuntándose del evento:', err);
-      alert(err.response?.data?.message || t('zoneDrawer.unregisterError'));
+      if (err.response?.status === 401) {
+        alert('Sesión expirada. Por favor inicia sesión de nuevo.');
+        navigate('/login');
+      } else if (err.response?.data?.message) {
+        alert('Error: ' + err.response.data.message);
+      } else {
+        alert('Error al desapuntarse del evento. Inténtalo de nuevo.');
+      }
     } finally {
       setRegistering(false);
     }
@@ -160,12 +195,15 @@ export default function ZoneDrawer({ report, event, onClose, onCreateEvent }) {
 
   return (
     <>
-      {/* Overlay */}
-      <div className="fixed inset-0 bg-black/20 z-9998" onClick={onClose} />
-
-      {/* Drawer */}
-      <div className="fixed top-0 right-0 h-full w-full sm:w-[480px] bg-white shadow-2xl z-9999 flex flex-col">
-
+      {/* Overlay semitransparente */}
+      <div 
+        className="fixed inset-0 bg-black/20 z-9998 transition-opacity duration-300"
+        onClick={onClose}
+      />
+      
+      {/* Drawer desde la derecha */}
+      <div className="fixed top-0 right-0 h-full w-full sm:w-[480px] bg-white shadow-2xl z-9999 transform transition-transform duration-300 ease-out flex flex-col">
+        
         {/* Header */}
         <div className="bg-linear-to-r from-brand-primary to-brand-dark text-white p-5 shrink-0">
           <div className="flex items-start justify-between gap-3">
@@ -174,15 +212,18 @@ export default function ZoneDrawer({ report, event, onClose, onCreateEvent }) {
             </div>
             <button
               onClick={onClose}
-              className="text-white/80 hover:text-white hover:bg-white/20 p-2 rounded-lg shrink-0"
+              className="text-white/80 hover:text-white hover:bg-white/20 transition-colors p-2 rounded-lg shrink-0"
             >
               <IconX size={24} />
             </button>
           </div>
+          
           <div className="flex items-center justify-between gap-2 text-sm text-white/90 mt-3">
             <div className="flex items-center gap-2">
               <IconMapPin size={16} />
-              <span className="font-mono">{report.latitude.toFixed(5)}, {report.longitude.toFixed(5)}</span>
+              <span className="font-mono">
+                {report.latitude.toFixed(5)}, {report.longitude.toFixed(5)}
+              </span>
             </div>
             <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold ${status.bgColor} ${status.color} border ${status.borderColor}`}>
               <div className={`w-2 h-2 rounded-full ${status.dotColor} ${status.animated ? 'animate-pulse' : ''}`} />
@@ -191,98 +232,137 @@ export default function ZoneDrawer({ report, event, onClose, onCreateEvent }) {
           </div>
         </div>
 
-        {/* Content */}
+        {/* Content - Scrollable */}
         <div className="flex-1 overflow-y-auto p-6 space-y-6">
-
-          {/* Evento */}
+          
+          {/* Evento asociado */}
           {event && (
             <div className="bg-white rounded-xl shadow-md overflow-hidden border-2 border-sky-200">
-              <div className="bg-sky-700 p-4 flex items-center gap-3">
-                <div className="bg-white p-2 rounded-lg"><IconCalendarPlus size={24} className="text-sky-700" /></div>
-                <div className="flex-1">
-                  <span className="inline-block px-2 py-1 bg-white/20 rounded text-xs font-semibold text-white mb-1">{t('zoneDrawer.event')}</span>
-                  <h3 className="font-bold text-lg text-white">{event.title}</h3>
-                </div>
-                <div className="flex items-center gap-1.5 bg-white/20 px-3 py-1.5 rounded-lg">
-                  <IconAwardFilled size={18} className="text-amber-300" />
-                  <span className="text-white font-bold text-sm">+{event.reward_points}</span>
+              {/* Header del evento */}
+              <div className="bg-sky-700 p-4">
+                <div className="flex items-center gap-3">
+                  <div className="bg-white p-2 rounded-lg">
+                    <IconCalendarPlus size={24} className="text-sky-700" />
+                  </div>
+                  <div className="flex-1">
+                    <span className="inline-block px-2 py-1 bg-white/20 rounded text-xs font-semibold text-white mb-1">
+                      EVENTO DE LIMPIEZA
+                    </span>
+                    <h3 className="font-bold text-lg text-white">{event.title}</h3>
+                  </div>
+                  <div className="flex items-center gap-1.5 bg-white/20 px-3 py-1.5 rounded-lg">
+                    <IconAwardFilled size={18} className="text-amber-300" />
+                    <span className="text-white font-bold text-sm">+{event.reward_points}</span>
+                  </div>
                 </div>
               </div>
 
+              {/* Body del evento */}
               <div className="p-4 space-y-4">
+                {/* Descripción */}
                 <p className="text-gray-700 text-sm leading-relaxed">{event.description}</p>
+
+                {/* Info del evento */}
                 <div className="space-y-3">
+                  {/* Fecha y hora */}
                   <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg border border-gray-200">
                     <IconCalendarPlus size={20} className="text-gray-600 mt-0.5" />
                     <div className="flex-1">
                       <div className="text-xs text-gray-500 font-medium mb-1">FECHA Y HORA</div>
                       <div className="text-sm font-semibold text-gray-900">
-                        {new Date(event.datetime).toLocaleDateString('es-ES', { weekday:'long', day:'numeric', month:'long', year:'numeric'})}
+                        {new Date(event.datetime).toLocaleDateString('es-ES', { 
+                          weekday: 'long',
+                          day: 'numeric', 
+                          month: 'long', 
+                          year: 'numeric'
+                        })}
                       </div>
                       <div className="text-sm text-gray-600">
-                        {new Date(event.datetime).toLocaleTimeString('es-ES', { hour:'2-digit', minute:'2-digit'})}
+                        {new Date(event.datetime).toLocaleTimeString('es-ES', { 
+                          hour: '2-digit',
+                          minute: '2-digit'
+                        })}
                       </div>
                     </div>
                   </div>
                 </div>
 
+                {/* Botón de apuntarse/desapuntarse */}
                 {localEvent?.isUserRegistered ? (
                   <button
                     onClick={handleUnregisterFromEvent}
                     disabled={registering}
-                    className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {registering ? 'Procesando...' : t('zoneDrawer.unregister')}
+                    {registering ? 'Procesando...' : 'Desapuntarme del evento'}
                   </button>
                 ) : (
                   <button
                     onClick={handleRegisterToEvent}
                     disabled={registering}
-                    className="w-full bg-sky-700 hover:bg-sky-800 text-white font-semibold py-3 px-4 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full bg-sky-700 hover:bg-sky-800 text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {registering ? 'Apuntando...' : t('zoneDrawer.addme')}
+                    {registering ? 'Apuntando...' : 'Apuntarme al evento'}
                   </button>
                 )}
               </div>
             </div>
           )}
-
-          {/* Imágenes y descripción */}
+          
+          {/* Para zonas limpias: mostrar después, descripción, antes */}
           {report.status === 'LIMPIO' ? (
             <>
+              {/* Imagen "después" */}
               {report.after_img_url && (
                 <div className="relative rounded-xl overflow-hidden border-2 border-emerald-200">
                   <div className="absolute top-3 right-3 bg-emerald-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold shadow-md">
-                    {t('zoneDrawer.after')}
+                    Después de la limpieza
                   </div>
-                  <img src={report.after_img_url} alt={`${report.title} - después`} className="w-full aspect-video object-cover" />
+                  <img
+                    src={report.after_img_url}
+                    alt={`${report.title} - después`}
+                    className="w-full aspect-video object-cover"
+                  />
                 </div>
               )}
 
+              {/* Descripción */}
               {report.description && (
                 <div className="bg-emerald-50 p-4 rounded-xl border border-emerald-200">
                   <p className="text-gray-700 leading-relaxed">{report.description}</p>
                 </div>
               )}
 
+              {/* Imagen "antes" */}
               {report.img_url && (
                 <div className="relative rounded-xl overflow-hidden border-2 border-gray-200">
                   <div className="absolute top-3 right-3 bg-gray-600 text-white px-3 py-1.5 rounded-lg text-xs font-semibold shadow-md">
-                    {t('zoneDrawer.before')}
+                    Antes de la limpieza
                   </div>
-                  <img src={report.img_url} alt={`${report.title} - antes`} className="w-full aspect-video object-cover" />
+                  <img
+                    src={report.img_url}
+                    alt={`${report.title} - antes`}
+                    className="w-full aspect-video object-cover"
+                  />
                 </div>
               )}
             </>
           ) : (
             <>
+              {/* Para zonas sucias: flujo normal */}
+              {/* Imagen principal */}
               {report.img_url && (
                 <div className="relative rounded-2xl overflow-hidden border-2 border-gray-200">
-                  <img src={report.img_url} alt={report.title} className="w-full aspect-video object-cover" />
+                  <img
+                    src={report.img_url}
+                    alt={report.title}
+                    className="w-full aspect-video object-cover"
+                  />
                 </div>
               )}
 
-              <div className={`relative overflow-hidden rounded-xl border-2 ${severity.borderColor}`}>
+              {/* Badge de gravedad - Destacado */}
+              <div className={`relative overflow-hidden rounded-xl border-2 ${severity.borderColor} `}>
                 <div className={`absolute inset-0 ${severity.bgColor} opacity-90`} />
                 <div className="relative flex items-center gap-3 p-4">
                   <div className={`p-2 rounded-lg ${severity.color} bg-white/90`}>
@@ -295,21 +375,28 @@ export default function ZoneDrawer({ report, event, onClose, onCreateEvent }) {
                     )}
                   </div>
                   <div className="flex-1">
-                    <p className={`text-lg font-bold ${severity.color} mb-0.5`}>{t(severity.labelKey)}</p>
+                    <p className={`text-lg font-bold ${severity.color} mb-0.5`}>{severity.label}</p>
                     <p className="text-xs font-medium text-gray-600">
-                      {severityKey === 'HIGH' ? t('zoneDrawer.severityHighDesc')
-                        : severityKey === 'MEDIUM' ? t('zoneDrawer.severityMediumDesc')
-                        : t('zoneDrawer.severityLowDesc')}
+                      {severityKey === 'HIGH' 
+                        ? 'Requiere atención inmediata' 
+                        : severityKey === 'MEDIUM' 
+                        ? 'Necesita limpieza pronto' 
+                        : 'Basura dispersa en la zona'}
                     </p>
                   </div>
                   <div className={`w-1.5 h-12 rounded-full ${severity.dotColor}`} />
                 </div>
               </div>
 
+              {/* Descripción */}
               {report.description && (
                 <div>
-                  <h3 className="text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">{t('zoneDrawer.description')}</h3>
-                  <p className="text-gray-700 leading-relaxed bg-gray-50 p-4 rounded-xl border border-gray-200">{report.description}</p>
+                  <h3 className="text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">
+                    Descripción
+                  </h3>
+                  <p className="text-gray-700 leading-relaxed bg-gray-50 p-4 rounded-xl border border-gray-200">
+                    {report.description}
+                  </p>
                 </div>
               )}
             </>
@@ -320,14 +407,14 @@ export default function ZoneDrawer({ report, event, onClose, onCreateEvent }) {
             <div className="bg-gray-50 rounded-xl p-4 border border-gray-200 space-y-3">
               {report.created_at && (
                 <div className="flex justify-between items-center">
-                  <span className="text-sm font-semibold text-gray-600">{t('zoneDrawer.reportDate')}</span>
+                  <span className="text-sm font-semibold text-gray-600">Fecha de reporte</span>
                   <span className="text-sm text-gray-700 font-mono">{formattedDate}</span>
                 </div>
               )}
 
               {report.reported_id && (
                 <div className="flex justify-between items-center">
-                  <span className="text-sm font-semibold text-gray-600">{t('zoneDrawer.reportedBy')}</span>
+                  <span className="text-sm font-semibold text-gray-600">Reportado por</span>
                   <span className="text-sm text-gray-700">Usuario #{report.reported_id}</span>
                 </div>
               )}
@@ -336,23 +423,23 @@ export default function ZoneDrawer({ report, event, onClose, onCreateEvent }) {
 
         </div>
 
-        {/* Footer */}
+        {/* Footer - Botones de acción */}
         <div className="p-6 border-t border-gray-200 bg-gray-50 shrink-0 flex gap-3">
           <button
             onClick={handleNavigate}
             className="flex-1 flex items-center justify-center gap-2 px-5 py-3.5 bg-sky-700 hover:bg-sky-800 text-white rounded-xl transition-all font-semibold shadow-lg hover:shadow-xl cursor-pointer"
           >
             <IconNavigation size={20} />
-            {t('zoneDrawer.takeMe')}
+            Llévame allí
           </button>
-
+          
           {!event && report.status !== 'LIMPIO' && (
             <button
               onClick={handleCreateEvent}
               className="flex-1 flex items-center justify-center gap-2 px-5 py-3.5 bg-brand-primary hover:bg-brand-dark text-white rounded-xl transition-all font-semibold shadow-lg hover:shadow-xl cursor-pointer"
             >
               <IconCalendarPlus size={20} />
-              {t('zoneDrawer.createEvent')}
+              Crear Evento
             </button>
           )}
         </div>

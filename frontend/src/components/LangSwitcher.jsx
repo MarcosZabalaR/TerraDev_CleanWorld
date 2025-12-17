@@ -60,7 +60,7 @@ export default function LangSwitcher() {
     >
       <button
         onClick={() => setIsOpen((prev) => !prev)}
-        className="w-11 h-11 flex items-center justify-center rounded-xl shadow-card bg-white/0.1 backdrop-blur-xs border border-black/30 dark:border-white/20 transition-all duration-300"
+        className="w-11 h-11 flex items-center justify-center rounded-xl shadow-card bg-brand-primary/30 backdrop-blur-xs border border-black/30 dark:border-white/20 transition-all duration-300"
       >
         {flags[currentLang]}
       </button>
@@ -72,7 +72,7 @@ export default function LangSwitcher() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.15 }}
-            className="absolute right-0 mt-2 w-11 rounded-xl shadow-card bg-white/0.1 backdrop-blur-xs border border-black/30 dark:border-white/20 transition-all duration-300 flex flex-col items-center py-2 z-50"
+            className="absolute right-0 mt-2 w-11 rounded-xl shadow-card bg-brand-primary/30 backdrop-blur-xs border border-black/30 dark:border-white/20 transition-all duration-300 flex flex-col items-center py-2 z-50"
           >
             {availableLangs.map((lang) => (
               <button
