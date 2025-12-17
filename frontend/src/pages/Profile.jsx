@@ -262,7 +262,7 @@ export default function Profile() {
               <div className="relative group">
                 <img
                   key={user.avatar || "default"}
-                  src={user.avatar ? user.avatar : DefaultAvatar}
+                  src={user.avatar ? user.avatar : "https://images.icon-icons.com/1378/PNG/512/avatardefault_92824.png"}
                   alt="Avatar de Usuario"
                   className="rounded-full h-48 w-48 object-cover border-8 border-white shadow-xl"
                 />
