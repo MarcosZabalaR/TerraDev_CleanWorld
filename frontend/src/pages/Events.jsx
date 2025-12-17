@@ -39,8 +39,8 @@ export default function EventsPage() {
       try {
         setLoading(true);
         const [eventsRes, zonesRes] = await Promise.all([
-          axios.get('http://localhost:8080/events'),
-          axios.get('http://localhost:8080/zones')
+          axios.get('https://terradev-cleanworld.onrender.com/events'),
+          axios.get('https://terradev-cleanworld.onrender.com/zones')
         ]);
 
         // Marcar eventos donde el usuario está registrado
@@ -116,7 +116,7 @@ export default function EventsPage() {
     try {
       setRegisteringEventId(eventId);
       const response = await axios.post(
-        `http://localhost:8080/events/${eventId}/attend`,
+        `https://terradev-cleanworld.onrender.com/events/${eventId}/attend`,
         { userId: currentUser.id },
         {
           headers: {
@@ -160,7 +160,7 @@ export default function EventsPage() {
     try {
       setRegisteringEventId(eventId);
       const response = await axios.post(
-        `http://localhost:8080/events/${eventId}/unattend`,
+        `https://terradev-cleanworld.onrender.com/events/${eventId}/unattend`,
         { userId: currentUser.id },
         {
           headers: {
@@ -204,7 +204,7 @@ export default function EventsPage() {
     }
 
     try {
-      await axios.delete(`http://localhost:8080/events/${eventId}`);
+      await axios.delete(`https://terradev-cleanworld.onrender.com/events/${eventId}`);
       setEvents(events.filter(e => e.id !== eventId));
     } catch (err) {
       console.error('Error borrando evento:', err);

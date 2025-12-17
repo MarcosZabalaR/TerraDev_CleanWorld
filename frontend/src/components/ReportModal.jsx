@@ -75,7 +75,7 @@ export default function ReportModal({ isReportMode, reportCoords, pinPosition = 
     setIsUploading(true);
     try {
       const img_url = await uploadImageToCloudinary(images[0].file);
-      const { data } = await axios.post('http://localhost:8080/zones', {
+      const { data } = await axios.post('https://terradev-cleanworld.onrender.com/zones', {
         ...formData, img_url, latitude: reportCoords.lat, longitude: reportCoords.lng,
         status: 'SUCIO', reported_id: 1
       });

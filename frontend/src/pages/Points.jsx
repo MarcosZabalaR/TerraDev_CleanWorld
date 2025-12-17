@@ -64,7 +64,7 @@ export default function Points() {
     setModalMessage("");
   };
 
-  const API_BASE_URL = "http://localhost:8080";
+  const API_BASE_URL = "https://terradev-cleanworld.onrender.com";
 
   useEffect(() => {
     const fetchUser = async () => {
