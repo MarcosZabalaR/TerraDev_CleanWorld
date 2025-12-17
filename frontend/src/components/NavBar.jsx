@@ -12,7 +12,7 @@ import {
   IconMenu2,
   IconX,
 } from "@tabler/icons-react";
-import LangSwitcher from "../components/langSwitcher";
+import LangSwitcher from "../components/LangSwitcher";
 
 export default function NavBar() {
   const { t } = useTranslation("global");

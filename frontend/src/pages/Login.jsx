@@ -61,7 +61,7 @@ export default function Login() {
 
       console.log("Usuario logueado:", userData);
 
-      navigate("/profile"); 
+      navigate("/map"); // redirige al mapa
 
     } catch (error) {
       console.error("Error en login:", error);

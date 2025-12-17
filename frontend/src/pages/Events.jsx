@@ -4,7 +4,7 @@ import axios from 'axios';
 import Navbar from "../components/NavBar";
 import Footer from "../components/Footer";
 import ZoneDrawer from "../components/ZoneDrawer";
-import { IconChevronDown, IconChevronUp, IconCalendar, IconMapPin, IconAwardFilled, IconUser, IconZoomScan, IconCheck } from '@tabler/icons-react';
+import { IconChevronDown, IconChevronUp, IconCalendar, IconMapPin, IconAwardFilled, IconUser, IconZoomScan, IconCheck, IconTrash } from '@tabler/icons-react';
 
 export default function EventsPage() {
   const navigate = useNavigate();
@@ -198,6 +198,20 @@ export default function EventsPage() {
     }
   };
 
+  const handleDeleteEvent = async (eventId) => {
+    if (!confirm('¿Estás seguro de que quieres borrar este evento?')) {
+      return;
+    }
+
+    try {
+      await axios.delete(`http://localhost:8080/events/${eventId}`);
+      setEvents(events.filter(e => e.id !== eventId));
+    } catch (err) {
+      console.error('Error borrando evento:', err);
+      alert('Error al borrar el evento');
+    }
+  };
+
   const formatEventDate = (dateString) => {
     const date = new Date(dateString);
     return date.toLocaleDateString('es-ES', { 
@@ -360,7 +374,19 @@ export default function EventsPage() {
                   )}
 
                   <div className="p-4 flex flex-col flex-1">
-                    <h3 className="text-xl font-bold text-gray-800 mb-2">{event.title}</h3>
+                    <div className="flex items-start justify-between mb-2">
+                      <h3 className="text-xl font-bold text-gray-800 flex-1">{event.title}</h3>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleDeleteEvent(event.id);
+                        }}
+                        className="p-1 text-red-600 hover:bg-red-50 rounded"
+                        title="Borrar evento"
+                      >
+                        <IconTrash size={18} />
+                      </button>
+                    </div>
 
                     {event.description && (
                       <p className="text-gray-600 mb-3 line-clamp-2">{event.description}</p>

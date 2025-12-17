@@ -77,7 +77,7 @@ export default function Register() {
       await axios.post(baseURL, {
         ...formValues,
         avatar: "",
-        points: 0,
+        points: 1000,
       });
 
       navigate("/login");
