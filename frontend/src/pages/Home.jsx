@@ -54,12 +54,16 @@ function Home() {
         alt="Mapa Mundial"
       />
 
-      <img src={Cloud} className="h-80 md:h-100 w-400 absolute top-[20vh] right-[-20vh] rotate-[-18deg]" />
-      <img src={Cloud} className="h-80 md:h-100 w-400 absolute top-[40vh] md:top-[35vh] right-[-10vh] md:right-[-54vh] rotate-[-18deg]" />
-      <img src={Cloud} className="h-80 md:h-100 w-400 absolute top-[25vh] left-[-35vh] md:left-[-50vh] rotate-16" />
-      <img src={Cloud} className="h-80 md:h-100 w-400 absolute top-[50vh] left-[-20vh] md:left-[-40vh] rotate-20" />
+      <img src={Cloud} className="sm:hidden scale-150 absolute top-[50vh] right-[-20vh] " />
+      <img src={Cloud} className="sm:hidden scale-150 absolute top-[60vh] right-[20vh] rotate-[35deg]" />
+      
+      {<img src={Cloud} className="xs:hidden md:h-100 md:w-400 absolute top-[65vh] md:top-[35vh] right-[-10vh] md:right-[-54vh] rotate-[-18deg]" />}
+      <img src={Cloud} className="xs:hidden md:h-100 md:w-400 absolute top-[60vh] md:top-[60vh] right-[-10vh] md:right-[-54vh]" />
+      <img src={Cloud} className="xs:hidden md:h-100 md:w-400 absolute top-[60vh] left-[-20vh] md:left-[-40vh] rotate-20" /> 
     </div>
   );
 }
+
+      
 
 export default Home;
