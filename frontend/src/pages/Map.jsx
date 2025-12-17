@@ -48,8 +48,8 @@ export default function MapPage() {
         (async () => {
             try {
                 const [zonesRes, eventsRes] = await Promise.all([
-                    axios.get('http://localhost:8080/zones'),
-                    axios.get('http://localhost:8080/events')
+                    axios.get('https://terradev-cleanworld.onrender.com/zones'),
+                    axios.get('https://terradev-cleanworld.onrender.com/events')
                 ]);
                 
                 const containers = [

@@ -26,8 +26,8 @@ export default function ZonesPage() {
     try {
       setLoading(true);
       const [zonesRes, eventsRes] = await Promise.all([
-        axios.get('http://localhost:8080/zones'),
-        axios.get('http://localhost:8080/events')
+        axios.get('https://terradev-cleanworld.onrender.com/zones'),
+        axios.get('https://terradev-cleanworld.onrender.com/events')
       ]);
       setZones(zonesRes.data);
       setEvents(eventsRes.data);
@@ -56,7 +56,7 @@ export default function ZonesPage() {
 
   const handleDeleteZone = async (zoneId) => {
     try {
-      await axios.delete(`http://localhost:8080/zones/${zoneId}`);
+      await axios.delete(`https://terradev-cleanworld.onrender.com/zones/${zoneId}`);
       setZones(zones.filter(z => z.id !== zoneId));
     } catch (err) {
       console.error('Error borrando zona:', err);
@@ -150,12 +150,19 @@ export default function ZonesPage() {
             {sortedZones.map((zone) => {
               const createdDate = zone.created_at || zone.createdAt;
               const statusColors = { SUCIO: 'bg-red-100 text-red-800', LIMPIO: 'bg-green-100 text-green-800' };
-              
+              const hasEvent = events.some(e => e.zone?.id === zone.id || e.zone_id === zone.id);
+
               return (
-                <div key={zone.id} className="bg-white rounded-xl shadow-2xl hover:shadow-[0_10px_30px_rgba(0,0,0,0.2)] overflow-hidden transition transform hover:scale-105 cursor-pointer flex flex-col relative" onClick={() => setSelectedZone(zone)}>
+                <div key={zone.id} className={`bg-white rounded-xl shadow-2xl hover:shadow-[0_10px_30px_rgba(0,0,0,0.2)] overflow-hidden transition transform hover:scale-105 cursor-pointer flex flex-col relative ${hasEvent ? 'ring-4 ring-sky-400' : ''}`} onClick={() => setSelectedZone(zone)}>
                   {(zone.status === 'LIMPIO' ? zone.after_img_url : zone.img_url) && (
                     <div className="h-48 bg-gray-200 shrink-0 relative">
                       <img src={zone.status === 'LIMPIO' ? zone.after_img_url : zone.img_url} alt={zone.title} className="w-full h-full object-cover" />
+                      {hasEvent && (
+                        <div className="absolute top-3 left-3 bg-sky-700 text-white px-3 py-1 rounded-full text-sm font-semibold flex items-center gap-1 shadow-lg border-2 border-white">
+                          <IconCalendar size={16} />
+                          Evento creado
+                        </div>
+                      )}
                       {zone.status === 'LIMPIO' ? (
                         <div className="absolute top-3 right-3 bg-emerald-400 text-white px-3 py-1 rounded-full text-sm font-semibold flex items-center gap-1 shadow-lg border-2 border-white">
                           ✓ Limpia

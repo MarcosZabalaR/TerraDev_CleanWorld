@@ -4,7 +4,7 @@ import axios from 'axios';
 import Navbar from "../components/NavBar";
 import Footer from "../components/Footer";
 import ZoneDrawer from "../components/ZoneDrawer";
-import { IconChevronDown, IconChevronUp, IconCalendar, IconMapPin, IconAwardFilled, IconUser, IconZoomScan, IconCheck } from '@tabler/icons-react';
+import { IconChevronDown, IconChevronUp, IconCalendar, IconMapPin, IconAwardFilled, IconUser, IconZoomScan, IconCheck, IconTrash } from '@tabler/icons-react';
 
 export default function EventsPage() {
   const navigate = useNavigate();
@@ -39,8 +39,8 @@ export default function EventsPage() {
       try {
         setLoading(true);
         const [eventsRes, zonesRes] = await Promise.all([
-          axios.get('http://localhost:8080/events'),
-          axios.get('http://localhost:8080/zones')
+          axios.get('https://terradev-cleanworld.onrender.com/events'),
+          axios.get('https://terradev-cleanworld.onrender.com/zones')
         ]);
 
         // Marcar eventos donde el usuario está registrado
@@ -116,7 +116,7 @@ export default function EventsPage() {
     try {
       setRegisteringEventId(eventId);
       const response = await axios.post(
-        `http://localhost:8080/events/${eventId}/attend`,
+        `https://terradev-cleanworld.onrender.com/events/${eventId}/attend`,
         { userId: currentUser.id },
         {
           headers: {
@@ -160,7 +160,7 @@ export default function EventsPage() {
     try {
       setRegisteringEventId(eventId);
       const response = await axios.post(
-        `http://localhost:8080/events/${eventId}/unattend`,
+        `https://terradev-cleanworld.onrender.com/events/${eventId}/unattend`,
         { userId: currentUser.id },
         {
           headers: {
@@ -195,6 +195,20 @@ export default function EventsPage() {
       }
     } finally {
       setRegisteringEventId(null);
+    }
+  };
+
+  const handleDeleteEvent = async (eventId) => {
+    if (!confirm('¿Estás seguro de que quieres borrar este evento?')) {
+      return;
+    }
+
+    try {
+      await axios.delete(`https://terradev-cleanworld.onrender.com/events/${eventId}`);
+      setEvents(events.filter(e => e.id !== eventId));
+    } catch (err) {
+      console.error('Error borrando evento:', err);
+      alert('Error al borrar el evento');
     }
   };
 
@@ -360,7 +374,19 @@ export default function EventsPage() {
                   )}
 
                   <div className="p-4 flex flex-col flex-1">
-                    <h3 className="text-xl font-bold text-gray-800 mb-2">{event.title}</h3>
+                    <div className="flex items-start justify-between mb-2">
+                      <h3 className="text-xl font-bold text-gray-800 flex-1">{event.title}</h3>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleDeleteEvent(event.id);
+                        }}
+                        className="p-1 text-red-600 hover:bg-red-50 rounded"
+                        title="Borrar evento"
+                      >
+                        <IconTrash size={18} />
+                      </button>
+                    </div>
 
                     {event.description && (
                       <p className="text-gray-600 mb-3 line-clamp-2">{event.description}</p>

@@ -6,7 +6,7 @@ import { useState } from "react";
 
 export default function Register() {
   const navigate = useNavigate();
-  const baseURL = `${import.meta.env.API_URL || "http://localhost:8080"}/users`;
+  const baseURL = `${import.meta.env.API_URL || "https://terradev-cleanworld.onrender.com"}/users`;
 
   const [formValues, setFormValues] = useState({
     name: "",
@@ -77,7 +77,7 @@ export default function Register() {
       await axios.post(baseURL, {
         ...formValues,
         avatar: "",
-        points: 0,
+        points: 1000,
       });
 
       navigate("/login");
