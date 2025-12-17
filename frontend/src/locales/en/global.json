@@ -1,0 +1,276 @@
+{
+    "navbar": {
+      "map": "Map",
+      "zone": "Zone",
+      "event": "Events",
+      "report": "Report Zone",
+      "reward": "Rewards",
+      "profile": "Profile",
+      "logout": "Logout",
+      "login": "Login",
+      "register": "Register"
+    },
+    "footer": {
+      "slogan": "Together for a cleaner planet. Report, participate, and make a difference.",
+      "links": "Links",
+      "follow": "Follow us",
+      "where": "Where are we?",
+      "wer": "we are"
+    },
+    "eventModal": {
+      "gloves": "Protective gloves",
+      "bags": "Durable garbage bags",
+      "picker": "Trash pickers",
+      "broom": "Brooms and brushes",
+      "shovel": "Shovels",
+      "rake": "Rakes",
+      "vest": "Reflective vests",
+      "water": "Water and sun protection",
+      "tools": "Necessary tools",
+      "eventAlert": "The event must be scheduled at least 24 hours in advance",
+      "errorEvent": "Error creating the event",
+      "organize": "Organize Cleanup",
+      "titleEvent": "Event Title",
+      "description": "Description",
+      "toolsNecesary": "Necessary tools (optional)",
+      "toolsAdd": "Tools will be automatically added to the description",
+      "dateTime": "Date and Time",
+      "pointsEeward": "Reward points",
+      "points": "points",
+      "autoPoints": "Points automatically assigned based on zone severity",
+      "mild": "Mild",
+      "moderate": "Moderate",
+      "severe": "Severe",
+      "selectZone": "Selected Zone",
+      "cancel": "Cancel",
+      "creating": "Creating",
+      "create": "Create Event"
+    },
+    "recyclingMenu": {
+      "containers": "Containers",
+      "paper": "Paper",
+      "glass": "Glass",
+      "waste": "Waste",
+      "batteries": "Batteries",
+      "clothes": "Clothes",
+      "oil": "Oil",
+      "center": "Recycling Center"
+    },
+    "reportModal": {
+      "severityDescription": {
+        "Mild": "Scattered trash in the area",
+        "Moderate": "Notable accumulation of trash",
+        "Severe": "Illegal dumping or large accumulation of trash"
+      },
+      "maxImage": "Maximum 1 image",
+      "image": "You must upload at least one photo of the issue",
+      "descriptionProblem": "You must add a description of the problem",
+      "dirty": "DIRTY",
+      "location": "Select the location",
+      "markMap": "Click on the map to mark the zone",
+      "reportZone": "Report Zone",
+      "clickMap": "Click on the map to change location",
+      "title": "Title",
+      "exampleTitle": "E.g.: Trash accumulated near the container",
+      "description": "Description",
+      "exampleDescription": "Describe the problem in detail...",
+      "level": "Severity level",
+      "photo": "Photo",
+      "addPhoto": "Add Photo",
+      "cancel": "Cancel"
+    },
+    "zoneDrawer": {
+      "mild": "Mild",
+      "moderate": "Moderate",
+      "severe": "Severe",
+
+      "severityLowDesc": "Scattered trash in the area",
+      "severityMediumDesc": "Needs cleaning soon",
+      "severityHighDesc": "Requires immediate attention",
+
+      "description": "Description",
+      "reportDate": "Report date",
+      "dateUnavailable": "Date unavailable",
+
+      "takeMe": "Take me there",
+      "createEvent": "Create event"
+    },
+    "error404": {
+      "notFound": "Page Not Found",
+      "backHome": "Go Back Home",
+      "support": "Contact Support"
+    },
+    "events": {
+      "pastEvent": "Past event",
+      "today": "Today",
+      "tomorrow": "Tomorrow",
+      "in": "In",
+      "days": "days",
+      "cleanEvents": "Cleanup Events",
+      "dateEvent": "Event Date",
+      "registration": "My Registrations",
+      "showRegistration": "Showing my registrations",
+      "hideFinishedEvents": "Hide finished events",
+      "showFinishedEvents": "Show finished events",
+      "loadEvents": "Loading events...",
+      "error": "Error",
+      "notFoundEvents": "No events available",
+      "completed": "Completed",
+      "sign": "Join",
+      "shownMap": "View on map"
+    },
+    "home": {
+      "welcome": "Welcome to",
+      "map": "Map",
+      "login": "Login"
+    },
+    "login": {
+      "title": "Login",
+      "email": "Email",
+      "password": "Password",
+      "errors": {
+        "requiredEmail": "Email is required",
+        "requiredPassword": "Password is required",
+        "invalidLogin": "Incorrect email or password",
+        "unexpected": "Unexpected error, please try again"
+      },
+      "buttons": {
+        "login": "Login",
+        "register": "Register"
+      },
+      "links": {
+        "forgotPassword": "Forgot your password?"
+      }
+    },
+    "points": {
+      "title": "Congratulations!",
+      "subtitle": "You have earned:",
+      "points": "points",
+      "loadingPoints": "Loading...",
+      "tutorialToggle": "How can I earn points?",
+      "tutorialSteps": {
+        "step1": {
+          "title": "Login",
+          "description": "First, create a CleanWorld account or login to start your adventure"
+        },
+        "step2": {
+          "title": "Earn points",
+          "description": "Participate in events to earn points and redeem them for amazing rewards."
+        },
+        "step3": {
+          "title": "Get rewards",
+          "description": "Visit our rewards panel to exchange your points for the best prizes."
+        }
+      },
+      "redeem": "Redeem"
+    },
+    "profile": {
+      "loadingProfile": "Loading profile...",
+      "loadError": {
+        "title": "Load Error",
+        "message": "{{error}}",
+        "loginButton": "Go to Login",
+        "sessionExpired": "Session expired. Please login again."
+      },
+      "avatar": {
+        "alt": "User Avatar",
+        "uploadButton": "Upload Avatar",
+        "invalidFile": "Invalid file (type or size). Max 5MB.",
+        "uploading": "Uploading avatar..."
+      },
+      "userInfo": {
+        "memberOf": "Member of CleanWorld",
+        "email": "Email",
+        "joinDate": "Member since",
+        "username": "Name",
+        "password": "Password",
+        "edit": "Edit",
+        "save": "Save",
+        "cancel": "Cancel"
+      },
+      "usernameUpdate": {
+        "emptyOrSame": "Empty name or same as current",
+        "success": "Name updated successfully",
+        "error": "Error updating name"
+      },
+      "passwordUpdate": {
+        "mismatch": "Passwords do not match",
+        "minLength": "Minimum 6 characters",
+        "success": "Password updated successfully",
+        "error": "Error changing password"
+      },
+      "loadingAction": "Processing...",
+      "buttons": {
+        "logout": "Logout"
+      }
+    },
+    "register": {
+      "title": "Register",
+      "fields": {
+        "username": "Username",
+        "email": "Email",
+        "password": "Password",
+        "confirmPassword": "Confirm Password"
+      },
+      "errors": {
+        "usernameRequired": "Username is required",
+        "usernameInvalid": "Username can only contain letters and numbers",
+        "usernameLength": "Username must be between 3 and 16 characters",
+        "usernameExists": "Username already exists",
+        "emailRequired": "Email is required",
+        "emailInvalid": "Invalid email format",
+        "emailExists": "This email is already registered",
+        "passwordRequired": "Password is required",
+        "passwordMismatch": "Passwords do not match",
+        "submitError": "Unexpected error while creating user"
+      },
+      "buttons": {
+        "register": "Register",
+        "alreadyHaveAccount": "I already have an account"
+      }
+    },
+    "zonesPage": {
+      "title": "Reported Zones",
+      "filters": {
+        "date": {
+          "label": "Creation Date",
+          "asc": "Oldest first",
+          "desc": "Newest first"
+        },
+        "severity": {
+          "label": "Severity",
+          "asc": "Lowest severity first",
+          "desc": "Highest severity first"
+        },
+        "status": {
+          "all": "All zones",
+          "SUCIO": "Dirty zones",
+          "LIMPIO": "Clean zones"
+        },
+        "statusDescription": {
+          "all": "Showing all zones",
+          "SUCIO": "Showing dirty zones",
+          "LIMPIO": "Showing clean zones"
+        }
+      },
+      "loading": "Loading zones...",
+      "noZones": "No zones reported",
+      "error": {
+        "title": "Error",
+        "fetch": "Error loading data",
+        "delete": "Error deleting zone"
+      },
+      "zoneCard": {
+        "clean": "Clean",
+        "status": "Status",
+        "reportedOn": "Zone reported on",
+        "viewOnMap": "View on map"
+      },
+      "severity": {
+        "Leve": "Mild",
+        "Moderada": "Moderate",
+        "Grave": "Severe"
+      }
+    }
+  }
+  

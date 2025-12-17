@@ -1,3 +1,6 @@
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import { IconX, IconCalendarPlus, IconMapPin, IconNavigation, IconAlertTriangle, IconAlertCircle, IconTrash, IconAwardFilled } from '@tabler/icons-react';
 
 const severityConfig = {
@@ -44,13 +47,47 @@ const statusConfig = {
 };
 
 export default function ZoneDrawer({ report, event, onClose, onCreateEvent }) {
+  const navigate = useNavigate();
+  const [currentUser, setCurrentUser] = useState(null);
+  const [registering, setRegistering] = useState(false);
+  const [localEvent, setLocalEvent] = useState(event);
+
+  useEffect(() => {
+    loadCurrentUser();
+  }, []);
+
+  // Actualizar localEvent cuando event cambia
+  useEffect(() => {
+    if (event) {
+      // Verificar si el usuario está registrado
+      const isUserRegistered = currentUser && event.attendees
+        ? event.attendees.some(attendee => attendee.id === currentUser.id)
+        : false;
+      setLocalEvent({ ...event, isUserRegistered });
+    } else {
+      setLocalEvent(null);
+    }
+  }, [event, currentUser]);
+
+  const loadCurrentUser = () => {
+    try {
+      const userLocalString = localStorage.getItem('user');
+      if (userLocalString) {
+        const userData = JSON.parse(userLocalString);
+        setCurrentUser(userData);
+      }
+    } catch (err) {
+      console.error('Error loading user:', err);
+    }
+  };
+
   if (!report) return null;
 
   // Convertir severity numérico a string si es necesario
-  const severityKey = typeof report.severity === 'number' 
-    ? ['', 'LOW', 'MEDIUM', 'HIGH'][report.severity] 
+  const severityKey = typeof report.severity === 'number'
+    ? ['', 'LOW', 'MEDIUM', 'HIGH'][report.severity]
     : report.severity;
-  
+
   const severity = severityConfig[severityKey] || severityConfig.MEDIUM;
   const status = statusConfig[report.status] || statusConfig.SUCIO;
   
@@ -71,6 +108,89 @@ export default function ZoneDrawer({ report, event, onClose, onCreateEvent }) {
   const handleNavigate = () => {
     const url = `https://www.google.com/maps/dir/?api=1&destination=${report.latitude},${report.longitude}`;
     window.open(url, '_blank');
+  };
+
+  const handleRegisterToEvent = async () => {
+    if (!currentUser || !currentUser.id) {
+      alert('Debes iniciar sesión para apuntarte a un evento');
+      navigate('/login');
+      return;
+    }
+
+    if (!localEvent || !localEvent.id) {
+      alert('No hay evento disponible');
+      return;
+    }
+
+    try {
+      setRegistering(true);
+      const response = await axios.post(
+        `http://localhost:8080/events/${localEvent.id}/attend`,
+        { userId: currentUser.id },
+        {
+          headers: {
+            'Authorization': `Bearer ${currentUser.token}`,
+            'Content-Type': 'application/json'
+          }
+        }
+      );
+      // Actualizar asistentes y estado de inscripción
+      const updatedAttendees = response.data.attendees || [];
+      const isUserRegistered = updatedAttendees.some(u => u.id === currentUser.id);
+      setLocalEvent({ ...localEvent, attendees: updatedAttendees, isUserRegistered });
+    } catch (err) {
+      console.error('Error registrando a evento:', err);
+      if (err.response?.status === 401) {
+        alert('Sesión expirada. Por favor inicia sesión de nuevo.');
+        navigate('/login');
+      } else if (err.response?.data?.message) {
+        alert('Error: ' + err.response.data.message);
+      } else {
+        alert('Error al apuntarse al evento. Inténtalo de nuevo.');
+      }
+    } finally {
+      setRegistering(false);
+    }
+  };
+
+  const handleUnregisterFromEvent = async () => {
+    if (!currentUser || !currentUser.id) {
+      return;
+    }
+
+    if (!localEvent || !localEvent.id) {
+      return;
+    }
+
+    try {
+      setRegistering(true);
+      const response = await axios.post(
+        `http://localhost:8080/events/${localEvent.id}/unattend`,
+        { userId: currentUser.id },
+        {
+          headers: {
+            'Authorization': `Bearer ${currentUser.token}`,
+            'Content-Type': 'application/json'
+          }
+        }
+      );
+      // Actualizar asistentes y estado de inscripción
+      const updatedAttendees = response.data.attendees || [];
+      const isUserRegistered = updatedAttendees.some(u => u.id === currentUser.id);
+      setLocalEvent({ ...localEvent, attendees: updatedAttendees, isUserRegistered });
+    } catch (err) {
+      console.error('Error desapuntándose del evento:', err);
+      if (err.response?.status === 401) {
+        alert('Sesión expirada. Por favor inicia sesión de nuevo.');
+        navigate('/login');
+      } else if (err.response?.data?.message) {
+        alert('Error: ' + err.response.data.message);
+      } else {
+        alert('Error al desapuntarse del evento. Inténtalo de nuevo.');
+      }
+    } finally {
+      setRegistering(false);
+    }
   };
 
   return (
@@ -167,13 +287,24 @@ export default function ZoneDrawer({ report, event, onClose, onCreateEvent }) {
                   </div>
                 </div>
 
-                {/* Botón de apuntarse */}
-                <button
-                  onClick={() => {/* TODO: Implementar lógica de inscripción */}}
-                  className="w-full bg-sky-700 hover:bg-sky-800 text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-200"
-                >
-                  Apuntarme al evento
-                </button>
+                {/* Botón de apuntarse/desapuntarse */}
+                {localEvent?.isUserRegistered ? (
+                  <button
+                    onClick={handleUnregisterFromEvent}
+                    disabled={registering}
+                    className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {registering ? 'Procesando...' : 'Desapuntarme del evento'}
+                  </button>
+                ) : (
+                  <button
+                    onClick={handleRegisterToEvent}
+                    disabled={registering}
+                    className="w-full bg-sky-700 hover:bg-sky-800 text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {registering ? 'Apuntando...' : 'Apuntarme al evento'}
+                  </button>
+                )}
               </div>
             </div>
           )}

@@ -1,202 +1,228 @@
-import { useState, useEffect, useRef } from "react"; // Importar useRef para el menú desplegable
+import { useState, useEffect, useRef } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
 import Logo from "../assets/CleanWorldLogo.png";
-import { IconLogout, IconUser, IconChevronDown, IconChevronUp } from "@tabler/icons-react"; // Añadir iconos
+import Avatar from "../assets/Avatar.jpg";
+import {
+  IconLogout,
+  IconUser,
+  IconChevronDown,
+  IconChevronUp,
+  IconMenu2,
+  IconX,
+} from "@tabler/icons-react";
+import LangSwitcher from "../components/langSwitcher";
 
 export default function NavBar() {
+  const { t } = useTranslation("global");
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Estados de autenticación
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [userName, setUserName] = useState("");
-  // Estado para el menú desplegable
+  const [userAvatarURL, setUserAvatarURL] = useState(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  
-  // Referencia para detectar clics fuera del menú
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const dropdownRef = useRef(null);
 
-  // Función para cerrar el menú si se hace clic fuera de él
+  const navLinks = [
+    { path: "/map", label: t("navbar.map") },
+    { path: "/zones", label: t("navbar.zone") },
+    { path: "/events", label: t("navbar.event") },
+    { path: "/points", label: t("navbar.reward") },
+  ];
+
+  const navLinkClass = "font-bold block py-2 hover:underline";
+
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+    const handleClickOutside = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
         setIsDropdownOpen(false);
       }
     };
-    
-    // Adjuntar y limpiar el listener
     document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-
-  // Efecto para verificar la autenticación
   useEffect(() => {
     const userString = localStorage.getItem("user");
-
     if (userString) {
-      try {
-        const userData = JSON.parse(userString);
-        
-        if (userData.token && userData.name) {
-          setIsAuthenticated(true);
-          setUserName(userData.name); 
-          return;
-        }
-      } catch (e) {
-        console.error("Error al parsear el usuario de localStorage:", e);
+      const userData = JSON.parse(userString);
+      if (userData.token) {
+        setIsAuthenticated(true);
+        setUserName(userData.name);
+        setUserAvatarURL(userData.profilePicture || null);
+        return;
       }
     }
-
     setIsAuthenticated(false);
-    setUserName("");
-    
-  }, [location.pathname]); 
+  }, [location.pathname]);
 
-  //  reporte
-  const handleReportClick = (e) => {
-    e.preventDefault();
-    if (location.pathname === "/map") {
-      navigate("/map?report=true", { replace: true });
-    } else {
-      navigate("/map?report=true");
-    }
-  };
-
-  // Función para manejar el cierre de sesión
   const handleLogout = () => {
-    localStorage.removeItem("user"); 
+    localStorage.removeItem("user");
     setIsAuthenticated(false);
-    setUserName("");
-    setIsDropdownOpen(false); // Cierra el menú al cerrar sesión
+    setIsDropdownOpen(false);
+    setIsMobileMenuOpen(false);
     navigate("/");
   };
-  
-  // Función para navegar al perfil desde el desplegable
-  const handleProfileClick = () => {
-      setIsDropdownOpen(false);
-      navigate("/profile");
-  }
 
-  // Clase CSS para simplificarlo
-  const navLinkClass = "py-1 hover:underline";
+  const handleReportClick = (e) => {
+    e.preventDefault();
+    const reportPath = location.pathname === "/map" ? "/map?report=true" : "/map?report=true";
+    navigate(reportPath, { replace: location.pathname === "/map" });
+  };
+
+  const avatarSrc = userAvatarURL || Avatar;
 
   return (
-    <nav className="flex bg-brand-primary text-white font-bold p-4 h-20 items-center relative z-50">
-     
-      <h1>
-        <Link to="/" className="flex items-center gap-1 text-lg">
-          <img
-            src={Logo}
-            alt="CleanWorld Logo"
-            className="w-8 h-8 object-contain mr-2 bg-white rounded-md"
-          />
-          CleanWorld
-        </Link>
-      </h1>
+    <>
+      <nav className="bg-brand-primary text-white p-4 relative z-50">
+        <div className="flex items-center justify-between h-12">
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-2 font-bold text-lg">
+            <img src={Logo} className="w-8 h-8 bg-white rounded-md" />
+            CleanWorld
+          </Link>
 
-      {/* Enlaces */}
-      <ul className="flex font-medium gap-4 justify-center grow items-center">
-        <li>
-          <Link to="/map" className={navLinkClass}>
-            Mapa
-          </Link>
-        </li>
-        <li>
-          <Link to="/zones" className={navLinkClass}>
-            Zonas
-          </Link>
-        </li>
-        <li>
-          <Link to="/events" className={navLinkClass}>
-            Eventos
-          </Link>
-        </li>
-        
-    
-        <li>
+          {/* Desktop menu */}
+          <ul className="hidden md:flex gap-6 items-center">
+            {navLinks.map((link) => (
+              <li key={link.path}>
+                <Link to={link.path} className={navLinkClass}>
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+
+            {isAuthenticated && (
+              <li>
+                <button
+                  onClick={handleReportClick}
+                  className="px-3 py-2 rounded-xl bg-brand-light text-brand-dark font-bold transition-colors hover:bg-neutral-200"
+                >
+                  {t("navbar.report")}
+                </button>
+              </li>
+            )}
+          </ul>
+
+          {/* Right section */}
+          <div className="flex items-center gap-3">
+            <LangSwitcher />
+
+            <div className="hidden md:flex items-center gap-3">
+              {isAuthenticated ? (
+                <div className="relative" ref={dropdownRef}>
+                  <button
+                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                    className="flex items-center gap-2 bg-brand-secondary px-3 py-2 rounded-xl"
+                  >
+                    <img src={avatarSrc} className="w-6 h-6 rounded-full" />
+                    {userName}
+                    {isDropdownOpen ? <IconChevronUp /> : <IconChevronDown />}
+                  </button>
+
+                  {isDropdownOpen && (
+                    <div className="absolute right-0 mt-2 w-48 bg-white text-gray-800 rounded-lg shadow">
+                      <button
+                        onClick={() => navigate("/profile")}
+                        className="flex w-full px-4 py-2 gap-2 hover:bg-gray-100"
+                      >
+                        <IconUser /> {t("navbar.profile")}
+                      </button>
+                      <button
+                        onClick={handleLogout}
+                        className="flex w-full px-4 py-2 gap-2 text-red-600 hover:bg-red-50"
+                      >
+                        <IconLogout /> {t("navbar.logout")}
+                      </button>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <>
+                  <Link to="/login" className="font-bold">{t("navbar.login")}</Link>
+                  <Link
+                    to="/register"
+                    className="font-bold bg-brand-light text-brand-dark px-3 py-2 rounded-xl"
+                  >
+                    {t("navbar.register")}
+                  </Link>
+                </>
+              )}
+            </div>
+
+            {/* Mobile button */}
+            <button className="md:hidden" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+              {isMobileMenuOpen ? <IconX size={28} /> : <IconMenu2 size={28} />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden mt-4 bg-brand-secondary p-4 rounded-xl space-y-4">
+            {/* Navegación */}
+            <div className="flex flex-col gap-3">
+              {navLinks.map((link) => (
+                <Link key={link.path} to={link.path} className={navLinkClass}>
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+
+            <hr className="border-white/20" />
+
+            {/* Usuario */}
+            <div className="flex flex-col gap-3 pt-2">
+              {isAuthenticated ? (
+                <>
+                  <button
+                    onClick={() => navigate("/profile")}
+                    className="flex py-2 font-bold bg-brand-light text-brand-dark justify-center rounded-xl"
+                  >
+                    <IconUser /> {t("navbar.profile")}
+                  </button>
+                  <button
+                    onClick={handleLogout}
+                    className="flex py-2 font-bold bg-brand-dark text-brand-light justify-center rounded-xl"
+                  >
+                    <IconLogout /> {t("navbar.logout")}
+                  </button>
+                </>
+              ) : (
+                <>
+                  <Link
+                    to="/login"
+                    className="py-2 font-bold bg-brand-light text-brand-dark text-center rounded-xl"
+                  >
+                    {t("navbar.login")}
+                  </Link>
+                  <Link
+                    to="/register"
+                    className="py-2 font-bold bg-brand-dark text-brand-light text-center rounded-xl"
+                  >
+                    {t("navbar.register")}
+                  </Link>
+                </>
+              )}
+            </div>
+          </div>
+        )}
+      </nav>
+
+      {/* Botón Reportar zona en móvil, centrado justo debajo del navbar */}
+      {!isMobileMenuOpen && isAuthenticated && (
+        <div className="fixed md:hidden top-21 left-0 w-full flex justify-center z-50">
           <button
             onClick={handleReportClick}
-            className="px-3 py-2 rounded-xl bg-brand-light text-brand-dark font-bold transition-colors hover:bg-neutral-200"
+            className="px-4 py-2 rounded-xl bg-brand-light text-brand-dark font-bold transition-colors hover:bg-neutral-200"
           >
-            Reportar zona
+            {t("navbar.report")}
           </button>
-        </li>
-
-      
-        {isAuthenticated && (
-          <>
-            {/* El enlace a Perfil y Logout ya no están aquí, están en el desplegable. */}
-            <li>
-              <Link to="/points" className={navLinkClass}>
-                Recompensas
-              </Link>
-            </li>
-          </>
-        )}
-      </ul>
-
-    
-      <div className="flex items-center gap-3">
-        {isAuthenticated ? (
-          // Si el usuario está autenticado, muestra el desplegable
-          <div className="relative" ref={dropdownRef}>
-            {/* Botón/Etiqueta que activa el desplegable */}
-            <button
-              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="flex items-center gap-1 px-3 py-2 rounded-xl bg-brand-secondary text-white font-bold transition-colors hover:bg-brand-dark"
-              aria-expanded={isDropdownOpen}
-              aria-controls="profile-menu"
-            >
-              <IconUser size={20} />
-              <span className="truncate max-w-[100px]">{userName}</span>
-              {isDropdownOpen ? <IconChevronUp size={18} /> : <IconChevronDown size={18} />}
-            </button>
-
-            {/* Menú Desplegable */}
-            {isDropdownOpen && (
-              <div 
-                id="profile-menu"
-                className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl py-1 z-9999 text-gray-800 border border-gray-200"
-              >
-                <button
-                  onClick={handleProfileClick}
-                  className="w-full text-left px-4 py-2 text-sm flex items-center gap-2 hover:bg-gray-100"
-                >
-                  <IconUser size={18} /> Perfil
-                </button>
-                
-                <hr className="my-1 border-gray-100" />
-                
-                <button
-                  onClick={handleLogout}
-                  className="w-full text-left px-4 py-2 text-sm text-red-600 flex items-center gap-2 hover:bg-red-50 hover:text-red-700"
-                >
-                  <IconLogout size={18} /> Cerrar Sesión
-                </button>
-              </div>
-            )}
-          </div>
-        ) : (
-          // Si el usuario NO está autenticado
-          <>
-            <Link
-              to="/login"
-              className="hover:underline px-3 py-2 rounded-xl text-white font-bold transition-colors hover:bg-brand-secondary"
-            >
-              Iniciar Sesión
-            </Link>
-            <Link
-              to="/register"
-              className="px-3 py-2 rounded-xl bg-brand-light text-brand-dark font-bold transition-colors hover:bg-white"
-            >
-              Registro
-            </Link>
-          </>
-        )}
-      </div>
-    </nav>
+        </div>
+      )}
+    </>
   );
 }

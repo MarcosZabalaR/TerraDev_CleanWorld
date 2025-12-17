@@ -65,29 +65,34 @@ export default function Points() {
   };
 
   const API_BASE_URL = "http://localhost:8080";
-  const AUTHENTICATED_USER_ID = 1;
 
   useEffect(() => {
-    if (!AUTHENTICATED_USER_ID) {
-      console.warn("No se encontró el ID de usuario. La API no será llamada.");
-      setPoints(0);
-      return;
-    }
-
     const fetchUser = async () => {
       try {
-        const response = await fetch(
-          `${API_BASE_URL}/users/${AUTHENTICATED_USER_ID}`
-        );
+        const userLocal = JSON.parse(localStorage.getItem("user"));
+        if (!userLocal?.id || !userLocal?.token) {
+          console.warn("Usuario no autenticado o ID faltante");
+          setPoints(0);
+          return;
+        }
+  
+        const response = await fetch(`${API_BASE_URL}/users/${userLocal.id}`, {
+          headers: {
+            "Authorization": `Bearer ${userLocal.token}`,
+            "Content-Type": "application/json",
+          },
+        });
+  
         if (!response.ok) throw new Error("Error fetching user data.");
+  
         const data = await response.json();
-        setPoints(data.points);
+        setPoints(data.points ?? 0);
       } catch (e) {
         console.error("Error fetching user:", e);
         setPoints(0);
       }
     };
-
+  
     fetchUser();
   }, []);
 
