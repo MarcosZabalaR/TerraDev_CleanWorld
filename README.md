@@ -27,7 +27,7 @@ npm install
 - Desde **IntelliJ**, cambiar las variables de entorno a:
 
 ```
-DDBB_HOST=sdvhnk.h.filess.io;DDBB_PORT=3307;DDBB_NAME=clean_world_shestiffof;DDBB_USER=clean_world_shestiffof;DDBB_PASS=26f0e04f0694f4523029d5b491ca980965c756d5
+DDBB_USER={"Nombre de tu usuario en local"};DDBB_NAME={"Nombre de tu base de datos local"};DDBB_PASS={"Tu constraseña"};DDBB_HOST=37.132.209.152;DDBB_PORT=3306;JWT_SECRET={"Tu token"}
 ```
 
 En caso de no saber cambiar las variables de entorno aquí te dejo un tutorial:
