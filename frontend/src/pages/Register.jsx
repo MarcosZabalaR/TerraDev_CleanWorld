@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
+import { IconEye, IconEyeClosed } from "@tabler/icons-react";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -17,6 +18,27 @@ export default function Register() {
 
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState({});
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
+  const passwordRules = {
+    length: formValues.password.length >= 10,
+    lowercase: /[a-z]/.test(formValues.password),
+    uppercase: /[A-Z]/.test(formValues.password),
+    number: /\d/.test(formValues.password),
+    special: /[^A-Za-z0-9]/.test(formValues.password),
+    match:
+      formValues.password &&
+      confirmPassword &&
+      formValues.password === confirmPassword,
+  };
+
+  const passwordStrength = Object.values(passwordRules).filter(Boolean).length;
+
+  const isFormValid =
+    formValues.name.trim() &&
+    formValues.email.trim() &&
+    Object.values(passwordRules).every(Boolean);
 
   const handleChange = (e) => {
     setFormValues({
@@ -27,63 +49,24 @@ export default function Register() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     let validationErrors = {};
 
-    if (!formValues.name.trim()) {
-      validationErrors.name = "El nombre de usuario es obligatorio";
-    } else {
-      const patternUser = /^[a-zA-Z0-9 áéíóúÁÉÍÓÚñÑüÜ'-]+$/;
-      if (!patternUser.test(formValues.name)) {
-        validationErrors.name = "El usuario solo puede tener letras y números";
-      } else if (formValues.name.length > 16 || formValues.name.length < 3) {
-        validationErrors.name = "El usuario debe tener entre 3 y 16 caracteres";
-      }
-    }
-
-    if (!formValues.email.trim()) {
-      validationErrors.email = "El email es obligatorio";
-    } else {
-      const patternEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!patternEmail.test(formValues.email)) {
-        validationErrors.email = "Formato de email inválido";
-      }
-    }
-
-    if (!formValues.password) {
-      validationErrors.password = "La contraseña es obligatoria";
-    }
-
-    if (formValues.password !== confirmPassword) {
-      validationErrors.confirmPassword = "Las contraseñas no coinciden";
-    }
+    if (!formValues.name.trim()) validationErrors.name = "El nombre es obligatorio";
+    if (!formValues.email.trim()) validationErrors.email = "El email es obligatorio";
+    if (!Object.values(passwordRules).every(Boolean))
+      validationErrors.password = "La contraseña no cumple los requisitos";
 
     setErrors(validationErrors);
     if (Object.keys(validationErrors).length > 0) return;
 
     try {
-      const userExists = await axios.get(`${baseURL}/check-user`, { params: { name: formValues.name } });
-      if (userExists.data.exists) {
-        setErrors({ name: "El nombre de usuario ya existe" });
-        return;
-      }
-
-      const emailExists = await axios.get(`${baseURL}/check-email`, { params: { email: formValues.email } });
-      if (emailExists.data.exists) {
-        setErrors({ email: "Este email ya está registrado" });
-        return;
-      }
-
       await axios.post(baseURL, {
         ...formValues,
         avatar: "",
         points: 1000,
       });
-
       navigate("/login");
-
-    } catch (error) {
-      console.error("Error creando usuario:", error);
+    } catch {
       setErrors({ submit: "Error inesperado al crear usuario" });
     }
   };
@@ -91,13 +74,15 @@ export default function Register() {
   return (
     <>
       <Navbar />
+
       <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-blue-50 to-brand-light">
-        <div className="bg-white border-2 border-gray-300 rounded-xl shadow-lg p-8 md:p-10 w-120 max-w-2xl">
-          <h1 className="text-3xl md:text-4xl font-bold text-center mb-6 md:mb-8 text-gray-800">
+        <div className="bg-white border-2 border-gray-300 rounded-xl shadow-lg p-8 md:p-10 w-full max-w-3xl">
+          <h1 className="text-4xl font-bold text-center mb-8 text-gray-800">
             Registro
           </h1>
 
-          <form className="flex flex-col gap-5 md:gap-6" onSubmit={handleSubmit}>
+          <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
+            {/* USUARIO */}
             <div className="relative w-full">
               <input
                 type="text"
@@ -107,14 +92,15 @@ export default function Register() {
                 onChange={handleChange}
                 className="peer bg-gray-100 border border-gray-300 rounded px-4 pt-5 pb-2 w-full focus:outline-none focus:ring-2 focus:ring-brand-primary"
               />
-              <label className="absolute left-4 top-2 text-gray-500 text-sm transition-all 
-                peer-placeholder-shown:top-5 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base
-                peer-focus:top-2 peer-focus:text-gray-700 peer-focus:text-sm">
+              <label className="absolute left-4 top-2 text-gray-500 text-sm transition-all
+                peer-placeholder-shown:top-5 peer-placeholder-shown:text-base
+                peer-focus:top-2 peer-focus:text-sm">
                 Usuario *
               </label>
               {errors.name && <p className="text-red-600">{errors.name}</p>}
             </div>
 
+            {/* EMAIL */}
             <div className="relative w-full">
               <input
                 type="email"
@@ -124,62 +110,127 @@ export default function Register() {
                 onChange={handleChange}
                 className="peer bg-gray-100 border border-gray-300 rounded px-4 pt-5 pb-2 w-full focus:outline-none focus:ring-2 focus:ring-brand-primary"
               />
-              <label className="absolute left-4 top-2 text-gray-500 text-sm transition-all 
-                peer-placeholder-shown:top-5 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base
-                peer-focus:top-2 peer-focus:text-gray-700 peer-focus:text-sm">
+              <label className="absolute left-4 top-2 text-gray-500 text-sm transition-all
+                peer-placeholder-shown:top-5 peer-placeholder-shown:text-base
+                peer-focus:top-2 peer-focus:text-sm">
                 Email *
               </label>
               {errors.email && <p className="text-red-600">{errors.email}</p>}
             </div>
 
-            <div className="relative w-full">
-              <input
-                type="password"
-                name="password"
-                placeholder=" "
-                value={formValues.password}
-                onChange={handleChange}
-                className="peer bg-gray-100 border border-gray-300 rounded px-4 pt-5 pb-2 w-full focus:outline-none focus:ring-2 focus:ring-brand-primary"
-              />
-              <label className="absolute left-4 top-2 text-gray-500 text-sm transition-all 
-                peer-placeholder-shown:top-5 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base
-                peer-focus:top-2 peer-focus:text-gray-700 peer-focus:text-sm">
-                Contraseña *
-              </label>
-              {errors.password && <p className="text-red-600">{errors.password}</p>}
+            {/* PASSWORD & CONFIRM PASSWORD */}
+            <div className="flex flex-col md:flex-row gap-4">
+              <div className="w-full md:w-2/3 space-y-4">
+                {/* PASSWORD */}
+                <div className="relative">
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    name="password"
+                    placeholder=" "
+                    value={formValues.password}
+                    onChange={handleChange}
+                    className="peer bg-gray-100 border border-gray-300 rounded px-4 pt-5 pb-2 w-full pr-12 focus:outline-none focus:ring-2 focus:ring-brand-primary"
+                  />
+                  <label className="absolute left-4 top-2 text-gray-500 text-sm transition-all
+                    peer-placeholder-shown:top-5 peer-placeholder-shown:text-base
+                    peer-focus:top-2 peer-focus:text-sm">
+                    Contraseña *
+                  </label>
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute right-3 top-4 text-gray-600 hover:text-gray-800"
+                  >
+                    {showPassword ? <IconEyeClosed stroke={2} /> : <IconEye stroke={2} />}
+                  </button>
+                </div>
+
+                <div className="h-2 bg-gray-200 rounded">
+                  <div
+                    className={`h-2 rounded transition-all ${
+                      passwordStrength <= 2
+                        ? "bg-red-500 w-1/4"
+                        : passwordStrength <= 4
+                        ? "bg-yellow-400 w-3/4"
+                        : "bg-green-600 w-full"
+                    }`}
+                  />
+                </div>
+
+                {/* CONFIRM PASSWORD */}
+                <div className="relative">
+                  <input
+                    type={showConfirmPassword ? "text" : "password"}
+                    placeholder=" "
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    className="peer bg-gray-100 border border-gray-300 rounded px-4 pt-5 pb-2 w-full pr-12 focus:outline-none focus:ring-2 focus:ring-brand-primary"
+                  />
+                  <label className="absolute left-4 top-2 text-gray-500 text-sm transition-all
+                    peer-placeholder-shown:top-5 peer-placeholder-shown:text-base
+                    peer-focus:top-2 peer-focus:text-sm">
+                    Confirmar contraseña *
+                  </label>
+                  <button
+                    type="button"
+                    onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                    className="absolute right-3 top-4 text-gray-600 hover:text-gray-800"
+                  >
+                    {showConfirmPassword  ? <IconEyeClosed stroke={2} /> : <IconEye stroke={2} />}
+                  </button>
+                </div>
+              </div>
+
+              {/* RULES */}
+              <div className="w-full md:w-1/3 bg-gray-50 border rounded-lg p-3 text-sm">
+                <p className="font-semibold mb-2">Debe contener:</p>
+                <ul className="space-y-1">
+                  {Object.entries({
+                    "10 caracteres mínimo": passwordRules.length,
+                    "Una minúscula": passwordRules.lowercase,
+                    "Una mayúscula": passwordRules.uppercase,
+                    "Un número": passwordRules.number,
+                    "Un carácter especial": passwordRules.special,
+                    "Las contraseñas coinciden": passwordRules.match,
+                  }).map(([label, valid]) => (
+                    <li
+                      key={label}
+                      className={valid ? "text-green-600 line-through" : "text-gray-600"}
+                    >
+                      • {label}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
-            <div className="relative w-full">
-              <input
-                type="password"
-                name="confirmPassword"
-                placeholder=" "
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                className="peer bg-gray-100 border border-gray-300 rounded px-4 pt-5 pb-2 w-full focus:outline-none focus:ring-2 focus:ring-brand-primary"
-              />
-              <label className="absolute left-4 top-2 text-gray-500 text-sm transition-all 
-                peer-placeholder-shown:top-5 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base
-                peer-focus:top-2 peer-focus:text-gray-700 peer-focus:text-sm">
-                Confirmar contraseña *
-              </label>
-              {errors.confirmPassword && <p className="text-red-600">{errors.confirmPassword}</p>}
-            </div>
+            {errors.submit && (
+              <p className="text-red-600 text-center">{errors.submit}</p>
+            )}
 
-            {errors.submit && <p className="text-red-600 text-center">{errors.submit}</p>}
+            <button
+              type="submit"
+              disabled={!isFormValid}
+              className={`py-3 rounded font-semibold transition ${
+                isFormValid
+                  ? "bg-brand-primary text-white hover:bg-brand-dark"
+                  : "bg-gray-300 text-gray-500 cursor-not-allowed"
+              }`}
+            >
+              Registrar
+            </button>
 
-            <div className="flex flex-col gap-3 md:gap-4">
-              <button type="submit" className="bg-brand-primary text-white font-semibold py-3 rounded hover:bg-brand-dark transition duration-300">
-                Registrar
-              </button>
-              <button type="button" className="bg-gray-200 text-gray-800 font-semibold py-3 rounded hover:bg-gray-300 transition duration-300" onClick={() => navigate("/login")}>
-                Ya tengo cuenta
-              </button>
-            </div>
-
+            <button
+              type="button"
+              onClick={() => navigate("/login")}
+              className="py-3 rounded bg-gray-200 hover:bg-gray-300"
+            >
+              Ya tengo cuenta
+            </button>
           </form>
         </div>
       </div>
+
       <Footer />
     </>
   );
