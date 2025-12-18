@@ -4,6 +4,7 @@ import Navbar from "../components/NavBar";
 import Footer from "../components/Footer";
 import axios from "axios";
 import { useState } from "react";
+import { IconEye, IconEyeClosed } from "@tabler/icons-react";
 
 // Importa el hook de Formspree si lo vas a usar, o usa axios directamente para Formspree
 // Si usas Formspree, asegúrate de haber instalado: npm install @formspree/react
@@ -136,6 +137,7 @@ export default function Login() {
     }
   };
 
+  const [showPassword, setShowPassword] = useState(false);
 
   return (
     <>
@@ -171,18 +173,28 @@ export default function Login() {
               {/* Campo Password */}
               <div className="relative w-full">
                 <input
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   name="password"
                   placeholder=" "
                   value={formValues.password}
                   onChange={handleChange}
-                  className="peer bg-gray-100 border border-gray-300 rounded px-4 pt-5 pb-2 w-full focus:outline-none focus:ring-2 focus:ring-brand-light"
+                  className="peer bg-gray-100 border border-gray-300 rounded px-4 pt-5 pb-2 pr-12 w-full focus:outline-none focus:ring-2 focus:ring-brand-light"
                 />
+
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-3 top-4 text-gray-600 hover:text-gray-800"
+                >
+                  {showPassword ? <IconEyeClosed stroke={2} /> : <IconEye stroke={2} />}
+                </button>
+
                 <label className="absolute left-4 top-2 text-gray-500 text-sm transition-all 
                   peer-placeholder-shown:top-5 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base
                   peer-focus:top-2 peer-focus:text-gray-700 peer-focus:text-sm">
                   Password
                 </label>
+
                 {errors.password && <p className="text-red-600 text-sm mt-1">{errors.password}</p>}
               </div>
 
